@@ -7,6 +7,7 @@ import {
   AlertCircle,
   Bot,
   BrainCircuit,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   CirclePlay,
@@ -61,6 +62,30 @@ export function PlaygroundShell() {
   const lesson =
     playgroundLessons.find((item) => item.id === selectedLessonId) ?? playgroundLessons[0];
   const frame = activeFrames[Math.min(frameIndex, activeFrames.length - 1)];
+
+  const levelOrder = ["foundation", "beginner", "intermediate", "advanced", "mastery"];
+  const levelColors: Record<string, string> = {
+    foundation: "text-violet-400",
+    beginner: "text-sky-400",
+    intermediate: "text-emerald-400",
+    advanced: "text-rose-400",
+    mastery: "text-amber-400",
+  };
+  const grouped = levelOrder
+    .map((lvl) => ({ level: lvl, items: playgroundLessons.filter((l) => l.level.toLowerCase() === lvl) }))
+    .filter((g) => g.items.length > 0);
+
+  const [expandedLevels, setExpandedLevels] = useState<Set<string>>(
+    () => new Set([lesson.level.toLowerCase()]),
+  );
+  const toggleLevel = (lvl: string) => {
+    setExpandedLevels((prev) => {
+      const next = new Set(prev);
+      if (next.has(lvl)) next.delete(lvl);
+      else next.add(lvl);
+      return next;
+    });
+  };
 
   const visibleOutput = hasRun
     ? runOutput.slice(0, Math.ceil(((frameIndex + 1) / activeFrames.length) * runOutput.length))
@@ -254,49 +279,75 @@ export function PlaygroundShell() {
               {isAutoPlaying ? "Auto running" : "Manual mode"}
             </div>
           </div>
-          <div className="mt-4 border-t border-white/[0.08] pt-4 space-y-2">
-            {playgroundLessons.map((item, index) => {
-              const active = item.id === lesson.id;
-              return (
-                <motion.button
-                  key={item.id}
-                  type="button"
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: index * 0.06 }}
-                  onClick={() => selectLesson(item.id)}
-                  className={`w-full rounded-[24px] border p-4 text-left transition ${
-                    active
-                      ? "border-signal/20 bg-signal/10 shadow-[0_4px_16px_rgba(232,98,42,0.1)]"
-                      : "border-white/[0.06] bg-parchment hover:bg-mist hover:border-white/[0.10]"
-                  }`}
+          <div className="mt-4 border-t border-white/[0.08] pt-4 space-y-3">
+            {grouped.map((group) => (
+              <div key={group.level}>
+                <button
+                  onClick={() => toggleLevel(group.level)}
+                  className="flex w-full items-center justify-between rounded-xl px-2 py-2 hover:bg-white/[0.04] transition"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className={`text-xs font-semibold uppercase tracking-[0.18em] ${active ? item.levelColor : "text-ink/42"}`}>
-                      {item.level}
+                  <div className="flex items-center gap-2">
+                    <span className={`text-[11px] font-bold uppercase tracking-[0.18em] ${levelColors[group.level]}`}>
+                      {group.level}
                     </span>
-                    <span className="text-xs text-ink/42">{item.duration}</span>
+                    <span className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[10px] text-ink/50">
+                      {group.items.length}
+                    </span>
                   </div>
-                  <div className="mt-2 text-sm font-semibold text-bright">{item.title}</div>
-                  {isComplete(item.id) && (
-                    <div className="mt-2 flex items-center gap-1.5 text-[10px] font-semibold text-leaf">
-                      <span className="h-1.5 w-1.5 rounded-full bg-leaf" />
-                      Completed
-                    </div>
+                  {expandedLevels.has(group.level) ? (
+                    <ChevronDown className="h-3.5 w-3.5 text-ink/40" />
+                  ) : (
+                    <ChevronRight className="h-3.5 w-3.5 text-ink/40" />
                   )}
-                  <p className="mt-1.5 text-xs leading-5 text-ink/55">{item.objective}</p>
-                  {/* Complexity badge */}
-                  <div className="mt-3 flex gap-2">
-                    <span className="rounded-full bg-parchment px-2.5 py-1 text-[10px] font-medium text-ink/50">
-                      Time: {item.timeComplexity}
-                    </span>
-                    <span className="rounded-full bg-parchment px-2.5 py-1 text-[10px] font-medium text-ink/50">
-                      Space: {item.spaceComplexity}
-                    </span>
+                </button>
+                {expandedLevels.has(group.level) && (
+                  <div className="mt-1 space-y-2 pl-1 transition-all duration-300">
+                    {group.items.map((item, index) => {
+                      const active = item.id === lesson.id;
+                      return (
+                        <motion.button
+                          key={item.id}
+                          type="button"
+                          initial={{ opacity: 0, y: 16 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.35, delay: index * 0.06 }}
+                          onClick={() => selectLesson(item.id)}
+                          className={`w-full rounded-[24px] border p-4 text-left transition ${
+                            active
+                              ? "border-signal/20 bg-signal/10 shadow-[0_4px_16px_rgba(232,98,42,0.1)]"
+                              : "border-white/[0.06] bg-parchment hover:bg-mist hover:border-white/[0.10]"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className={`text-xs font-semibold uppercase tracking-[0.18em] ${active ? item.levelColor : "text-ink/42"}`}>
+                              {item.level}
+                            </span>
+                            <span className="text-xs text-ink/42">{item.duration}</span>
+                          </div>
+                          <div className="mt-2 text-sm font-semibold text-bright">{item.title}</div>
+                          {isComplete(item.id) && (
+                            <div className="mt-2 flex items-center gap-1.5 text-[10px] font-semibold text-leaf">
+                              <span className="h-1.5 w-1.5 rounded-full bg-leaf" />
+                              Completed
+                            </div>
+                          )}
+                          <p className="mt-1.5 text-xs leading-5 text-ink/55">{item.objective}</p>
+                          {/* Complexity badge */}
+                          <div className="mt-3 flex gap-2">
+                            <span className="rounded-full bg-parchment px-2.5 py-1 text-[10px] font-medium text-ink/50">
+                              Time: {item.timeComplexity}
+                            </span>
+                            <span className="rounded-full bg-parchment px-2.5 py-1 text-[10px] font-medium text-ink/50">
+                              Space: {item.spaceComplexity}
+                            </span>
+                          </div>
+                        </motion.button>
+                      );
+                    })}
                   </div>
-                </motion.button>
-              );
-            })}
+                )}
+              </div>
+            ))}
           </div>
         </aside>
 

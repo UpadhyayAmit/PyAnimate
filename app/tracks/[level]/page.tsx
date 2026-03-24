@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, ExternalLink, Zap } from "lucide-react";
+import { ArrowLeft, Clock, Database, ExternalLink, Lock, Zap } from "lucide-react";
 import { algorithmsByLevel, trackLevels } from "@/data/course";
 import { SiteHeader } from "@/components/site-header";
 
@@ -10,12 +10,32 @@ const difficultyLabel: Record<string, string> = {
   easy: "Easy",
   medium: "Medium",
   hard: "Hard",
+  expert: "Expert",
 };
 
 const difficultyStyle: Record<string, string> = {
   easy: "bg-green-900/30 text-green-400 border-green-700/40",
   medium: "bg-amber-900/30 text-amber-400 border-amber-700/40",
   hard: "bg-orange-900/30 text-orange-400 border-orange-700/40",
+  expert: "bg-purple-900/30 text-purple-400 border-purple-700/40",
+};
+
+const difficultyGradient: Record<string, string> = {
+  easy: "bg-gradient-to-r from-emerald-500/0 via-emerald-500/70 to-emerald-500/0",
+  medium: "bg-gradient-to-r from-amber-500/0 via-amber-500/70 to-amber-500/0",
+  hard: "bg-gradient-to-r from-rose-500/0 via-rose-500/70 to-rose-500/0",
+  expert: "bg-gradient-to-r from-purple-500/0 via-purple-500/70 to-purple-500/0",
+};
+
+const categoryEmoji: Record<string, string> = {
+  sorting: "🔀",
+  searching: "🔍",
+  graph: "🕸",
+  "dynamic programming": "🧮",
+  trees: "🌳",
+  "data structures": "📦",
+  fundamentals: "⚡",
+  recursion: "🔁",
 };
 
 export default async function TrackPage({ params }: Props) {
@@ -87,13 +107,21 @@ export default async function TrackPage({ params }: Props) {
             {algorithms.map((algo, index) => (
               <article
                 key={algo.id}
-                className={`card-elevated group relative flex flex-col rounded-[24px] p-5 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.5),0_24px_56px_rgba(0,0,0,0.4)] ${
+                className={`card-elevated group relative flex flex-col rounded-[24px] overflow-hidden p-5 transition-all hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)] ${
                   algo.hasPlayground ? "" : "opacity-80"
                 }`}
               >
-                {/* Number + difficulty */}
+                {/* Top accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-0.5 rounded-t-[24px] ${difficultyGradient[algo.difficulty] ?? ""}`} />
+
+                {/* Decorative number */}
+                <span className="pointer-events-none absolute right-4 top-3 text-[28px] font-black text-ink/[0.07] leading-none select-none">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* Difficulty badge */}
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="text-xs font-bold text-ink/30">
+                  <span className="text-xs font-bold text-ink/30 invisible">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span
@@ -106,6 +134,7 @@ export default async function TrackPage({ params }: Props) {
                 </div>
 
                 <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/40">
+                  {categoryEmoji[algo.category.toLowerCase()] ?? ""}{" "}
                   {algo.category}
                 </div>
                 <h3 className="text-lg font-semibold text-bright">{algo.title}</h3>
@@ -113,12 +142,13 @@ export default async function TrackPage({ params }: Props) {
 
                 {/* Complexity row */}
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1.5 rounded-full bg-parchment px-3 py-1 text-xs text-ink/55">
+                  <div className="flex items-center gap-1.5 rounded-full bg-signal/8 px-3 py-1 text-xs text-signal/80">
                     <Zap className="h-3 w-3" />
                     <span>Time: {algo.timeComplexity}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-parchment px-3 py-1 text-xs text-ink/55">
-                    Space: {algo.spaceComplexity}
+                  <div className="flex items-center gap-1.5 rounded-full bg-wave/8 px-3 py-1 text-xs text-wave/80">
+                    <Database className="h-3 w-3" />
+                    <span>Space: {algo.spaceComplexity}</span>
                   </div>
                 </div>
 
@@ -137,14 +167,15 @@ export default async function TrackPage({ params }: Props) {
                       Open lesson <ExternalLink className="h-3 w-3" />
                     </Link>
                   ) : (
-                    <span className="rounded-full border border-ink/10 bg-parchment px-3 py-1.5 text-xs text-ink/40">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-ink/15 bg-parchment px-3 py-1.5 text-xs italic text-ink/30">
+                      <Lock className="h-3 w-3" />
                       Coming soon
                     </span>
                   )}
                 </div>
 
                 {algo.hasPlayground && (
-                  <div className="absolute right-5 top-5 h-2 w-2 rounded-full bg-leaf" />
+                  <div className="absolute right-5 top-5 h-2 w-2 rounded-full bg-leaf animate-pulse" />
                 )}
               </article>
             ))}

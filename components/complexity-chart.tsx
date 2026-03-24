@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 interface Props {
   timeComplexity: string;
@@ -67,6 +67,7 @@ function buildPath(fn: (x: number) => number): string {
 }
 
 export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
+  const [nValue, setNValue] = useState<number>(8);
   const paths = useMemo(() => CURVES.map((c) => buildPath(c.fn)), []);
 
   const highlighted = useMemo(
@@ -177,6 +178,41 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
             );
           })}
 
+          {/* nValue vertical marker */}
+          {(() => {
+            const markerX = PAD.left + (nValue / 20) * PLOT_W;
+            const tIdx = (nValue / 20) * N;
+            return (
+              <>
+                <line
+                  x1={markerX}
+                  y1={PAD.top}
+                  x2={markerX}
+                  y2={PAD.top + PLOT_H}
+                  stroke="rgba(255,255,255,0.30)"
+                  strokeWidth="1"
+                  strokeDasharray="3,3"
+                />
+                {highlighted
+                  .filter((c) => c.activeTime || c.activeSpace)
+                  .map((c) => {
+                    const yPos = PAD.top + PLOT_H - c.fn(tIdx) * PLOT_H;
+                    return (
+                      <circle
+                        key={`dot-${c.id}`}
+                        cx={markerX}
+                        cy={yPos}
+                        r={3}
+                        fill={c.color}
+                        stroke="rgba(0,0,0,0.5)"
+                        strokeWidth="1"
+                      />
+                    );
+                  })}
+              </>
+            );
+          })()}
+
           {/* Active curve labels */}
           {highlighted
             .filter((c) => c.activeTime || c.activeSpace)
@@ -228,6 +264,51 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
             </div>
           );
         })}
+      </div>
+
+      {/* Interactive n slider */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-[10px] text-white/40">
+          <span>n = {nValue}</span>
+          <span>range 1–20</span>
+        </div>
+        <input
+          type="range"
+          min={1}
+          max={20}
+          value={nValue}
+          onChange={(e) => setNValue(Number(e.target.value))}
+          className="w-full h-1 rounded-full appearance-none cursor-pointer"
+          style={{ accentColor: "#ff6535" }}
+        />
+        {/* At-n table */}
+        <div className="rounded-[12px] bg-[#0f172a] p-3">
+          <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/35">
+            At n = {nValue}
+          </div>
+          <table className="w-full text-[10px]">
+            <thead>
+              <tr className="text-white/30">
+                <th className="text-left pb-1 font-medium">Complexity</th>
+                <th className="text-right pb-1 font-medium">Operations</th>
+              </tr>
+            </thead>
+            <tbody className="space-y-1">
+              {[
+                { label: "O(1)", value: "1", color: "#38bdf8" },
+                { label: "O(log n)", value: String(Math.round(Math.log2(nValue) * 10) / 10), color: "#4ade80" },
+                { label: "O(n)", value: String(nValue), color: "#fcd34d" },
+                { label: "O(n log n)", value: String(Math.round(nValue * Math.log2(nValue))), color: "#ff6535" },
+                { label: "O(n²)", value: String(nValue * nValue), color: "#fb7185" },
+              ].map((row) => (
+                <tr key={row.label}>
+                  <td className="py-0.5 font-mono" style={{ color: row.color }}>{row.label}</td>
+                  <td className="py-0.5 text-right text-white/60 font-mono">{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

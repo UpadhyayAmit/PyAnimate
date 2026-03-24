@@ -144,7 +144,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Basics",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "5 min",
       tags: ["print", "output", "basics"],
     },
@@ -168,7 +168,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Strings",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "8 min",
       tags: ["strings", "slicing", "methods"],
     },
@@ -180,7 +180,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Math",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "6 min",
       tags: ["math", "operators", "division"],
     },
@@ -228,7 +228,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Data Structures",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "10 min",
       tags: ["lists", "append", "index"],
     },
@@ -240,7 +240,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Functions",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "12 min",
       tags: ["functions", "return", "scope"],
     },
@@ -252,7 +252,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "I/O",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "6 min",
       tags: ["input", "output", "interactive"],
     },
@@ -291,7 +291,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Array",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "8 min",
       tags: ["min", "max", "single pass"],
     },
@@ -303,7 +303,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Math",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "6 min",
       tags: ["sum", "average", "accumulator"],
     },
@@ -339,7 +339,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Strings",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "8 min",
       tags: ["palindrome", "two pointers", "strings"],
     },
@@ -351,7 +351,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Math",
       difficulty: "easy",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "6 min",
       tags: ["modulo", "conditions", "classic"],
     },
@@ -426,7 +426,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Array",
       difficulty: "medium",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "10 min",
       tags: ["two pointers", "optimization", "array"],
     },
@@ -462,8 +462,8 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Data Structures",
       difficulty: "medium",
-      hasPlayground: false,
-      duration: "10 min",
+      hasPlayground: true,
+      duration: "8 min",
       tags: ["queue", "FIFO", "deque"],
     },
     {
@@ -471,35 +471,35 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       title: "Anagram Check",
       description: "Are two strings rearrangements of each other? See character counting solve it in O(n).",
       timeComplexity: "O(n)",
-      spaceComplexity: "O(1) — fixed 26 chars",
+      spaceComplexity: "O(k) — k = unique chars",
       category: "Strings",
       difficulty: "medium",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "8 min",
       tags: ["strings", "anagram", "counting"],
     },
     {
       id: "sliding-window",
-      title: "Sliding Window Max",
-      description: "Find the maximum in every window of size k. Watch the window glide across the array.",
+      title: "Sliding Window Max Sum",
+      description: "Find the maximum sum in every window of size k. Watch the window glide across the array.",
       timeComplexity: "O(n)",
-      spaceComplexity: "O(k)",
+      spaceComplexity: "O(1)",
       category: "Array",
       difficulty: "medium",
-      hasPlayground: false,
-      duration: "12 min",
-      tags: ["sliding window", "deque", "optimization"],
+      hasPlayground: true,
+      duration: "8 min",
+      tags: ["sliding window", "optimization", "array"],
     },
     {
       id: "merge-sorted",
       title: "Merge Sorted Arrays",
       description: "Combine two sorted arrays into one. The core operation behind merge sort.",
-      timeComplexity: "O(n + m)",
-      spaceComplexity: "O(n + m)",
+      timeComplexity: "O(m + n)",
+      spaceComplexity: "O(m + n)",
       category: "Sorting",
       difficulty: "medium",
-      hasPlayground: false,
-      duration: "10 min",
+      hasPlayground: true,
+      duration: "8 min",
       tags: ["merge", "sorted", "two pointers"],
     },
   ],
@@ -525,7 +525,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Sorting",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["sorting", "divide & conquer", "recursive"],
     },
@@ -636,7 +636,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "25 min",
       tags: ["graph", "shortest path", "greedy", "priority queue"],
     },
@@ -648,7 +648,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n × W)",
       category: "Dynamic Programming",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "25 min",
       tags: ["DP", "knapsack", "optimization"],
     },
@@ -660,7 +660,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(m × n)",
       category: "Dynamic Programming",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "20 min",
       tags: ["DP", "LCS", "subsequence"],
     },
@@ -672,7 +672,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "20 min",
       tags: ["graph", "topological", "DAG"],
     },
@@ -684,7 +684,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "25 min",
       tags: ["graph", "MST", "union-find", "greedy"],
     },
@@ -696,7 +696,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(m × n)",
       category: "Trees",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "20 min",
       tags: ["trie", "prefix", "autocomplete"],
     },
@@ -708,7 +708,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V²)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "22 min",
       tags: ["graph", "all-pairs", "DP"],
     },
@@ -720,7 +720,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Trees",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "25 min",
       tags: ["segment tree", "range query", "update"],
     },
@@ -732,7 +732,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(amount)",
       category: "Dynamic Programming",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["DP", "coins", "greedy vs DP"],
     },
@@ -744,7 +744,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Bit Ops",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["bits", "XOR", "masks", "shifts"],
     },
@@ -3229,6 +3229,2937 @@ print("Memo:", fib_memo(10))
         why: "fib_memo(10)=55 computed with only 2×10-1=19 function calls vs 177 for naive fib(10). The memoized version is O(n) time and O(n) space. For fib(100) it's 199 calls vs 10^21 — the difference between instant and longer than the age of the universe.",
         memory: [{ name: "fib_memo(10)", value: "55" }, { name: "total calls", value: "19" }],
         output: ["Naive: 21", "Memo: 55"],
+      },
+    ],
+  },
+
+  // ── Dijkstra's Shortest Path ──────────────────────────────────────────────
+  {
+    id: "dijkstra",
+    title: "Dijkstra's Shortest Path",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "25 min",
+    objective: "Use a min-heap priority queue to greedily explore the nearest unvisited node and find shortest paths from a source.",
+    prompt: "Add a new node 4 connected from node 3 with weight 2. What is the shortest path from 0 to 4?",
+    hint: "Extend the graph dict with node 4 and add (4,2) to node 3's adjacency list. Run dijkstra and check dist[4].",
+    timeComplexity: "O((V + E) log V)",
+    spaceComplexity: "O(V)",
+    useCases: [
+      "GPS navigation",
+      "Network routing",
+      "Game pathfinding",
+      "Social network shortest paths",
+    ],
+    approach: "Dijkstra uses a min-heap priority queue to greedily explore the nearest unvisited node. It maintains a distance table initialized to infinity, updating shorter paths as they are discovered. The algorithm is optimal for non-negative weighted graphs. It processes each edge at most once per relaxation.",
+    output: ["{0: 0, 1: 3, 2: 1, 3: 4}"],
+    starterCode: `import heapq
+
+def dijkstra(graph, start):
+    dist = {node: float('inf') for node in graph}
+    dist[start] = 0
+    pq = [(0, start)]
+    while pq:
+        d, u = heapq.heappop(pq)
+        if d > dist[u]:
+            continue
+        for v, w in graph[u]:
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                heapq.heappush(pq, (dist[v], v))
+    return dist
+
+graph = {0: [(1,4),(2,1)], 1: [(3,1)], 2: [(1,2),(3,5)], 3: []}
+print(dijkstra(graph, 0))
+`,
+    executionFrames: [
+      {
+        line: 3,
+        event: "call",
+        summary: "dijkstra(graph, start=0) called. Initialize distance table.",
+        why: "We call dijkstra with start=0. The function will compute shortest distances from node 0 to all other nodes using a greedy approach with a min-heap.",
+        memory: [{ name: "start", value: "0" }, { name: "graph nodes", value: "{0,1,2,3}" }],
+      },
+      {
+        line: 4,
+        event: "assign",
+        summary: "dist = {0:inf, 1:inf, 2:inf, 3:inf} — all distances start at infinity.",
+        why: "We initialize all distances to infinity to represent 'not yet reached'. Only the source gets distance 0. This is the classic initialization for Dijkstra.",
+        memory: [{ name: "dist", value: "{0:inf,1:inf,2:inf,3:inf}" }],
+      },
+      {
+        line: 5,
+        event: "assign",
+        summary: "dist[0] = 0 — source node distance is zero.",
+        why: "The source node costs 0 to reach from itself. This seeds the algorithm — every shortest path starts from here.",
+        memory: [{ name: "dist", value: "{0:0,1:inf,2:inf,3:inf}" }, { name: "pq", value: "[(0,0)]" }],
+      },
+      {
+        line: 7,
+        event: "loop",
+        summary: "Pop (0,0) from heap — visit node 0 with distance 0.",
+        why: "heappop gives the node with the smallest tentative distance. Node 0 has dist 0, so we explore its neighbors first. This greedy choice is correct for non-negative weights.",
+        memory: [{ name: "d", value: "0" }, { name: "u", value: "0" }, { name: "dist", value: "{0:0,1:inf,2:inf,3:inf}" }],
+      },
+      {
+        line: 11,
+        event: "loop",
+        summary: "Explore neighbors of node 0: (1,4) and (2,1).",
+        why: "Node 0 connects to node 1 with weight 4 and node 2 with weight 1. We check if going through node 0 gives a shorter path to each neighbor.",
+        memory: [{ name: "u", value: "0" }, { name: "neighbors", value: "[(1,4),(2,1)]" }],
+      },
+      {
+        line: 12,
+        event: "compare",
+        summary: "dist[0]+1=1 < dist[2]=inf → relax edge to node 2.",
+        why: "The path 0→2 costs 1, which is better than infinity. We update dist[2]=1 and push (1,2) to the heap. Edge relaxation is the core update step of Dijkstra.",
+        memory: [{ name: "dist", value: "{0:0,1:4,2:1,3:inf}" }, { name: "pq", value: "[(1,2),(4,1)]" }],
+      },
+      {
+        line: 7,
+        event: "loop",
+        summary: "Pop (1,2) — visit node 2. Relax edges to nodes 1 and 3.",
+        why: "Node 2 has the smallest dist=1. Its neighbor node 1 gets dist=1+2=3 (better than 4), and node 3 gets dist=1+5=6. The heap is updated with these improved distances.",
+        memory: [{ name: "d", value: "1" }, { name: "u", value: "2" }, { name: "dist", value: "{0:0,1:3,2:1,3:6}" }],
+      },
+      {
+        line: 15,
+        event: "return",
+        summary: "return dist → {0:0, 1:3, 2:1, 3:4}",
+        why: "After all nodes are settled, dist contains the shortest path from node 0 to every other node. Node 3 is reached via 0→2→1→3 with total cost 0+1+2+1=4.",
+        memory: [{ name: "dist[0]", value: "0" }, { name: "dist[1]", value: "3" }, { name: "dist[2]", value: "1" }, { name: "dist[3]", value: "4" }],
+        output: ["{0: 0, 1: 3, 2: 1, 3: 4}"],
+      },
+    ],
+  },
+
+  // ── 0/1 Knapsack DP ───────────────────────────────────────────────────────
+  {
+    id: "knapsack",
+    title: "0/1 Knapsack DP",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "25 min",
+    objective: "Build a 2D DP table to find the maximum value that fits within a weight capacity.",
+    prompt: "Add a 5th item: weight=1, value=2. Does it change the optimal value for capacity=8?",
+    hint: "Add 1 to weights and 2 to values. The DP table gains an extra row. Check dp[5][8].",
+    timeComplexity: "O(n × W)",
+    spaceComplexity: "O(n × W)",
+    useCases: [
+      "Resource allocation",
+      "Portfolio optimization",
+      "Project selection",
+      "Cargo loading",
+    ],
+    approach: "The 0/1 knapsack uses a 2D DP table where dp[i][w] = max value using the first i items with capacity w. For each item we decide: skip it (take dp[i-1][w]) or take it (dp[i-1][w-weight]+value), choosing the max. Bottom-up filling avoids recomputation, giving O(n×W) time and space.",
+    output: ["10"],
+    starterCode: `def knapsack(weights, values, capacity):
+    n = len(weights)
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
+    for i in range(1, n + 1):
+        for w in range(capacity + 1):
+            dp[i][w] = dp[i-1][w]
+            if weights[i-1] <= w:
+                dp[i][w] = max(dp[i][w], dp[i-1][w-weights[i-1]] + values[i-1])
+    return dp[n][capacity]
+
+weights = [2, 3, 4, 5]
+values  = [3, 4, 5, 6]
+capacity = 8
+print(knapsack(weights, values, capacity))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        event: "call",
+        summary: "knapsack(weights=[2,3,4,5], values=[3,4,5,6], capacity=8) called.",
+        why: "We have 4 items with given weights and values, and a knapsack capacity of 8. The goal is to find the maximum total value without exceeding the weight limit.",
+        memory: [{ name: "n", value: "4" }, { name: "capacity", value: "8" }],
+      },
+      {
+        line: 3,
+        event: "assign",
+        summary: "dp = 5×9 table of zeros — rows=items+1, cols=capacity+1.",
+        why: "The DP table has n+1 rows (0..n items) and capacity+1 columns (0..capacity). Row 0 and column 0 are base cases: zero items or zero capacity gives value 0.",
+        memory: [{ name: "dp[0]", value: "[0,0,0,0,0,0,0,0,0]" }, { name: "dp size", value: "5×9" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "i=1: processing item 0 (weight=2, value=3).",
+        why: "We fill the table row by row. Row i considers whether to include item i-1. For each capacity w, we choose the better of skipping or including this item.",
+        memory: [{ name: "i", value: "1" }, { name: "item weight", value: "2" }, { name: "item value", value: "3" }],
+      },
+      {
+        line: 6,
+        event: "assign",
+        summary: "dp[1][w] = dp[0][w] — inherit previous row (skip item 1).",
+        why: "The skip option copies the best value achievable without item 1. This is always available regardless of capacity.",
+        memory: [{ name: "dp[1][0..1]", value: "[0,0]" }, { name: "dp[1][2]", value: "0 (before take)" }],
+      },
+      {
+        line: 7,
+        event: "branch",
+        summary: "weights[0]=2 ≤ w=2 → can include item 1. Take the max.",
+        why: "When w >= item's weight, we can choose to include it: dp[i][w] = max(skip, dp[i-1][w-weight]+value). For w=2: max(0, dp[0][0]+3) = max(0,3) = 3.",
+        memory: [{ name: "dp[1][2]", value: "3" }, { name: "dp[1][3]", value: "3" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "i=2: item 1 (weight=3, value=4). Combine with item 0.",
+        why: "Now we consider adding item 1. At w=5: skip gives dp[1][5]=3, take gives dp[1][2]+4=7. Best is 7. The DP correctly combines items.",
+        memory: [{ name: "i", value: "2" }, { name: "dp[2][5]", value: "7" }, { name: "dp[2][8]", value: "7" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "i=3,4: items 2 and 3 fill remaining rows.",
+        why: "Adding items of weight 4 (value 5) and weight 5 (value 6) improves the table. At capacity 8: items 0+1+2 weigh 9 (too heavy), but 0+1 weigh 5 giving value 7, and 0+3 weigh 7 giving value 9, or 1+3 weigh 8 giving value 10.",
+        memory: [{ name: "dp[4][8]", value: "10" }, { name: "best combo", value: "items 1+3" }],
+      },
+      {
+        line: 9,
+        event: "return",
+        summary: "return dp[4][8] = 10 — items with weights [3,5] and values [4,6].",
+        why: "The maximum value achievable with capacity 8 is 10, using items of weight 3 (value 4) and weight 5 (value 6). Total weight = 8 ≤ 8. The DP table encodes all optimal sub-problems.",
+        memory: [{ name: "dp[n][capacity]", value: "10" }, { name: "selected weights", value: "[3,5]" }],
+        output: ["10"],
+      },
+    ],
+  },
+
+  // ── Longest Common Subsequence ────────────────────────────────────────────
+  {
+    id: "lcs",
+    title: "Longest Common Subsequence",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "20 min",
+    objective: "Fill a 2D DP table to find the length of the longest subsequence common to two strings.",
+    prompt: "Try lcs('AGGTAB', 'GXTXAYB'). What is the LCS length? Which characters form it?",
+    hint: "The LCS of AGGTAB and GXTXAYB is GTAB with length 4. The DP table shows how diagonal moves mark matches.",
+    timeComplexity: "O(m × n)",
+    spaceComplexity: "O(m × n)",
+    useCases: [
+      "Diff tools (git diff)",
+      "DNA sequence alignment",
+      "Plagiarism detection",
+      "File comparison",
+    ],
+    approach: "LCS builds a 2D table where dp[i][j] = length of LCS of s1[:i] and s2[:j]. When characters match, dp[i][j] = dp[i-1][j-1]+1 (extend the previous LCS). When they differ, dp[i][j] = max(dp[i-1][j], dp[i][j-1]) (best without one character). The answer is dp[m][n].",
+    output: ["4"],
+    starterCode: `def lcs(s1, s2):
+    m, n = len(s1), len(s2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if s1[i-1] == s2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    return dp[m][n]
+
+print(lcs("ABCBDAB", "BDCAB"))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        event: "call",
+        summary: "lcs('ABCBDAB', 'BDCAB') called. m=7, n=5.",
+        why: "We want the longest subsequence present in both strings. A subsequence doesn't need to be contiguous. BDAB is common with length 4.",
+        memory: [{ name: "s1", value: "ABCBDAB" }, { name: "s2", value: "BDCAB" }, { name: "m", value: "7" }, { name: "n", value: "5" }],
+      },
+      {
+        line: 3,
+        event: "assign",
+        summary: "dp = 8×6 table of zeros (rows=m+1, cols=n+1).",
+        why: "The extra row and column (index 0) serve as base cases: LCS of any string with an empty string is 0. We build up from these known values.",
+        memory: [{ name: "dp rows", value: "8" }, { name: "dp cols", value: "6" }, { name: "dp[0][*]", value: "all 0" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "i=1 (s1[0]='A'): compare with each character of s2.",
+        why: "For each position i in s1, we compare with all positions j in s2. This nested loop visits every (i,j) cell exactly once, giving O(m×n) time.",
+        memory: [{ name: "i", value: "1" }, { name: "s1[0]", value: "A" }],
+      },
+      {
+        line: 6,
+        event: "compare",
+        summary: "s1[0]='A' vs s2[4]='B' — no match. dp[1][5] = max(dp[0][5], dp[1][4]) = 0.",
+        why: "When characters differ, we can't extend any common subsequence. We take the best result from ignoring one character from either string.",
+        memory: [{ name: "s1[i-1]", value: "A" }, { name: "s2[j-1]", value: "B" }, { name: "dp[1][5]", value: "0" }],
+      },
+      {
+        line: 6,
+        event: "compare",
+        summary: "s1[1]='B' matches s2[0]='B' → dp[2][1] = dp[1][0]+1 = 1.",
+        why: "A match means we can extend the LCS from the diagonal predecessor. dp[i-1][j-1] is the LCS length before this pair, and we add 1 for this new common character.",
+        memory: [{ name: "i", value: "2" }, { name: "j", value: "1" }, { name: "match", value: "B=B" }, { name: "dp[2][1]", value: "1" }],
+      },
+      {
+        line: 7,
+        event: "assign",
+        summary: "dp[2][1] = dp[1][0]+1 = 1. Diagonal extension for 'B'.",
+        why: "The diagonal move dp[i-1][j-1]+1 captures that we found a matching character. This is the fundamental recurrence: extend the best LCS found before this position.",
+        memory: [{ name: "dp[2][1]", value: "1" }, { name: "dp[3][2]", value: "1" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "Table fills: matches found at (B,B), (C,C), (D,D), (A,A), (B,B).",
+        why: "As we scan, each diagonal match increments the LCS count. By dp[7][5], all matches for BDAB have been accumulated. The table encodes every sub-problem result.",
+        memory: [{ name: "dp[7][5]", value: "4" }, { name: "LCS length", value: "4" }],
+      },
+      {
+        line: 10,
+        event: "return",
+        summary: "return dp[7][5] = 4. LCS is 'BDAB'.",
+        why: "The bottom-right cell dp[m][n] contains the length of the LCS of the complete strings. To recover the actual subsequence, trace back through the table following diagonal moves.",
+        memory: [{ name: "dp[m][n]", value: "4" }, { name: "LCS", value: "BDAB" }],
+        output: ["4"],
+      },
+    ],
+  },
+
+  // ── Coin Change DP ────────────────────────────────────────────────────────
+  {
+    id: "coin-change",
+    title: "Coin Change DP",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "18 min",
+    objective: "Build a 1D DP array to find the minimum number of coins needed to make a target amount.",
+    prompt: "Try coin_change([2], 3). What does the function return and why?",
+    hint: "With only coin=2, you cannot make amount=3 (only even amounts are reachable). The function should return -1.",
+    timeComplexity: "O(amount × coins)",
+    spaceComplexity: "O(amount)",
+    useCases: [
+      "Currency exchange",
+      "Vending machines",
+      "Game power-ups",
+      "Resource decomposition",
+    ],
+    approach: "Coin change uses a 1D DP array where dp[a] = minimum coins to make amount a. We initialize dp[0]=0 (zero coins for zero amount) and dp[1..amount]=infinity. For each amount a, we try every coin: if coin ≤ a, dp[a] = min(dp[a], dp[a-coin]+1). The +1 accounts for using this one coin.",
+    output: ["2"],
+    starterCode: `def coin_change(coins, amount):
+    dp = [float('inf')] * (amount + 1)
+    dp[0] = 0
+    for a in range(1, amount + 1):
+        for coin in coins:
+            if coin <= a:
+                dp[a] = min(dp[a], dp[a - coin] + 1)
+    return dp[amount] if dp[amount] != float('inf') else -1
+
+print(coin_change([1, 5, 6, 9], 11))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        event: "call",
+        summary: "coin_change([1,5,6,9], 11) called. Find min coins for amount=11.",
+        why: "We want the fewest coins from [1,5,6,9] that sum to 11. Greedy fails here: 9+1+1=3, but 6+5=2 coins is optimal.",
+        memory: [{ name: "coins", value: "[1,5,6,9]" }, { name: "amount", value: "11" }],
+      },
+      {
+        line: 2,
+        event: "assign",
+        summary: "dp = [inf, inf, ..., inf] (length 12). All amounts unreachable.",
+        why: "Infinity means 'not yet reachable'. We will overwrite these with actual minimum coin counts as we discover valid combinations.",
+        memory: [{ name: "dp length", value: "12" }, { name: "dp[0..11]", value: "all inf" }],
+      },
+      {
+        line: 3,
+        event: "assign",
+        summary: "dp[0] = 0 — zero coins needed for amount 0.",
+        why: "The base case: making amount 0 requires 0 coins. This seeds the DP — every reachable amount is built by adding one coin to a previously-reachable amount.",
+        memory: [{ name: "dp[0]", value: "0" }, { name: "dp[1..11]", value: "inf" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "a=1: try each coin. Only coin=1 works. dp[1] = dp[0]+1 = 1.",
+        why: "For amount 1, only coin=1 satisfies coin ≤ 1. dp[1] = min(inf, dp[0]+1) = 1. We need exactly 1 coin.",
+        memory: [{ name: "a", value: "1" }, { name: "dp[1]", value: "1" }],
+      },
+      {
+        line: 6,
+        event: "compare",
+        summary: "a=5: coin=5 → dp[5] = dp[0]+1 = 1. One coin solves it.",
+        why: "Amount 5 is reachable with a single coin-5. dp[5]=min(inf, dp[0]+1)=1. Similarly dp[6]=1 and dp[9]=1 for their matching coins.",
+        memory: [{ name: "dp[5]", value: "1" }, { name: "dp[6]", value: "1" }, { name: "dp[9]", value: "1" }],
+      },
+      {
+        line: 7,
+        event: "assign",
+        summary: "a=11: try coin=6 → dp[11] = min(inf, dp[5]+1) = min(inf, 2) = 2.",
+        why: "11-6=5, and dp[5]=1 (one coin-5), so 6+5=11 uses 2 coins total. This is better than 9+1+1=3 coins. The DP finds the optimal combination.",
+        memory: [{ name: "a", value: "11" }, { name: "dp[11] via coin 6", value: "2" }, { name: "dp[11] via coin 9", value: "3" }],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "a=11 settled: dp[11]=2 (coins 5+6). All amounts filled.",
+        why: "After considering all amounts 1..11 with all coins, the DP array is complete. Each dp[a] holds the minimum coins needed for amount a.",
+        memory: [{ name: "dp[11]", value: "2" }, { name: "optimal coins", value: "5+6" }],
+      },
+      {
+        line: 8,
+        event: "return",
+        summary: "dp[11]=2 ≠ inf → return 2.",
+        why: "The answer is 2: one coin-5 and one coin-6. If dp[amount] were still infinity, it would mean the amount is unreachable with the given coins, so we return -1.",
+        memory: [{ name: "dp[amount]", value: "2" }, { name: "result", value: "2" }],
+        output: ["2"],
+      },
+    ],
+  },
+
+  // ── Topological Sort (Kahn's) ─────────────────────────────────────────────
+  {
+    id: "topological-sort",
+    title: "Topological Sort (Kahn's)",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "20 min",
+    objective: "Use BFS with in-degree tracking (Kahn's algorithm) to produce a valid topological ordering of a DAG.",
+    prompt: "Add edge (4,5) and vertex 5. Does the topological order still include all vertices? What is the new order?",
+    hint: "With 6 vertices, the valid order becomes [0,1,2,3,4,5]. Kahn's algorithm processes node 5 after node 4 since 4→5.",
+    timeComplexity: "O(V + E)",
+    spaceComplexity: "O(V)",
+    useCases: [
+      "Build systems (make/gradle)",
+      "Course prerequisites",
+      "Task scheduling",
+      "Package dependency resolution",
+    ],
+    approach: "Kahn's algorithm maintains an in-degree count for each node. Nodes with in-degree 0 (no prerequisites) start in the queue. We repeatedly dequeue a node, append it to the order, and decrement the in-degree of its neighbors — adding any that reach 0. If the final order contains all vertices, the graph is a valid DAG.",
+    output: ["[0, 1, 2, 3, 4]"],
+    starterCode: `from collections import deque
+
+def topo_sort(vertices, edges):
+    in_degree = [0] * vertices
+    adj = [[] for _ in range(vertices)]
+    for u, v in edges:
+        adj[u].append(v)
+        in_degree[v] += 1
+    queue = deque(i for i in range(vertices) if in_degree[i] == 0)
+    order = []
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for neighbor in adj[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+    return order if len(order) == vertices else []
+
+edges = [(0,1),(0,2),(1,3),(2,3),(3,4)]
+print(topo_sort(5, edges))
+`,
+    executionFrames: [
+      {
+        line: 3,
+        event: "call",
+        summary: "topo_sort(5, edges) called. Graph: 0→1, 0→2, 1→3, 2→3, 3→4.",
+        why: "We have a DAG with 5 nodes. A topological sort orders them so every edge points from earlier to later in the sequence — prerequisite before dependent.",
+        memory: [{ name: "vertices", value: "5" }, { name: "edges count", value: "5" }],
+      },
+      {
+        line: 4,
+        event: "assign",
+        summary: "in_degree = [0,0,0,0,0] initially. Count edges into each node.",
+        why: "in_degree[v] counts how many edges point INTO v (prerequisites). Nodes with in_degree=0 have no prerequisites and can be processed first.",
+        memory: [{ name: "in_degree", value: "[0,0,0,0,0]" }],
+      },
+      {
+        line: 6,
+        event: "loop",
+        summary: "Process edges: in_degree becomes [0,1,1,2,1].",
+        why: "Each edge (u,v) increments in_degree[v]. Node 3 has in_degree=2 (from nodes 1 and 2). Node 0 has in_degree=0 — it's the only starting point.",
+        memory: [{ name: "in_degree", value: "[0,1,1,2,1]" }, { name: "adj[0]", value: "[1,2]" }],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "queue = deque([0]) — only node 0 has in_degree=0.",
+        why: "Node 0 has no prerequisites. It enters the queue first. This is the source of all paths in this DAG.",
+        memory: [{ name: "queue", value: "deque([0])" }, { name: "order", value: "[]" }],
+      },
+      {
+        line: 11,
+        event: "loop",
+        summary: "Dequeue 0, append to order. Decrement in_degree of neighbors 1 and 2.",
+        why: "Processing node 0 'removes' it from the graph. Its dependents (1 and 2) each lose one prerequisite. Both reach in_degree=0 and join the queue.",
+        memory: [{ name: "order", value: "[0]" }, { name: "queue", value: "deque([1,2])" }, { name: "in_degree[1]", value: "0" }, { name: "in_degree[2]", value: "0" }],
+      },
+      {
+        line: 11,
+        event: "loop",
+        summary: "Dequeue 1, append. Neighbor 3: in_degree[3]=2→1. Not yet ready.",
+        why: "Node 1 is processed next. Node 3 still depends on node 2, so it can't be processed until both prerequisites are done.",
+        memory: [{ name: "order", value: "[0,1]" }, { name: "in_degree[3]", value: "1" }, { name: "queue", value: "deque([2])" }],
+      },
+      {
+        line: 11,
+        event: "loop",
+        summary: "Dequeue 2. in_degree[3]=1→0. Node 3 joins queue. Then 3→4.",
+        why: "After processing node 2, node 3 finally has all prerequisites met and enters the queue. Then processing 3 frees node 4.",
+        memory: [{ name: "order", value: "[0,1,2,3,4]" }, { name: "queue", value: "deque([])" }],
+      },
+      {
+        line: 17,
+        event: "return",
+        summary: "len(order)=5 == vertices=5 → return [0,1,2,3,4].",
+        why: "A valid topological order exists — the graph is a DAG. If a cycle existed, some nodes would never reach in_degree=0, and len(order) < vertices, returning [] to signal the cycle.",
+        memory: [{ name: "order", value: "[0,1,2,3,4]" }, { name: "valid DAG", value: "true" }],
+        output: ["[0, 1, 2, 3, 4]"],
+      },
+    ],
+  },
+
+  // ── Hello World & Print ────────────────────────────────────────────────────
+  {
+    id: "hello-world",
+    title: "Hello World & Print",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Learn how to output text to the console using print().",
+    prompt: "Use print() to display messages to the console. This is the foundation of all programming.",
+    hint: "print() can take multiple arguments separated by commas",
+    timeComplexity: "O(1)",
+    spaceComplexity: "O(1)",
+    useCases: ["First program", "Output testing", "Debugging", "Quick checks"],
+    approach: "The print() function sends output to the console. Python executes statements line by line from top to bottom. Comments (starting with #) are ignored by the interpreter. String literals are enclosed in quotes.",
+    output: ["Hello, World!", "Welcome to PyAnimate!", "Hello, Learner"],
+    starterCode: `# This is a comment in Python
+print("Hello, World!")
+print("Welcome to PyAnimate!")
+
+# Variables hold data
+name = "Learner"
+print("Hello,", name)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Execute print statement",
+        why: "Demonstrates how to output text to the console",
+        event: "output",
+        memory: [],
+        output: ["Hello, World!"],
+      },
+      {
+        line: 3,
+        summary: "Print welcome message",
+        why: "Shows that multiple print statements execute in sequence",
+        event: "output",
+        memory: [],
+        output: ["Hello, World!", "Welcome to PyAnimate!"],
+      },
+      {
+        line: 6,
+        summary: "Assign variable",
+        why: "Variables store data that can be reused",
+        event: "assign",
+        memory: [{ name: "name", value: '"Learner"' }],
+        output: ["Hello, World!", "Welcome to PyAnimate!"],
+      },
+      {
+        line: 7,
+        summary: "Print with variable",
+        why: "Shows how to combine text and variables in output",
+        event: "output",
+        memory: [{ name: "name", value: '"Learner"' }],
+        output: ["Hello, World!", "Welcome to PyAnimate!", "Hello, Learner"],
+      },
+    ],
+  },
+
+  // ── String Operations ──────────────────────────────────────────────────────
+  {
+    id: "string-operations",
+    title: "String Operations",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Master string manipulation methods and indexing.",
+    prompt: "Modify the text to see how string methods transform data. Try different slicing ranges.",
+    hint: "Remember that indexing starts at 0 and negative indices count from the end",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(n)",
+    useCases: ["Text processing", "User input validation", "Data cleaning", "Format conversion"],
+    approach: "Strings in Python are immutable sequences. Methods like upper() and lower() create new strings. Indexing starts at 0, negative indices count from the end. Slicing [start:end] extracts substrings.",
+    output: ["PYTHON python 6", "P n yth"],
+    starterCode: `text = "Python"
+upper = text.upper()
+lower = text.lower()
+length = len(text)
+first = text[0]
+last = text[-1]
+slice_text = text[1:4]
+
+print(upper, lower, length)
+print(first, last, slice_text)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Create string",
+        why: "Strings are immutable sequences of characters in Python",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }],
+      },
+      {
+        line: 2,
+        summary: "Convert to uppercase",
+        why: "upper() creates a new string with all letters capitalized",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }],
+      },
+      {
+        line: 3,
+        summary: "Convert to lowercase",
+        why: "lower() creates a new string with all letters in lowercase",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }],
+      },
+      {
+        line: 4,
+        summary: "Get string length",
+        why: "len() returns the number of characters in the string",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }, { name: "length", value: "6" }],
+      },
+      {
+        line: 5,
+        summary: "Get first character",
+        why: "Index 0 accesses the first character of the string",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }, { name: "length", value: "6" }, { name: "first", value: '"P"' }],
+      },
+      {
+        line: 6,
+        summary: "Get last character",
+        why: "Index -1 accesses the last character, counting from the end",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }, { name: "length", value: "6" }, { name: "first", value: '"P"' }, { name: "last", value: '"n"' }],
+      },
+      {
+        line: 7,
+        summary: "Slice substring",
+        why: "Slicing [1:4] extracts characters from index 1 to 3 (end is exclusive)",
+        event: "assign",
+        memory: [{ name: "text", value: '"Python"' }, { name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }, { name: "length", value: "6" }, { name: "first", value: '"P"' }, { name: "last", value: '"n"' }, { name: "slice_text", value: '"yth"' }],
+      },
+      {
+        line: 9,
+        summary: "Print results",
+        why: "Display the uppercase, lowercase, and length",
+        event: "output",
+        memory: [{ name: "upper", value: '"PYTHON"' }, { name: "lower", value: '"python"' }, { name: "length", value: "6" }],
+        output: ["PYTHON python 6"],
+      },
+      {
+        line: 10,
+        summary: "Print indexed values",
+        why: "Display the first character, last character, and slice",
+        event: "output",
+        memory: [{ name: "first", value: '"P"' }, { name: "last", value: '"n"' }, { name: "slice_text", value: '"yth"' }],
+        output: ["PYTHON python 6", "P n yth"],
+      },
+    ],
+  },
+
+  // ── Arithmetic & Math ──────────────────────────────────────────────────────
+  {
+    id: "arithmetic",
+    title: "Arithmetic & Math",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Understand Python's arithmetic operators and their behavior.",
+    prompt: "Change a and b to see how different operators work. Notice the difference between / and //.",
+    hint: "Division (/) always returns a float, while floor division (//) returns an integer",
+    timeComplexity: "O(1)",
+    spaceComplexity: "O(1)",
+    useCases: ["Calculations", "Game logic", "Financial apps", "Scientific computing"],
+    approach: "Python supports standard arithmetic operators: +, -, *, / (float division), // (integer division), % (remainder), ** (exponentiation). Operations follow standard mathematical precedence.",
+    output: ["13 7 30", "3.3333333333333335 3 1 100"],
+    starterCode: `a = 10
+b = 3
+
+add = a + b
+subtract = a - b
+multiply = a * b
+divide = a / b
+floor_div = a // b
+modulo = a % b
+power = a ** 2
+
+print(add, subtract, multiply)
+print(divide, floor_div, modulo, power)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Assign first number",
+        why: "Variables store numeric values for calculation",
+        event: "assign",
+        memory: [{ name: "a", value: "10" }],
+      },
+      {
+        line: 2,
+        summary: "Assign second number",
+        why: "We need two operands for binary operations",
+        event: "assign",
+        memory: [{ name: "a", value: "10" }, { name: "b", value: "3" }],
+      },
+      {
+        line: 4,
+        summary: "Addition: 10 + 3 = 13",
+        why: "The + operator adds two numbers",
+        event: "assign",
+        memory: [{ name: "a", value: "10" }, { name: "b", value: "3" }, { name: "add", value: "13" }],
+      },
+      {
+        line: 5,
+        summary: "Subtraction: 10 - 3 = 7",
+        why: "The - operator subtracts the second number from the first",
+        event: "assign",
+        memory: [{ name: "a", value: "10" }, { name: "b", value: "3" }, { name: "add", value: "13" }, { name: "subtract", value: "7" }],
+      },
+      {
+        line: 6,
+        summary: "Multiplication: 10 * 3 = 30",
+        why: "The * operator multiplies two numbers",
+        event: "assign",
+        memory: [{ name: "a", value: "10" }, { name: "b", value: "3" }, { name: "add", value: "13" }, { name: "subtract", value: "7" }, { name: "multiply", value: "30" }],
+      },
+      {
+        line: 7,
+        summary: "Division: 10 / 3 = 3.333...",
+        why: "The / operator performs true division, always returning a float",
+        event: "assign",
+        memory: [{ name: "divide", value: "3.3333333333333335" }],
+      },
+      {
+        line: 8,
+        summary: "Floor division: 10 // 3 = 3",
+        why: "The // operator performs integer division, discarding the remainder",
+        event: "assign",
+        memory: [{ name: "floor_div", value: "3" }],
+      },
+      {
+        line: 9,
+        summary: "Modulo: 10 % 3 = 1",
+        why: "The % operator returns the remainder after division",
+        event: "assign",
+        memory: [{ name: "modulo", value: "1" }],
+      },
+      {
+        line: 10,
+        summary: "Exponentiation: 10 ** 2 = 100",
+        why: "The ** operator raises a number to a power",
+        event: "assign",
+        memory: [{ name: "power", value: "100" }],
+      },
+      {
+        line: 12,
+        summary: "Print basic operations",
+        why: "Display addition, subtraction, and multiplication results",
+        event: "output",
+        memory: [{ name: "add", value: "13" }, { name: "subtract", value: "7" }, { name: "multiply", value: "30" }],
+        output: ["13 7 30"],
+      },
+      {
+        line: 13,
+        summary: "Print division operations",
+        why: "Display division, floor division, modulo, and power results",
+        event: "output",
+        memory: [{ name: "divide", value: "3.3333333333333335" }, { name: "floor_div", value: "3" }, { name: "modulo", value: "1" }, { name: "power", value: "100" }],
+        output: ["13 7 30", "3.3333333333333335 3 1 100"],
+      },
+    ],
+  },
+
+  // ── Lists Basics ───────────────────────────────────────────────────────────
+  {
+    id: "lists-basics",
+    title: "Lists Basics",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Learn how to create and manipulate Python lists.",
+    prompt: "Add more fruits and try different list operations. Watch how the list grows and shrinks.",
+    hint: "append() adds to the end (O(1)), insert() can add anywhere (O(n))",
+    timeComplexity: "O(n) for insert/remove",
+    spaceComplexity: "O(n)",
+    useCases: ["Collections", "Queues", "Stacks", "Dynamic arrays"],
+    approach: "Lists are mutable, ordered collections. append() adds to end (O(1)), insert() adds at position (O(n)), remove() finds and deletes (O(n)), pop() removes last (O(1)). Indexing is O(1).",
+    output: ["['apple', 'apricot', 'cherry', 'date']", "apple date 5 cherry"],
+    starterCode: `fruits = ["apple", "banana", "cherry"]
+fruits.append("date")
+fruits.insert(1, "apricot")
+first = fruits[0]
+last = fruits[-1]
+length = len(fruits)
+
+fruits.remove("banana")
+popped = fruits.pop()
+
+print(fruits)
+print(first, last, length, popped)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Create list",
+        why: "Lists are mutable, ordered collections that can hold any type of data",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "banana", "cherry"]' }],
+      },
+      {
+        line: 2,
+        summary: "Append to end",
+        why: "append() adds an element to the end of the list in O(1) time",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "banana", "cherry", "date"]' }],
+      },
+      {
+        line: 3,
+        summary: "Insert at position 1",
+        why: "insert() adds an element at the specified index, shifting elements right",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "banana", "cherry", "date"]' }],
+      },
+      {
+        line: 4,
+        summary: "Get first element",
+        why: "Indexing with 0 retrieves the first element in O(1) time",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "banana", "cherry", "date"]' }, { name: "first", value: '"apple"' }],
+      },
+      {
+        line: 5,
+        summary: "Get last element",
+        why: "Negative indexing with -1 retrieves the last element",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "banana", "cherry", "date"]' }, { name: "first", value: '"apple"' }, { name: "last", value: '"date"' }],
+      },
+      {
+        line: 6,
+        summary: "Get list length",
+        why: "len() returns the number of elements in the list",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "banana", "cherry", "date"]' }, { name: "first", value: '"apple"' }, { name: "last", value: '"date"' }, { name: "length", value: "5" }],
+      },
+      {
+        line: 8,
+        summary: "Remove banana",
+        why: "remove() finds and deletes the first occurrence of the value in O(n) time",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "cherry", "date"]' }],
+      },
+      {
+        line: 9,
+        summary: "Pop last element",
+        why: "pop() removes and returns the last element in O(1) time",
+        event: "assign",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "cherry"]' }, { name: "popped", value: '"date"' }],
+      },
+      {
+        line: 11,
+        summary: "Print current list",
+        why: "Display the list after modifications",
+        event: "output",
+        memory: [{ name: "fruits", value: '["apple", "apricot", "cherry"]' }],
+        output: ["['apple', 'apricot', 'cherry', 'date']"],
+      },
+      {
+        line: 12,
+        summary: "Print stored values",
+        why: "Display the first, last, length, and popped values we saved earlier",
+        event: "output",
+        memory: [{ name: "first", value: '"apple"' }, { name: "last", value: '"date"' }, { name: "length", value: "5" }, { name: "popped", value: '"cherry"' }],
+        output: ["['apple', 'apricot', 'cherry', 'date']", "apple date 5 cherry"],
+      },
+    ],
+  },
+
+  // ── Functions Intro ────────────────────────────────────────────────────────
+  {
+    id: "functions-intro",
+    title: "Functions Intro",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Understand how to define and call functions with parameters and return values.",
+    prompt: "Create your own function that takes parameters and returns a result.",
+    hint: "Functions create a local scope - variables inside don't affect variables outside",
+    timeComplexity: "O(1)",
+    spaceComplexity: "O(1)",
+    useCases: ["Code reuse", "Modularity", "Abstraction", "Testing"],
+    approach: "Functions are defined with def keyword, take parameters, and return values. They create a local scope for variables. Functions can be called multiple times with different arguments.",
+    output: ["Hello, Alice!", "12"],
+    starterCode: `def greet(name):
+    message = "Hello, " + name + "!"
+    return message
+
+def add(x, y):
+    return x + y
+
+result1 = greet("Alice")
+result2 = add(5, 7)
+
+print(result1)
+print(result2)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Define greet function",
+        why: "The def keyword creates a function object that can be called later",
+        event: "assign",
+        memory: [{ name: "greet", value: "<function>" }],
+      },
+      {
+        line: 5,
+        summary: "Define add function",
+        why: "Functions are first-class objects in Python and can be stored as values",
+        event: "assign",
+        memory: [{ name: "greet", value: "<function>" }, { name: "add", value: "<function>" }],
+      },
+      {
+        line: 8,
+        summary: 'Call greet("Alice")',
+        why: "Calling a function creates a new local scope with the parameter bound to the argument",
+        event: "call",
+        memory: [{ name: "name", value: '"Alice"' }],
+      },
+      {
+        line: 2,
+        summary: "Create message in function scope",
+        why: "Variables created inside a function are local to that function",
+        event: "assign",
+        memory: [{ name: "name", value: '"Alice"' }, { name: "message", value: '"Hello, Alice!"' }],
+      },
+      {
+        line: 3,
+        summary: "Return from greet",
+        why: "The return statement sends a value back to the caller and exits the function",
+        event: "return",
+        memory: [{ name: "result1", value: '"Hello, Alice!"' }],
+      },
+      {
+        line: 9,
+        summary: "Call add(5, 7)",
+        why: "Functions can take multiple parameters separated by commas",
+        event: "call",
+        memory: [{ name: "x", value: "5" }, { name: "y", value: "7" }],
+      },
+      {
+        line: 6,
+        summary: "Return x + y",
+        why: "Functions can return the result of an expression directly",
+        event: "return",
+        memory: [{ name: "result2", value: "12" }],
+      },
+      {
+        line: 11,
+        summary: "Print greeting result",
+        why: "Display the message returned from greet()",
+        event: "output",
+        memory: [{ name: "result1", value: '"Hello, Alice!"' }],
+        output: ["Hello, Alice!"],
+      },
+      {
+        line: 12,
+        summary: "Print addition result",
+        why: "Display the sum returned from add()",
+        event: "output",
+        memory: [{ name: "result2", value: "12" }],
+        output: ["Hello, Alice!", "12"],
+      },
+    ],
+  },
+
+  // ── Input & Output ─────────────────────────────────────────────────────────
+  {
+    id: "input-output",
+    title: "Input & Output",
+    level: "foundation",
+    levelColor: "text-violet-400",
+    duration: "3 min",
+    objective: "Learn how programs accept input and produce output, including type conversion.",
+    prompt: "Modify the simulated input values and see how they're processed. Try different ages.",
+    hint: "input() always returns a string - use int() to convert to a number",
+    timeComplexity: "O(n) for string conversion",
+    spaceComplexity: "O(n)",
+    useCases: ["User interaction", "Data entry", "Configuration", "Interactive programs"],
+    approach: "Input typically comes from input() function (here simulated). Output uses print(). Type conversion (int(), str(), float()) changes data types. String concatenation joins text.",
+    output: ["Name: Alice", "Age: 25", "Next year: 26"],
+    starterCode: `# Simulated input (in browser we can't use real input())
+user_name = "Alice"
+user_age = "25"
+
+print("Name:", user_name)
+print("Age:", user_age)
+
+# Type conversion
+age_num = int(user_age)
+next_year = age_num + 1
+
+print("Next year:", next_year)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Simulated input for name",
+        why: "In a real program, this would come from input(), which pauses and waits for user input",
+        event: "assign",
+        memory: [{ name: "user_name", value: '"Alice"' }],
+      },
+      {
+        line: 3,
+        summary: "Simulated input for age",
+        why: "input() always returns a string, even if the user types a number",
+        event: "assign",
+        memory: [{ name: "user_name", value: '"Alice"' }, { name: "user_age", value: '"25"' }],
+      },
+      {
+        line: 5,
+        summary: "Print name",
+        why: "print() can take multiple arguments separated by commas",
+        event: "output",
+        memory: [{ name: "user_name", value: '"Alice"' }],
+        output: ["Name: Alice"],
+      },
+      {
+        line: 6,
+        summary: "Print age string",
+        why: "The age is still a string at this point, not a number",
+        event: "output",
+        memory: [{ name: "user_age", value: '"25"' }],
+        output: ["Name: Alice", "Age: 25"],
+      },
+      {
+        line: 9,
+        summary: "Convert string to integer",
+        why: "int() converts a string representation of a number to an actual integer",
+        event: "assign",
+        memory: [{ name: "user_age", value: '"25"' }, { name: "age_num", value: "25" }],
+      },
+      {
+        line: 10,
+        summary: "Calculate next year",
+        why: "Now that age_num is an integer, we can perform arithmetic on it",
+        event: "assign",
+        memory: [{ name: "age_num", value: "25" }, { name: "next_year", value: "26" }],
+      },
+      {
+        line: 12,
+        summary: "Print calculation result",
+        why: "Display the result of the arithmetic operation",
+        event: "output",
+        memory: [{ name: "next_year", value: "26" }],
+        output: ["Name: Alice", "Age: 25", "Next year: 26"],
+      },
+    ],
+  },
+
+  // ── Find Min & Max ─────────────────────────────────────────────────────────
+  {
+    id: "find-min-max",
+    title: "Find Min & Max",
+    level: "beginner",
+    levelColor: "text-sky-400",
+    duration: "5 min",
+    objective: "Find the minimum and maximum values in a list with a single pass.",
+    prompt: "Find the minimum and maximum values in a list with a single pass.",
+    hint: "You only need one loop comparing each element with the current min and max",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    useCases: ["Data analysis", "Statistics", "Range validation", "Outlier detection"],
+    approach:
+      "Initialize min and max to the first element. Iterate through the list once, comparing each element with current min/max and updating if necessary. This is more efficient than sorting (O(n log n)).",
+    output: ["Min: 11", "Max: 90"],
+    starterCode: `numbers = [64, 34, 25, 12, 22, 11, 90]
+
+min_val = numbers[0]
+max_val = numbers[0]
+
+for num in numbers:
+    if num < min_val:
+        min_val = num
+    if num > max_val:
+        max_val = num
+
+print("Min:", min_val)
+print("Max:", max_val)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Load the list of numbers",
+        why: "We start with our input data - a list of unsorted numbers to analyze",
+        event: "assign",
+        memory: [{ name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" }],
+      },
+      {
+        line: 3,
+        summary: "Initialize min_val to first element",
+        why: "Setting min_val to the first element guarantees we start with an actual value from the list, avoiding edge cases",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+        ],
+      },
+      {
+        line: 4,
+        summary: "Initialize max_val to first element",
+        why: "Same reasoning as min_val - we use the first element as our initial maximum",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+          { name: "max_val", value: "64" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Start loop with first number (64)",
+        why: "We iterate through every number, including the first one we already used for initialization",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "64" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Check if 64 < 64 (false)",
+        why: "First comparison: 64 is not less than our current min (64), so we skip updating min_val",
+        event: "compare",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "64" },
+        ],
+      },
+      {
+        line: 9,
+        summary: "Check if 64 > 64 (false)",
+        why: "64 is not greater than our current max (64), so max_val stays the same",
+        event: "compare",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "64" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 34",
+        why: "Move to the second element in the list",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "64" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "34" },
+        ],
+      },
+      {
+        line: 8,
+        summary: "Update min_val to 34",
+        why: "34 < 64, so we found a new minimum. Update min_val to 34",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "34" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "34" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 11",
+        why: "Skipping ahead to the smallest number to show the final min update",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "12" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "11" },
+        ],
+      },
+      {
+        line: 8,
+        summary: "Update min_val to 11",
+        why: "11 is the smallest number in the list, this is our final minimum",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "11" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "11" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 90",
+        why: "Last element - the largest number in our list",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "11" },
+          { name: "max_val", value: "64" },
+          { name: "num", value: "90" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Update max_val to 90",
+        why: "90 > 64, so we found a new maximum. This is our final maximum value",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "11" },
+          { name: "max_val", value: "90" },
+          { name: "num", value: "90" },
+        ],
+      },
+      {
+        line: 12,
+        summary: "Print minimum value",
+        why: "Output the result: the smallest value we found",
+        event: "output",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "11" },
+          { name: "max_val", value: "90" },
+        ],
+        output: ["Min: 11"],
+      },
+      {
+        line: 13,
+        summary: "Print maximum value",
+        why: "Output the result: the largest value we found",
+        event: "output",
+        memory: [
+          { name: "numbers", value: "[64, 34, 25, 12, 22, 11, 90]" },
+          { name: "min_val", value: "11" },
+          { name: "max_val", value: "90" },
+        ],
+        output: ["Min: 11", "Max: 90"],
+      },
+    ],
+  },
+
+  // ── Sum & Average ──────────────────────────────────────────────────────────
+  {
+    id: "sum-average",
+    title: "Sum & Average",
+    level: "beginner",
+    levelColor: "text-sky-400",
+    duration: "5 min",
+    objective: "Calculate sum and average by accumulating values in a single pass.",
+    prompt: "Calculate the sum and average of a list of numbers.",
+    hint: "Use an accumulator variable to build up the total, then divide by the count",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    useCases: ["Grade calculation", "Financial analysis", "Performance metrics", "Data aggregation"],
+    approach:
+      "Sum is calculated by accumulating values in a loop. Average is sum divided by count. Python's += operator is shorthand for total = total + num. Division (/) produces a float.",
+    output: ["Sum: 150", "Average: 30.0"],
+    starterCode: `numbers = [10, 20, 30, 40, 50]
+
+total = 0
+count = len(numbers)
+
+for num in numbers:
+    total += num
+
+average = total / count
+
+print("Sum:", total)
+print("Average:", average)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Load the list of numbers",
+        why: "Define our input data - a list of numbers to sum and average",
+        event: "assign",
+        memory: [{ name: "numbers", value: "[10, 20, 30, 40, 50]" }],
+      },
+      {
+        line: 3,
+        summary: "Initialize total accumulator to 0",
+        why: "Start with 0 because we're adding to it. 0 is the additive identity - adding 0 doesn't change the result",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "0" },
+        ],
+      },
+      {
+        line: 4,
+        summary: "Store the count of elements",
+        why: "len(numbers) gives us 5. We calculate this once before the loop for efficiency and use it later to compute average",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "0" },
+          { name: "count", value: "5" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Start loop with num = 10",
+        why: "Begin iterating through the list, starting with the first element",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "0" },
+          { name: "count", value: "5" },
+          { name: "num", value: "10" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Add 10 to total: total = 0 + 10",
+        why: "The += operator is shorthand for total = total + num. This is the accumulator pattern",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "10" },
+          { name: "count", value: "5" },
+          { name: "num", value: "10" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 20",
+        why: "Move to the second element",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "10" },
+          { name: "count", value: "5" },
+          { name: "num", value: "20" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Add 20 to total: total = 10 + 20",
+        why: "Accumulate the second value. Total is now 30",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "30" },
+          { name: "count", value: "5" },
+          { name: "num", value: "20" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 30",
+        why: "Continue with the third element",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "30" },
+          { name: "count", value: "5" },
+          { name: "num", value: "30" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Add 30 to total: total = 30 + 30",
+        why: "Total is now 60, halfway through the list",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "60" },
+          { name: "count", value: "5" },
+          { name: "num", value: "30" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 40",
+        why: "Fourth element",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "60" },
+          { name: "count", value: "5" },
+          { name: "num", value: "40" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Add 40 to total: total = 60 + 40",
+        why: "Total is now 100",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "100" },
+          { name: "count", value: "5" },
+          { name: "num", value: "40" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Loop iteration: num = 50",
+        why: "Last element in the list",
+        event: "loop",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "100" },
+          { name: "count", value: "5" },
+          { name: "num", value: "50" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Add 50 to total: total = 100 + 50",
+        why: "Final accumulation. Total is now 150 - the complete sum",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "150" },
+          { name: "count", value: "5" },
+          { name: "num", value: "50" },
+        ],
+      },
+      {
+        line: 9,
+        summary: "Calculate average: 150 / 5",
+        why: "Divide the sum by count to get the mean. The / operator produces a float (30.0) even when dividing evenly",
+        event: "assign",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "150" },
+          { name: "count", value: "5" },
+          { name: "average", value: "30.0" },
+        ],
+      },
+      {
+        line: 11,
+        summary: "Print sum",
+        why: "Output the total we accumulated",
+        event: "output",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "150" },
+          { name: "count", value: "5" },
+          { name: "average", value: "30.0" },
+        ],
+        output: ["Sum: 150"],
+      },
+      {
+        line: 12,
+        summary: "Print average",
+        why: "Output the computed average value",
+        event: "output",
+        memory: [
+          { name: "numbers", value: "[10, 20, 30, 40, 50]" },
+          { name: "total", value: "150" },
+          { name: "count", value: "5" },
+          { name: "average", value: "30.0" },
+        ],
+        output: ["Sum: 150", "Average: 30.0"],
+      },
+    ],
+  },
+
+  // ── FizzBuzz ───────────────────────────────────────────────────────────────
+  {
+    id: "fizzbuzz",
+    title: "FizzBuzz",
+    level: "beginner",
+    levelColor: "text-sky-400",
+    duration: "5 min",
+    objective: "Use modulo and conditionals to print Fizz, Buzz, or FizzBuzz based on divisibility.",
+    prompt: "Print numbers 1-15, but replace multiples of 3 with 'Fizz', multiples of 5 with 'Buzz', and multiples of both with 'FizzBuzz'.",
+    hint: "Check divisibility by 15 first, then 3, then 5. Order matters!",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    useCases: ["Interview classic", "Divisibility logic", "Control flow practice", "Modulo operator"],
+    approach:
+      "FizzBuzz tests conditionals and modulo. Check divisibility by 15 first (multiples of both 3 and 5), then 3, then 5. The order matters: if you check 3 before 15, numbers like 15 would print 'Fizz' instead of 'FizzBuzz'.",
+    output: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"],
+    starterCode: `for i in range(1, 16):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Start loop from 1 to 15",
+        why: "range(1, 16) generates numbers 1 through 15. The second argument is exclusive",
+        event: "loop",
+        memory: [{ name: "i", value: "1" }],
+      },
+      {
+        line: 2,
+        summary: "Check if 1 divisible by 15",
+        why: "1 % 15 = 1 (not 0), so this condition is false. Move to next check",
+        event: "branch",
+        memory: [{ name: "i", value: "1" }],
+      },
+      {
+        line: 4,
+        summary: "Check if 1 divisible by 3",
+        why: "1 % 3 = 1 (not 0), so this is also false. Continue to next condition",
+        event: "branch",
+        memory: [{ name: "i", value: "1" }],
+      },
+      {
+        line: 6,
+        summary: "Check if 1 divisible by 5",
+        why: "1 % 5 = 1 (not 0), so we skip to else",
+        event: "branch",
+        memory: [{ name: "i", value: "1" }],
+      },
+      {
+        line: 9,
+        summary: "Print the number 1",
+        why: "1 doesn't match any divisibility rule, so print it directly",
+        event: "output",
+        memory: [{ name: "i", value: "1" }],
+        output: ["1"],
+      },
+      {
+        line: 1,
+        summary: "Loop iteration: i = 2",
+        why: "Continue to next number",
+        event: "loop",
+        memory: [{ name: "i", value: "2" }],
+      },
+      {
+        line: 9,
+        summary: "Print the number 2",
+        why: "2 is not divisible by 3 or 5, print it",
+        event: "output",
+        memory: [{ name: "i", value: "2" }],
+        output: ["1", "2"],
+      },
+      {
+        line: 1,
+        summary: "Loop iteration: i = 3",
+        why: "First multiple of 3",
+        event: "loop",
+        memory: [{ name: "i", value: "3" }],
+      },
+      {
+        line: 4,
+        summary: "3 is divisible by 3",
+        why: "3 % 3 = 0, so this condition is true. Execute the elif block",
+        event: "branch",
+        memory: [{ name: "i", value: "3" }],
+      },
+      {
+        line: 5,
+        summary: "Print 'Fizz'",
+        why: "3 is a multiple of 3, so output Fizz instead of the number",
+        event: "output",
+        memory: [{ name: "i", value: "3" }],
+        output: ["1", "2", "Fizz"],
+      },
+      {
+        line: 1,
+        summary: "Loop iteration: i = 5",
+        why: "First multiple of 5",
+        event: "loop",
+        memory: [{ name: "i", value: "5" }],
+      },
+      {
+        line: 6,
+        summary: "5 is divisible by 5",
+        why: "5 % 5 = 0, this condition is true",
+        event: "branch",
+        memory: [{ name: "i", value: "5" }],
+      },
+      {
+        line: 7,
+        summary: "Print 'Buzz'",
+        why: "5 is a multiple of 5, so output Buzz",
+        event: "output",
+        memory: [{ name: "i", value: "5" }],
+        output: ["1", "2", "Fizz", "4", "Buzz"],
+      },
+      {
+        line: 1,
+        summary: "Loop iteration: i = 15",
+        why: "15 is divisible by both 3 and 5 - the critical test case",
+        event: "loop",
+        memory: [{ name: "i", value: "15" }],
+      },
+      {
+        line: 2,
+        summary: "15 is divisible by 15",
+        why: "15 % 15 = 0. This is why we check 15 FIRST - it catches numbers divisible by both 3 and 5",
+        event: "branch",
+        memory: [{ name: "i", value: "15" }],
+      },
+      {
+        line: 3,
+        summary: "Print 'FizzBuzz'",
+        why: "15 is a multiple of both 3 and 5, so we print FizzBuzz. If we checked % 3 first, we'd incorrectly print just 'Fizz'",
+        event: "output",
+        memory: [{ name: "i", value: "15" }],
+        output: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"],
+      },
+    ],
+  },
+
+  // ── Queue Operations ───────────────────────────────────────────────────────
+  {
+    id: "queue-ops",
+    title: "Queue Operations",
+    level: "intermediate",
+    levelColor: "text-emerald-400",
+    duration: "8 min",
+    objective: "Understand FIFO (First-In-First-Out) and why deque is O(1) for both enqueue and dequeue.",
+    prompt: "Add 'Diana' to the queue. Predict the order of removal.",
+    hint: "The first person added (Alice) will be the first removed. Dequeue uses popleft() for O(1) removal.",
+    timeComplexity: "O(1) per operation",
+    spaceComplexity: "O(n)",
+    useCases: ["Task scheduling", "Message queues", "Breadth-first search", "Print spooling"],
+    approach:
+      "Queues follow FIFO (First-In-First-Out). Python's deque (double-ended queue) provides O(1) append (enqueue) and popleft (dequeue). Lists would be O(n) for pop(0). Queues are essential for BFS and job scheduling.",
+    output: ["Queue: ['Alice', 'Bob', 'Charlie']", "Removed: Alice Bob", "Remaining: ['Charlie']"],
+    starterCode: `from collections import deque
+
+queue = deque()
+
+# Enqueue elements
+queue.append("Alice")
+queue.append("Bob")
+queue.append("Charlie")
+
+print("Queue:", list(queue))
+
+# Dequeue elements
+first = queue.popleft()
+second = queue.popleft()
+
+print("Removed:", first, second)
+print("Remaining:", list(queue))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Import deque",
+        why: "We import deque from collections because it's optimized for queue operations. Unlike list.pop(0) which is O(n), deque.popleft() is O(1) — it maintains pointers to both ends.",
+        event: "import",
+        memory: [],
+      },
+      {
+        line: 3,
+        summary: "Create empty queue",
+        why: "Initialize an empty deque. This will hold our queue elements. deque() creates a double-ended queue that allows fast append and pop from both ends.",
+        event: "assign",
+        memory: [{ name: "queue", value: "deque([])" }],
+      },
+      {
+        line: 6,
+        summary: "Enqueue 'Alice'",
+        why: "append() adds to the right end in O(1) time. Alice is first in, so she'll be first out (FIFO principle).",
+        event: "append",
+        memory: [{ name: "queue", value: "deque(['Alice'])" }],
+      },
+      {
+        line: 7,
+        summary: "Enqueue 'Bob'",
+        why: "Bob joins the back of the queue. The queue now has 2 elements, with Alice at the front and Bob at the back.",
+        event: "append",
+        memory: [{ name: "queue", value: "deque(['Alice', 'Bob'])" }],
+      },
+      {
+        line: 8,
+        summary: "Enqueue 'Charlie'",
+        why: "Charlie is added to the back. The queue order is now Alice → Bob → Charlie. Alice will be served first.",
+        event: "append",
+        memory: [{ name: "queue", value: "deque(['Alice', 'Bob', 'Charlie'])" }],
+      },
+      {
+        line: 10,
+        summary: "Print current queue",
+        why: "We convert deque to list for readable output. This shows the current state before any dequeuing.",
+        event: "output",
+        memory: [{ name: "queue", value: "deque(['Alice', 'Bob', 'Charlie'])" }],
+        output: ["Queue: ['Alice', 'Bob', 'Charlie']"],
+      },
+      {
+        line: 13,
+        summary: "Dequeue first element",
+        why: "popleft() removes from the front in O(1) time. Alice was first in, so she's first out. This is the defining feature of FIFO.",
+        event: "popleft",
+        memory: [
+          { name: "queue", value: "deque(['Bob', 'Charlie'])" },
+          { name: "first", value: "'Alice'" },
+        ],
+      },
+      {
+        line: 14,
+        summary: "Dequeue second element",
+        why: "Bob is now at the front, so popleft() removes him next. The deque maintains O(1) removal because it updates the front pointer, not shifting all elements.",
+        event: "popleft",
+        memory: [
+          { name: "queue", value: "deque(['Charlie'])" },
+          { name: "first", value: "'Alice'" },
+          { name: "second", value: "'Bob'" },
+        ],
+      },
+      {
+        line: 16,
+        summary: "Print removed elements",
+        why: "Shows that Alice and Bob were removed in the order they were added (FIFO). This is the queue discipline in action.",
+        event: "output",
+        memory: [
+          { name: "queue", value: "deque(['Charlie'])" },
+          { name: "first", value: "'Alice'" },
+          { name: "second", value: "'Bob'" },
+        ],
+        output: ["Queue: ['Alice', 'Bob', 'Charlie']", "Removed: Alice Bob"],
+      },
+      {
+        line: 17,
+        summary: "Print remaining queue",
+        why: "Only Charlie remains. If we needed to process him, we'd call popleft() again. The queue is now ready for more enqueue/dequeue operations.",
+        event: "output",
+        memory: [
+          { name: "queue", value: "deque(['Charlie'])" },
+          { name: "first", value: "'Alice'" },
+          { name: "second", value: "'Bob'" },
+        ],
+        output: ["Queue: ['Alice', 'Bob', 'Charlie']", "Removed: Alice Bob", "Remaining: ['Charlie']"],
+      },
+    ],
+  },
+
+  // ── Anagram Check ──────────────────────────────────────────────────────────
+  {
+    id: "anagram-check",
+    title: "Anagram Check",
+    level: "intermediate",
+    levelColor: "text-emerald-400",
+    duration: "8 min",
+    objective: "Use hash map counting to determine if two strings are anagrams in O(n) time.",
+    prompt: "Change s2 to 'lisent'. Is it still an anagram?",
+    hint: "Count characters in s1, then decrement for each character in s2. Any mismatch means not an anagram.",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(k) — k = unique chars",
+    useCases: ["Word games", "Text analysis", "Cryptography", "Spell checkers"],
+    approach:
+      "Use a hash map to count character frequencies in first string, then decrement for second string. If any character is missing or count goes negative, not an anagram. More efficient than sorting (O(n log n)).",
+    output: ["Anagram: True"],
+    starterCode: `def is_anagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    
+    count = {}
+    for char in s1:
+        count[char] = count.get(char, 0) + 1
+    
+    for char in s2:
+        if char not in count:
+            return False
+        count[char] -= 1
+        if count[char] < 0:
+            return False
+    
+    return True
+
+result = is_anagram("listen", "silent")
+print("Anagram:", result)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Check lengths",
+        why: "Anagrams must have the same length. This O(1) check catches obvious mismatches early — no need to count characters if lengths differ.",
+        event: "compare",
+        memory: [{ name: "s1", value: "'listen'" }, { name: "s2", value: "'silent'" }],
+      },
+      {
+        line: 5,
+        summary: "Initialize empty hash map",
+        why: "We'll use this dictionary to count character frequencies. Hash maps give O(1) lookup and update, making the total algorithm O(n) instead of O(n²).",
+        event: "assign",
+        memory: [
+          { name: "s1", value: "'listen'" },
+          { name: "s2", value: "'silent'" },
+          { name: "count", value: "{}" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Count 'l' in s1",
+        why: "get(char, 0) returns current count or 0 if not present. We increment by 1. This pattern safely handles first occurrence without KeyError.",
+        event: "assign",
+        memory: [
+          { name: "s1", value: "'listen'" },
+          { name: "s2", value: "'silent'" },
+          { name: "char", value: "'l'" },
+          { name: "count", value: "{'l': 1}" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Count 'i' in s1",
+        why: "'i' is a new character, so count.get('i', 0) returns 0, then we increment to 1.",
+        event: "assign",
+        memory: [
+          { name: "char", value: "'i'" },
+          { name: "count", value: "{'l': 1, 'i': 1}" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Count remaining s1 chars",
+        why: "After processing all characters: 's', 't', 'e', 'n'. Each unique char has count 1 in 'listen'.",
+        event: "assign",
+        memory: [
+          { name: "count", value: "{'l': 1, 'i': 1, 's': 1, 't': 1, 'e': 1, 'n': 1}" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Check 's' in s2",
+        why: "'s' exists in count (from s1), so we proceed to decrement. If s2 had a character not in s1, we'd return False immediately.",
+        event: "compare",
+        memory: [
+          { name: "char", value: "'s'" },
+          { name: "count", value: "{'l': 1, 'i': 1, 's': 1, 't': 1, 'e': 1, 'n': 1}" },
+        ],
+      },
+      {
+        line: 12,
+        summary: "Decrement 's' count",
+        why: "We found 's' in s2, so we decrement its count. count['s'] goes from 1 to 0. This balances the character usage.",
+        event: "assign",
+        memory: [
+          { name: "char", value: "'s'" },
+          { name: "count", value: "{'l': 1, 'i': 1, 's': 0, 't': 1, 'e': 1, 'n': 1}" },
+        ],
+      },
+      {
+        line: 13,
+        summary: "Check if count negative",
+        why: "If count['s'] < 0, it means s2 has more 's' characters than s1 — not an anagram. Here it's 0, so we continue.",
+        event: "compare",
+        memory: [
+          { name: "count", value: "{'l': 1, 'i': 1, 's': 0, 't': 1, 'e': 1, 'n': 1}" },
+        ],
+      },
+      {
+        line: 12,
+        summary: "Process remaining s2 chars",
+        why: "After processing 'i', 'l', 'e', 'n', 't' from 'silent', all counts become 0. This means every character in s1 was matched exactly once in s2.",
+        event: "assign",
+        memory: [
+          { name: "count", value: "{'l': 0, 'i': 0, 's': 0, 't': 0, 'e': 0, 'n': 0}" },
+        ],
+      },
+      {
+        line: 16,
+        summary: "Return True",
+        why: "All characters matched with zero remaining count. 'listen' and 'silent' are anagrams — same characters, different order.",
+        event: "return",
+        memory: [
+          { name: "count", value: "{'l': 0, 'i': 0, 's': 0, 't': 0, 'e': 0, 'n': 0}" },
+          { name: "result", value: "True" },
+        ],
+      },
+      {
+        line: 19,
+        summary: "Print result",
+        why: "Output confirms the anagram check. This O(n) approach is faster than sorting both strings (O(n log n)) and comparing.",
+        event: "output",
+        memory: [{ name: "result", value: "True" }],
+        output: ["Anagram: True"],
+      },
+    ],
+  },
+
+  // ── Sliding Window ─────────────────────────────────────────────────────────
+  {
+    id: "sliding-window",
+    title: "Sliding Window Max Sum",
+    level: "intermediate",
+    levelColor: "text-emerald-400",
+    duration: "8 min",
+    objective: "Use the sliding window technique to find maximum sum subarray in O(n) instead of O(n×k).",
+    prompt: "Change k to 4. What's the new maximum sum?",
+    hint: "For each slide, subtract the element leaving the window and add the element entering. Compare to max.",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(1)",
+    useCases: ["Time series analysis", "Moving averages", "Network packet analysis", "Stream processing"],
+    approach:
+      "Sliding window maintains a fixed-size window over data. Instead of recalculating sum for each window (O(nk)), we slide by removing the leftmost element and adding the new rightmost (O(n)). Essential pattern for array/string problems.",
+    output: ["Max sum: 9"],
+    starterCode: `def max_sum_subarray(arr, k):
+    n = len(arr)
+    if n < k:
+        return None
+    
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    
+    for i in range(k, n):
+        window_sum = window_sum - arr[i - k] + arr[i]
+        max_sum = max(max_sum, window_sum)
+    
+    return max_sum
+
+arr = [2, 1, 5, 1, 3, 2]
+k = 3
+result = max_sum_subarray(arr, k)
+print("Max sum:", result)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Get array length",
+        why: "We need n to validate input and to set loop bounds. Storing it avoids recalculating len(arr) multiple times.",
+        event: "assign",
+        memory: [
+          { name: "arr", value: "[2, 1, 5, 1, 3, 2]" },
+          { name: "k", value: "3" },
+          { name: "n", value: "6" },
+        ],
+      },
+      {
+        line: 3,
+        summary: "Validate input",
+        why: "If array has fewer than k elements, we can't form a window of size k. Early return prevents index errors.",
+        event: "compare",
+        memory: [{ name: "n", value: "6" }, { name: "k", value: "3" }],
+      },
+      {
+        line: 6,
+        summary: "Initialize first window",
+        why: "sum(arr[:k]) calculates sum of first 3 elements: [2,1,5] = 8. This is our starting window. We only calculate this once — future windows are computed by sliding.",
+        event: "assign",
+        memory: [
+          { name: "arr", value: "[2, 1, 5, 1, 3, 2]" },
+          { name: "k", value: "3" },
+          { name: "window_sum", value: "8" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Set initial max",
+        why: "First window sum becomes the initial maximum. As we slide, we'll compare each new window_sum to max_sum and update if larger.",
+        event: "assign",
+        memory: [
+          { name: "window_sum", value: "8" },
+          { name: "max_sum", value: "8" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Slide to window [1,5,1]",
+        why: "i=3: Remove arr[0]=2, add arr[3]=1. New sum = 8-2+1 = 7. This is the key insight: sliding by -left +right is O(1), not O(k).",
+        event: "assign",
+        memory: [
+          { name: "i", value: "3" },
+          { name: "window_sum", value: "7" },
+          { name: "max_sum", value: "8" },
+        ],
+      },
+      {
+        line: 11,
+        summary: "Compare to max",
+        why: "max(8, 7) = 8. The new window sum is lower, so max_sum stays 8. We continue sliding to find if any window beats 8.",
+        event: "compare",
+        memory: [
+          { name: "window_sum", value: "7" },
+          { name: "max_sum", value: "8" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Slide to window [5,1,3]",
+        why: "i=4: Remove arr[1]=1, add arr[4]=3. New sum = 7-1+3 = 9. This is the largest window so far!",
+        event: "assign",
+        memory: [
+          { name: "i", value: "4" },
+          { name: "window_sum", value: "9" },
+          { name: "max_sum", value: "8" },
+        ],
+      },
+      {
+        line: 11,
+        summary: "Update max to 9",
+        why: "max(8, 9) = 9. We found a better window! Update max_sum. Window [5,1,3] has sum 9, which beats the previous best of 8.",
+        event: "assign",
+        memory: [
+          { name: "window_sum", value: "9" },
+          { name: "max_sum", value: "9" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Slide to window [1,3,2]",
+        why: "i=5: Remove arr[2]=5, add arr[5]=2. New sum = 9-5+2 = 6. Last window to check.",
+        event: "assign",
+        memory: [
+          { name: "i", value: "5" },
+          { name: "window_sum", value: "6" },
+          { name: "max_sum", value: "9" },
+        ],
+      },
+      {
+        line: 11,
+        summary: "Final comparison",
+        why: "max(9, 6) = 9. The last window is smaller. max_sum remains 9 — window [5,1,3] is the winner.",
+        event: "compare",
+        memory: [
+          { name: "window_sum", value: "6" },
+          { name: "max_sum", value: "9" },
+        ],
+      },
+      {
+        line: 13,
+        summary: "Return maximum sum",
+        why: "Return 9 — the maximum sum among all windows of size 3. This ran in O(n) time: one pass after initial setup.",
+        event: "return",
+        memory: [{ name: "max_sum", value: "9" }, { name: "result", value: "9" }],
+      },
+      {
+        line: 18,
+        summary: "Print result",
+        why: "Output the maximum sum found. The sliding window pattern reduced complexity from O(n×k) to O(n) — critical for large datasets.",
+        event: "output",
+        memory: [{ name: "result", value: "9" }],
+        output: ["Max sum: 9"],
+      },
+    ],
+  },
+
+  // ── Merge Sorted Arrays ────────────────────────────────────────────────────
+  {
+    id: "merge-sorted",
+    title: "Merge Sorted Arrays",
+    level: "intermediate",
+    levelColor: "text-emerald-400",
+    duration: "8 min",
+    objective: "Use two-pointer technique to merge two sorted arrays in O(m+n) time.",
+    prompt: "Add 9 to arr1. Trace which pointer advances at each step.",
+    hint: "Compare arr1[i] and arr2[j]. Take the smaller one, advance that pointer. Repeat until one array exhausted.",
+    timeComplexity: "O(m + n)",
+    spaceComplexity: "O(m + n)",
+    useCases: ["Merge sort subroutine", "Database joins", "Sorted stream merging", "K-way merge"],
+    approach:
+      "Two-pointer technique: compare elements from both arrays, always taking the smaller one. After one array is exhausted, append the remainder. This is the merge step in merge sort and merges two sorted sequences in linear time.",
+    output: ["[1, 2, 3, 4, 5, 6, 7, 8]"],
+    starterCode: `def merge_sorted_arrays(arr1, arr2):
+    merged = []
+    i, j = 0, 0
+    
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] <= arr2[j]:
+            merged.append(arr1[i])
+            i += 1
+        else:
+            merged.append(arr2[j])
+            j += 1
+    
+    merged.extend(arr1[i:])
+    merged.extend(arr2[j:])
+    
+    return merged
+
+arr1 = [1, 3, 5, 7]
+arr2 = [2, 4, 6, 8]
+result = merge_sorted_arrays(arr1, arr2)
+print(result)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Create empty result",
+        why: "We build a new merged array rather than modifying inputs. This keeps the function pure — no side effects on the original arrays.",
+        event: "assign",
+        memory: [
+          { name: "arr1", value: "[1, 3, 5, 7]" },
+          { name: "arr2", value: "[2, 4, 6, 8]" },
+          { name: "merged", value: "[]" },
+        ],
+      },
+      {
+        line: 3,
+        summary: "Initialize two pointers",
+        why: "i tracks position in arr1, j tracks position in arr2. Both start at 0. This is the two-pointer pattern — each pointer moves independently based on comparisons.",
+        event: "assign",
+        memory: [
+          { name: "merged", value: "[]" },
+          { name: "i", value: "0" },
+          { name: "j", value: "0" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Compare 1 vs 2",
+        why: "arr1[0]=1 <= arr2[0]=2, so we take 1. The smaller element always goes next to maintain sorted order. Advance i to 1.",
+        event: "compare",
+        memory: [
+          { name: "i", value: "0" },
+          { name: "j", value: "0" },
+          { name: "arr1[i]", value: "1" },
+          { name: "arr2[j]", value: "2" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Append 1, advance i",
+        why: "merged = [1]. i moves to 1. j stays at 0 because we haven't used arr2[0] yet.",
+        event: "append",
+        memory: [
+          { name: "merged", value: "[1]" },
+          { name: "i", value: "1" },
+          { name: "j", value: "0" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Compare 3 vs 2",
+        why: "arr1[1]=3 > arr2[0]=2, so we take 2 from arr2. This shows the dynamic nature — we don't take from arrays in alternating order, we take the smaller one.",
+        event: "compare",
+        memory: [
+          { name: "arr1[i]", value: "3" },
+          { name: "arr2[j]", value: "2" },
+        ],
+      },
+      {
+        line: 10,
+        summary: "Append 2, advance j",
+        why: "merged = [1, 2]. j moves to 1. i stays at 1. We took from arr2 this time.",
+        event: "append",
+        memory: [
+          { name: "merged", value: "[1, 2]" },
+          { name: "i", value: "1" },
+          { name: "j", value: "1" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Compare 3 vs 4",
+        why: "arr1[1]=3 <= arr2[1]=4, take 3.",
+        event: "compare",
+        memory: [
+          { name: "arr1[i]", value: "3" },
+          { name: "arr2[j]", value: "4" },
+        ],
+      },
+      {
+        line: 7,
+        summary: "Append 3, advance i",
+        why: "merged = [1, 2, 3]. i moves to 2.",
+        event: "append",
+        memory: [
+          { name: "merged", value: "[1, 2, 3]" },
+          { name: "i", value: "2" },
+          { name: "j", value: "1" },
+        ],
+      },
+      {
+        line: 6,
+        summary: "Continue merging",
+        why: "Pattern continues: compare arr1[i] vs arr2[j], take smaller, advance that pointer. After 4 more comparisons: merged = [1,2,3,4,5,6,7].",
+        event: "append",
+        memory: [
+          { name: "merged", value: "[1, 2, 3, 4, 5, 6, 7]" },
+          { name: "i", value: "4" },
+          { name: "j", value: "3" },
+        ],
+      },
+      {
+        line: 5,
+        summary: "arr1 exhausted",
+        why: "i=4 equals len(arr1), so the while condition fails. arr1 is fully consumed. arr2 still has arr2[3]=8 remaining.",
+        event: "compare",
+        memory: [
+          { name: "i", value: "4" },
+          { name: "j", value: "3" },
+        ],
+      },
+      {
+        line: 14,
+        summary: "Extend with arr2 remainder",
+        why: "arr2[3:] = [8]. Since arr2 is already sorted, we can safely append all remaining elements. merged.extend([8]) gives final result.",
+        event: "extend",
+        memory: [
+          { name: "merged", value: "[1, 2, 3, 4, 5, 6, 7, 8]" },
+          { name: "result", value: "[1, 2, 3, 4, 5, 6, 7, 8]" },
+        ],
+      },
+      {
+        line: 21,
+        summary: "Print merged array",
+        why: "Output the sorted merge. This algorithm visited each element exactly once: O(m+n) time. This is optimal — you can't merge without looking at all elements.",
+        event: "output",
+        memory: [{ name: "result", value: "[1, 2, 3, 4, 5, 6, 7, 8]" }],
+        output: ["[1, 2, 3, 4, 5, 6, 7, 8]"],
+      },
+    ],
+  },
+
+  // ── Kruskal's MST ──────────────────────────────────────────────────────────
+  {
+    id: "kruskals",
+    title: "Kruskal's MST",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "15 min",
+    objective: "Build a minimum spanning tree using greedy edge selection and Union-Find to detect cycles.",
+    prompt: "Change the edges to create a graph where the MST has total weight 10. How does Union-Find prevent cycles?",
+    hint: "Watch the Union-Find operations. find() checks if two nodes share a root; union() merges components only if they're separate.",
+    timeComplexity: "O(E log E)",
+    spaceComplexity: "O(V)",
+    useCases: [
+      "Network design",
+      "Circuit design",
+      "Clustering",
+      "Road planning",
+    ],
+    approach:
+      "Kruskal's MST algorithm sorts edges by weight and greedily adds edges that don't form cycles (using Union-Find/Disjoint Set). Union-Find tracks connected components with path compression for near-constant time operations.",
+    output: ["[(1, 2, 1)]", "[(1, 2, 1), (1, 3, 2)]", "[(1, 2, 1), (1, 3, 2), (0, 2, 3)]"],
+    starterCode: `class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+    
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+    
+    def union(self, x, y):
+        px, py = self.find(x), self.find(y)
+        if px != py:
+            self.parent[px] = py
+
+def kruskal(vertices, edges):
+    uf = UnionFind(vertices)
+    edges.sort(key=lambda e: e[2])
+    mst = []
+    for u, v, w in edges:
+        if uf.find(u) != uf.find(v):
+            uf.union(u, v)
+            mst.append((u, v, w))
+    return mst
+
+edges = [(0,1,4), (0,2,3), (1,2,1), (1,3,2), (2,3,4)]
+result = kruskal(4, edges)
+print(result)
+`,
+    executionFrames: [
+      {
+        line: 2,
+        summary: "Initialize Union-Find",
+        why: "Each vertex starts as its own parent — every node is its own component initially. parent[i] = i means 'i is a root.'",
+        event: "assign",
+        memory: [{ name: "n", value: "4" }, { name: "parent", value: "[0, 1, 2, 3]" }],
+      },
+      {
+        line: 5,
+        summary: "Define find()",
+        why: "find(x) returns the root of x's component. Path compression (line 7) flattens the tree during traversal, making future finds near O(1).",
+        event: "call",
+        memory: [{ name: "parent", value: "[0, 1, 2, 3]" }],
+      },
+      {
+        line: 10,
+        summary: "Define union()",
+        why: "union(x, y) merges two components by making one root point to the other. We only unite if find(x) != find(y) — that's the cycle check.",
+        event: "call",
+        memory: [{ name: "parent", value: "[0, 1, 2, 3]" }],
+      },
+      {
+        line: 17,
+        summary: "Sort edges by weight",
+        why: "Greedy choice: always try the cheapest edge next. edges.sort(key=lambda e: e[2]) gives [(1,2,1), (1,3,2), (0,2,3), (0,1,4), (2,3,4)].",
+        event: "sort",
+        memory: [{ name: "edges", value: "[(1,2,1), (1,3,2), (0,2,3), (0,1,4), (2,3,4)]" }],
+      },
+      {
+        line: 20,
+        summary: "Try edge (1,2,1)",
+        why: "find(1)=1, find(2)=2 — different components. Safe to add without forming a cycle. This is the lightest edge.",
+        event: "compare",
+        memory: [{ name: "u", value: "1" }, { name: "v", value: "2" }, { name: "w", value: "1" }],
+      },
+      {
+        line: 21,
+        summary: "Union 1 and 2",
+        why: "parent[1] = 2. Now vertices 1 and 2 share root 2. They're in the same component. MST now has 1 edge.",
+        event: "union",
+        memory: [{ name: "parent", value: "[0, 2, 2, 3]" }, { name: "mst", value: "[(1, 2, 1)]" }],
+        output: ["[(1, 2, 1)]"],
+      },
+      {
+        line: 20,
+        summary: "Try edge (1,3,2)",
+        why: "find(1)=2 (via path compression), find(3)=3. Different roots — safe to add. Weight 2 is next cheapest.",
+        event: "compare",
+        memory: [{ name: "u", value: "1" }, { name: "v", value: "3" }, { name: "w", value: "2" }],
+      },
+      {
+        line: 21,
+        summary: "Union 1 and 3",
+        why: "parent[2] = 3. Now 1, 2, and 3 all share root 3. Three vertices connected with 2 edges.",
+        event: "union",
+        memory: [{ name: "parent", value: "[0, 2, 3, 3]" }, { name: "mst", value: "[(1, 2, 1), (1, 3, 2)]" }],
+        output: ["[(1, 2, 1), (1, 3, 2)]"],
+      },
+      {
+        line: 20,
+        summary: "Try edge (0,2,3)",
+        why: "find(0)=0, find(2)=3. Different components — 0 is isolated, {1,2,3} is a component. Safe to add.",
+        event: "compare",
+        memory: [{ name: "u", value: "0" }, { name: "v", value: "2" }, { name: "w", value: "3" }],
+      },
+      {
+        line: 21,
+        summary: "Union 0 and 2",
+        why: "parent[0] = 3. All 4 vertices now share root 3. We have 3 edges connecting 4 vertices — that's a spanning tree!",
+        event: "union",
+        memory: [{ name: "parent", value: "[3, 2, 3, 3]" }, { name: "mst", value: "[(1, 2, 1), (1, 3, 2), (0, 2, 3)]" }],
+        output: ["[(1, 2, 1), (1, 3, 2), (0, 2, 3)]"],
+      },
+      {
+        line: 20,
+        summary: "Try edge (0,1,4)",
+        why: "find(0)=3, find(1)=3. SAME root! Adding this edge would create a cycle. Skip it.",
+        event: "branch",
+        memory: [{ name: "u", value: "0" }, { name: "v", value: "1" }, { name: "w", value: "4" }],
+      },
+      {
+        line: 20,
+        summary: "Try edge (2,3,4)",
+        why: "find(2)=3, find(3)=3. SAME root again. This would also create a cycle. Skip it. MST is complete.",
+        event: "branch",
+        memory: [{ name: "u", value: "2" }, { name: "v", value: "3" }, { name: "w", value: "4" }],
+      },
+      {
+        line: 23,
+        summary: "Return MST",
+        why: "MST has 3 edges with total weight 1+2+3=6. For V vertices, a tree always has exactly V-1 edges. Kruskal's guarantees the minimum total weight.",
+        event: "return",
+        memory: [{ name: "mst", value: "[(1, 2, 1), (1, 3, 2), (0, 2, 3)]" }],
+        output: ["[(1, 2, 1), (1, 3, 2), (0, 2, 3)]"],
+      },
+    ],
+  },
+
+  // ── Trie (Prefix Tree) ─────────────────────────────────────────────────────
+  {
+    id: "trie",
+    title: "Trie (Prefix Tree)",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "15 min",
+    objective: "Build a prefix tree that stores words character-by-character for fast search and autocomplete.",
+    prompt: "Insert 'dog' and search for 'cat'. Why does search('ca') return False even though 'cat' was inserted?",
+    hint: "search() checks is_end at the final node. 'ca' exists as a path but is_end=False — it's not a complete word.",
+    timeComplexity: "O(m) — m = word length",
+    spaceComplexity: "O(n × m) — n = words",
+    useCases: [
+      "Autocomplete",
+      "Spell checkers",
+      "IP routing",
+      "Dictionary lookups",
+    ],
+    approach:
+      "Trie (prefix tree) stores strings character-by-character in a tree structure. Each path from root to leaf represents a word. Sharing prefixes saves space. Search/insert/delete are all O(m) where m is word length.",
+    output: ["True", "False"],
+    starterCode: `class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+    
+    def search(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return node.is_end
+
+trie = Trie()
+trie.insert("cat")
+trie.insert("car")
+print(trie.search("cat"))
+print(trie.search("can"))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "Define TrieNode class",
+        why: "Each node holds children dict (maps char → TrieNode) and is_end flag (True if this node completes a word). This structure allows prefix sharing.",
+        event: "call",
+        memory: [],
+      },
+      {
+        line: 6,
+        summary: "Create Trie with root",
+        why: "Trie starts with an empty root node. The root represents the empty string. All words branch from here.",
+        event: "assign",
+        memory: [{ name: "root", value: "TrieNode{children: {}, is_end: False}" }],
+      },
+      {
+        line: 27,
+        summary: "Insert 'cat'",
+        why: "Start at root. Build path c→a→t. Each node is created on demand if the character doesn't exist yet.",
+        event: "call",
+        memory: [{ name: "word", value: '"cat"' }, { name: "node", value: "root" }],
+      },
+      {
+        line: 13,
+        summary: "Traverse/create 'c'",
+        why: "'c' not in root.children, so create TrieNode and assign to root.children['c']. Move node pointer to this new node.",
+        event: "assign",
+        memory: [{ name: "char", value: '"c"' }, { name: "node.children", value: "{'c': TrieNode{}}" }],
+      },
+      {
+        line: 13,
+        summary: "Traverse/create 'a'",
+        why: "'a' not in node.children (we're at 'c' node now). Create TrieNode for 'a'. Path is now c→a.",
+        event: "assign",
+        memory: [{ name: "char", value: '"a"' }, { name: "node.children", value: "{'a': TrieNode{}}" }],
+      },
+      {
+        line: 13,
+        summary: "Traverse/create 't'",
+        why: "Create 't' node. We've built the full path root→c→a→t.",
+        event: "assign",
+        memory: [{ name: "char", value: '"t"' }, { name: "node.children", value: "{'t': TrieNode{}}" }],
+      },
+      {
+        line: 16,
+        summary: "Mark 't' as end",
+        why: "Set is_end=True at the 't' node. This marks 'cat' as a complete word. Without this flag, 'cat' would just be a prefix.",
+        event: "assign",
+        memory: [{ name: "node.is_end", value: "True" }],
+      },
+      {
+        line: 28,
+        summary: "Insert 'car'",
+        why: "Start again at root. Path c→a already exists (shared with 'cat'). We only need to add 'r' and mark it as end.",
+        event: "call",
+        memory: [{ name: "word", value: '"car"' }],
+      },
+      {
+        line: 12,
+        summary: "Reuse 'c' node",
+        why: "'c' already in root.children from 'cat' insert. Sharing prefixes is the key space-saving feature of tries. Move to existing node.",
+        event: "branch",
+        memory: [{ name: "char", value: '"c"' }],
+      },
+      {
+        line: 12,
+        summary: "Reuse 'a' node",
+        why: "'a' already exists under 'c'. Move to existing node. We've reused 2 nodes so far.",
+        event: "branch",
+        memory: [{ name: "char", value: '"a"' }],
+      },
+      {
+        line: 13,
+        summary: "Create 'r' node",
+        why: "'r' not in 'a' node's children. Create new TrieNode. Now we have two branches from 'a': 't' (for 'cat') and 'r' (for 'car').",
+        event: "assign",
+        memory: [{ name: "char", value: '"r"' }, { name: "node.children", value: "{'r': TrieNode{}}" }],
+      },
+      {
+        line: 16,
+        summary: "Mark 'r' as end",
+        why: "Set is_end=True at 'r' node. 'car' is now a complete word. Tree has root→c→a with two children: t (cat) and r (car).",
+        event: "assign",
+        memory: [{ name: "node.is_end", value: "True" }],
+      },
+      {
+        line: 29,
+        summary: "Search for 'cat'",
+        why: "Start at root. Traverse c→a→t. Check if the final node has is_end=True. It does — 'cat' was inserted.",
+        event: "call",
+        memory: [{ name: "word", value: '"cat"' }],
+      },
+      {
+        line: 24,
+        summary: "Return True",
+        why: "All characters found AND node.is_end=True at the final 't' node. 'cat' is a complete word in the trie.",
+        event: "return",
+        memory: [{ name: "result", value: "True" }],
+        output: ["True"],
+      },
+      {
+        line: 30,
+        summary: "Search for 'can'",
+        why: "Start at root. Traverse c→a. Try to find 'n' in 'a' node's children. It doesn't exist — we only have 't' and 'r'.",
+        event: "call",
+        memory: [{ name: "word", value: '"can"' }],
+      },
+      {
+        line: 22,
+        summary: "Return False",
+        why: "'n' not in node.children at 'a' node. Path c→a→n doesn't exist in the tree. Return False immediately.",
+        event: "return",
+        memory: [{ name: "result", value: "False" }],
+        output: ["True", "False"],
+      },
+    ],
+  },
+
+  // ── Floyd-Warshall ─────────────────────────────────────────────────────────
+  {
+    id: "floyd-warshall",
+    title: "Floyd-Warshall All-Pairs Shortest Path",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "15 min",
+    objective: "Compute shortest paths between all pairs of vertices using dynamic programming with a k-i-j triple loop.",
+    prompt: "Change graph[0] to [(1,2), (2,5)]. How does the algorithm find that 0→2 direct (5) is worse than 0→1→2 (3)?",
+    hint: "Watch the k=1 iteration. When k=1, it checks if dist[0][1] + dist[1][2] < dist[0][2]. If true, it updates dist[0][2].",
+    timeComplexity: "O(V³)",
+    spaceComplexity: "O(V²)",
+    useCases: [
+      "All-pairs shortest paths",
+      "Route optimization",
+      "Network analysis",
+      "Transitive closure",
+    ],
+    approach:
+      "Floyd-Warshall computes shortest paths between all pairs of vertices using dynamic programming. For each intermediate vertex k, it checks if path i→k→j is shorter than direct i→j. Works with negative weights (but not negative cycles).",
+    output: [
+      "[0, 3, 4, 5]",
+      "[inf, 0, 1, 2]",
+      "[inf, inf, 0, 1]",
+      "[inf, inf, inf, 0]",
+    ],
+    starterCode: `def floyd_warshall(graph):
+    n = len(graph)
+    dist = [[float('inf')] * n for _ in range(n)]
+    
+    for i in range(n):
+        dist[i][i] = 0
+    
+    for u in range(n):
+        for v, w in graph[u]:
+            dist[u][v] = w
+    
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+    
+    return dist
+
+graph = [[(1,3), (2,8)], [(2,1)], [(3,1)], []]
+result = floyd_warshall(graph)
+for row in result:
+    print(row)
+`,
+    executionFrames: [
+      {
+        line: 3,
+        summary: "Initialize dist matrix",
+        why: "Start with all distances = infinity. dist[i][j] will eventually hold the shortest path from i to j. Infinity means 'no path known yet.'",
+        event: "assign",
+        memory: [{ name: "n", value: "4" }, { name: "dist", value: "[[∞, ∞, ∞, ∞], [∞, ∞, ∞, ∞], [∞, ∞, ∞, ∞], [∞, ∞, ∞, ∞]]" }],
+      },
+      {
+        line: 6,
+        summary: "Set diagonal to 0",
+        why: "dist[i][i] = 0 for all i. Distance from a vertex to itself is always 0. This is the base case.",
+        event: "assign",
+        memory: [{ name: "dist", value: "[[0, ∞, ∞, ∞], [∞, 0, ∞, ∞], [∞, ∞, 0, ∞], [∞, ∞, ∞, 0]]" }],
+      },
+      {
+        line: 9,
+        summary: "Load direct edges",
+        why: "For each edge (u, v, w), set dist[u][v] = w. These are the direct edge weights — the initial known paths. 0→1: 3, 0→2: 8, 1→2: 1, 2→3: 1.",
+        event: "assign",
+        memory: [{ name: "dist", value: "[[0, 3, 8, ∞], [∞, 0, 1, ∞], [∞, ∞, 0, 1], [∞, ∞, ∞, 0]]" }],
+      },
+      {
+        line: 12,
+        summary: "k=0: Try paths via 0",
+        why: "For each pair (i, j), check if going through vertex 0 is shorter than the current known path. dist[i][j] vs dist[i][0] + dist[0][j].",
+        event: "loop",
+        memory: [{ name: "k", value: "0" }],
+      },
+      {
+        line: 15,
+        summary: "Update dist[1][2] via 0?",
+        why: "Check dist[1][2] (currently 1) vs dist[1][0] + dist[0][2] = ∞ + 8 = ∞. Direct 1→2 is better. No update.",
+        event: "compare",
+        memory: [{ name: "i", value: "1" }, { name: "j", value: "2" }, { name: "dist[1][2]", value: "1" }],
+      },
+      {
+        line: 12,
+        summary: "k=1: Try paths via 1",
+        why: "Now check if routing through vertex 1 improves any paths. This is where we discover 0→1→2 is better than direct 0→2.",
+        event: "loop",
+        memory: [{ name: "k", value: "1" }],
+      },
+      {
+        line: 15,
+        summary: "Update dist[0][2] via 1",
+        why: "dist[0][2]=8 vs dist[0][1]+dist[1][2]=3+1=4. Going through 1 is shorter! Update dist[0][2]=4. This is the DP magic.",
+        event: "assign",
+        memory: [{ name: "i", value: "0" }, { name: "j", value: "2" }, { name: "dist[0][2]", value: "4" }],
+      },
+      {
+        line: 15,
+        summary: "Update dist[0][3] via 1",
+        why: "dist[0][3]=∞ vs dist[0][1]+dist[1][2]+dist[2][3]=3+1+1=5 (via path we just found). dist[0][3]=5 now.",
+        event: "assign",
+        memory: [{ name: "i", value: "0" }, { name: "j", value: "3" }, { name: "dist[0][3]", value: "5" }],
+      },
+      {
+        line: 15,
+        summary: "Update dist[1][3] via 2",
+        why: "We're at k=2 now. dist[1][3]=∞ vs dist[1][2]+dist[2][3]=1+1=2. Path 1→2→3 has distance 2.",
+        event: "assign",
+        memory: [{ name: "k", value: "2" }, { name: "i", value: "1" }, { name: "j", value: "3" }, { name: "dist[1][3]", value: "2" }],
+      },
+      {
+        line: 12,
+        summary: "k=2 continues",
+        why: "Check all other pairs via vertex 2. Most are already optimal from previous iterations. This is the DP table filling in action.",
+        event: "loop",
+        memory: [{ name: "k", value: "2" }],
+      },
+      {
+        line: 12,
+        summary: "k=3: Final pass",
+        why: "Check paths via vertex 3. Since 3 has no outgoing edges, no improvements are possible. The distance matrix is now complete.",
+        event: "loop",
+        memory: [{ name: "k", value: "3" }],
+      },
+      {
+        line: 17,
+        summary: "Return dist matrix",
+        why: "dist[i][j] now holds the shortest path distance from i to j for all pairs. O(V³) iterations to compute all V² pairs.",
+        event: "return",
+        memory: [{ name: "dist", value: "[[0, 3, 4, 5], [∞, 0, 1, 2], [∞, ∞, 0, 1], [∞, ∞, ∞, 0]]" }],
+        output: ["[0, 3, 4, 5]", "[inf, 0, 1, 2]", "[inf, inf, 0, 1]", "[inf, inf, inf, 0]"],
+      },
+    ],
+  },
+
+  // ── Segment Tree ───────────────────────────────────────────────────────────
+  {
+    id: "segment-tree",
+    title: "Segment Tree for Range Queries",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "15 min",
+    objective: "Build a segment tree for fast range sum queries in O(log n) time.",
+    prompt: "Change the array to [2, 4, 6, 8, 10, 12]. What's the sum of indices 2-4? How many nodes does the query visit?",
+    hint: "Query visits O(log n) nodes. Each recursive call splits the range in half until it finds segments fully inside [l, r].",
+    timeComplexity: "O(log n) query/update",
+    spaceComplexity: "O(n)",
+    useCases: [
+      "Range queries",
+      "Interval statistics",
+      "Competitive programming",
+      "Real-time analytics",
+    ],
+    approach:
+      "Segment tree is a binary tree for range queries. Each node stores aggregate (sum/min/max) for a range. Queries and updates are O(log n). Build is O(n). Essential for problems requiring fast range operations.",
+    output: ["15"],
+    starterCode: `class SegmentTree:
+    def __init__(self, arr):
+        self.n = len(arr)
+        self.tree = [0] * (4 * self.n)
+        self.build(arr, 0, 0, self.n - 1)
+    
+    def build(self, arr, node, start, end):
+        if start == end:
+            self.tree[node] = arr[start]
+        else:
+            mid = (start + end) // 2
+            self.build(arr, 2*node+1, start, mid)
+            self.build(arr, 2*node+2, mid+1, end)
+            self.tree[node] = self.tree[2*node+1] + self.tree[2*node+2]
+    
+    def query(self, node, start, end, l, r):
+        if r < start or end < l:
+            return 0
+        if l <= start and end <= r:
+            return self.tree[node]
+        mid = (start + end) // 2
+        return self.query(2*node+1, start, mid, l, r) + self.query(2*node+2, mid+1, end, l, r)
+
+arr = [1, 3, 5, 7, 9, 11]
+st = SegmentTree(arr)
+print(st.query(0, 0, 5, 1, 3))
+`,
+    executionFrames: [
+      {
+        line: 3,
+        summary: "Initialize tree array",
+        why: "self.tree size is 4*n — a safe upper bound for a binary tree with n leaves. For n=6, we allocate 24 slots. Most will be unused but it's simple.",
+        event: "assign",
+        memory: [{ name: "n", value: "6" }, { name: "tree", value: "[0, 0, ..., 0] (24 zeros)" }],
+      },
+      {
+        line: 8,
+        summary: "Build tree recursively",
+        why: "build() fills the tree bottom-up. Base case: if start==end, it's a leaf — store arr[start]. Recursive case: build left and right subtrees, then sum them.",
+        event: "call",
+        memory: [{ name: "node", value: "0" }, { name: "start", value: "0" }, { name: "end", value: "5" }],
+      },
+      {
+        line: 8,
+        summary: "Leaf: tree[8] = arr[0] = 1",
+        why: "Leftmost leaf covers index 0. tree[8]=1. (The exact node index depends on the recursion path — 2*node+1 repeatedly.)",
+        event: "assign",
+        memory: [{ name: "tree[8]", value: "1" }],
+      },
+      {
+        line: 8,
+        summary: "Leaf: tree[9] = arr[1] = 3",
+        why: "Next leaf covers index 1. tree[9]=3. Leaves are scattered in the tree array based on binary indexing.",
+        event: "assign",
+        memory: [{ name: "tree[9]", value: "3" }],
+      },
+      {
+        line: 14,
+        summary: "Internal: tree[4] = 1+3 = 4",
+        why: "tree[4] covers range [0,1]. It sums its children: tree[8]+tree[9]=1+3=4. This is the bottom-up aggregation.",
+        event: "assign",
+        memory: [{ name: "tree[4]", value: "4" }],
+      },
+      {
+        line: 14,
+        summary: "Build continues: tree[0]=36",
+        why: "Root tree[0] covers entire range [0,5]. Sum of all leaves: 1+3+5+7+9+11=36. Build is O(n) — visit each element once.",
+        event: "assign",
+        memory: [{ name: "tree[0]", value: "36" }],
+      },
+      {
+        line: 26,
+        summary: "Query sum(1, 3)",
+        why: "We want sum of arr[1..3] = 3+5+7 = 15. query() recursively visits nodes until it finds segments fully inside [1,3].",
+        event: "call",
+        memory: [{ name: "l", value: "1" }, { name: "r", value: "3" }],
+      },
+      {
+        line: 17,
+        summary: "Check node [0,5]",
+        why: "Start at root (range [0,5]). Not fully inside [1,3] — need to split. Go to left and right children.",
+        event: "compare",
+        memory: [{ name: "node", value: "0" }, { name: "start", value: "0" }, { name: "end", value: "5" }],
+      },
+      {
+        line: 21,
+        summary: "Recurse left [0,2]",
+        why: "Left child covers [0,2]. mid=(0+5)//2=2. Recurse to node 2*0+1=1 with range [0,2]. This overlaps [1,3] partially.",
+        event: "call",
+        memory: [{ name: "node", value: "1" }, { name: "start", value: "0" }, { name: "end", value: "2" }],
+      },
+      {
+        line: 21,
+        summary: "Recurse right [3,5]",
+        why: "Right child covers [3,5]. Recurse to node 2*0+2=2 with range [3,5]. This overlaps [1,3] at index 3 only.",
+        event: "call",
+        memory: [{ name: "node", value: "2" }, { name: "start", value: "3" }, { name: "end", value: "5" }],
+      },
+      {
+        line: 19,
+        summary: "Segment [1,1] fully inside",
+        why: "Found a node covering exactly [1,1], fully inside [1,3]. Return tree[node]=3 immediately. No further recursion needed here.",
+        event: "return",
+        memory: [{ name: "tree[node]", value: "3" }],
+      },
+      {
+        line: 19,
+        summary: "Segment [2,2] fully inside",
+        why: "Another fully-inside segment [2,2]. Return tree[node]=5. These are the leaves we're collecting.",
+        event: "return",
+        memory: [{ name: "tree[node]", value: "5" }],
+      },
+      {
+        line: 19,
+        summary: "Segment [3,3] fully inside",
+        why: "Segment [3,3] is fully inside [1,3]. Return tree[node]=7. We've now collected arr[1], arr[2], arr[3].",
+        event: "return",
+        memory: [{ name: "tree[node]", value: "7" }],
+      },
+      {
+        line: 22,
+        summary: "Sum partial results",
+        why: "Recursion unwinds. Sum the returns: 3+5+7=15. This is the answer. We visited O(log n) nodes — much faster than iterating arr[1..3] manually for large arrays.",
+        event: "return",
+        memory: [{ name: "result", value: "15" }],
+        output: ["15"],
+      },
+    ],
+  },
+
+  // ── Bit Manipulation ───────────────────────────────────────────────────────
+  {
+    id: "bit-manipulation",
+    title: "Bit Manipulation Tricks",
+    level: "mastery",
+    levelColor: "text-amber-400",
+    duration: "15 min",
+    objective: "Master bitwise operators and classic bit tricks for constant-time operations.",
+    prompt: "Change count_set_bits(13) to count_set_bits(255). How many bits are set? Why is n &= (n-1) faster than checking each bit?",
+    hint: "n &= (n-1) clears the rightmost set bit. For 255 (11111111), it runs 8 times. For sparse numbers, it's much faster than checking all 32/64 bits.",
+    timeComplexity: "O(1) or O(k) — k = bits",
+    spaceComplexity: "O(1)",
+    useCases: [
+      "Low-level optimization",
+      "Cryptography",
+      "Compression",
+      "Graphics programming",
+    ],
+    approach:
+      "Bitwise operators (&, |, ^, ~, <<, >>) manipulate individual bits. n & (n-1) clears rightmost set bit. n & -n isolates rightmost set bit. XOR swap uses no temp variable. Bit tricks enable constant-time operations.",
+    output: ["Set bits in 13: 3", "Is 16 power of 2? True", "Swapped: 10 5"],
+    starterCode: `def count_set_bits(n):
+    count = 0
+    while n:
+        count += 1
+        n &= (n - 1)
+    return count
+
+def is_power_of_two(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+def swap_bits(a, b):
+    a = a ^ b
+    b = a ^ b
+    a = a ^ b
+    return a, b
+
+print("Set bits in 13:", count_set_bits(13))
+print("Is 16 power of 2?", is_power_of_two(16))
+a, b = swap_bits(5, 10)
+print("Swapped:", a, b)
+`,
+    executionFrames: [
+      {
+        line: 1,
+        summary: "count_set_bits(13)",
+        why: "13 in binary is 1101. We want to count the number of 1 bits. Naive approach: check each bit with n & (1 << i). Brian Kernighan's trick is faster.",
+        event: "call",
+        memory: [{ name: "n", value: "13 (0b1101)" }],
+      },
+      {
+        line: 5,
+        summary: "n &= (n-1) — iteration 1",
+        why: "n=13 (1101), n-1=12 (1100). n & (n-1) = 1101 & 1100 = 1100 (12). This clears the rightmost set bit (the 1 in position 0).",
+        event: "assign",
+        memory: [{ name: "n", value: "12 (0b1100)" }, { name: "count", value: "1" }],
+      },
+      {
+        line: 5,
+        summary: "n &= (n-1) — iteration 2",
+        why: "n=12 (1100), n-1=11 (1011). n & (n-1) = 1100 & 1011 = 1000 (8). Cleared the bit at position 2.",
+        event: "assign",
+        memory: [{ name: "n", value: "8 (0b1000)" }, { name: "count", value: "2" }],
+      },
+      {
+        line: 5,
+        summary: "n &= (n-1) — iteration 3",
+        why: "n=8 (1000), n-1=7 (0111). n & (n-1) = 1000 & 0111 = 0000 (0). Cleared the last bit. n is now 0, loop exits.",
+        event: "assign",
+        memory: [{ name: "n", value: "0 (0b0000)" }, { name: "count", value: "3" }],
+      },
+      {
+        line: 6,
+        summary: "Return count=3",
+        why: "Loop ran 3 times because 13 has 3 set bits. This is O(k) where k = number of set bits — faster than O(log n) for sparse numbers.",
+        event: "return",
+        memory: [{ name: "count", value: "3" }],
+        output: ["Set bits in 13: 3"],
+      },
+      {
+        line: 8,
+        summary: "is_power_of_two(16)",
+        why: "Powers of 2 have exactly 1 set bit: 1, 2, 4, 8, 16 (10000). If n has 1 bit, n & (n-1) clears it → 0. So n & (n-1) == 0 is the test.",
+        event: "call",
+        memory: [{ name: "n", value: "16 (0b10000)" }],
+      },
+      {
+        line: 9,
+        summary: "Check n & (n-1) == 0",
+        why: "16 & 15 = 10000 & 01111 = 00000. Yes! 16 is a power of 2. Also check n > 0 to exclude 0 (which would also satisfy n & (n-1) == 0).",
+        event: "compare",
+        memory: [{ name: "result", value: "True" }],
+        output: ["Set bits in 13: 3", "Is 16 power of 2? True"],
+      },
+      {
+        line: 11,
+        summary: "XOR swap: a=5, b=10",
+        why: "Classic XOR swap without temp variable. a=5 (0101), b=10 (1010). XOR has the property: x^x=0, x^0=x, x^y^x=y.",
+        event: "call",
+        memory: [{ name: "a", value: "5 (0b0101)" }, { name: "b", value: "10 (0b1010)" }],
+      },
+      {
+        line: 12,
+        summary: "a = a ^ b",
+        why: "a = 5 ^ 10 = 0101 ^ 1010 = 1111 (15). Now a holds the XOR of both original values. This is the key.",
+        event: "assign",
+        memory: [{ name: "a", value: "15 (0b1111)" }, { name: "b", value: "10 (0b1010)" }],
+      },
+      {
+        line: 13,
+        summary: "b = a ^ b",
+        why: "b = 15 ^ 10 = 1111 ^ 1010 = 0101 (5). b now has the original value of a! Because (a^b)^b = a^(b^b) = a^0 = a.",
+        event: "assign",
+        memory: [{ name: "a", value: "15 (0b1111)" }, { name: "b", value: "5 (0b0101)" }],
+      },
+      {
+        line: 14,
+        summary: "a = a ^ b",
+        why: "a = 15 ^ 5 = 1111 ^ 0101 = 1010 (10). a now has the original value of b! Because (a^b)^a = b. Swap complete with no temp variable.",
+        event: "assign",
+        memory: [{ name: "a", value: "10 (0b1010)" }, { name: "b", value: "5 (0b0101)" }],
+      },
+      {
+        line: 15,
+        summary: "Return swapped values",
+        why: "a and b are swapped: a=10, b=5. XOR swap is a clever trick but rarely used in practice — modern compilers optimize temp variables to registers anyway.",
+        event: "return",
+        memory: [{ name: "a", value: "10" }, { name: "b", value: "5" }],
+        output: ["Set bits in 13: 3", "Is 16 power of 2? True", "Swapped: 10 5"],
       },
     ],
   },
