@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" \"/c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" run build)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" run build)"
+    ]
+  }
+}
