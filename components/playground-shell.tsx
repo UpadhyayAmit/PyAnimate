@@ -635,7 +635,7 @@ export function PlaygroundShell() {
                     transition={{ delay: index * 0.05 }}
                     className="rounded-[18px] bg-mist p-3"
                   >
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/40">
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/70">
                       {entry.name}
                     </div>
                     <div className="mt-1.5 truncate font-mono text-xl font-semibold text-bright">
