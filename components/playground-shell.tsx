@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { playgroundLessons } from "@/data/course";
 import { MonacoPythonEditor } from "@/components/monaco-python-editor";
+import { ComplexityChart } from "@/components/complexity-chart";
 import { usePyodide } from "@/lib/use-pyodide";
 import { useProgress } from "@/lib/use-progress";
 import type { ExecutionFrame } from "@/data/course";
@@ -253,7 +254,7 @@ export function PlaygroundShell() {
               {isAutoPlaying ? "Auto running" : "Manual mode"}
             </div>
           </div>
-          <div className="mt-5 space-y-3">
+          <div className="mt-4 border-t border-white/[0.08] pt-4 space-y-2">
             {playgroundLessons.map((item, index) => {
               const active = item.id === lesson.id;
               return (
@@ -264,10 +265,10 @@ export function PlaygroundShell() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.35, delay: index * 0.06 }}
                   onClick={() => selectLesson(item.id)}
-                  className={`w-full rounded-[24px] p-4 text-left transition ${
+                  className={`w-full rounded-[24px] border p-4 text-left transition ${
                     active
-                      ? "bg-signal/10 shadow-[0_4px_16px_rgba(232,98,42,0.1)]"
-                      : "bg-parchment hover:bg-mist"
+                      ? "border-signal/20 bg-signal/10 shadow-[0_4px_16px_rgba(232,98,42,0.1)]"
+                      : "border-white/[0.06] bg-parchment hover:bg-mist hover:border-white/[0.10]"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -550,6 +551,17 @@ export function PlaygroundShell() {
                         </li>
                       ))}
                     </ul>
+                  </div>
+
+                  {/* Big O chart */}
+                  <div>
+                    <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-ink/40">
+                      Growth curve
+                    </div>
+                    <ComplexityChart
+                      timeComplexity={lesson.timeComplexity}
+                      spaceComplexity={lesson.spaceComplexity}
+                    />
                   </div>
                 </motion.div>
               )}

@@ -8,49 +8,54 @@ import { trackLevels } from "@/data/course";
 // Each level gets a distinct visual identity
 const trackStyles = [
   {
-    card: "bg-gradient-to-br from-sky-950/70 to-blue-900/40 border-sky-700/30",
+    card: "bg-gradient-to-br from-violet-900/40 via-violet-800/20 to-transparent border-violet-500/40 hover:shadow-[0_8px_32px_rgba(139,92,246,0.18)]",
+    topBar: "bg-gradient-to-r from-violet-500 to-violet-400",
+    icon: "text-violet-400",
+    iconBg: "bg-violet-800/50",
+    number: "text-violet-400",
+    goal: "bg-violet-900/60 text-violet-300",
+    arrow: "text-violet-400",
+    count: "text-violet-400",
+  },
+  {
+    card: "bg-gradient-to-br from-sky-900/40 via-sky-800/20 to-transparent border-sky-500/40 hover:shadow-[0_8px_32px_rgba(56,189,248,0.18)]",
+    topBar: "bg-gradient-to-r from-sky-500 to-sky-400",
     icon: "text-sky-400",
     iconBg: "bg-sky-800/50",
-    number: "text-sky-500",
+    number: "text-sky-400",
     goal: "bg-sky-900/60 text-sky-300",
     arrow: "text-sky-400",
-    count: "text-sky-400/60",
+    count: "text-sky-400",
   },
   {
-    card: "bg-gradient-to-br from-indigo-950/70 to-violet-900/40 border-indigo-700/30",
-    icon: "text-indigo-400",
-    iconBg: "bg-indigo-800/50",
-    number: "text-indigo-500",
-    goal: "bg-indigo-900/60 text-indigo-300",
-    arrow: "text-indigo-400",
-    count: "text-indigo-400/60",
-  },
-  {
-    card: "bg-gradient-to-br from-emerald-950/70 to-teal-900/40 border-emerald-700/30",
+    card: "bg-gradient-to-br from-emerald-900/40 via-emerald-800/20 to-transparent border-emerald-500/40 hover:shadow-[0_8px_32px_rgba(52,211,153,0.18)]",
+    topBar: "bg-gradient-to-r from-emerald-500 to-emerald-400",
     icon: "text-emerald-400",
     iconBg: "bg-emerald-800/50",
-    number: "text-emerald-500",
+    number: "text-emerald-400",
     goal: "bg-emerald-900/60 text-emerald-300",
     arrow: "text-emerald-400",
-    count: "text-emerald-400/60",
+    count: "text-emerald-400",
   },
   {
-    card: "bg-gradient-to-br from-amber-950/70 to-orange-900/40 border-amber-700/30",
-    icon: "text-amber-400",
-    iconBg: "bg-amber-800/50",
-    number: "text-amber-500",
-    goal: "bg-amber-900/60 text-amber-300",
-    arrow: "text-amber-400",
-    count: "text-amber-400/60",
-  },
-  {
-    card: "bg-gradient-to-br from-rose-950/70 to-red-900/40 border-rose-700/30",
+    card: "bg-gradient-to-br from-rose-900/40 via-rose-800/20 to-transparent border-rose-500/40 hover:shadow-[0_8px_32px_rgba(251,113,133,0.18)]",
+    topBar: "bg-gradient-to-r from-rose-500 to-rose-400",
     icon: "text-rose-400",
     iconBg: "bg-rose-800/50",
-    number: "text-rose-500",
+    number: "text-rose-400",
     goal: "bg-rose-900/60 text-rose-300",
     arrow: "text-rose-400",
-    count: "text-rose-400/60",
+    count: "text-rose-400",
+  },
+  {
+    card: "bg-gradient-to-br from-amber-900/40 via-amber-800/20 to-transparent border-amber-500/40 hover:shadow-[0_8px_32px_rgba(251,191,36,0.18)]",
+    topBar: "bg-gradient-to-r from-amber-500 to-amber-400",
+    icon: "text-amber-400",
+    iconBg: "bg-amber-800/50",
+    number: "text-amber-400",
+    goal: "bg-amber-900/60 text-amber-300",
+    arrow: "text-amber-400",
+    count: "text-amber-400",
   },
 ];
 
@@ -92,8 +97,12 @@ export function TrackGrid() {
               >
                 <Link
                   href={`/tracks/${track.id}`}
-                  className={`group flex flex-col rounded-[24px] border p-5 shadow-[0_2px_12px_rgba(0,0,0,0.4)] transition-shadow hover:shadow-[0_4px_24px_rgba(0,0,0,0.5)] ${s.card}`}
+                  className={`group flex flex-col rounded-[24px] border overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.4)] transition-shadow ${s.card}`}
                 >
+                  {/* Glowing top accent line */}
+                  <div className={`h-1 w-full shrink-0 ${s.topBar}`} />
+
+                  <div className="flex flex-col flex-1 p-5">
                   {/* Icon badge + number */}
                   <div className="mb-5 flex items-start justify-between">
                     <span className={`text-sm font-bold ${s.number}`}>
@@ -125,6 +134,7 @@ export function TrackGrid() {
                     <span className={`inline-flex items-center gap-1 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.arrow}`}>
                       Explore <ArrowRight className="h-3 w-3" />
                     </span>
+                  </div>
                   </div>
                 </Link>
               </motion.div>

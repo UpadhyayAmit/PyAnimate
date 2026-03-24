@@ -537,7 +537,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(log n)",
       category: "Sorting",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["sorting", "pivot", "in-place"],
     },
@@ -549,7 +549,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(1)",
       category: "Sorting",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "20 min",
       tags: ["sorting", "heap", "priority queue"],
     },
@@ -561,7 +561,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["graph", "BFS", "queue", "shortest path"],
     },
@@ -573,7 +573,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(V)",
       category: "Graph",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "18 min",
       tags: ["graph", "DFS", "recursion", "backtracking"],
     },
@@ -585,7 +585,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(h)",
       category: "Trees",
       difficulty: "hard",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "15 min",
       tags: ["trees", "traversal", "recursion"],
     },
@@ -621,7 +621,7 @@ export const algorithmsByLevel: Record<string, AlgorithmEntry[]> = {
       spaceComplexity: "O(n)",
       category: "Recursion",
       difficulty: "medium",
-      hasPlayground: false,
+      hasPlayground: true,
       duration: "15 min",
       tags: ["recursion", "fibonacci", "memoization"],
     },
@@ -2537,6 +2537,698 @@ print("sorted:", sorted_arr)
         why: "Total work: O(n) merge work per level × O(log n) levels = O(n log n). Space: O(n) for the temporary arrays during merging. This is why Python's built-in sort (Timsort) is based on merge sort — it's reliably fast.",
         memory: [{ name: "arr", value: "[5, 3, 1, 2, 7, 4]" }, { name: "sorted_arr", value: "[1, 2, 3, 4, 5, 7]" }],
         output: ["merge([3],[5]) → [3,5]", "merge([1],[3,5]) → [1,3,5]", "merge([7],[4]) → [4,7]", "merge([2],[4,7]) → [2,4,7]", "merge([1,3,5],[2,4,7]) → [1,2,3,4,5,7]", "sorted: [1, 2, 3, 4, 5, 7]"],
+      },
+    ],
+  },
+  // ── Quick Sort ────────────────────────────────────────────────────────────
+  {
+    id: "quick-sort",
+    title: "Quick Sort",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "18 min",
+    objective: "Watch partition divide the array around a pivot, then recurse on each half.",
+    prompt: "Change arr to [3, 6, 8, 10, 1, 2, 1]. What pivot gets chosen each time and why?",
+    hint: "The pivot is always arr[high]. Try tracing which element becomes the pivot in each recursive call.",
+    timeComplexity: "O(n log n) avg / O(n²) worst",
+    spaceComplexity: "O(log n)",
+    useCases: [
+      "Default sort in many standard libraries (V8, C++ std::sort uses introsort based on quicksort)",
+      "Cache-friendly in-place sorting — no extra array needed",
+      "Quickselect variant finds kth smallest in O(n) average",
+      "Database query optimisers use variants for in-memory sorting",
+    ],
+    approach: "Quick sort picks a pivot (last element here) and partitions the array so all elements ≤ pivot go left and all > pivot go right. The pivot ends up in its final sorted position after each partition call. Recursing on both halves gives O(n log n) average time. The worst case O(n²) occurs when the pivot is always the smallest or largest — randomising pivot selection avoids this.",
+    output: ["[11, 12, 22, 25, 34, 64, 90]"],
+    starterCode: `def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quick_sort(arr, low, pi - 1)
+        quick_sort(arr, pi + 1, high)
+
+arr = [64, 34, 25, 12, 22, 11, 90]
+quick_sort(arr, 0, len(arr) - 1)
+print(arr)
+`,
+    executionFrames: [
+      {
+        line: 16,
+        event: "assign",
+        summary: "arr = [64, 34, 25, 12, 22, 11, 90] — 7 elements to sort.",
+        why: "Quick sort works in-place — no extra array. The original array gets rearranged through swaps during partitioning.",
+        memory: [{ name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }],
+        output: [],
+      },
+      {
+        line: 17,
+        event: "call",
+        summary: "quick_sort(arr, 0, 6) — sort the full array.",
+        why: "We pass low=0 and high=6 (last index). The function will call partition to place arr[6]=90 in its correct position, then recurse on the sub-arrays.",
+        memory: [{ name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }, { name: "low", value: "0" }, { name: "high", value: "6" }],
+        output: [],
+      },
+      {
+        line: 2,
+        event: "assign",
+        summary: "pivot = arr[6] = 90. i = -1. Scanning j from 0 to 5.",
+        why: "Choosing arr[high] as pivot is simple. Here pivot=90 is the maximum, so every element is ≤ pivot and will go to the left side. This is the best case for this partition.",
+        memory: [{ name: "pivot", value: "90" }, { name: "i", value: "-1" }, { name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }],
+        output: [],
+      },
+      {
+        line: 4,
+        event: "loop",
+        summary: "j=0..5: all elements ≤ 90 so each triggers a swap with itself (i advances to 0,1,2,3,4,5).",
+        why: "Since all elements are smaller than 90, i increments each iteration and arr[i] swaps with arr[j] — but i==j so nothing actually moves. The partition finds that 90 already belongs at the end.",
+        memory: [{ name: "pivot", value: "90" }, { name: "i", value: "5" }, { name: "j", value: "5" }, { name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "swap",
+        summary: "arr[i+1] ↔ arr[high]: arr[6] ↔ arr[6]. Pivot 90 stays at index 6. pi=6.",
+        why: "The partition index is 6 — pivot 90 is already in its final sorted position. Quick sort now recurses on [64,34,25,12,22,11] (left) and an empty right side.",
+        memory: [{ name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }, { name: "pi", value: "6" }],
+        output: [],
+      },
+      {
+        line: 12,
+        event: "call",
+        summary: "Recurse left: quick_sort(arr, 0, 5). Now pivot = arr[5] = 11.",
+        why: "With pivot=11 (smallest element), all others are larger. 11 will end up at index 0 after partition. This shows worst-case-like behaviour for this particular sub-call.",
+        memory: [{ name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }, { name: "low", value: "0" }, { name: "high", value: "5" }, { name: "pivot", value: "11" }],
+        output: [],
+      },
+      {
+        line: 4,
+        event: "compare",
+        summary: "Scan j=0..4: no element ≤ 11 (64,34,25,12,22 are all >11). i stays at -1.",
+        why: "When pivot is the minimum, nothing swaps in the loop. Then arr[i+1]=arr[0] swaps with arr[high]=arr[5], placing 11 at index 0. This is the worst case scenario.",
+        memory: [{ name: "pivot", value: "11" }, { name: "i", value: "-1" }, { name: "arr", value: "[64, 34, 25, 12, 22, 11, 90]" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "swap",
+        summary: "arr[0] ↔ arr[5]: 64 and 11 swap. pi=0. Array: [11, 34, 25, 12, 22, 64, 90].",
+        why: "11 is now at its final position (index 0). No left sub-array to recurse on. Right sub-array [34,25,12,22,64] continues recursing until sorted.",
+        memory: [{ name: "arr", value: "[11, 34, 25, 12, 22, 64, 90]" }, { name: "pi", value: "0" }],
+        output: [],
+      },
+      {
+        line: 13,
+        event: "call",
+        summary: "Recurse: quick_sort continues until all pivots are placed. Array sorts progressively.",
+        why: "Each partition call places exactly one element in its final position. With n=7 elements, exactly 7 partition calls are needed. The recursion depth is O(log n) on average.",
+        memory: [{ name: "arr", value: "[11, 12, 22, 25, 34, 64, 90]" }],
+        output: [],
+      },
+      {
+        line: 18,
+        event: "output",
+        summary: "print(arr) → [11, 12, 22, 25, 34, 64, 90]. Sorted in-place!",
+        why: "Quick sort sorted in-place with O(log n) stack space. Compare to merge sort which needs O(n) extra space. The trade-off: quick sort is cache-friendly and typically 2-3× faster in practice despite the same O(n log n) average complexity.",
+        memory: [{ name: "arr", value: "[11, 12, 22, 25, 34, 64, 90]" }],
+        output: ["[11, 12, 22, 25, 34, 64, 90]"],
+      },
+    ],
+  },
+  // ── Heap Sort ─────────────────────────────────────────────────────────────
+  {
+    id: "heap-sort",
+    title: "Heap Sort",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "20 min",
+    objective: "Build a max-heap from the array, then extract the maximum element one by one into sorted order.",
+    prompt: "Change arr to [4, 10, 3, 5, 1]. Draw the heap tree after building it. Which element is always at index 0?",
+    hint: "In a max-heap, arr[0] is always the largest element. After each extraction, heapify restores this property.",
+    timeComplexity: "O(n log n)",
+    spaceComplexity: "O(1)",
+    useCases: [
+      "Priority queues — always extract the maximum/minimum efficiently",
+      "Operating system schedulers use heap-based priority queues",
+      "Guaranteed O(n log n) worst case — unlike quicksort",
+      "Finding the k largest elements in a stream",
+    ],
+    approach: "Heap sort has two phases. First, build a max-heap from the array in O(n) by calling heapify from the bottom up (starting at n//2-1). Second, repeatedly swap the root (maximum) with the last element, shrink the heap size by 1, and heapify the root to restore the heap property. Each extraction is O(log n) and we do n extractions, giving O(n log n). Space is O(1) because everything happens in-place.",
+    output: ["[5, 6, 7, 11, 12, 13]"],
+    starterCode: `def heapify(arr, n, i):
+    largest = i
+    l, r = 2 * i + 1, 2 * i + 2
+    if l < n and arr[l] > arr[largest]:
+        largest = l
+    if r < n and arr[r] > arr[largest]:
+        largest = r
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n - 1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(arr, n, i)
+
+arr = [12, 11, 13, 5, 6, 7]
+heap_sort(arr)
+print(arr)
+`,
+    executionFrames: [
+      {
+        line: 19,
+        event: "assign",
+        summary: "arr = [12, 11, 13, 5, 6, 7] — 6 elements. n=6.",
+        why: "The array represents a binary tree: index i has children at 2i+1 and 2i+2. arr[0]=12 is the root. We need to rearrange this into a valid max-heap where every parent ≥ its children.",
+        memory: [{ name: "arr", value: "[12, 11, 13, 5, 6, 7]" }, { name: "n", value: "6" }],
+        output: [],
+      },
+      {
+        line: 13,
+        event: "loop",
+        summary: "Build heap phase: heapify from i=2 down to i=0 (n//2-1 = 2).",
+        why: "We start from the last internal node (n//2-1=2) and go up to root (0). Leaf nodes don't need heapifying. This bottom-up approach builds the heap in O(n) — more efficient than n insertions which would be O(n log n).",
+        memory: [{ name: "arr", value: "[12, 11, 13, 5, 6, 7]" }, { name: "i", value: "2" }],
+        output: [],
+      },
+      {
+        line: 1,
+        event: "call",
+        summary: "heapify(arr, 6, 2): i=2, arr[2]=13. Children: l=5(arr[5]=7), r=6(out of bounds).",
+        why: "heapify checks if a node is larger than its children. Here arr[2]=13 > arr[5]=7, so no swap needed. Node 13 is already in the right place.",
+        memory: [{ name: "i", value: "2" }, { name: "largest", value: "2" }, { name: "arr[2]", value: "13" }],
+        output: [],
+      },
+      {
+        line: 1,
+        event: "call",
+        summary: "heapify(arr, 6, 1): i=1, arr[1]=11. Children: l=3(5), r=4(6). largest stays 1.",
+        why: "arr[1]=11 > arr[3]=5 and arr[1]=11 > arr[4]=6. No swap needed. Node 11 is the largest in its subtree.",
+        memory: [{ name: "i", value: "1" }, { name: "largest", value: "1" }, { name: "arr", value: "[12, 11, 13, 5, 6, 7]" }],
+        output: [],
+      },
+      {
+        line: 1,
+        event: "call",
+        summary: "heapify(arr, 6, 0): i=0, arr[0]=12. Children: l=1(11), r=2(13). largest=2!",
+        why: "arr[2]=13 > arr[0]=12, so largest=2. We swap arr[0] and arr[2]. Now 13 is the root — the max-heap property is satisfied at the root. Array becomes [13, 11, 12, 5, 6, 7].",
+        memory: [{ name: "i", value: "0" }, { name: "largest", value: "2" }, { name: "arr", value: "[13, 11, 12, 5, 6, 7]" }],
+        output: [],
+      },
+      {
+        line: 15,
+        event: "loop",
+        summary: "Extract phase: i=5. Swap arr[0]=13 with arr[5]=7. Heap size shrinks to 5.",
+        why: "The root of a max-heap is always the maximum. Swapping it to the end puts it in its final sorted position. We then heapify the remaining n-1 elements to find the next maximum.",
+        memory: [{ name: "arr", value: "[7, 11, 12, 5, 6, 13]" }, { name: "i", value: "5" }],
+        output: [],
+      },
+      {
+        line: 17,
+        event: "call",
+        summary: "heapify(arr, 5, 0): restore heap for indices 0-4. 12 bubbles to root.",
+        why: "After removing 13 from the root, 7 is at the top. heapify sifts it down while 12 (the new max among remaining elements) rises to the root. Array: [12, 11, 7, 5, 6, 13].",
+        memory: [{ name: "arr", value: "[12, 11, 7, 5, 6, 13]" }, { name: "heap size", value: "5" }],
+        output: [],
+      },
+      {
+        line: 16,
+        event: "swap",
+        summary: "i=4: Swap arr[0]=12 with arr[4]=6. Extract 12 to its sorted position.",
+        why: "12 is now at index 4 — its final position. We continue extracting. Each extraction is O(log n) because heapify must sift down at most log n levels. After all extractions: sorted ascending.",
+        memory: [{ name: "arr", value: "[6, 11, 7, 5, 12, 13]" }, { name: "i", value: "4" }],
+        output: [],
+      },
+      {
+        line: 20,
+        event: "output",
+        summary: "print(arr) → [5, 6, 7, 11, 12, 13]. Heap sort complete!",
+        why: "Heap sort achieved O(n log n) with O(1) extra space — better space complexity than merge sort's O(n). The trade-off: heap sort is not cache-friendly (jumps around memory) so quicksort is usually faster in practice despite worse worst-case.",
+        memory: [{ name: "arr", value: "[5, 6, 7, 11, 12, 13]" }],
+        output: ["[5, 6, 7, 11, 12, 13]"],
+      },
+    ],
+  },
+  // ── BFS ───────────────────────────────────────────────────────────────────
+  {
+    id: "bfs",
+    title: "Breadth-First Search",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "18 min",
+    objective: "Explore a graph level by level using a queue. BFS finds shortest paths in unweighted graphs.",
+    prompt: "Change the start node to 0. What order are nodes visited? How does BFS guarantee the shortest path?",
+    hint: "BFS visits all neighbors at distance 1 before distance 2. The first time you reach a node is always via the shortest path.",
+    timeComplexity: "O(V + E)",
+    spaceComplexity: "O(V)",
+    useCases: [
+      "Shortest path in unweighted graphs (GPS routing on simple maps)",
+      "Web crawlers explore links level by level",
+      "Social network degree of separation (6 degrees of Kevin Bacon)",
+      "Peer-to-peer network discovery (BitTorrent node lookup)",
+    ],
+    approach: "BFS uses a queue (FIFO) to explore the graph level by level. Start by enqueuing the start node and marking it visited. At each step, dequeue a node, process it, then enqueue all unvisited neighbors and mark them visited. Marking as visited when enqueuing (not dequeuing) is critical — it prevents adding the same node to the queue multiple times, keeping time complexity O(V+E). The result visits nodes in order of increasing distance from the start.",
+    output: ["[2, 0, 3, 1]"],
+    starterCode: `from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    order = []
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    return order
+
+graph = {0: [1,2], 1: [2], 2: [0,3], 3: [3]}
+result = bfs(graph, 2)
+print(result)
+`,
+    executionFrames: [
+      {
+        line: 16,
+        event: "assign",
+        summary: "graph defined: 4 nodes (0-3), directed edges. Starting BFS from node 2.",
+        why: "The graph is represented as an adjacency list — a dict mapping each node to its list of neighbors. This representation is O(V+E) space and makes neighbor lookup O(degree), which is efficient for sparse graphs.",
+        memory: [{ name: "graph", value: "{0:[1,2], 1:[2], 2:[0,3], 3:[3]}" }, { name: "start", value: "2" }],
+        output: [],
+      },
+      {
+        line: 4,
+        event: "assign",
+        summary: "visited = {2}, queue = deque([2]), order = [].",
+        why: "We initialise with start=2 already in visited. This prevents revisiting it when we see it as a neighbor of node 0. Using a set for visited gives O(1) lookup — much faster than a list's O(n) search.",
+        memory: [{ name: "visited", value: "{2}" }, { name: "queue", value: "deque([2])" }, { name: "order", value: "[]" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "loop",
+        summary: "Iteration 1: dequeue node 2. order=[2]. Neighbors of 2: [0, 3].",
+        why: "queue.popleft() is O(1) with deque (unlike list.pop(0) which is O(n)). This is why we use collections.deque not a plain list for BFS queues.",
+        memory: [{ name: "node", value: "2" }, { name: "visited", value: "{2}" }, { name: "order", value: "[2]" }, { name: "queue", value: "deque([])" }],
+        output: [],
+      },
+      {
+        line: 11,
+        event: "branch",
+        summary: "Neighbor 0 not visited → add to visited and queue. Neighbor 3 same.",
+        why: "We mark neighbors as visited WHEN ENQUEUING, not when dequeuing. This prevents duplicate entries in the queue. If we marked on dequeue, both 2 and 1 could enqueue node 2's neighbor before it's processed.",
+        memory: [{ name: "visited", value: "{2, 0, 3}" }, { name: "queue", value: "deque([0, 3])" }, { name: "order", value: "[2]" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "loop",
+        summary: "Iteration 2: dequeue node 0. order=[2,0]. Neighbors of 0: [1, 2].",
+        why: "Node 0 was enqueued when we processed node 2's neighbors. BFS processes nodes in the exact order they were enqueued — FIFO guarantees level-by-level traversal.",
+        memory: [{ name: "node", value: "0" }, { name: "order", value: "[2, 0]" }, { name: "queue", value: "deque([3])" }],
+        output: [],
+      },
+      {
+        line: 11,
+        event: "branch",
+        summary: "Neighbor 1: not visited → enqueue. Neighbor 2: already visited → skip.",
+        why: "Node 2 is already in visited, so we skip it. This is the cycle detection mechanism of BFS. Without the visited set, we would loop forever on the 2→0→2 cycle.",
+        memory: [{ name: "visited", value: "{0, 1, 2, 3}" }, { name: "queue", value: "deque([3, 1])" }, { name: "order", value: "[2, 0]" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "loop",
+        summary: "Iteration 3: dequeue node 3. order=[2,0,3]. Node 3's neighbor is itself — already visited.",
+        why: "Node 3 has a self-loop (3:[3]). Since 3 is already in visited, the self-loop doesn't cause infinite recursion. BFS handles self-loops and cycles gracefully.",
+        memory: [{ name: "node", value: "3" }, { name: "order", value: "[2, 0, 3]" }, { name: "queue", value: "deque([1])" }],
+        output: [],
+      },
+      {
+        line: 8,
+        event: "loop",
+        summary: "Iteration 4: dequeue node 1. order=[2,0,3,1]. Neighbor 2 already visited. Queue empty.",
+        why: "All 4 nodes have been visited. BFS found node 1 at distance 2 from start (2→0→1). This is the shortest path — BFS guarantees this because it explores all distance-1 nodes before distance-2 nodes.",
+        memory: [{ name: "node", value: "1" }, { name: "order", value: "[2, 0, 3, 1]" }, { name: "queue", value: "deque([])" }],
+        output: [],
+      },
+      {
+        line: 17,
+        event: "output",
+        summary: "result = [2, 0, 3, 1]. BFS traversal order from node 2.",
+        why: "Total work: each node dequeued once (V operations) and each edge examined once (E operations) = O(V+E). Space: O(V) for the queue and visited set. This is optimal — you must examine every edge at least once to guarantee shortest paths.",
+        memory: [{ name: "result", value: "[2, 0, 3, 1]" }],
+        output: ["[2, 0, 3, 1]"],
+      },
+    ],
+  },
+  // ── DFS ───────────────────────────────────────────────────────────────────
+  {
+    id: "dfs",
+    title: "Depth-First Search",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "18 min",
+    objective: "Explore as deep as possible before backtracking. Watch the call stack grow with each recursive step.",
+    prompt: "Change the start node to 2. How does the traversal order change? What happens if you remove node 3 from the graph?",
+    hint: "DFS follows one path to its end before backtracking. The call stack depth equals the depth of the current path.",
+    timeComplexity: "O(V + E)",
+    spaceComplexity: "O(V)",
+    useCases: [
+      "Detecting cycles in a graph (used in deadlock detection)",
+      "Topological sorting of dependencies (build systems, package managers)",
+      "Solving mazes and puzzles (backtracking)",
+      "Finding connected components and strongly connected components (Tarjan's algorithm)",
+    ],
+    approach: "DFS uses the call stack (recursion) to explore as far as possible along each branch before backtracking. We add the current node to visited before recursing on its neighbors — this prevents infinite loops on cycles. The recursive structure mirrors the tree structure of the DFS traversal. Each node is visited exactly once and each edge examined once, giving O(V+E) time. Stack space is O(V) in the worst case (a path graph where DFS goes to depth V).",
+    output: ["[0, 1, 3, 2]"],
+    starterCode: `def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(node)
+    order = [node]
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            order += dfs(graph, neighbor, visited)
+    return order
+
+graph = {0: [1, 2], 1: [0, 3], 2: [0], 3: [1]}
+result = dfs(graph, 0)
+print(result)
+`,
+    executionFrames: [
+      {
+        line: 10,
+        event: "assign",
+        summary: "graph = {0:[1,2], 1:[0,3], 2:[0], 3:[1]}. Start DFS from node 0.",
+        why: "Undirected graph with 4 nodes and 3 edges (0-1, 0-2, 1-3). Represented as adjacency list with each edge appearing twice (both directions). DFS will visit all 4 nodes starting from 0.",
+        memory: [{ name: "graph", value: "{0:[1,2], 1:[0,3], 2:[0], 3:[1]}" }],
+        output: [],
+      },
+      {
+        line: 1,
+        event: "call",
+        summary: "dfs(graph, 0, None). visited=None triggers initialization to empty set.",
+        why: "Using visited=None as default (not visited=set()) is important! Mutable default arguments in Python are shared across calls. With set(), all calls would share the same set — a classic Python gotcha.",
+        memory: [{ name: "node", value: "0" }, { name: "visited", value: "set()" }, { name: "order", value: "[0]" }],
+        output: [],
+      },
+      {
+        line: 4,
+        event: "assign",
+        summary: "visited.add(0). order=[0]. Now loop over neighbors [1, 2].",
+        why: "We mark node 0 as visited BEFORE recursing. This prevents an infinite loop when neighbor 1 tries to visit node 0 back. The visited set is shared across all recursive calls via the visited parameter.",
+        memory: [{ name: "node", value: "0" }, { name: "visited", value: "{0}" }, { name: "order", value: "[0]" }],
+        output: [],
+      },
+      {
+        line: 6,
+        event: "branch",
+        summary: "Neighbor 1 not visited. Recurse: dfs(graph, 1, {0}).",
+        why: "DFS goes as deep as possible — it immediately recurses on the first neighbor (1) rather than enqueuing all neighbors like BFS. The call stack now has dfs(0) waiting for dfs(1) to return.",
+        memory: [{ name: "node", value: "1" }, { name: "visited", value: "{0, 1}" }, { name: "order", value: "[1]" }],
+        output: [],
+      },
+      {
+        line: 6,
+        event: "branch",
+        summary: "dfs(1): neighbor 0 is already visited. Recurse on neighbor 3: dfs(graph, 3, {0,1}).",
+        why: "Node 0 is in visited, so we skip it (avoiding backtrack to parent). Node 3 is unvisited — DFS dives deeper. Stack depth is now 3: dfs(0) → dfs(1) → dfs(3).",
+        memory: [{ name: "node", value: "3" }, { name: "visited", value: "{0, 1, 3}" }, { name: "call stack depth", value: "3" }],
+        output: [],
+      },
+      {
+        line: 5,
+        event: "return",
+        summary: "dfs(3): only neighbor is 1, already visited. Returns [3]. Backtrack to dfs(1).",
+        why: "Node 3 is a leaf in the DFS tree — no unvisited neighbors. The function returns [3] and the call stack unwinds. This is the 'backtracking' step — DFS backtracks when it hits a dead end.",
+        memory: [{ name: "node", value: "3" }, { name: "order (returned)", value: "[3]" }, { name: "visited", value: "{0, 1, 3}" }],
+        output: [],
+      },
+      {
+        line: 7,
+        event: "return",
+        summary: "dfs(1) combines: order=[1]+[3]=[1,3]. No more unvisited neighbors. Backtrack to dfs(0).",
+        why: "dfs(1) finishes after exploring the entire subtree rooted at 1 (which included node 3). It returns [1, 3] to dfs(0), which adds it to its own order list.",
+        memory: [{ name: "node", value: "1" }, { name: "order (returned)", value: "[1, 3]" }, { name: "visited", value: "{0, 1, 3}" }],
+        output: [],
+      },
+      {
+        line: 6,
+        event: "branch",
+        summary: "Back in dfs(0): now process neighbor 2. Recurse: dfs(graph, 2, {0,1,3}).",
+        why: "After the dfs(1) subtree is fully explored, dfs(0) moves to its next neighbor: 2. DFS explores one full branch before moving to the next.",
+        memory: [{ name: "node", value: "2" }, { name: "visited", value: "{0, 1, 2, 3}" }, { name: "order (returned)", value: "[2]" }],
+        output: [],
+      },
+      {
+        line: 11,
+        event: "output",
+        summary: "result = [0, 1, 3, 2]. DFS visited in order: 0 → 1 → 3 (deep) → backtrack → 2.",
+        why: "DFS order: 0,1,3,2. BFS from 0 would give: 0,1,2,3. Same nodes, different order. DFS goes deep (1→3) before exploring node 2. This traversal order is the foundation of topological sort and cycle detection.",
+        memory: [{ name: "result", value: "[0, 1, 3, 2]" }],
+        output: ["[0, 1, 3, 2]"],
+      },
+    ],
+  },
+  // ── Binary Tree Traversal ─────────────────────────────────────────────────
+  {
+    id: "binary-tree-traversal",
+    title: "Binary Tree Traversal",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "15 min",
+    objective: "See how in-order traversal visits a binary search tree in sorted order. Understand left-root-right recursion.",
+    prompt: "Add root.right.left = Node(5) and root.right.right = Node(7). What does the in-order result become?",
+    hint: "In-order visits left subtree, then root, then right subtree. For a BST this always gives sorted ascending order.",
+    timeComplexity: "O(n)",
+    spaceComplexity: "O(h) — h = tree height",
+    useCases: [
+      "In-order traversal of a BST produces sorted output — used in tree-sort",
+      "Expression tree evaluation (post-order gives Reverse Polish Notation)",
+      "Directory tree traversal (pre-order to print file paths)",
+      "Serialisation and deserialisation of trees for storage/transmission",
+    ],
+    approach: "Binary tree traversal visits every node exactly once. In-order (Left→Root→Right) visits the left subtree recursively, then the current node, then the right subtree. For a Binary Search Tree (BST), this produces sorted ascending output because all left subtree values are smaller and all right subtree values are larger. The recursion depth equals the tree height h: O(log n) for balanced trees, O(n) for degenerate (linked-list shaped) trees.",
+    output: ["[1, 2, 3, 4, 6]"],
+    starterCode: `class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+def inorder(node, result=[]):
+    if node:
+        inorder(node.left, result)
+        result.append(node.val)
+        inorder(node.right, result)
+    return result
+
+root = Node(4)
+root.left = Node(2)
+root.right = Node(6)
+root.left.left = Node(1)
+root.left.right = Node(3)
+result = inorder(root)
+print(result)
+`,
+    executionFrames: [
+      {
+        line: 13,
+        event: "assign",
+        summary: "Build BST: root=4, left=2, right=6, 2.left=1, 2.right=3.",
+        why: "This is a valid BST: all left subtree values (1,2,3) < root (4) < right subtree values (6). In-order traversal of any BST always produces sorted ascending output — that's the key property we're demonstrating.",
+        memory: [{ name: "root.val", value: "4" }, { name: "root.left.val", value: "2" }, { name: "root.right.val", value: "6" }],
+        output: [],
+      },
+      {
+        line: 7,
+        event: "call",
+        summary: "inorder(root=4): go left first. Call inorder(node.left = 2).",
+        why: "In-order means: Left → Root → Right. We must fully explore the left subtree before processing the current node. The recursion naturally handles this — we don't return to node 4 until node 2's entire subtree is processed.",
+        memory: [{ name: "current node", value: "4" }, { name: "result", value: "[]" }],
+        output: [],
+      },
+      {
+        line: 7,
+        event: "call",
+        summary: "inorder(node=2): go left. Call inorder(node.left = 1).",
+        why: "Still following Left → Root → Right. From node 2, we first go to its left child (1) before appending 2 to result. Call stack: inorder(4) → inorder(2) → inorder(1).",
+        memory: [{ name: "current node", value: "2" }, { name: "result", value: "[]" }],
+        output: [],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "inorder(node=1): left is None → base case. Append 1 to result. result=[1].",
+        why: "Node 1 is a leaf. Its left child is None, so the base case `if node` is False and we return immediately. Then we append node.val=1. 1 is correctly the first element — it's the leftmost (smallest) node in the BST.",
+        memory: [{ name: "current node", value: "1" }, { name: "result", value: "[1]" }],
+        output: [],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "Back in inorder(2): append 2. result=[1,2]. Then recurse right → inorder(3).",
+        why: "After fully processing node 1 (left subtree of 2), we append node 2's value. Now result=[1,2]. Then we go to node 2's right child (3). In-order for the subtree rooted at 2: [1, 2, 3].",
+        memory: [{ name: "current node", value: "2" }, { name: "result", value: "[1, 2]" }],
+        output: [],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "inorder(node=3): leaf node. Append 3. result=[1,2,3]. Backtrack to inorder(4).",
+        why: "Node 3 is a leaf (both children None). We append 3 and return. The entire left subtree of root (4) has been processed: [1, 2, 3]. Now we unwind back to inorder(4).",
+        memory: [{ name: "current node", value: "3" }, { name: "result", value: "[1, 2, 3]" }],
+        output: [],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "Back in inorder(4): append 4. result=[1,2,3,4]. Then recurse right → inorder(6).",
+        why: "Root value 4 is appended after its entire left subtree. This is the 'Root' step of Left→Root→Right. result=[1,2,3,4] so far — already sorted! Now we process the right subtree.",
+        memory: [{ name: "current node", value: "4" }, { name: "result", value: "[1, 2, 3, 4]" }],
+        output: [],
+      },
+      {
+        line: 9,
+        event: "assign",
+        summary: "inorder(node=6): leaf node. Append 6. result=[1,2,3,4,6]. Done!",
+        why: "Node 6's children are both None (base case). Append 6. The complete in-order traversal is [1,2,3,4,6] — perfectly sorted! This works because BST property guarantees left<root<right at every node.",
+        memory: [{ name: "current node", value: "6" }, { name: "result", value: "[1, 2, 3, 4, 6]" }],
+        output: [],
+      },
+      {
+        line: 18,
+        event: "output",
+        summary: "print(result) → [1, 2, 3, 4, 6]. In-order BST traversal = sorted output!",
+        why: "O(n) time — every node visited exactly once. O(h) call stack space where h is tree height. For a balanced BST h=O(log n). Warning: the result=[] default argument is a Python gotcha — mutable defaults are shared between calls. In production code, use result=None and initialise inside the function.",
+        memory: [{ name: "result", value: "[1, 2, 3, 4, 6]" }],
+        output: ["[1, 2, 3, 4, 6]"],
+      },
+    ],
+  },
+  // ── Fibonacci (Recursive) ─────────────────────────────────────────────────
+  {
+    id: "fibonacci-recursive",
+    title: "Fibonacci (Recursive)",
+    level: "Advanced",
+    levelColor: "text-rose-400",
+    duration: "15 min",
+    objective: "See the call tree fan out exponentially without memoization, then watch memoization collapse it to linear.",
+    prompt: "Increase fib(8) to fib(12). Count the total function calls. Now try fib_memo(30) — instant! Why?",
+    hint: "Naive fib(n) makes 2^n calls. Memoized fib_memo(n) makes exactly 2n-1 calls — once for each unique subproblem.",
+    timeComplexity: "O(2ⁿ) naive / O(n) memoized",
+    spaceComplexity: "O(n)",
+    useCases: [
+      "Dynamic programming pattern — memoize overlapping subproblems",
+      "Fibonacci numbers appear in nature (spiral patterns, golden ratio)",
+      "Understanding exponential vs polynomial time complexity",
+      "Template for top-down DP: LCS, edit distance, knapsack",
+    ],
+    approach: "Naive recursive Fibonacci recalculates the same subproblems exponentially many times. fib(5) calls fib(4) and fib(3). fib(4) also calls fib(3) — that's a duplicate. The call tree has 2^n leaves, making it O(2^n). Memoization stores each result in a dict the first time it's computed. On subsequent calls, we return the cached result in O(1). This reduces the call tree from an exponential bush to a linear chain, making it O(n) time and O(n) space.",
+    output: ["Naive: 21", "Memo: 55"],
+    starterCode: `def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+def fib_memo(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 1:
+        return n
+    memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
+    return memo[n]
+
+print("Naive:", fib(8))
+print("Memo:", fib_memo(10))
+`,
+    executionFrames: [
+      {
+        line: 1,
+        event: "call",
+        summary: "fib(8): naive recursion. Will make ~2^8 = 256 function calls.",
+        why: "Naive fib has no memory of previous results. fib(8) calls fib(7) and fib(6). fib(7) calls fib(6) again. fib(6) is computed many times — this exponential blowup makes it impractical for n > 40.",
+        memory: [{ name: "n", value: "8" }, { name: "call count (approx)", value: "~256" }],
+        output: [],
+      },
+      {
+        line: 2,
+        event: "branch",
+        summary: "Base case: if n <= 1, return n. fib(0)=0, fib(1)=1.",
+        why: "The base cases stop the recursion. Fibonacci is defined as F(0)=0, F(1)=1. Without base cases the recursion would never terminate. These are reached at the leaves of the call tree.",
+        memory: [{ name: "n", value: "1" }, { name: "return value", value: "1" }],
+        output: [],
+      },
+      {
+        line: 4,
+        event: "return",
+        summary: "fib(8) = fib(7) + fib(6). Each sub-call fans out into two more calls recursively.",
+        why: "Each call spawns TWO more calls (except base cases). Call tree has height 8 and up to 2^8=256 nodes. The tree is not balanced — fib(n-1) subtree is deeper than fib(n-2). Total calls = 2*fib(n+1)-1 ≈ 2^n.",
+        memory: [{ name: "fib(8)", value: "21" }, { name: "fib(7)", value: "13" }, { name: "fib(6)", value: "8" }],
+        output: [],
+      },
+      {
+        line: 14,
+        event: "output",
+        summary: 'print("Naive:", fib(8)) → Naive: 21. Correct, but extremely slow for large n.',
+        why: "fib(8)=21 is correct. But for fib(40) the naive version makes ~2.7 billion calls! The problem is overlapping subproblems — fib(6) is computed in both the fib(7) branch and the fib(6) branch. Memoization solves this.",
+        memory: [{ name: "fib(8)", value: "21" }],
+        output: ["Naive: 21"],
+      },
+      {
+        line: 6,
+        event: "call",
+        summary: "fib_memo(10, {}): memoized version. memo={} starts empty.",
+        why: "memo={} as a default argument is intentionally shared across calls (a Python feature/gotcha). Here it acts as a persistent cache. Each unique n value will be computed exactly once and stored in memo.",
+        memory: [{ name: "n", value: "10" }, { name: "memo", value: "{}" }],
+        output: [],
+      },
+      {
+        line: 7,
+        event: "branch",
+        summary: "n=10 not in memo → proceed to compute. Recurse: fib_memo(9) + fib_memo(8).",
+        why: "First call for each n: cache miss. We compute and store the result. The recursion still goes deep (n, n-1, n-2, ... 1, 0) but each level only goes DOWN the fib(n-1) branch — fib(n-2) is already cached!",
+        memory: [{ name: "n", value: "10" }, { name: "memo", value: "{}" }, { name: "cache miss", value: "true" }],
+        output: [],
+      },
+      {
+        line: 11,
+        event: "assign",
+        summary: "Computing down: fib_memo(2)=1, fib_memo(3)=2, fib_memo(4)=3... memo fills up.",
+        why: "With memoization, we compute fib(0) through fib(10) in sequence, caching each result. When fib_memo(10) later needs fib_memo(8), it's already in memo — O(1) lookup instead of O(2^8) recursive calls.",
+        memory: [{ name: "memo", value: "{0:0, 1:1, 2:1, 3:2, 4:3, 5:5}" }],
+        output: [],
+      },
+      {
+        line: 7,
+        event: "branch",
+        summary: "Cache hit! fib_memo(8) needed by fib_memo(10) found in memo instantly.",
+        why: "memo[8]=21 was computed when calculating fib_memo(9). Now fib_memo(10) gets it in O(1). Without memoization this would recompute 2^8=256 calls. With memo: O(1). This is the essence of dynamic programming.",
+        memory: [{ name: "memo", value: "{0:0,1:1,2:1,3:2,4:3,5:5,6:8,7:13,8:21,9:34}" }, { name: "cache hit for n=8", value: "21" }],
+        output: [],
+      },
+      {
+        line: 15,
+        event: "output",
+        summary: 'print("Memo:", fib_memo(10)) → Memo: 55. Only 19 calls made (2n-1)!',
+        why: "fib_memo(10)=55 computed with only 2×10-1=19 function calls vs 177 for naive fib(10). The memoized version is O(n) time and O(n) space. For fib(100) it's 199 calls vs 10^21 — the difference between instant and longer than the age of the universe.",
+        memory: [{ name: "fib_memo(10)", value: "55" }, { name: "total calls", value: "19" }],
+        output: ["Naive: 21", "Memo: 55"],
       },
     ],
   },
