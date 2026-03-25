@@ -159,7 +159,7 @@ Get PyAnimate running locally in under 2 minutes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/PyAnimate.git
+git clone https://github.com/UpadhyayAmit/PyAnimate.git
 cd PyAnimate
 
 # Install dependencies
