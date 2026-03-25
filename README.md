@@ -62,7 +62,7 @@ graph TD
     
     B --> H[Web Worker<br/>Pyodide Runtime]
     H --> I[sys.settrace<br/>Execution Tracer]
-    I --> J[ExecutionFrame[]]
+    I --> J["ExecutionFrame[]"]
     J --> E
     
     K[data/course.ts<br/>Lesson Data] --> C
@@ -366,33 +366,7 @@ We welcome contributions from the community! Whether it's bug fixes, new lessons
 
 ## 📄 License
 
-PyAnimate is open source software licensed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2024 PyAnimate Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-See [LICENSE](LICENSE) file for full details.
+PyAnimate is open source software licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -414,14 +388,6 @@ PyAnimate stands on the shoulders of giants. Massive thanks to:
 ## 🌟 Star History
 
 If PyAnimate helps you learn algorithms, please consider giving it a ⭐ on GitHub! It helps others discover the project.
-
----
-
-## 📬 Contact & Support
-
-- **Issues:** [GitHub Issues](https://github.com/YOUR_USERNAME/PyAnimate/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/YOUR_USERNAME/PyAnimate/discussions)
-- **Twitter:** [@PyAnimate](https://twitter.com/PyAnimate) *(update with real handle)*
 
 ---
 
