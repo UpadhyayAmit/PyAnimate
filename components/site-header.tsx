@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PyAnimateLogo } from "@/components/icons/pyanimate-logo";
 
 type SiteHeaderProps = {
   compactLabel?: string;
@@ -9,10 +10,8 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
     <header className="px-6 pt-6 sm:px-10 lg:px-16">
       <div className="site-shell flex items-center justify-between rounded-full border border-white/10 bg-parchment/90 px-5 py-3 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-signal to-amber shadow-[0_2px_12px_rgba(255,101,53,0.4)]">
-            <span className="text-xs font-black text-white">P</span>
-          </span>
-          <span className="text-gradient-signal text-lg font-bold neon-text-signal">
+          <PyAnimateLogo className="h-8 w-8 shadow-[0_2px_12px_rgba(255,101,53,0.4)] rounded-[10px]" />
+          <span className="text-gradient-signal text-lg font-bold neon-text-signal ml-1">
             PyAnimate
           </span>
         </Link>

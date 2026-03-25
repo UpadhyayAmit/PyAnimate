@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-stem" x1="50" y1="10" x2="50" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#ff6535" />
+      <stop offset="1" stopColor="#fbbf24" />
+    </linearGradient>
+
+    <linearGradient id="grad-loop" x1="20" y1="20" x2="90" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#38bdf8" />
+      <stop offset="1" stopColor="#4ade80" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Plate -->
+  <rect x="0" y="0" width="100" height="100" rx="24" fill="#080c12" />
+  <rect x="2" y="2" width="96" height="96" rx="22" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
+
+  <!-- Animated Loop (The "P" bowl) -->
+  <path
+    d="M 32 30 C 85 30, 85 64, 32 64"
+    stroke="url(#grad-loop)"
+    strokeWidth="16"
+    strokeLinecap="round"
+    fill="none"
+  />
+
+  <!-- The Stem of the "P" -->
+  <path
+    d="M 32 20 L 32 80"
+    stroke="url(#grad-stem)"
+    strokeWidth="16"
+    strokeLinecap="round"
+  />
+
+  <!-- Play Icon cutting into negative space -->
+  <polygon points="43,38 56,47 43,56" fill="#080c12" />
+  <polygon points="46,41 53,47 46,53" fill="#ffffff" />
+</svg>

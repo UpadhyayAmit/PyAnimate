@@ -36,7 +36,7 @@ export function Hero() {
       <div className="site-shell grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center xl:gap-16">
         {/* Left: headline + CTAs + stats */}
         <div className="relative z-10">
-          <motion.div
+          <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -44,16 +44,16 @@ export function Hero() {
           >
             <Sparkles className="h-3.5 w-3.5 text-signal" />
             Python concepts that move, react, and explain themselves
-          </motion.div>
+          </motion.h1>
 
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
             className="max-w-xl text-5xl font-semibold leading-[1.12] tracking-tight sm:text-6xl"
           >
             Learn Python by <span className="text-gradient-signal">seeing every idea</span>{" "}<span className="text-gradient-wave">unfold in motion.</span>
-          </motion.h1>
+          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
