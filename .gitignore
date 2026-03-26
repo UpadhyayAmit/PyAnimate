@@ -7,3 +7,9 @@ dist/
 
 .vercel
 .env*.local
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+.claude
