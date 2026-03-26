@@ -203,5 +203,707 @@
       "coin-change": "Minimum coins to make an amount. See the DP array fill from 0 up to the target.",
       "bit-manipulation": "AND, OR, XOR, shifts — the operations behind cryptography, graphics, and competitive programming."
     }
+  },
+  "Quizzes": {
+    "hello-world": {
+      "title": "Knowledge Check",
+      "question": "What does the `print()` function do?",
+      "options": {
+        "A": "Outputs data to the console",
+        "B": "Saves a file",
+        "C": "Takes user input",
+        "D": "Stops the program"
+      },
+      "correct": "A",
+      "successMessage": "Correct! print() is used for output.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "variables-types": {
+      "title": "Knowledge Check",
+      "question": "Which of the following creates an integer variable?",
+      "options": {
+        "A": "x = '5'",
+        "B": "x = 5",
+        "C": "x = 5.0",
+        "D": "x = True"
+      },
+      "correct": "B",
+      "successMessage": "Correct! 5 without quotes or decimals is an int.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "string-operations": {
+      "title": "Knowledge Check",
+      "question": "Which operator connects two strings in Python?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "+",
+        "D": "/"
+      },
+      "correct": "C",
+      "successMessage": "Correct! The + operator joins strings.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "arithmetic": {
+      "title": "Knowledge Check",
+      "question": "What does the modulo operator (%) return?",
+      "options": {
+        "A": "Percentage",
+        "B": "Quotient",
+        "C": "100x multiplier",
+        "D": "Remainder of a division"
+      },
+      "correct": "D",
+      "successMessage": "Correct! % is for remainders.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "if-else": {
+      "title": "Knowledge Check",
+      "question": "Which keyword is used for alternative conditions in Python?",
+      "options": {
+        "A": "else if",
+        "B": "elseif",
+        "C": "elif",
+        "D": "then"
+      },
+      "correct": "C",
+      "successMessage": "Correct! Python uses 'elif'.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "while-loop": {
+      "title": "Knowledge Check",
+      "question": "What happens if a while loop's condition never becomes False?",
+      "options": {
+        "A": "It runs infinitely",
+        "B": "It crashes",
+        "C": "It stops after 100 times",
+        "D": "It skips"
+      },
+      "correct": "A",
+      "successMessage": "Correct! Infinite loops keep running.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "for-loop": {
+      "title": "Knowledge Check",
+      "question": "Which built-in function is typically used with for loops to iterate numbers?",
+      "options": {
+        "A": "count()",
+        "B": "range()",
+        "C": "loop()",
+        "D": "iter()"
+      },
+      "correct": "B",
+      "successMessage": "Correct! range() is used.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "lists-basics": {
+      "title": "Knowledge Check",
+      "question": "How do you access the first element of list 'arr'?",
+      "options": {
+        "A": "arr[1]",
+        "B": "arr.first()",
+        "C": "arr[0]",
+        "D": "arr[-1]"
+      },
+      "correct": "C",
+      "successMessage": "Correct! Python lists are 0-indexed.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "functions-intro": {
+      "title": "Knowledge Check",
+      "question": "What keyword defines a function?",
+      "options": {
+        "A": "def",
+        "B": "function",
+        "C": "fun",
+        "D": "create"
+      },
+      "correct": "A",
+      "successMessage": "Correct! 'def' makes functions.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "input-output": {
+      "title": "Knowledge Check",
+      "question": "What type does input() always return?",
+      "options": {
+        "A": "Integer",
+        "B": "Boolean",
+        "C": "Float",
+        "D": "String"
+      },
+      "correct": "D",
+      "successMessage": "Correct! Use int() to cast.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "linear-search": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the linear search algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "count-occurrences": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the count occurrences algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "find-min-max": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the find min-max algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "sum-average": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the sum average algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "loop-explorer": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the loop explorer algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "reverse-list": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the reverse list algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "palindrome": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the palindrome algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "fizzbuzz": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the fizzbuzz algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "factorial": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the factorial algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "fibonacci-iterative": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the fibonacci iterative algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "binary-search": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the binary search algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "selection-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the selection sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "insertion-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the insertion sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "two-pointers": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the two pointers algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "hash-map-counting": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the hash map-counting algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "stack-ops": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the stack ops algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "queue-ops": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the queue ops algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "anagram-check": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the anagram check algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "sliding-window": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the sliding window algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "merge-sorted": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the merge sorted algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "bubble-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the bubble sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "merge-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the merge sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "quick-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the quick sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "heap-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the heap sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "bfs": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the bfs algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "dfs": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the dfs algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "binary-tree-traversal": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the binary tree-traversal algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "two-sum": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the two sum algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "valid-parentheses": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the valid parentheses algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "fibonacci-recursive": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the fibonacci recursive algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "dijkstra": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the dijkstra algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "knapsack": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the knapsack algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "lcs": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the lcs algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "topological-sort": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the topological sort algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "kruskals": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the kruskals algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "trie": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the trie algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "floyd-warshall": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the floyd warshall algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "segment-tree": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the segment tree algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "coin-change": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the coin change algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "bit-manipulation": {
+      "title": "Knowledge Check",
+      "question": "Have you grasped the core concept behind the bit manipulation algorithm?",
+      "options": {
+        "A": "Yes, I understand it perfectly.",
+        "B": "I should probably review it again.",
+        "C": "It is still a bit confusing.",
+        "D": "Not at all."
+      },
+      "correct": "A",
+      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    }
   }
 }

@@ -24,7 +24,7 @@ export default async function TrackPage({ params }: Props) {
       <SiteHeader compactLabel={track.title} />
 
       {/* Hero */}
-      <section className="px-6 pt-10 pb-8 sm:px-10 lg:px-16">
+      <section className="px-4 pt-8 pb-6 sm:px-6 md:px-10 lg:px-16">
         <div className="site-shell">
           <Link
             href="/#tracks"
@@ -34,13 +34,13 @@ export default async function TrackPage({ params }: Props) {
             {t("allTracks")}
           </Link>
 
-          <div className={`card-elevated overflow-hidden rounded-[32px] bg-gradient-to-br p-8 ${track.accent}`}>
+          <div className={`card-elevated overflow-hidden rounded-[24px] sm:rounded-[32px] bg-gradient-to-br p-6 sm:p-8 ${track.accent}`}>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <div className="text-xs font-bold uppercase tracking-[0.22em] text-ink/40">
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.22em] text-ink/40">
                   {t("trackLabel")}
                 </div>
-                <h1 className="mt-2 text-4xl font-semibold text-bright sm:text-5xl">{track.title}</h1>
+                <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold text-bright">{track.title}</h1>
                 <p className="mt-2 text-base text-ink/60">{tc.has(`tracks.${track.id}.audience`) ? tc(`tracks.${track.id}.audience`) : track.audience}</p>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-ink/65">{tc.has(`tracks.${track.id}.description`) ? tc(`tracks.${track.id}.description`) : track.description}</p>
               </div>
@@ -60,7 +60,7 @@ export default async function TrackPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-10 sm:px-10 lg:px-16">
+      <section className="px-4 pb-10 sm:px-6 md:px-10 lg:px-16">
         <TrackAlgorithmGrid algorithms={algorithms as any} />
       </section>
     </main>

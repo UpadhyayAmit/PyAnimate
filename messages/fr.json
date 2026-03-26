@@ -130,11 +130,26 @@
   },
   "CourseData": {
     "tracks": {
-      "foundation": { "audience": "Débutants absolus, zéro expérience", "description": "Partez de zéro. Découvrez comment Python gère les données, les décisions et le flux — pas à pas, chaque concept animé." },
-      "beginner": { "audience": "Premiers pas en Python", "description": "Construisez de vraies habitudes de programmation. Maîtrisez boucles, fonctions et listes en les voyant s'exécuter pas à pas." },
-      "intermediate": { "audience": "Développeurs créant des scripts et des apps", "description": "Améliorez votre boîte à outils. Explorez dictionnaires, piles, files et vos premiers algorithmes de recherche avec suivi visuel d'état." },
-      "advanced": { "audience": "Ingénieurs perfectionnant la résolution de problèmes", "description": "Pensez algorithmiquement. Voyez tri et arbres s'animer en temps réel, comprenez Big O par l'observation." },
-      "mastery": { "audience": "Experts explorant les mécanismes internes", "description": "Repoussez les limites. Recherche de graphes, programmation dynamique et algorithmes de niveau entretien — le tout visualisé en direct." }
+      "foundation": {
+        "audience": "Débutants absolus, zéro expérience",
+        "description": "Partez de zéro. Découvrez comment Python gère les données, les décisions et le flux — pas à pas, chaque concept animé."
+      },
+      "beginner": {
+        "audience": "Premiers pas en Python",
+        "description": "Construisez de vraies habitudes de programmation. Maîtrisez boucles, fonctions et listes en les voyant s'exécuter pas à pas."
+      },
+      "intermediate": {
+        "audience": "Développeurs créant des scripts et des apps",
+        "description": "Améliorez votre boîte à outils. Explorez dictionnaires, piles, files et vos premiers algorithmes de recherche avec suivi visuel d'état."
+      },
+      "advanced": {
+        "audience": "Ingénieurs perfectionnant la résolution de problèmes",
+        "description": "Pensez algorithmiquement. Voyez tri et arbres s'animer en temps réel, comprenez Big O par l'observation."
+      },
+      "mastery": {
+        "audience": "Experts explorant les mécanismes internes",
+        "description": "Repoussez les limites. Recherche de graphes, programmation dynamique et algorithmes de niveau entretien — le tout visualisé en direct."
+      }
     },
     "algorithms": {
       "hello-world": "Votre premier résultat Python. Voyez comment print() envoie des données à la console et pourquoi c'est la base de tout débogage.",
@@ -188,6 +203,707 @@
       "coin-change": "Nombre minimal de pièces pour un montant. Voyez le tableau DP se remplir de 0 jusqu'à la cible.",
       "bit-manipulation": "AND, OR, XOR, shifts — les opérations derrière la cryptographie, le graphisme et la programmation compétitive."
     }
+  },
+  "Quizzes": {
+    "hello-world": {
+      "title": "Vérification des Connaissances",
+      "question": "Que fait la fonction `print()` ?",
+      "options": {
+        "A": "Affiche des données dans la console",
+        "B": "Enregistre un fichier",
+        "C": "Prend l'entrée",
+        "D": "Arrête le programme"
+      },
+      "correct": "A",
+      "successMessage": "Correct ! print() est utilisé pour la sortie.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "variables-types": {
+      "title": "Vérification des Connaissances",
+      "question": "Laquelle des propositions suivantes crée une variable entière ?",
+      "options": {
+        "A": "x = '5'",
+        "B": "x = 5",
+        "C": "x = 5.0",
+        "D": "x = True"
+      },
+      "correct": "B",
+      "successMessage": "Correct ! 5 sans guillemets ni décimales est un int.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "string-operations": {
+      "title": "Vérification des Connaissances",
+      "question": "Quel opérateur relie deux chaînes en Python ?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "+",
+        "D": "/"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! L'opérateur + concatène les chaînes.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "arithmetic": {
+      "title": "Vérification des Connaissances",
+      "question": "Que renvoie l'opérateur modulo (%) ?",
+      "options": {
+        "A": "Un pourcentage",
+        "B": "Le quotient",
+        "C": "Le multiplicateur x100",
+        "D": "Le reste d'une division"
+      },
+      "correct": "D",
+      "successMessage": "Correct ! % calcule les restes.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "if-else": {
+      "title": "Vérification des Connaissances",
+      "question": "Quel mot-clé est utilisé pour les conditions alternatives en Python ?",
+      "options": {
+        "A": "else if",
+        "B": "elseif",
+        "C": "elif",
+        "D": "then"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! Python utilise 'elif'.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "while-loop": {
+      "title": "Vérification des Connaissances",
+      "question": "Que se passe-t-il si la condition d'une boucle while ne devient jamais False ?",
+      "options": {
+        "A": "Elle tourne à l'infini",
+        "B": "Elle plante",
+        "C": "Elle s'arrête après 100 itérations",
+        "D": "Elle est ignorée"
+      },
+      "correct": "A",
+      "successMessage": "Correct ! Les boucles infinies continuent de tourner.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "for-loop": {
+      "title": "Vérification des Connaissances",
+      "question": "Quelle fonction est utilisée avec les boucles for pour itérer des nombres ?",
+      "options": {
+        "A": "count()",
+        "B": "range()",
+        "C": "loop()",
+        "D": "iter()"
+      },
+      "correct": "B",
+      "successMessage": "Correct ! range() est utilisé pour cela.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "lists-basics": {
+      "title": "Vérification des Connaissances",
+      "question": "Comment accéder au premier élément de la liste 'arr' ?",
+      "options": {
+        "A": "arr[1]",
+        "B": "arr.first()",
+        "C": "arr[0]",
+        "D": "arr[-1]"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! Les listes Python commencent à 0.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "functions-intro": {
+      "title": "Vérification des Connaissances",
+      "question": "Quel mot-clé définit une fonction ?",
+      "options": {
+        "A": "def",
+        "B": "function",
+        "C": "fun",
+        "D": "create"
+      },
+      "correct": "A",
+      "successMessage": "Correct ! 'def' crée des fonctions.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "input-output": {
+      "title": "Vérification des Connaissances",
+      "question": "Quel type la fonction input() renvoie-t-elle par défaut ?",
+      "options": {
+        "A": "Integer",
+        "B": "Boolean",
+        "C": "Float",
+        "D": "String"
+      },
+      "correct": "D",
+      "successMessage": "Correct ! input() capture du texte.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "linear-search": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme linear search ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "count-occurrences": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme count occurrences ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "find-min-max": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme find min-max ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "sum-average": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme sum average ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "loop-explorer": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme loop explorer ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "reverse-list": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme reverse list ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "palindrome": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme palindrome ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "fizzbuzz": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme fizzbuzz ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "factorial": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme factorial ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "fibonacci-iterative": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme fibonacci iterative ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "binary-search": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme binary search ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "selection-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme selection sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "insertion-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme insertion sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "two-pointers": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme two pointers ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "hash-map-counting": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme hash map-counting ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "stack-ops": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme stack ops ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "queue-ops": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme queue ops ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "anagram-check": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme anagram check ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "sliding-window": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme sliding window ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "merge-sorted": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme merge sorted ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "bubble-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme bubble sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "merge-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme merge sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "quick-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme quick sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "heap-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme heap sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "bfs": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme bfs ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "dfs": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme dfs ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "binary-tree-traversal": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme binary tree-traversal ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "two-sum": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme two sum ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "valid-parentheses": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme valid parentheses ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "fibonacci-recursive": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme fibonacci recursive ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "dijkstra": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme dijkstra ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "knapsack": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme knapsack ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "lcs": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme lcs ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "topological-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme topological sort ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "kruskals": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme kruskals ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "trie": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme trie ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "floyd-warshall": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme floyd warshall ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "segment-tree": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme segment tree ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "coin-change": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme coin change ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "bit-manipulation": {
+      "title": "Vérification des Connaissances",
+      "question": "Avez-vous bien compris le concept principal de l'algorithme bit manipulation ?",
+      "options": {
+        "A": "Oui, je le comprends parfaitement.",
+        "B": "Je devrais probablement le revoir.",
+        "C": "C'est encore un peu confus.",
+        "D": "Pas du tout."
+      },
+      "correct": "A",
+      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    }
   }
 }
-

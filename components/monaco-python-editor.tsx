@@ -87,7 +87,8 @@ export function MonacoPythonEditor({
           padding: { top: 18, bottom: 18 },
           roundedSelection: true,
           scrollBeyondLastLine: false,
-          wordWrap: "on",
+          emptySelectionClipboard: false,
+          wordWrap: "off",
           automaticLayout: true,
           tabSize: 4,
         }}

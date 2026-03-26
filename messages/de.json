@@ -130,11 +130,26 @@
   },
   "CourseData": {
     "tracks": {
-      "foundation": { "audience": "Absolute Anfänger, keine Erfahrung", "description": "Starten Sie bei Null. Lernen Sie, wie Python über Daten, Entscheidungen und Ablauf denkt — Schritt für Schritt, jedes Konzept animiert." },
-      "beginner": { "audience": "Python-Erstlerner", "description": "Bauen Sie echte Programmiergewohnheiten auf. Meistern Sie Schleifen, Funktionen und Listen, indem Sie sie Schritt für Schritt ausführen sehen." },
-      "intermediate": { "audience": "Entwickler, die Skripte und Apps erstellen", "description": "Erweitern Sie Ihr Werkzeugset. Erkunden Sie Dictionaries, Stacks, Queues und erste Suchalgorithmen mit visuellem State-Tracking." },
-      "advanced": { "audience": "Ingenieure, die Problemlösung verfeinern", "description": "Denken Sie algorithmisch. Sehen Sie Sortier- und Baumalgorithmen in Echtzeit animiert, verstehen Sie Big O durch Beobachtung." },
-      "mastery": { "audience": "Experten, die Interna erkunden", "description": "Stoßen Sie an die Grenzen. Graphsuche, dynamische Programmierung und Interview-Algorithmen — alles live visualisiert." }
+      "foundation": {
+        "audience": "Absolute Anfänger, keine Erfahrung",
+        "description": "Starten Sie bei Null. Lernen Sie, wie Python über Daten, Entscheidungen und Ablauf denkt — Schritt für Schritt, jedes Konzept animiert."
+      },
+      "beginner": {
+        "audience": "Python-Erstlerner",
+        "description": "Bauen Sie echte Programmiergewohnheiten auf. Meistern Sie Schleifen, Funktionen und Listen, indem Sie sie Schritt für Schritt ausführen sehen."
+      },
+      "intermediate": {
+        "audience": "Entwickler, die Skripte und Apps erstellen",
+        "description": "Erweitern Sie Ihr Werkzeugset. Erkunden Sie Dictionaries, Stacks, Queues und erste Suchalgorithmen mit visuellem State-Tracking."
+      },
+      "advanced": {
+        "audience": "Ingenieure, die Problemlösung verfeinern",
+        "description": "Denken Sie algorithmisch. Sehen Sie Sortier- und Baumalgorithmen in Echtzeit animiert, verstehen Sie Big O durch Beobachtung."
+      },
+      "mastery": {
+        "audience": "Experten, die Interna erkunden",
+        "description": "Stoßen Sie an die Grenzen. Graphsuche, dynamische Programmierung und Interview-Algorithmen — alles live visualisiert."
+      }
     },
     "algorithms": {
       "hello-world": "Ihre erste Python-Ausgabe. Sehen Sie, wie print() Daten an die Konsole sendet und warum es die Grundlage allen Debuggens ist.",
@@ -188,6 +203,707 @@
       "coin-change": "Minimale Münzen für einen Betrag. Sehen Sie das DP-Array von 0 bis zum Ziel füllen.",
       "bit-manipulation": "AND, OR, XOR, Shifts — die Operationen hinter Kryptographie, Grafik und Wettbewerbsprogrammierung."
     }
+  },
+  "Quizzes": {
+    "hello-world": {
+      "title": "Wissensüberprüfung",
+      "question": "Was macht die Funktion `print()`?",
+      "options": {
+        "A": "Gibt Daten auf der Konsole aus",
+        "B": "Speichert eine Datei",
+        "C": "Nimmt Eingaben entgegen",
+        "D": "Stoppt das Programm"
+      },
+      "correct": "A",
+      "successMessage": "Richtig! print() wird zur Ausgabe verwendet.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "variables-types": {
+      "title": "Wissensüberprüfung",
+      "question": "Welche der folgenden Optionen erstellt eine Integer-Variable?",
+      "options": {
+        "A": "x = '5'",
+        "B": "x = 5",
+        "C": "x = 5.0",
+        "D": "x = True"
+      },
+      "correct": "B",
+      "successMessage": "Richtig! 5 ohne Anführungszeichen oder Dezimalstellen ist ein int.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "string-operations": {
+      "title": "Wissensüberprüfung",
+      "question": "Welcher Operator verbindet zwei Strings in Python?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "+",
+        "D": "/"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! Der +-Operator verbindet Strings.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "arithmetic": {
+      "title": "Wissensüberprüfung",
+      "question": "Was gibt der Modulo-Operator (%) zurück?",
+      "options": {
+        "A": "Prozentsatz",
+        "B": "Quotient",
+        "C": "100x Multiplikator",
+        "D": "Rest einer Division"
+      },
+      "correct": "D",
+      "successMessage": "Richtig! % berechnet Reste.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "if-else": {
+      "title": "Wissensüberprüfung",
+      "question": "Welches Schlüsselwort wird für alternative Bedingungen in Python verwendet?",
+      "options": {
+        "A": "else if",
+        "B": "elseif",
+        "C": "elif",
+        "D": "then"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! Python verwendet 'elif'.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "while-loop": {
+      "title": "Wissensüberprüfung",
+      "question": "Was passiert, wenn die Bedingung einer While-Schleife nie False wird?",
+      "options": {
+        "A": "Sie läuft unendlich",
+        "B": "Das Programm stürzt ab",
+        "C": "Sie stoppt nach 100 Iterationen",
+        "D": "Sie wird übersprungen"
+      },
+      "correct": "A",
+      "successMessage": "Richtig! Unendliche Schleifen laufen weiter.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "for-loop": {
+      "title": "Wissensüberprüfung",
+      "question": "Welche Funktion wird bei For-Schleifen zum Iterieren von Zahlen verwendet?",
+      "options": {
+        "A": "count()",
+        "B": "range()",
+        "C": "loop()",
+        "D": "iter()"
+      },
+      "correct": "B",
+      "successMessage": "Richtig! Dafür wird range() verwendet.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "lists-basics": {
+      "title": "Wissensüberprüfung",
+      "question": "Wie greifen Sie auf das erste Element der Liste 'arr' zu?",
+      "options": {
+        "A": "arr[1]",
+        "B": "arr.first()",
+        "C": "arr[0]",
+        "D": "arr[-1]"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! Python-Listen sind nullindiziert.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "functions-intro": {
+      "title": "Wissensüberprüfung",
+      "question": "Welches Schlüsselwort definiert eine Funktion?",
+      "options": {
+        "A": "def",
+        "B": "function",
+        "C": "fun",
+        "D": "create"
+      },
+      "correct": "A",
+      "successMessage": "Richtig! 'def' erstellt Funktionen.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "input-output": {
+      "title": "Wissensüberprüfung",
+      "question": "Welchen Datentyp gibt input() standardmäßig zurück?",
+      "options": {
+        "A": "Integer",
+        "B": "Boolean",
+        "C": "Float",
+        "D": "String"
+      },
+      "correct": "D",
+      "successMessage": "Richtig! input() erfasst Text.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "linear-search": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des linear search-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "count-occurrences": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des count occurrences-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "find-min-max": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des find min-max-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "sum-average": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des sum average-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "loop-explorer": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des loop explorer-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "reverse-list": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des reverse list-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "palindrome": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des palindrome-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "fizzbuzz": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des fizzbuzz-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "factorial": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des factorial-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "fibonacci-iterative": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des fibonacci iterative-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "binary-search": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des binary search-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "selection-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des selection sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "insertion-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des insertion sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "two-pointers": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des two pointers-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "hash-map-counting": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des hash map-counting-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "stack-ops": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des stack ops-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "queue-ops": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des queue ops-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "anagram-check": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des anagram check-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "sliding-window": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des sliding window-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "merge-sorted": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des merge sorted-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "bubble-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des bubble sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "merge-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des merge sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "quick-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des quick sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "heap-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des heap sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "bfs": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des bfs-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "dfs": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des dfs-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "binary-tree-traversal": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des binary tree-traversal-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "two-sum": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des two sum-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "valid-parentheses": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des valid parentheses-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "fibonacci-recursive": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des fibonacci recursive-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "dijkstra": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des dijkstra-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "knapsack": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des knapsack-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "lcs": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des lcs-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "topological-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des topological sort-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "kruskals": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des kruskals-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "trie": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des trie-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "floyd-warshall": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des floyd warshall-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "segment-tree": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des segment tree-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "coin-change": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des coin change-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "bit-manipulation": {
+      "title": "Wissensüberprüfung",
+      "question": "Haben Sie das Konzept des bit manipulation-Algorithmus vollständig verstanden?",
+      "options": {
+        "A": "Ja, ich verstehe es.",
+        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
+        "C": "Es ist immer noch verwirrend.",
+        "D": "Überhaupt nicht."
+      },
+      "correct": "A",
+      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    }
   }
 }
-
