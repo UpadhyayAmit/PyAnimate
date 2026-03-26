@@ -1,13 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const steps = [
   {
     id: "foundation",
     num: "01",
-    title: "Foundation",
+    titleKey: "foundation" as const,
     skills: ["Variables", "Types", "Print", "If / else"],
     color: "#38bdf8",
     dim: "rgba(56,189,248,0.12)",
@@ -15,7 +16,7 @@ const steps = [
   {
     id: "beginner",
     num: "02",
-    title: "Beginner",
+    titleKey: "beginner" as const,
     skills: ["Loops", "Functions", "Lists", "Search"],
     color: "#818cf8",
     dim: "rgba(129,140,248,0.12)",
@@ -23,7 +24,7 @@ const steps = [
   {
     id: "intermediate",
     num: "03",
-    title: "Intermediate",
+    titleKey: "intermediate" as const,
     skills: ["Binary search", "Sort", "Hash maps", "OOP"],
     color: "#34d399",
     dim: "rgba(52,211,153,0.12)",
@@ -31,7 +32,7 @@ const steps = [
   {
     id: "advanced",
     num: "04",
-    title: "Advanced",
+    titleKey: "advanced" as const,
     skills: ["Recursion", "Merge sort", "Complexity", "Two Sum"],
     color: "#fbbf24",
     dim: "rgba(251,191,36,0.12)",
@@ -39,7 +40,7 @@ const steps = [
   {
     id: "mastery",
     num: "05",
-    title: "Mastery",
+    titleKey: "mastery" as const,
     skills: ["Graphs", "DP", "Bit ops", "Systems"],
     color: "#f87171",
     dim: "rgba(248,113,113,0.12)",
@@ -47,14 +48,16 @@ const steps = [
 ];
 
 export function LearningJourney() {
+  const t = useTranslations("LearningJourney");
+
   return (
     <section className="px-6 py-8 sm:px-10 lg:px-16">
       <div className="site-shell">
         <div className="mb-6 flex items-baseline gap-4">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">
-            Learning Path
+            {t("sectionLabel")}
           </p>
-          <p className="text-xs text-ink/35">Click any step to open the track</p>
+          <p className="text-xs text-ink/35">{t("clickHint")}</p>
         </div>
 
         {/* Horizontal timeline strip */}
@@ -89,10 +92,10 @@ export function LearningJourney() {
                       className="text-sm font-semibold mb-3"
                       style={{ color: step.color }}
                     >
-                      {step.title}
+                      {t(step.titleKey)}
                     </div>
 
-                    {/* Skills */}
+                    {/* Skills — programming terms stay English */}
                     <div className="flex flex-wrap gap-1 mt-auto">
                       {step.skills.map((skill) => (
                         <span

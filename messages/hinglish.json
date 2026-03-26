@@ -1,0 +1,207 @@
+{
+  "Navigation": {
+    "interactiveLab": "Interactive Python Lab",
+    "headline": "Aage badhne se pehle har step ko seekhein, edit karein, replay karein aur samjhein.",
+    "subheadline": "Playground load hone par auto-run hota hai. Apne Python ko trace karne ke liye <strong>Mera Code Chalao</strong> par click karein — har step live animated.",
+    "tracks": "Tracks",
+    "algorithms": "Algorithms",
+    "playground": "Playground",
+    "home": "Home"
+  },
+  "Hero": {
+    "badge": "Python concepts jo move karte hain, react karte hain aur khud explain karte hain",
+    "headlineStart": "Python seekhein ",
+    "headlineHighlight1": "har idea ko",
+    "headlineHighlight2": " motion mein dekh kar.",
+    "description": "PyAnimate ek browser playground, visual execution, guided prompts, aur level-based tracks ko combine karta hai taaki aap Python intuition jaldi build kar sakein.",
+    "openPlayground": "Playground kholein",
+    "exploreTracks": "Tracks explore karein",
+    "executionPreview": "Execution Preview",
+    "step": "Step",
+    "guidedTracks": "Guided tracks",
+    "algorithmLessons": "Algorithm lessons",
+    "installBrowserFirst": "install Browser-first"
+  },
+  "Outcomes": {
+    "traceTitle": "Code ko visually trace karein",
+    "traceDesc": "Sirf raw output padhne ki jagah variables, loops, aur stack transitions dekhein.",
+    "practiceTitle": "Level ke hisaab se practice karein",
+    "practiceDesc": "Pehle syntax se lekar advanced algorithms tak clear tracks se guzrein.",
+    "experimentTitle": "Safely experiment karein",
+    "experimentDesc": "Live edit karein, execution replay karein, aur galtiyon ko samjhein isse pehle ki woh aadat ban jaayein."
+  },
+  "TrackGrid": {
+    "sectionLabel": "Skill Tracks",
+    "heading": "Pehle print statement se expert-level reasoning tak progress karein.",
+    "startLearning": "Seekhna shuru karein →",
+    "lessons": "lessons",
+    "explore": "Explore karein"
+  },
+  "LearningJourney": {
+    "sectionLabel": "Learning Path",
+    "clickHint": "Track kholne ke liye kisi bhi step par click karein",
+    "foundation": "Foundation",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "mastery": "Mastery"
+  },
+  "AlgorithmPipeline": {
+    "sectionLabel": "Yeh kaise kaam karta hai",
+    "heading": "Har algorithm ek hi pipeline follow karta hai.",
+    "liveTrace": "Live trace example — Bubble Sort"
+  },
+  "LessonSpotlight": {
+    "sectionLabel": "Algorithm Lessons",
+    "heading": "Algorithms ko chalte hue dekhein, sirf padhein nahi.",
+    "description": "Har lesson execution path ko step by step animate karta hai, phir aapko modify karke dubara chalane ki challenge deta hai.",
+    "openPlayground": "Playground kholein",
+    "startLesson": "Lesson shuru karein"
+  },
+  "TrackPage": {
+    "allTracks": "Saare tracks",
+    "trackLabel": "Track",
+    "algorithmsInTrack": "is track mein algorithms"
+  },
+  "AlgorithmGrid": {
+    "start": "Shuru karein",
+    "review": "Review karein",
+    "algorithmsInTrack": "is track mein algorithms",
+    "complexityHidden": "Beginners ke liye complexity chhipayi gayi",
+    "time": "Time",
+    "space": "Space",
+    "trackProgress": "Track Progress",
+    "completed": "Complete"
+  },
+  "Playground": {
+    "interactiveLab": "Interactive Python Lab",
+    "headline": "Aage badhne se pehle har step ko seekhein, edit karein, replay karein aur samjhein.",
+    "subheadline": "Playground load hone par auto-run hota hai. Apne Python ko trace karne ke liye {runMyCode} par click karein — har step live animated.",
+    "explainLabel": "Samjhein",
+    "replayLabel": "Replay",
+    "challengeLabel": "Challenge",
+    "lineByLine": "Line by line",
+    "stepByStep": "Step by step",
+    "guidedPrompts": "Guided prompts",
+    "runMyCode": "Mera Code Chalao",
+    "codeStudio": "Code Studio",
+    "monacoReady": "Monaco Ready",
+    "back": "Peeche",
+    "forward": "Aage",
+    "pause": "Ruko",
+    "play": "Chalao",
+    "reset": "Reset",
+    "whyThisApproach": "Yeh approach kyun?",
+    "dataFlow": "Data Flow Pipeline",
+    "track": "Track",
+    "timeline": "Timeline",
+    "live": "Live",
+    "line": "line",
+    "conceptMastered": "Concept seekh liya!",
+    "explain": "Samjhein",
+    "complexity": "Complexity",
+    "complexityOverview": "Complexity Overview",
+    "timeLabel": "Time",
+    "spaceLabel": "Space",
+    "growthCurve": "Growth Curve",
+    "operations": "Operations",
+    "challenge": "Challenge",
+    "hint": "Hint",
+    "outputConsole": "Output Console",
+    "noOutputYet": "Abhi tak koi output nahi...",
+    "lines": "lines",
+    "dataStructures": "Data Structures",
+    "memoryMatrixEmpty": "Memory Matrix khaali hai",
+    "memoryMatrixHint": "Memory space mein block mapping dekhne ke liye timeline chalayein.",
+    "callStack": "Call Stack",
+    "heapSpace": "Heap Space",
+    "primitives": "Primitives & References",
+    "objects": "Objects & Structures",
+    "stackValue": "STACK VALUE",
+    "listRef": "list ref",
+    "emptyList": "Khaali List",
+    "realWorldApplications": "Real-World Applications",
+    "runStatus": {
+      "loading": "Python load ho raha hai...",
+      "running": "Chal raha hai...",
+      "error": "Python error",
+      "ready": "Python ready hai"
+    }
+  },
+  "CourseData": {
+    "tracks": {
+      "foundation": {
+        "audience": "Bilkul beginners, zero experience",
+        "description": "Zero se start karein. Seekhein ki Python data, decisions, aur flow ke baare mein kaise sochta hai — step by step, har concept animated."
+      },
+      "beginner": {
+        "audience": "Pehli baar Python seekhne waale",
+        "description": "Real programming habits banayein. Loops, functions, aur lists ko ek ek step mein chalte dekhkar master karein."
+      },
+      "intermediate": {
+        "audience": "Scripts aur apps ship karne waale builders",
+        "description": "Apni toolkit upgrade karein. Visual state tracking ke saath dictionaries, stacks, queues aur pehle search algorithms explore karein."
+      },
+      "advanced": {
+        "audience": "Problem solving refine karne waale engineers",
+        "description": "Algorithmically sochein. Sorting aur tree algorithms ko real time mein animate hote dekhein, observation se Big O samjhein."
+      },
+      "mastery": {
+        "audience": "Internals explore karne waale experts",
+        "description": "Frontier tak pahunchein. Graph search, dynamic programming, aur interview-level algorithms — sab live visualized."
+      }
+    },
+    "algorithms": {
+      "hello-world": "Aapka pehla Python output. Dekhein ki print() console par data kaise bhejta hai aur yeh sabhi debugging ki neenv kyun hai.",
+      "variables-types": "Ek variable ko memory mein jeevant hote dekhein. int, float, str, aur bool ko living boxes ke roop mein dekhein jo values hold karte hain.",
+      "string-operations": "Strings sequences hain. Slicing, concatenation aur methods ko character arrays par animate hote dekhein.",
+      "arithmetic": "Numbers, operators aur integer division. Dekhein ki Python step by step expressions evaluate kaise karta hai.",
+      "if-else": "Decisions lene wala code. Truthiness ke basis par execution ko branches ke beech jump karte dekhein.",
+      "while-loop": "Condition se driven repetition. Dekhein ki loop guard har iteration se pehle check karta hai aur infinite loops kyun hote hain.",
+      "for-loop": "Sequences par iterate karein. Dekhein ki Python ka for loop asli mein andar se ek iterator kaise hai.",
+      "lists-basics": "Python ka sabse useful container. Append, pop aur index ko animated memory block par operations ke roop mein dekhein.",
+      "functions-intro": "Logic ke reusable blocks. Ek function call ko stack frame push karte aur return value ko caller tak flow hote dekhein.",
+      "input-output": "Users se baat karne waale programs. Dekhein ki input() execution kaise pause karta hai aur ek string value return karta hai.",
+      "linear-search": "Har element ko tab tak check karein jab tak target na mil jaaye. O(n) — sabse simple search algorithm.",
+      "count-occurrences": "Count karein ki koi value kitni baar dikhti hai. Hash map ko har pass ke saath counts accumulate karte dekhein.",
+      "find-min-max": "Ek hi pass mein running minimum aur maximum track karein. Dekhein ki ek loop kyun kaafi hai.",
+      "sum-average": "Values accumulate karein aur mean compute karein. Woh accumulator pattern dekhein jo kai algorithms ko power deta hai.",
+      "loop-explorer": "Dekhein ki loop iterations shared state kaise update karte hain. Score ko har pass ke saath accumulate hote dekhein.",
+      "reverse-list": "Dono sides se two-pointer swap. Pointers ko beech mein milne tak andar move karte dekhein.",
+      "palindrome": "Dono sides se characters compare karein. Dekhein ki two-pointer technique symmetry confirm kaise karti hai.",
+      "fizzbuzz": "Classic divisibility check. 100 iterations mein modulo ko conditional output drive karte dekhein.",
+      "factorial": "1 se n tak multiply karein. Product ko step by step badhte dekhein aur samjhein ki 0! = 1 kyun hai.",
+      "fibonacci-iterative": "Do rolling variables ke saath sequence generate karein. Dekhein ki yeh space mein recursive version ko kyun beat karta hai.",
+      "binary-search": "Har step par search space ko aadha karein. Sorted input zaroori. O(log n) ko live hote dekhein.",
+      "selection-sort": "Har pass mein minimum dhundhein aur front mein move karein. n passes ko sorted array produce karte dekhein.",
+      "insertion-sort": "Har element ko already-sorted prefix mein sahi position par insert karein. Nearly sorted data ke liye efficient.",
+      "two-pointers": "O(n²) ki jagah O(n) mein array problems solve karne ke liye ek dusre ki taraf move karte do indices use karein.",
+      "hash-map-counting": "O(1) per lookup mein count karne ke liye dictionary use karein. Kai frequency problems ki foundation.",
+      "stack-ops": "LIFO action mein. List par stack ke roop mein push, pop, aur peek animate hote dekhein.",
+      "queue-ops": "FIFO action mein. Enqueue aur dequeue animate hote dekhein aur samjhein ki deque list se better kyun hai.",
+      "anagram-check": "Kya do strings ek dusre ki rearrangements hain? O(n) mein character counting se solve karte dekhein.",
+      "sliding-window": "Size k ki har window mein maximum sum dhundhein. Window ko array par slide karte dekhein.",
+      "merge-sorted": "Do sorted arrays ko ek mein combine karein. Merge sort ke peeche ka core operation.",
+      "bubble-sort": "Adjacent pairs compare karein. Bade elements har pass mein upar bubble karte hain.",
+      "merge-sort": "Divide karein, halves sort karein, merge karein. Recursion tree ko split aur recombine hote dekhein.",
+      "quick-sort": "Ek pivot choose karein, uske around partition karein, recurse karein. Average O(n log n) great cache performance ke saath.",
+      "heap-sort": "Max-heap banayein, elements ko order mein extract karein. Quicksort ke unlike guaranteed O(n log n).",
+      "bfs": "Queue use karke graph ko level by level explore karein. Unweighted graphs mein shortest paths dhundhein.",
+      "dfs": "Backtracking se pehle jitna deep ho sake explore karein. Har recursive step ke saath call stack badhte dekhein.",
+      "binary-tree-traversal": "In-order, pre-order, post-order. Ek hi tree par nodes ko different sequences mein visit hote dekhein.",
+      "two-sum": "Do numbers dhundhein jo target mein add hote hain. Dekhein ki hash map O(n²) ko O(n) mein kaise badalta hai.",
+      "valid-parentheses": "Open aur close brackets match karne ke liye stack use karein. Classic stack application interview question.",
+      "fibonacci-recursive": "Call tree ko exponentially fan out hote dekhein. Samjhein ki memoization kyun zaroori hai.",
+      "dijkstra": "Priority queue use karke source se sabhi nodes tak shortest paths dhundhein. GPS navigation ki backbone.",
+      "knapsack": "Weight limit ke andar value maximize karein. DP table ko row by row bharte dekhein.",
+      "lcs": "Do strings mein shared sabse lamba subsequence dhundhein. Diff tools aur DNA alignment ka core.",
+      "topological-sort": "Dependencies respect karte hue tasks ko order karein. Kahn's algorithm ko zero in-degree nodes hataate dekhein.",
+      "kruskals": "Cycles banaye bina lowest-weight edges ko greedily add karke minimum spanning tree banayein.",
+      "trie": "Letter by letter strings insert aur search karein. Dekhein ki autocomplete under the hood kaise kaam karta hai.",
+      "floyd-warshall": "3-loop DP ke saath all-pairs shortest paths. O(V³) mein distance matrix update hote dekhein.",
+      "segment-tree": "O(log n) mein range queries aur point updates. Tree build aur sums upar propagate hote dekhein.",
+      "coin-change": "Ek amount banane ke liye minimum coins. DP array ko 0 se target tak bharte dekhein.",
+      "bit-manipulation": "AND, OR, XOR, shifts — cryptography, graphics, aur competitive programming ke peeche ke operations."
+    }
+  }
+}

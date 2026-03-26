@@ -1,0 +1,207 @@
+{
+  "Navigation": {
+    "interactiveLab": "इंटरएक्टिव पायथन लैब",
+    "headline": "आगे बढ़ने से पहले हर कदम को सीखें, संपादित करें, रीप्ले करें और समझें।",
+    "subheadline": "प्लेग्राउंड लोड होने पर ऑटो-रन होता है। अपने पायथन को ट्रेस करने के लिए <strong>मेरा कोड चलाएँ</strong> पर क्लिक करें — हर कदम लाइव एनिमेटेड।",
+    "tracks": "ट्रैक्स",
+    "algorithms": "एल्गोरिदम",
+    "playground": "प्लेग्राउंड",
+    "home": "होम"
+  },
+  "Hero": {
+    "badge": "पायथन की अवधारणाएं जो चलती हैं, प्रतिक्रिया करती हैं और खुद को समझाती हैं",
+    "headlineStart": "पायथन सीखें ",
+    "headlineHighlight1": "हर विचार को",
+    "headlineHighlight2": " गति में सामने आते देखकर।",
+    "description": "PyAnimate एक ब्राउज़र प्लेग्राउंड, विज़ुअल निष्पादन, निर्देशित संकेत और स्तर-आधारित ट्रैक को मिलाता है ताकि आप तेजी से पायथन ज्ञान बना सकें।",
+    "openPlayground": "प्लेग्राउंड खोलें",
+    "exploreTracks": "ट्रैक्स एक्सप्लोर करें",
+    "executionPreview": "निष्पादन पूर्वावलोकन",
+    "step": "कदम",
+    "guidedTracks": "निर्देशित ट्रैक्स",
+    "algorithmLessons": "एल्गोरिदम पाठ",
+    "installBrowserFirst": "इंस्टॉल ब्राउज़र-पहले"
+  },
+  "Outcomes": {
+    "traceTitle": "कोड को विज़ुअली ट्रेस करें",
+    "traceDesc": "केवल रॉ आउटपुट पढ़ने की बजाय वेरिएबल्स, लूप्स और स्टैक ट्रांज़ीशन देखें।",
+    "practiceTitle": "स्तर के अनुसार अभ्यास करें",
+    "practiceDesc": "पहले सिंटैक्स से लेकर एडवांस्ड एल्गोरिदम तक स्पष्ट ट्रैक्स से गुज़रें।",
+    "experimentTitle": "सुरक्षित रूप से प्रयोग करें",
+    "experimentDesc": "लाइव संपादित करें, निष्पादन रीप्ले करें, और गलतियों को आदत बनने से पहले समझें।"
+  },
+  "TrackGrid": {
+    "sectionLabel": "कौशल ट्रैक्स",
+    "heading": "पहले print स्टेटमेंट से विशेषज्ञ-स्तर की सोच तक आगे बढ़ें।",
+    "startLearning": "सीखना शुरू करें →",
+    "lessons": "पाठ",
+    "explore": "एक्सप्लोर करें"
+  },
+  "LearningJourney": {
+    "sectionLabel": "सीखने का मार्ग",
+    "clickHint": "ट्रैक खोलने के लिए किसी भी कदम पर क्लिक करें",
+    "foundation": "बुनियाद",
+    "beginner": "शुरुआती",
+    "intermediate": "मध्यवर्ती",
+    "advanced": "उन्नत",
+    "mastery": "माहिर"
+  },
+  "AlgorithmPipeline": {
+    "sectionLabel": "यह कैसे काम करता है",
+    "heading": "हर एल्गोरिदम एक ही पाइपलाइन का पालन करता है।",
+    "liveTrace": "लाइव ट्रेस उदाहरण — Bubble Sort"
+  },
+  "LessonSpotlight": {
+    "sectionLabel": "एल्गोरिदम पाठ",
+    "heading": "एल्गोरिदम को चलते हुए देखें, सिर्फ पढ़ें नहीं।",
+    "description": "हर पाठ निष्पादन पथ को कदम दर कदम एनिमेट करता है, फिर आपको संशोधित करने और पुनः चलाने की चुनौती देता है।",
+    "openPlayground": "प्लेग्राउंड खोलें",
+    "startLesson": "पाठ शुरू करें"
+  },
+  "TrackPage": {
+    "allTracks": "सभी ट्रैक्स",
+    "trackLabel": "ट्रैक",
+    "algorithmsInTrack": "इस ट्रैक में एल्गोरिदम"
+  },
+  "AlgorithmGrid": {
+    "start": "शुरू करें",
+    "review": "रिव्यू करें",
+    "algorithmsInTrack": "इस ट्रैक में एल्गोरिदम",
+    "complexityHidden": "शुरुआती लोगों के लिए जटिलता छिपाई गई",
+    "time": "समय",
+    "space": "स्पेस",
+    "trackProgress": "ट्रैक प्रगति",
+    "completed": "पूर्ण"
+  },
+  "Playground": {
+    "interactiveLab": "इंटरएक्टिव पायथन लैब",
+    "headline": "आगे बढ़ने से पहले हर कदम को सीखें, संपादित करें, रीप्ले करें और समझें।",
+    "subheadline": "प्लेग्राउंड लोड होने पर ऑटो-रन होता है। अपने पायथन को ट्रेस करने के लिए {runMyCode} पर क्लिक करें — हर कदम लाइव एनिमेटेड।",
+    "explainLabel": "समझें",
+    "replayLabel": "रीप्ले",
+    "challengeLabel": "चुनौती",
+    "lineByLine": "लाइन दर लाइन",
+    "stepByStep": "कदम दर कदम",
+    "guidedPrompts": "निर्देशित संकेत",
+    "runMyCode": "मेरा कोड चलाएँ",
+    "codeStudio": "कोड स्टूडियो",
+    "monacoReady": "Monaco तैयार",
+    "back": "पीछे",
+    "forward": "आगे",
+    "pause": "रुकें",
+    "play": "चलाएँ",
+    "reset": "रीसेट",
+    "whyThisApproach": "यह दृष्टिकोण क्यों?",
+    "dataFlow": "डेटा फ्लो पाइपलाइन",
+    "track": "ट्रैक",
+    "timeline": "टाइमलाइन",
+    "live": "लाइव",
+    "line": "लाइन",
+    "conceptMastered": "कॉन्सेप्ट सीख लिया!",
+    "explain": "समझें",
+    "complexity": "जटिलता",
+    "complexityOverview": "जटिलता अवलोकन",
+    "timeLabel": "समय",
+    "spaceLabel": "स्पेस",
+    "growthCurve": "ग्रोथ कर्व",
+    "operations": "ऑपरेशन्स",
+    "challenge": "चुनौती",
+    "hint": "संकेत",
+    "outputConsole": "आउटपुट कंसोल",
+    "noOutputYet": "अभी तक कोई आउटपुट नहीं...",
+    "lines": "लाइन्स",
+    "dataStructures": "डेटा स्ट्रक्चर्स",
+    "memoryMatrixEmpty": "मेमोरी मैट्रिक्स खाली है",
+    "memoryMatrixHint": "मेमोरी स्पेस में ब्लॉक मैपिंग देखने के लिए टाइमलाइन चलाएँ।",
+    "callStack": "कॉल स्टैक",
+    "heapSpace": "हीप स्पेस",
+    "primitives": "Primitives और संदर्भ",
+    "objects": "Objects और स्ट्रक्चर",
+    "stackValue": "स्टैक मान",
+    "listRef": "list ref",
+    "emptyList": "खाली सूची",
+    "realWorldApplications": "वास्तविक दुनिया के अनुप्रयोग",
+    "runStatus": {
+      "loading": "पायथन लोड हो रहा है...",
+      "running": "चल रहा है...",
+      "error": "पायथन त्रुटि",
+      "ready": "पायथन तैयार है"
+    }
+  },
+  "CourseData": {
+    "tracks": {
+      "foundation": {
+        "audience": "बिल्कुल शुरुआती, शून्य अनुभव",
+        "description": "शून्य से शुरू करें। जानें कि Python डेटा, निर्णय और प्रवाह के बारे में कैसे सोचता है — कदम दर कदम, हर अवधारणा एनिमेटेड।"
+      },
+      "beginner": {
+        "audience": "पहली बार Python सीखने वाले",
+        "description": "वास्तविक प्रोग्रामिंग आदतें बनाएं। लूप्स, फ़ंक्शन्स और लिस्ट्स को एक-एक कदम पर चलते देखकर माहिर बनें।"
+      },
+      "intermediate": {
+        "audience": "स्क्रिप्ट और ऐप्स बनाने वाले",
+        "description": "अपनी टूलकिट को अपग्रेड करें। विज़ुअल स्टेट ट्रैकिंग के साथ dictionaries, stacks, queues और पहले search algorithms की खोज करें।"
+      },
+      "advanced": {
+        "audience": "समस्या-समाधान में विशेषज्ञ इंजीनियर",
+        "description": "एल्गोरिदमिक रूप से सोचें। sorting और tree algorithms को रियल टाइम में एनिमेट होते देखें, अवलोकन से Big O समझें।"
+      },
+      "mastery": {
+        "audience": "आंतरिक कार्यप्रणाली की खोज करने वाले विशेषज्ञ",
+        "description": "सीमाओं को आगे बढ़ाएं। Graph search, dynamic programming, और इंटरव्यू-स्तर के algorithms — सभी लाइव विज़ुअलाइज़।"
+      }
+    },
+    "algorithms": {
+      "hello-world": "आपका पहला Python आउटपुट। देखें कि print() कंसोल पर डेटा कैसे भेजता है और यह सभी debugging की नींव क्यों है।",
+      "variables-types": "एक variable को मेमोरी में जीवंत होते देखें। int, float, str, और bool को जीवित बॉक्स के रूप में देखें जो मान रखते हैं।",
+      "string-operations": "Strings अनुक्रम हैं। slicing, concatenation और methods को character arrays पर एनिमेट होते देखें।",
+      "arithmetic": "नंबर, ऑपरेटर और integer division। देखें कि Python कदम दर कदम expressions का मूल्यांकन कैसे करता है।",
+      "if-else": "निर्णय लेने वाला कोड। truthiness के आधार पर execution को branches के बीच कूदते देखें।",
+      "while-loop": "शर्त द्वारा चालित दोहराव। देखें कि loop guard हर iteration से पहले जांच करता है और infinite loops क्यों होते हैं।",
+      "for-loop": "अनुक्रमों पर iterate करें। देखें कि Python का for loop वास्तव में अंदर से एक iterator कैसे है।",
+      "lists-basics": "Python का सबसे उपयोगी कंटेनर। append, pop और index को एनिमेटेड मेमोरी ब्लॉक पर संचालन के रूप में देखें।",
+      "functions-intro": "लॉजिक के पुन: प्रयोज्य ब्लॉक। एक function call को stack frame push करते और return value को caller तक बहते देखें।",
+      "input-output": "उपयोगकर्ताओं से बात करने वाले प्रोग्राम। देखें कि input() execution को कैसे रोकता है और एक string value लौटाता है।",
+      "linear-search": "हर element को तब तक जांचें जब तक लक्ष्य न मिल जाए। O(n) — सबसे सरल search algorithm।",
+      "count-occurrences": "गिनें कि कोई value कितनी बार दिखाई देती है। hash map को हर pass के साथ counts जमा करते देखें।",
+      "find-min-max": "एक ही pass में चलते minimum और maximum को ट्रैक करें। देखें कि एक loop क्यों काफी है।",
+      "sum-average": "मान जमा करें और औसत की गणना करें। वह accumulator pattern देखें जो कई algorithms को शक्ति देता है।",
+      "loop-explorer": "देखें कि loop iterations साझा state को कैसे अपडेट करते हैं। score को हर pass के साथ जमा होते देखें।",
+      "reverse-list": "दोनों सिरों से two-pointer swap। pointers को बीच में मिलने तक अंदर की ओर बढ़ते देखें।",
+      "palindrome": "दोनों सिरों से characters की तुलना करें। देखें कि two-pointer तकनीक symmetry की पुष्टि कैसे करती है।",
+      "fizzbuzz": "क्लासिक विभाज्यता जांच। 100 iterations में modulo को conditional output चलाते देखें।",
+      "factorial": "1 से n तक गुणा करें। product को कदम दर कदम बढ़ते देखें और समझें कि 0! = 1 क्यों है।",
+      "fibonacci-iterative": "दो rolling variables के साथ अनुक्रम उत्पन्न करें। देखें कि यह space में recursive version को क्यों हराता है।",
+      "binary-search": "हर कदम पर खोज स्थान को आधा करें। sorted input आवश्यक। O(log n) को लाइव होते देखें।",
+      "selection-sort": "हर pass में minimum खोजें और सामने ले जाएं। n passes को sorted array बनाते देखें।",
+      "insertion-sort": "हर element को पहले से sorted prefix में सही स्थान पर डालें। लगभग sorted डेटा के लिए कुशल।",
+      "two-pointers": "O(n²) के बजाय O(n) में array समस्याओं को हल करने के लिए एक-दूसरे की ओर बढ़ते दो indices का उपयोग करें।",
+      "hash-map-counting": "O(1) प्रति lookup में गिनती के लिए dictionary का उपयोग करें। कई frequency समस्याओं की नींव।",
+      "stack-ops": "LIFO क्रिया में। list पर stack के रूप में push, pop, और peek को एनिमेट होते देखें।",
+      "queue-ops": "FIFO क्रिया में। enqueue और dequeue को एनिमेट होते देखें और समझें कि deque list से बेहतर क्यों है।",
+      "anagram-check": "क्या दो strings एक-दूसरे की पुनर्व्यवस्था हैं? O(n) में character counting को हल करते देखें।",
+      "sliding-window": "size k की हर window में अधिकतम योग खोजें। window को array पर सरकते देखें।",
+      "merge-sorted": "दो sorted arrays को एक में मिलाएं। merge sort के पीछे मुख्य ऑपरेशन।",
+      "bubble-sort": "adjacent जोड़ियों की तुलना करें। बड़े elements हर pass में ऊपर bubble करते हैं।",
+      "merge-sort": "विभाजित करें, हिस्सों को sort करें, merge करें। recursion tree को विभाजित और पुनः संयोजित होते देखें।",
+      "quick-sort": "एक pivot चुनें, उसके चारों ओर partition करें, recurse करें। औसत O(n log n) उत्कृष्ट cache performance के साथ।",
+      "heap-sort": "max-heap बनाएं, क्रम में elements निकालें। quicksort के विपरीत गारंटीकृत O(n log n)।",
+      "bfs": "queue का उपयोग करके graph को level दर level explore करें। unweighted graphs में shortest paths खोजें।",
+      "dfs": "backtracking से पहले जितना गहरा हो सके explore करें। हर recursive step के साथ call stack को बढ़ते देखें।",
+      "binary-tree-traversal": "In-order, pre-order, post-order। एक ही tree पर nodes को विभिन्न अनुक्रमों में visit होते देखें।",
+      "two-sum": "दो संख्याएं खोजें जो target में जुड़ती हैं। देखें कि hash map O(n²) को O(n) में कैसे बदलता है।",
+      "valid-parentheses": "open और close brackets को मैच करने के लिए stack का उपयोग करें। क्लासिक stack application इंटरव्यू प्रश्न।",
+      "fibonacci-recursive": "call tree को exponentially फैलते देखें। समझें कि memoization क्यों आवश्यक है।",
+      "dijkstra": "priority queue का उपयोग करके source से सभी nodes तक shortest paths खोजें। GPS navigation की रीढ़।",
+      "knapsack": "weight सीमा के भीतर value maximize करें। DP table को row दर row भरते देखें।",
+      "lcs": "दो strings द्वारा साझा सबसे लंबा subsequence खोजें। diff tools और DNA alignment का मूल।",
+      "topological-sort": "निर्भरताओं का सम्मान करते हुए tasks को क्रमबद्ध करें। Kahn's algorithm को zero in-degree nodes हटाते देखें।",
+      "kruskals": "cycles बनाए बिना सबसे कम weight वाले edges को greedily जोड़कर minimum spanning tree बनाएं।",
+      "trie": "अक्षर दर अक्षर strings डालें और खोजें। देखें कि autocomplete अंदर से कैसे काम करता है।",
+      "floyd-warshall": "3-loop DP के साथ all-pairs shortest paths। O(V³) में distance matrix को अपडेट होते देखें।",
+      "segment-tree": "O(log n) में range queries और point updates। tree को build और sums को ऊपर propagate होते देखें।",
+      "coin-change": "एक राशि बनाने के लिए न्यूनतम coins। DP array को 0 से target तक भरते देखें।",
+      "bit-manipulation": "AND, OR, XOR, shifts — cryptography, graphics, और competitive programming के पीछे के ऑपरेशन।"
+    }
+  }
+}

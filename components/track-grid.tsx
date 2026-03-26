@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Code2, Database, GitBranch, Layers } from "lucide-react";
 import { trackLevels } from "@/data/course";
+import { useTranslations } from "next-intl";
 
 // Each level gets a distinct visual identity
 const trackStyles = [
@@ -62,23 +63,25 @@ const trackStyles = [
 const trackIcons = [BookOpen, Code2, Database, GitBranch, Layers];
 
 export function TrackGrid() {
+  const t = useTranslations("TrackGrid");
+
   return (
     <section id="tracks" className="px-6 py-10 sm:px-10 lg:px-16">
       <div className="site-shell">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">
-              Skill Tracks
+              {t("sectionLabel")}
             </p>
             <h2 className="mt-3 max-w-lg text-3xl font-semibold text-bright sm:text-4xl">
-              Progress from first print statement to expert-level reasoning.
+              {t("heading")}
             </h2>
           </div>
           <Link
             href="/playground"
             className="shrink-0 inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-semibold text-signal transition hover:bg-signal/18"
           >
-            Start learning →
+            {t("startLearning")}
           </Link>
         </div>
 
@@ -129,10 +132,10 @@ export function TrackGrid() {
 
                   <div className="mt-5 flex items-center justify-between border-t border-white/8 pt-4">
                     <span className={`text-xs font-medium ${s.count}`}>
-                      {track.lessonCount} lessons
+                      {track.lessonCount} {t("lessons")}
                     </span>
                     <span className={`inline-flex items-center gap-1 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.arrow}`}>
-                      Explore <ArrowRight className="h-3 w-3" />
+                      {t("explore")} <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>
                   </div>

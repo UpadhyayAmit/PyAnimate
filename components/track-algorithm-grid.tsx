@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Clock, Database, ExternalLink, Lock, Zap, CheckCircle2 } from "lucide-react";
 import { useProgress } from "@/lib/use-progress";
 import { useEffect, useState } from "react";
 import { TrackProgress } from "./track-progress";
+import { useTranslations } from "next-intl";
 
 type AlgorithmEntry = {
   id: string;
@@ -51,6 +52,8 @@ const categoryEmoji: Record<string, string> = {
 };
 
 export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[] }) {
+  const t = useTranslations("AlgorithmGrid");
+  const tc = useTranslations("CourseData");
   const { isComplete } = useProgress();
   const [mounted, setMounted] = useState(false);
 
@@ -62,7 +65,7 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
     <div className="site-shell">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-xl font-semibold text-bright">
-          {algorithms.length} algorithms in this track
+          {algorithms.length} {t("algorithmsInTrack")}
         </h2>
       </div>
 
@@ -71,6 +74,7 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {algorithms.map((algo, index) => {
           const completed = mounted && isComplete(algo.id);
+          const translatedDesc = tc.has(`algorithms.${algo.id}`) ? tc(`algorithms.${algo.id}`) : algo.description;
           return (
             <article
               key={algo.id}
@@ -105,22 +109,22 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
                 {algo.title}
                 {completed && <CheckCircle2 className="h-4 w-4 text-leaf" />}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-6 text-ink/58">{algo.description}</p>
+              <p className="mt-2 flex-1 text-sm leading-6 text-ink/58">{translatedDesc}</p>
 
               {algo.difficulty === "easy" ? (
-                <div className="mt-4 flex items-center gap-1.5 rounded-full bg-ink/5 px-4 py-1.5 text-xs text-ink/40 w-fit cursor-help" title="Don't worry about Big O notation yet, focus on the basics!">
+                <div className="mt-4 flex items-center gap-1.5 rounded-full bg-ink/5 px-4 py-1.5 text-xs text-ink/40 w-fit cursor-help" title={t("complexityHidden")}>
                    <Zap className="h-3 w-3 opacity-50" />
-                   <span>Complexity hidden for beginners</span>
+                   <span>{t("complexityHidden")}</span>
                 </div>
               ) : (
                 <div className="mt-4 flex flex-wrap gap-2">
                   <div className="flex items-center gap-1.5 rounded-full bg-signal/8 px-3 py-1 text-xs text-signal/80">
                     <Zap className="h-3 w-3" />
-                    <span>Time: {algo.timeComplexity}</span>
+                    <span>{t("time")}: {algo.timeComplexity}</span>
                   </div>
                   <div className="flex items-center gap-1.5 rounded-full bg-wave/8 px-3 py-1 text-xs text-wave/80">
                     <Database className="h-3 w-3" />
-                    <span>Space: {algo.spaceComplexity}</span>
+                    <span>{t("space")}: {algo.spaceComplexity}</span>
                   </div>
                 </div>
               )}
@@ -135,7 +139,7 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
                   href={`/playground?lesson=${algo.id}`}
                   className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2 text-sm font-bold text-white shadow-[0_4px_14px_rgba(232,98,42,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,98,42,0.4)]"
                 >
-                  {completed ? "Review" : "Start"} <ExternalLink className="h-4 w-4" />
+                  {completed ? t("review") : t("start")} <ExternalLink className="h-4 w-4" />
                 </Link>
               </div>
 

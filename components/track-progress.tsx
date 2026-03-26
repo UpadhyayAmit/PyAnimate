@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useProgress } from "@/lib/use-progress";
+import { useTranslations } from "next-intl";
 
 type TrackProgressProps = {
   algorithms: { id: string }[];
 };
 
 export function TrackProgress({ algorithms }: TrackProgressProps) {
+  const t = useTranslations("AlgorithmGrid");
   const { completedLessons } = useProgress();
   const [mounted, setMounted] = useState(false);
 
@@ -28,10 +30,10 @@ export function TrackProgress({ algorithms }: TrackProgressProps) {
     <div className="mb-8 card-elevated rounded-[24px] p-5">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/70">
-          Track Progress
+          {t("trackProgress")}
         </h3>
         <span className="text-xs font-bold text-signal">
-          {completed} / {total} Completed — {percentage}%
+          {completed} / {total} {t("completed")} — {percentage}%
         </span>
       </div>
       <div className="h-2.5 overflow-hidden rounded-full bg-white/6">
