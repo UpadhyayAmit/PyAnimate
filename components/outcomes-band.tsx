@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Eye, FlaskConical, Layers } from "lucide-react";
-import { featuredOutcomes } from "@/data/course";
+import { useTranslations } from "next-intl";
 
 const outcomeStyles = [
   {
@@ -25,15 +25,23 @@ const outcomeStyles = [
 const outcomeIcons = [Eye, Layers, FlaskConical];
 
 export function OutcomesBand() {
+  const t = useTranslations("Outcomes");
+
+  const outcomes = [
+    { titleKey: "traceTitle" as const, descKey: "traceDesc" as const },
+    { titleKey: "practiceTitle" as const, descKey: "practiceDesc" as const },
+    { titleKey: "experimentTitle" as const, descKey: "experimentDesc" as const },
+  ];
+
   return (
     <section className="px-6 py-4 sm:px-10 lg:px-16">
       <div className="site-shell grid gap-4 lg:grid-cols-3">
-        {featuredOutcomes.map((item, index) => {
+        {outcomes.map((item, index) => {
           const Icon = outcomeIcons[index];
           const s = outcomeStyles[index];
           return (
             <motion.article
-              key={item.title}
+              key={item.titleKey}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
@@ -45,8 +53,8 @@ export function OutcomesBand() {
                 <Icon className={`h-4 w-4 ${s.icon}`} />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-bright">{item.title}</h3>
-                <p className="mt-1.5 text-sm leading-6 text-ink/60">{item.description}</p>
+                <h3 className="text-base font-semibold text-bright">{t(item.titleKey)}</h3>
+                <p className="mt-1.5 text-sm leading-6 text-ink/60">{t(item.descKey)}</p>
               </div>
             </motion.article>
           );

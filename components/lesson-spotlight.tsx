@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { lessonCards } from "@/data/course";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const cardStyles = [
   {
@@ -31,6 +32,7 @@ const cardStyles = [
 ];
 
 export function LessonSpotlight() {
+  const t = useTranslations("LessonSpotlight");
   const router = useRouter();
   return (
     <section id="algorithms" className="px-6 py-10 sm:px-10 lg:px-16">
@@ -38,22 +40,21 @@ export function LessonSpotlight() {
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">
-              Algorithm Lessons
+              {t("sectionLabel")}
             </p>
             <h2 className="mt-3 max-w-lg text-3xl font-semibold text-bright sm:text-4xl">
-              See algorithms run, not just read about them.
+              {t("heading")}
             </h2>
           </div>
           <div className="flex flex-col items-start gap-3 sm:items-end">
             <p className="max-w-sm text-sm leading-7 text-ink/58">
-              Each lesson animates the execution path step by step, then gives you a challenge
-              to modify and rerun.
+              {t("description")}
             </p>
             <Link
               href="/playground"
               className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-semibold text-signal transition hover:bg-signal/18"
             >
-              Open Playground <ArrowRight className="h-3.5 w-3.5" />
+              {t("openPlayground")} <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
@@ -84,7 +85,7 @@ export function LessonSpotlight() {
                     {lesson.duration}
                   </span>
                   <span className={`flex items-center gap-1.5 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.link}`}>
-                    Start lesson <ArrowRight className="h-3.5 w-3.5" />
+                    {t("startLesson")} <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </motion.article>

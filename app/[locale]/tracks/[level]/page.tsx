@@ -1,9 +1,10 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, Database, ExternalLink, Lock, Zap } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { algorithmsByLevel, trackLevels } from "@/data/course";
 import { SiteHeader } from "@/components/site-header";
 import { TrackAlgorithmGrid } from "@/components/track-algorithm-grid";
+import { getTranslations } from "next-intl/server";
 
 type Props = { params: Promise<{ level: string }> };
 
@@ -13,6 +14,8 @@ export default async function TrackPage({ params }: Props) {
   const track = trackLevels.find((t) => t.id === level);
   const allAlgorithms = algorithmsByLevel[level];
   const algorithms = allAlgorithms?.filter((algo) => algo.hasPlayground) ?? [];
+  const t = await getTranslations("TrackPage");
+  const tc = await getTranslations("CourseData");
 
   if (!track || !allAlgorithms) notFound();
 
@@ -28,18 +31,18 @@ export default async function TrackPage({ params }: Props) {
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/55 transition hover:text-ink"
           >
             <ArrowLeft className="h-4 w-4" />
-            All tracks
+            {t("allTracks")}
           </Link>
 
           <div className={`card-elevated overflow-hidden rounded-[32px] bg-gradient-to-br p-8 ${track.accent}`}>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <div className="text-xs font-bold uppercase tracking-[0.22em] text-ink/40">
-                  Track
+                  {t("trackLabel")}
                 </div>
                 <h1 className="mt-2 text-4xl font-semibold text-bright sm:text-5xl">{track.title}</h1>
-                <p className="mt-2 text-base text-ink/60">{track.audience}</p>
-                <p className="mt-4 max-w-xl text-sm leading-7 text-ink/65">{track.description}</p>
+                <p className="mt-2 text-base text-ink/60">{tc.has(`tracks.${track.id}.audience`) ? tc(`tracks.${track.id}.audience`) : track.audience}</p>
+                <p className="mt-4 max-w-xl text-sm leading-7 text-ink/65">{tc.has(`tracks.${track.id}.description`) ? tc(`tracks.${track.id}.description`) : track.description}</p>
               </div>
               <div className="flex shrink-0 flex-col gap-3 sm:items-end">
                 {track.goals.map((goal) => (

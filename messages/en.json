@@ -1,0 +1,207 @@
+{
+  "Navigation": {
+    "interactiveLab": "Interactive Python Lab",
+    "headline": "Learn, edit, replay, and understand each step before moving on.",
+    "subheadline": "The playground auto-runs on load. Hit <strong>Run My Code</strong> to trace your own Python — every step animated live.",
+    "tracks": "Tracks",
+    "algorithms": "Algorithms",
+    "playground": "Playground",
+    "home": "Home"
+  },
+  "Hero": {
+    "badge": "Python concepts that move, react, and explain themselves",
+    "headlineStart": "Learn Python by ",
+    "headlineHighlight1": "seeing every idea",
+    "headlineHighlight2": " unfold in motion.",
+    "description": "PyAnimate blends a browser playground, visual execution, guided prompts, and level-based tracks so you can build Python intuition faster.",
+    "openPlayground": "Open Playground",
+    "exploreTracks": "Explore Tracks",
+    "executionPreview": "Execution Preview",
+    "step": "Step",
+    "guidedTracks": "Guided tracks",
+    "algorithmLessons": "Algorithm lessons",
+    "installBrowserFirst": "install Browser-first"
+  },
+  "Outcomes": {
+    "traceTitle": "Trace code visually",
+    "traceDesc": "See variables, loops, and stack transitions instead of reading raw output alone.",
+    "practiceTitle": "Practice by level",
+    "practiceDesc": "Move through clear tracks with pacing from first syntax to advanced algorithms.",
+    "experimentTitle": "Experiment safely",
+    "experimentDesc": "Edit live, replay execution, and understand mistakes before they harden into habits."
+  },
+  "TrackGrid": {
+    "sectionLabel": "Skill Tracks",
+    "heading": "Progress from first print statement to expert-level reasoning.",
+    "startLearning": "Start learning →",
+    "lessons": "lessons",
+    "explore": "Explore"
+  },
+  "LearningJourney": {
+    "sectionLabel": "Learning Path",
+    "clickHint": "Click any step to open the track",
+    "foundation": "Foundation",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "mastery": "Mastery"
+  },
+  "AlgorithmPipeline": {
+    "sectionLabel": "How it works",
+    "heading": "Every algorithm follows the same pipeline.",
+    "liveTrace": "Live trace example — Bubble Sort"
+  },
+  "LessonSpotlight": {
+    "sectionLabel": "Algorithm Lessons",
+    "heading": "See algorithms run, not just read about them.",
+    "description": "Each lesson animates the execution path step by step, then gives you a challenge to modify and rerun.",
+    "openPlayground": "Open Playground",
+    "startLesson": "Start lesson"
+  },
+  "TrackPage": {
+    "allTracks": "All tracks",
+    "trackLabel": "Track",
+    "algorithmsInTrack": "algorithms in this track"
+  },
+  "AlgorithmGrid": {
+    "start": "Start",
+    "review": "Review",
+    "algorithmsInTrack": "algorithms in this track",
+    "complexityHidden": "Complexity hidden for beginners",
+    "time": "Time",
+    "space": "Space",
+    "trackProgress": "Track Progress",
+    "completed": "Completed"
+  },
+  "Playground": {
+    "interactiveLab": "Interactive Python Lab",
+    "headline": "Learn, edit, replay, and understand each step before moving on.",
+    "subheadline": "The playground auto-runs on load. Hit {runMyCode} to trace your own Python — every step animated live.",
+    "explainLabel": "Explain",
+    "replayLabel": "Replay",
+    "challengeLabel": "Challenge",
+    "lineByLine": "Line by line",
+    "stepByStep": "Step by step",
+    "guidedPrompts": "Guided prompts",
+    "runMyCode": "Run My Code",
+    "codeStudio": "Code Studio",
+    "monacoReady": "Monaco Ready",
+    "back": "Back",
+    "forward": "Forward",
+    "pause": "Pause",
+    "play": "Play",
+    "reset": "Reset",
+    "whyThisApproach": "Why this approach?",
+    "dataFlow": "Data Flow Pipeline",
+    "track": "Track",
+    "timeline": "Timeline",
+    "live": "Live",
+    "line": "line",
+    "conceptMastered": "Concept Mastered!",
+    "explain": "Explain",
+    "complexity": "Complexity",
+    "complexityOverview": "Complexity Overview",
+    "timeLabel": "Time",
+    "spaceLabel": "Space",
+    "growthCurve": "Growth Curve",
+    "operations": "Operations",
+    "challenge": "Challenge",
+    "hint": "Hint",
+    "outputConsole": "Output Console",
+    "noOutputYet": "No output yet...",
+    "lines": "lines",
+    "dataStructures": "Data Structures",
+    "memoryMatrixEmpty": "Memory Matrix Empty",
+    "memoryMatrixHint": "Run the timeline to visualize blocks mapping into memory space.",
+    "callStack": "Call Stack",
+    "heapSpace": "Heap Space",
+    "primitives": "Primitives & References",
+    "objects": "Objects & Structures",
+    "stackValue": "STACK VALUE",
+    "listRef": "list ref",
+    "emptyList": "Empty List",
+    "realWorldApplications": "Real-World Applications",
+    "runStatus": {
+      "loading": "Loading Python…",
+      "running": "Running…",
+      "error": "Python error",
+      "ready": "Python ready"
+    }
+  },
+  "CourseData": {
+    "tracks": {
+      "foundation": {
+        "audience": "Absolute beginners, zero experience",
+        "description": "Start from zero. Learn how Python thinks about data, decisions, and flow — step by step, with every concept animated."
+      },
+      "beginner": {
+        "audience": "First-time Python learners",
+        "description": "Build real programming habits. Master loops, functions, and lists by watching them execute one step at a time."
+      },
+      "intermediate": {
+        "audience": "Builders shipping scripts and apps",
+        "description": "Upgrade your toolkit. Explore dictionaries, stacks, queues, and your first search algorithms with visual state tracking."
+      },
+      "advanced": {
+        "audience": "Engineers refining problem solving",
+        "description": "Think algorithmically. See sorting and tree algorithms animate in real time, understand Big O through observation."
+      },
+      "mastery": {
+        "audience": "Experts exploring internals",
+        "description": "Push to the frontier. Graph search, dynamic programming, and interview-level algorithms — all visualized live."
+      }
+    },
+    "algorithms": {
+      "hello-world": "Your first Python output. See how print() sends data to the console and why it's the foundation of all debugging.",
+      "variables-types": "Watch a variable come to life in memory. See int, float, str, and bool as living boxes that hold values.",
+      "string-operations": "Strings are sequences. See slicing, concatenation, and methods animate over character arrays.",
+      "arithmetic": "Numbers, operators, and integer division. See exactly how Python evaluates expressions step by step.",
+      "if-else": "Code that makes decisions. Watch execution jump between branches based on truthiness.",
+      "while-loop": "Repetition driven by a condition. See the loop guard check before every iteration and why infinite loops happen.",
+      "for-loop": "Iterate over sequences. See how Python's for loop is really an iterator under the hood.",
+      "lists-basics": "Python's most useful container. See append, pop, and index as operations on an animated memory block.",
+      "functions-intro": "Reusable blocks of logic. Watch a function call push a stack frame and return value flow back to the caller.",
+      "input-output": "Programs that talk to users. See how input() pauses execution and returns a string value.",
+      "linear-search": "Check every element until you find the target. O(n) — the simplest search algorithm there is.",
+      "count-occurrences": "Count how many times a value appears. See a hash map accumulate counts with each pass.",
+      "find-min-max": "Track the running minimum and maximum through a single pass. See why one loop is enough.",
+      "sum-average": "Accumulate values and compute the mean. See the accumulator pattern that powers many algorithms.",
+      "loop-explorer": "Watch how loop iterations update shared state. See score accumulate with each pass.",
+      "reverse-list": "Two-pointer swap from both ends. Watch pointers move inward until they meet in the middle.",
+      "palindrome": "Compare characters from both ends. See how the two-pointer technique confirms symmetry.",
+      "fizzbuzz": "Classic divisibility check. See modulo drive conditional output across 100 iterations.",
+      "factorial": "Multiply from 1 to n. See the product grow step by step and understand why 0! = 1.",
+      "fibonacci-iterative": "Generate the sequence with two rolling variables. See why this beats the recursive version in space.",
+      "binary-search": "Halve the search space every step. Requires sorted input. Watch O(log n) happen live.",
+      "selection-sort": "Find the minimum each pass and move it to the front. See n passes produce a sorted array.",
+      "insertion-sort": "Insert each element into its correct position in the already-sorted prefix. Efficient for nearly sorted data.",
+      "two-pointers": "Use two indices moving toward each other to solve array problems in O(n) instead of O(n²).",
+      "hash-map-counting": "Use a dictionary to count in O(1) per lookup. The foundation of many frequency problems.",
+      "stack-ops": "LIFO in action. See push, pop, and peek animate on a list used as a stack.",
+      "queue-ops": "FIFO in action. See enqueue and dequeue animate and understand why deque beats a list.",
+      "anagram-check": "Are two strings rearrangements of each other? See character counting solve it in O(n).",
+      "sliding-window": "Find the maximum sum in every window of size k. Watch the window glide across the array.",
+      "merge-sorted": "Combine two sorted arrays into one. The core operation behind merge sort.",
+      "bubble-sort": "Compare adjacent pairs. Larger elements bubble to the top each pass.",
+      "merge-sort": "Divide, sort halves, merge. See the recursion tree split and recombine.",
+      "quick-sort": "Choose a pivot, partition around it, recurse. Average O(n log n) with great cache performance.",
+      "heap-sort": "Build a max-heap, extract elements in order. Guaranteed O(n log n) unlike quicksort.",
+      "bfs": "Explore a graph level by level using a queue. Find shortest paths in unweighted graphs.",
+      "dfs": "Explore as deep as possible before backtracking. See the call stack grow with each recursive step.",
+      "binary-tree-traversal": "In-order, pre-order, post-order. Watch nodes visit in different sequences on the same tree.",
+      "two-sum": "Find two numbers that add to a target. See how a hash map turns O(n²) into O(n).",
+      "valid-parentheses": "Use a stack to match open and close brackets. Classic stack application interview question.",
+      "fibonacci-recursive": "See the call tree fan out exponentially. Understand why memoization is essential.",
+      "dijkstra": "Find shortest paths from a source to all nodes using a priority queue. The backbone of GPS navigation.",
+      "knapsack": "Maximise value within a weight limit. See the DP table fill row by row.",
+      "lcs": "Find the longest subsequence shared by two strings. Core of diff tools and DNA alignment.",
+      "topological-sort": "Order tasks respecting dependencies. See Kahn's algorithm remove nodes with zero in-degree.",
+      "kruskals": "Build a minimum spanning tree by greedily adding lowest-weight edges without forming cycles.",
+      "trie": "Insert and search strings letter by letter. See how autocomplete works under the hood.",
+      "floyd-warshall": "All-pairs shortest paths with a 3-loop DP. See the distance matrix update in O(V³).",
+      "segment-tree": "Range queries and point updates in O(log n). See the tree build and propagate sums upward.",
+      "coin-change": "Minimum coins to make an amount. See the DP array fill from 0 up to the target.",
+      "bit-manipulation": "AND, OR, XOR, shifts — the operations behind cryptography, graphics, and competitive programming."
+    }
+  }
+}

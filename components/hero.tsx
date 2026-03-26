@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PlayCircle, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { executionFrames, heroStats } from "@/data/course";
 
 const heroPreviewLines = [
@@ -16,6 +17,7 @@ const heroPreviewLines = [
 ];
 
 export function Hero() {
+  const t = useTranslations("Hero");
   const shouldReduceMotion = useReducedMotion();
   const [frameIndex, setFrameIndex] = useState(0);
   const frame = executionFrames[frameIndex];
@@ -43,7 +45,7 @@ export function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full bg-parchment px-4 py-2 text-sm font-medium text-ink/65"
           >
             <Sparkles className="h-3.5 w-3.5 text-signal" />
-            Python concepts that move, react, and explain themselves
+            {t("badge")}
           </motion.h1>
 
           <motion.p
@@ -52,7 +54,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
             className="max-w-xl text-5xl font-semibold leading-[1.12] tracking-tight sm:text-6xl"
           >
-            Learn Python by <span className="text-gradient-signal">seeing every idea</span>{" "}<span className="text-gradient-wave">unfold in motion.</span>
+            {t("headlineStart")}<span className="text-gradient-signal">{t("headlineHighlight1")}</span>{" "}<span className="text-gradient-wave">{t("headlineHighlight2")}</span>
           </motion.p>
 
           <motion.p
@@ -61,8 +63,7 @@ export function Hero() {
             transition={{ duration: 0.55, delay: 0.16, ease: "easeOut" }}
             className="mt-6 max-w-md text-base leading-8 text-ink/65"
           >
-            PyAnimate blends a browser playground, visual execution, guided prompts, and
-            level-based tracks so you can build Python intuition faster.
+            {t("description")}
           </motion.p>
 
           <motion.div
@@ -76,13 +77,13 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-signal to-amber px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(255,101,53,0.4)] glow-signal transition hover:opacity-90"
             >
               <PlayCircle className="h-4 w-4" />
-              Open Playground
+              {t("openPlayground")}
             </Link>
             <a
               href="#tracks"
               className="inline-flex items-center rounded-full bg-parchment px-6 py-3 text-sm font-semibold text-ink transition hover:bg-mist"
             >
-              Explore Tracks
+              {t("exploreTracks")}
             </a>
           </motion.div>
 
@@ -93,12 +94,20 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.32, ease: "easeOut" }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            {heroStats.map((item) => (
-              <div key={item.label} className="flex items-baseline gap-2">
-                <span className="text-2xl font-semibold text-bright">{item.value}</span>
-                <span className="text-sm text-ink/55">{item.label}</span>
-              </div>
-            ))}
+            {heroStats.map((item) => {
+              const statKeyMap: Record<string, string> = {
+                "Guided tracks": "guidedTracks",
+                "Algorithm lessons": "algorithmLessons",
+              };
+              const labelKey = statKeyMap[item.label] || "installBrowserFirst";
+              
+              return (
+                <div key={item.label} className="flex items-baseline gap-2">
+                  <span className="text-2xl font-semibold text-bright">{item.value}</span>
+                  <span className="text-sm text-ink/55">{t(labelKey as any)}</span>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
 
@@ -113,10 +122,10 @@ export function Hero() {
           <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-ink/42">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-signal" />
-              Execution Preview
+              {t("executionPreview")}
             </div>
             <span>
-              Step {frameIndex + 1} / {executionFrames.length}
+              {t("step")} {frameIndex + 1} / {executionFrames.length}
             </span>
           </div>
 

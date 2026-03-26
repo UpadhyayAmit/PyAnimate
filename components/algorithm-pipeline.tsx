@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // Data pipeline flow: shows how an algorithm processes data
 // Input → Parse → Process (Algorithm) → Validate → Output
@@ -71,15 +72,17 @@ const arrows = [
 ];
 
 export function AlgorithmPipeline() {
+  const t = useTranslations("AlgorithmPipeline");
+
   return (
     <section className="px-6 py-10 sm:px-10 lg:px-16">
       <div className="site-shell">
         <div className="mb-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">
-            How it works
+            {t("sectionLabel")}
           </p>
           <h2 className="mt-3 max-w-lg text-3xl font-semibold text-bright sm:text-4xl">
-            Every algorithm follows the same pipeline.
+            {t("heading")}
           </h2>
         </div>
 
@@ -100,13 +103,13 @@ export function AlgorithmPipeline() {
                     className={`rounded-[18px] border p-4 ${stage.bg} ${stage.border}`}
                     style={{ boxShadow: `0 0 32px ${stage.color}28, inset 0 1px 0 ${stage.color}20` }}
                   >
-                    {/* Stage label */}
+                    {/* Stage label — programming terms stay English */}
                     <div className={`text-xs font-bold uppercase tracking-[0.18em] ${stage.textColor}`}>
                       {stage.label}
                     </div>
                     <div className="mt-0.5 text-[11px] text-ink/45">{stage.sub}</div>
 
-                    {/* Example items */}
+                    {/* Example items — code/programming terms stay English */}
                     <ul className="mt-3 space-y-1.5">
                       {stage.examples.map((ex) => (
                         <li key={ex} className="flex items-center gap-2">
@@ -168,7 +171,7 @@ export function AlgorithmPipeline() {
           className="mt-6 rounded-[20px] bg-parchment p-5"
         >
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink/40">
-            Live trace example — Bubble Sort
+            {t("liveTrace")}
           </div>
           <div className="flex flex-wrap gap-2">
             {[

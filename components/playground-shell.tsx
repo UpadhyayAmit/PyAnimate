@@ -32,6 +32,7 @@ import { ComplexityChart } from "@/components/complexity-chart";
 import { usePyodide } from "@/lib/use-pyodide";
 import { useProgress } from "@/lib/use-progress";
 import type { ExecutionFrame } from "@/data/course";
+import { useTranslations } from "next-intl";
 
 const SPEEDS = [
   { label: "0.5×", ms: 3600 },
@@ -40,6 +41,7 @@ const SPEEDS = [
 ];
 
 export function PlaygroundShell() {
+  const t = useTranslations("Playground");
   const searchParams = useSearchParams();
   const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
@@ -217,10 +219,10 @@ export function PlaygroundShell() {
   }
 
   const pyStatusLabel =
-    pyStatus === "loading" ? "Loading Python…"
-    : pyStatus === "running" ? "Running…"
-    : pyStatus === "error" ? "Python error"
-    : "Python ready";
+    pyStatus === "loading" ? t("runStatus.loading")
+    : pyStatus === "running" ? t("runStatus.running")
+    : pyStatus === "error" ? t("runStatus.error")
+    : t("runStatus.ready");
 
   return (
     <div className="site-shell relative px-6 py-10 sm:px-10 lg:px-16">
@@ -233,22 +235,18 @@ export function PlaygroundShell() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-signal/20 bg-signal/8 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-signal">
               <Sparkles className="h-3 w-3" />
-              Interactive Python Lab
+              {t("interactiveLab")}
             </div>
             <h1 className="mt-4 text-3xl font-semibold leading-snug text-bright sm:text-4xl">
-              Learn, edit, replay, and understand each step before moving on.
+              {t("headline")}
             </h1>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-ink/60">
-              The playground auto-runs on load. Hit{" "}
-              <strong className="font-semibold text-ink">Run My Code</strong> to trace your own
-              Python — every step animated live.
-            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-ink/60" dangerouslySetInnerHTML={{ __html: t("subheadline", { runMyCode: `<strong class="font-semibold text-ink">${t("runMyCode")}</strong>` }) }} />
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:items-end">
             {[
-              { icon: BrainCircuit, label: "Explain", value: "Line by line" },
-              { icon: Gauge, label: "Replay", value: "Step by step" },
-              { icon: Bot, label: "Challenge", value: "Guided prompts" },
+              { icon: BrainCircuit, label: t("explainLabel"), value: t("lineByLine") },
+              { icon: Gauge, label: t("replayLabel"), value: t("stepByStep") },
+              { icon: Bot, label: t("challengeLabel"), value: t("guidedPrompts") },
               { icon: Zap, label: "XP", value: mounted ? `${totalXP} pts` : "..." },
             ].map((item) => (
               <div
@@ -274,7 +272,7 @@ export function PlaygroundShell() {
             className="inline-flex items-center gap-1.5 rounded-full bg-parchment px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-mist disabled:opacity-35"
           >
             <ChevronLeft className="h-4 w-4" />
-            Back
+            {t("back") ?? "Back"}
           </button>
 
           {/* Play / Pause */}
@@ -284,7 +282,7 @@ export function PlaygroundShell() {
             className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-signal/90"
           >
             {isAutoPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            {isAutoPlaying ? "Pause" : "Play"}
+            {isAutoPlaying ? (t("pause") ?? "Pause") : (t("play") ?? "Play")}
           </button>
 
           {/* Step forward */}
@@ -294,7 +292,7 @@ export function PlaygroundShell() {
             disabled={frameIndex === activeFrames.length - 1}
             className="inline-flex items-center gap-1.5 rounded-full bg-parchment px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-mist disabled:opacity-35"
           >
-            Forward
+            {t("forward") ?? "Forward"}
             <ChevronRight className="h-4 w-4" />
           </button>
 
@@ -305,7 +303,7 @@ export function PlaygroundShell() {
             className="inline-flex items-center gap-1.5 rounded-full bg-parchment px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-mist"
           >
             <RotateCcw className="h-4 w-4" />
-            Reset
+            {t("reset") ?? "Reset"}
           </button>
 
           {/* Speed control */}
@@ -425,7 +423,7 @@ export function PlaygroundShell() {
           >
              <div className="flex items-center gap-2 mb-4">
                 <BrainCircuit className="h-4 w-4 text-signal" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">Explain</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("explain")}</div>
              </div>
              
              <div className="text-xl font-bold text-bright">Line {frame?.line ?? "–"}</div>
@@ -434,7 +432,7 @@ export function PlaygroundShell() {
              {frame?.why && (
                <div className="mt-5 rounded-[20px] border border-amber/20 bg-gradient-to-br from-amber/10 to-transparent p-5">
                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-amber/80 flex items-center gap-1.5">
-                   <Lightbulb className="h-3 w-3" /> Why this approach?
+                   <Lightbulb className="h-3 w-3" /> {t("whyThisApproach")}
                  </div>
                  <p className="text-xs leading-relaxed text-ink/75">{frame.why}</p>
                </div>
@@ -445,21 +443,21 @@ export function PlaygroundShell() {
           <div className="card-elevated rounded-[32px] p-6 shadow-md">
              <div className="flex items-center gap-2 mb-4">
                 <Gauge className="h-4 w-4 text-amber" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">Complexity</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("complexity")}</div>
              </div>
              
              <div className="grid grid-cols-2 gap-4 mb-5">
                 <div className="rounded-[20px] bg-white/[0.03] border border-white/5 p-4 text-center">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 mb-1">Time</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 mb-1">{t("timeLabel")}</div>
                   <div className="font-mono text-lg font-bold text-leaf">{lesson.timeComplexity}</div>
                 </div>
                 <div className="rounded-[20px] bg-white/[0.03] border border-white/5 p-4 text-center">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 mb-1">Space</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 mb-1">{t("spaceLabel")}</div>
                   <div className="font-mono text-lg font-bold text-sky-400">{lesson.spaceComplexity}</div>
                 </div>
              </div>
 
-             <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-ink/40">Complexity Overview</div>
+             <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-ink/40">{t("complexityOverview")}</div>
              <div className="w-full mt-2 rounded-xl bg-black/20 overflow-hidden">
                 <ComplexityChart timeComplexity={lesson.timeComplexity} spaceComplexity={lesson.spaceComplexity} />
              </div>
@@ -469,14 +467,14 @@ export function PlaygroundShell() {
           <div className="card-elevated rounded-[32px] p-6 shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <WandSparkles className="h-4 w-4 text-signal" />
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/50">Challenge</div>
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/50">{t("challenge")}</div>
               </div>
               <p className="text-sm leading-relaxed text-ink/80">{lesson.prompt}</p>
 
               <div className="mt-5 border-t border-white/10 pt-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Bot className="h-3.5 w-3.5 text-amber" />
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber/70">Hint</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber/70">{t("hint")}</div>
                 </div>
                 <p className="text-xs leading-relaxed text-ink/60">{lesson.hint}</p>
               </div>
@@ -489,13 +487,13 @@ export function PlaygroundShell() {
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/42">
-                  Code Studio
+                  {t("codeStudio")}
                 </div>
                 <h2 className="mt-2 text-3xl font-semibold text-bright">{lesson.title}</h2>
               </div>
               <div className="flex flex-wrap gap-2">
                 <div className="rounded-full bg-mist px-4 py-2 text-sm font-medium text-ink">
-                  Monaco Ready
+                  {t("monacoReady")}
                 </div>
                 <div className={`rounded-full px-4 py-2 text-sm font-medium ${
                   pyStatus === "ready" ? "bg-leaf/12 text-leaf"
@@ -532,7 +530,7 @@ export function PlaygroundShell() {
                 }`}
               >
                 {pyStatus === "running" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Terminal className="h-4 w-4" />}
-                {pyStatus === "running" ? "Running…" : "Run My Code"}
+                {pyStatus === "running" ? t("runStatus.running") : t("runMyCode")}
               </button>
 
               <div className="flex flex-wrap gap-2">
@@ -573,7 +571,7 @@ export function PlaygroundShell() {
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Terminal className="h-4 w-4 text-ink/50" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">Output Console</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("outputConsole")}</div>
               </div>
               <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 bg-white/5 px-2 py-0.5 rounded-full">
                 {visibleOutput.length} lines
@@ -581,7 +579,7 @@ export function PlaygroundShell() {
             </div>
             <div className="rounded-[20px] bg-[#0c121a] border border-black/50 px-5 py-4 font-mono text-sm leading-8 text-white/80 min-h-[120px]">
               {visibleOutput.length === 0 ? (
-                <span className="text-white/20 italic">No output yet...</span>
+                <span className="text-white/20 italic">{t("noOutputYet")}</span>
               ) : (
                 <AnimatePresence mode="popLayout">
                   {visibleOutput.map((line, index) => (
@@ -612,7 +610,7 @@ export function PlaygroundShell() {
                 onClick={() => selectLesson(nextLesson.id)}
               >
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Concept Mastered!</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">{t("conceptMastered")}</span>
                   <span className="mt-1 text-2xl">{nextLesson.title}</span>
                 </div>
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors">
@@ -630,7 +628,7 @@ export function PlaygroundShell() {
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-2">
                 <CirclePlay className="h-4 w-4 text-signal" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">Timeline</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("timeline")}</div>
               </div>
               {hasRun && (
                 <span className="rounded-full border border-leaf/25 bg-leaf/10 px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-leaf">
@@ -678,7 +676,7 @@ export function PlaygroundShell() {
           <div className="card-elevated rounded-[32px] p-6 shadow-md flex-1 overflow-hidden flex flex-col">
             <div className="flex items-center gap-2 mb-4">
               <Database className="h-4 w-4 text-sky-400" />
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">Data Structures</div>
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("dataStructures")}</div>
             </div>
             
             <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-6">
@@ -803,7 +801,7 @@ export function PlaygroundShell() {
                                       {item.val}
                                     </motion.div>
                                   )) : (
-                                    <span className="text-white/20 text-xs italic">Empty List</span>
+                                    <span className="text-white/20 text-xs italic">{t("emptyList")}</span>
                                   )}
                                 </div>
                               </motion.div>
@@ -824,7 +822,7 @@ export function PlaygroundShell() {
       <section className="relative z-10 mt-6 mb-12 card-elevated rounded-[32px] p-8 shadow-xl">
         <div className="flex items-center gap-3 mb-6">
           <Briefcase className="h-5 w-5 text-signal" />
-          <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-ink/70">Real-World Applications</h3>
+          <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-ink/70">{t("realWorldApplications")}</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {lesson.useCases.map((uc, i) => (
