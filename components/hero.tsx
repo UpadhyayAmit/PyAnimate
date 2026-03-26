@@ -31,7 +31,7 @@ export function Hero() {
   }, [shouldReduceMotion]);
 
   return (
-    <section className="relative overflow-hidden px-6 pb-16 pt-10 sm:px-10 lg:px-16">
+    <section className="relative overflow-hidden px-4 pb-12 pt-8 sm:px-10 lg:px-16">
       <div className="ambient-orb left-[6%] top-16 h-48 w-48 bg-amber/20" />
       <div className="ambient-orb ambient-orb--slow ambient-orb--delay right-[8%] top-20 h-56 w-56 bg-wave/15" />
 
@@ -52,7 +52,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
-            className="max-w-xl text-5xl font-semibold leading-[1.12] tracking-tight sm:text-6xl"
+            className="max-w-xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl"
           >
             {t("headlineStart")}<span className="text-gradient-signal">{t("headlineHighlight1")}</span>{" "}<span className="text-gradient-wave">{t("headlineHighlight2")}</span>
           </motion.p>
@@ -116,10 +116,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="card-elevated relative overflow-hidden rounded-[32px] p-5"
+          className="card-elevated relative overflow-hidden rounded-[24px] sm:rounded-[32px] p-4 sm:p-5"
         >
           {/* Header */}
-          <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-ink/42">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-ink/42">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-signal" />
               {t("executionPreview")}

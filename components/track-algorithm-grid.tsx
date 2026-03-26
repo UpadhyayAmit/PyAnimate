@@ -101,13 +101,13 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
                 </span>
               </div>
 
-              <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/40">
+              <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-ink/40">
                 {categoryEmoji[algo.category.toLowerCase()] ?? ""}{" "}
                 {algo.category}
               </div>
-              <h3 className="text-lg font-semibold text-bright flex items-center gap-2">
-                {algo.title}
-                {completed && <CheckCircle2 className="h-4 w-4 text-leaf" />}
+              <h3 className="text-base sm:text-lg font-semibold text-bright flex items-start sm:items-center gap-2">
+                <span className="leading-tight">{algo.title}</span>
+                {completed && <CheckCircle2 className="mt-0.5 sm:mt-0 h-4 w-4 shrink-0 text-leaf" />}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-6 text-ink/58">{translatedDesc}</p>
 
@@ -129,7 +129,7 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
                 </div>
               )}
 
-              <div className="mt-4 flex items-center justify-between border-t border-ink/6 pt-4">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink/6 pt-4">
                 <div className="flex items-center gap-1.5 text-xs text-ink/40">
                   <Clock className="h-3.5 w-3.5" />
                   {algo.duration}

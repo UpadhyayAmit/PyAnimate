@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Link } from "@/i18n/routing";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   AlertCircle,
@@ -14,6 +15,7 @@ import {
   ChevronRight,
   CirclePlay,
   Database,
+  ExternalLink,
   Gauge,
   Lightbulb,
   Loader2,
@@ -29,6 +31,7 @@ import confetti from "canvas-confetti";
 import { playgroundLessons } from "@/data/course";
 import { MonacoPythonEditor } from "@/components/monaco-python-editor";
 import { ComplexityChart } from "@/components/complexity-chart";
+import { LessonQuiz } from "@/components/lesson-quiz";
 import { usePyodide } from "@/lib/use-pyodide";
 import { useProgress } from "@/lib/use-progress";
 import type { ExecutionFrame } from "@/data/course";
@@ -57,7 +60,7 @@ export function PlaygroundShell() {
   const [frameIndex, setFrameIndex] = useState(0);
   const [speedIndex, setSpeedIndex] = useState(1); // default 1×
   const [code, setCode] = useState(playgroundLessons[0].starterCode);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(!shouldReduceMotion);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const [activeFrames, setActiveFrames] = useState<ExecutionFrame[]>(
     playgroundLessons[0].executionFrames,
   );
@@ -161,7 +164,7 @@ export function PlaygroundShell() {
   useEffect(() => {
     setFrameIndex(0);
     setCode(lesson.starterCode);
-    setIsAutoPlaying(!shouldReduceMotion);
+    setIsAutoPlaying(false);
     setActiveFrames(lesson.executionFrames);
     setRunOutput([]);
     setRunError(null);
@@ -176,7 +179,13 @@ export function PlaygroundShell() {
     if (!isAutoPlaying) return;
     const ms = SPEEDS[speedIndex].ms;
     const timer = window.setInterval(() => {
-      setFrameIndex((current) => (current + 1) % activeFrames.length);
+      setFrameIndex((current) => {
+        if (current === activeFrames.length - 1) {
+          setIsAutoPlaying(false);
+          return current;
+        }
+        return current + 1;
+      });
     }, ms);
     return () => window.clearInterval(timer);
   }, [isAutoPlaying, activeFrames.length, speedIndex]);
@@ -206,13 +215,6 @@ export function PlaygroundShell() {
       setHasRun(true);
       setFrameIndex(0);
       setIsAutoPlaying(true);
-      markComplete(lesson.id);
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 },
-        colors: ['#ff6535', '#38bdf8', '#4ade80', '#fbbf24']
-      });
     } catch (err) {
       setRunError(err instanceof Error ? err.message : "Unknown error");
     }
@@ -225,19 +227,19 @@ export function PlaygroundShell() {
     : t("runStatus.ready");
 
   return (
-    <div className="site-shell relative px-6 py-10 sm:px-10 lg:px-16">
+    <div className="site-shell relative px-3 py-6 sm:py-10 sm:px-10 lg:px-16">
       <div className="ambient-orb left-[5%] top-24 h-40 w-40 bg-amber/15" />
       <div className="ambient-orb ambient-orb--slow ambient-orb--delay right-[6%] top-20 h-48 w-48 bg-wave/10" />
 
       {/* Header strip */}
-      <section className="relative z-10 mb-6 card-elevated rounded-[32px] p-6">
+      <section className="relative z-10 mb-6 card-elevated rounded-[24px] sm:rounded-[32px] p-4 sm:p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-signal/20 bg-signal/8 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-signal">
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/20 bg-signal/8 px-3 py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-signal">
               <Sparkles className="h-3 w-3" />
               {t("interactiveLab")}
             </div>
-            <h1 className="mt-4 text-3xl font-semibold leading-snug text-bright sm:text-4xl">
+            <h1 className="mt-4 text-2xl font-semibold leading-snug text-bright sm:text-3xl lg:text-4xl">
               {t("headline")}
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-ink/60" dangerouslySetInnerHTML={{ __html: t("subheadline", { runMyCode: `<strong class="font-semibold text-ink">${t("runMyCode")}</strong>` }) }} />
@@ -325,13 +327,22 @@ export function PlaygroundShell() {
       </section>
 
       {/* ── Colorful Animated Track Pipeline ── */}
-      <section className="relative z-10 mb-8 rounded-[32px] bg-gradient-to-b from-parchment to-mist border border-white/5 p-8 shadow-xl">
-        <div className="mb-8 flex items-center justify-between">
+      <section className="relative z-10 mb-8 rounded-[24px] sm:rounded-[32px] bg-gradient-to-b from-parchment to-mist border border-white/5 p-4 sm:p-8 shadow-xl">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-xs font-bold uppercase tracking-[0.25em] text-signal/80 mb-1">
+            <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.25em] text-signal/80 mb-1">
               Data Flow Pipeline
             </div>
-            <h2 className="text-xl font-bold text-bright capitalize">{lesson.level} Track</h2>
+            <h2 className="text-xl font-bold text-bright capitalize">
+              <Link 
+                href={`/tracks/${activeFilter === "all" ? lesson.level.toLowerCase() : activeFilter}`}
+                className="hover:text-signal transition-colors group flex items-center gap-2"
+                title="Return to Track Dashboard"
+              >
+                {activeFilter === "all" ? lesson.level : activeFilter} Track
+                <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+            </h2>
           </div>
           <select
             title="Filter pipeline by track"
@@ -419,7 +430,7 @@ export function PlaygroundShell() {
             key={`explain-${frameIndex}`}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="card-elevated rounded-[32px] p-6 shadow-md"
+            className="card-elevated rounded-[24px] sm:rounded-[32px] p-5 sm:p-6 shadow-md"
           >
              <div className="flex items-center gap-2 mb-4">
                 <BrainCircuit className="h-4 w-4 text-signal" />
@@ -440,7 +451,7 @@ export function PlaygroundShell() {
           </motion.div>
 
           {/* Complexity block */}
-          <div className="card-elevated rounded-[32px] p-6 shadow-md">
+          <div className="card-elevated rounded-[24px] sm:rounded-[32px] p-5 sm:p-6 shadow-md">
              <div className="flex items-center gap-2 mb-4">
                 <Gauge className="h-4 w-4 text-amber" />
                 <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("complexity")}</div>
@@ -464,7 +475,7 @@ export function PlaygroundShell() {
           </div>
 
           {/* Challenge & Hint block */}
-          <div className="card-elevated rounded-[32px] p-6 shadow-md">
+          <div className="card-elevated rounded-[24px] sm:rounded-[32px] p-5 sm:p-6 shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <WandSparkles className="h-4 w-4 text-signal" />
                 <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/50">{t("challenge")}</div>
@@ -483,7 +494,7 @@ export function PlaygroundShell() {
 
         {/* ── Center Column: Code Editor & Output ── */}
         <section className="space-y-6 flex flex-col">
-          <div className="card-elevated rounded-[32px] p-5">
+          <div className="card-elevated rounded-[24px] sm:rounded-[32px] p-4 sm:p-5">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/42">
@@ -567,11 +578,11 @@ export function PlaygroundShell() {
           </div>
 
           {/* Output block (moved exactly below editor) */}
-          <div className="card-elevated rounded-[32px] p-6 shadow-md">
+          <div className="card-elevated rounded-[24px] sm:rounded-[32px] p-4 sm:p-6 shadow-md">
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Terminal className="h-4 w-4 text-ink/50" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-ink/50">{t("outputConsole")}</div>
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.2em] text-ink/50">{t("outputConsole")}</div>
               </div>
               <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 bg-white/5 px-2 py-0.5 rounded-full">
                 {visibleOutput.length} lines
@@ -599,26 +610,26 @@ export function PlaygroundShell() {
             </div>
           </div>
 
-          {/* Next Lesson CTA */}
-          <AnimatePresence>
-            {isFinished && nextLesson && (
-              <motion.button
-                initial={{ opacity: 0, y: 14, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                className="flex w-full items-center justify-between rounded-[32px] bg-gradient-to-r from-signal to-amber p-6 font-bold text-white shadow-[0_8px_32px_rgba(232,98,42,0.3)] transition hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(232,98,42,0.4)]"
-                onClick={() => selectLesson(nextLesson.id)}
-              >
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">{t("conceptMastered")}</span>
-                  <span className="mt-1 text-2xl">{nextLesson.title}</span>
-                </div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors">
-                  <ChevronRight className="h-7 w-7" />
-                </div>
-              </motion.button>
-            )}
-          </AnimatePresence>
+          <LessonQuiz
+            key={`quiz-${lesson.id}`}
+            lessonId={lesson.id}
+            isUnlocked={hasRun || isFinished}
+            onCorrectAnswer={() => {
+              markComplete(lesson.id, 50);
+              confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#ff6535', '#38bdf8', '#4ade80', '#fbbf24']
+              });
+            }}
+            onContinue={() => {
+              if (nextLesson) {
+                selectLesson(nextLesson.id);
+              }
+            }}
+          />
+
         </section>
 
         {/* ── Right Column: Timeline & Memory View ── */}

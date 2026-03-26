@@ -130,11 +130,26 @@
   },
   "CourseData": {
     "tracks": {
-      "foundation": { "audience": "零基础初学者", "description": "从零开始。学习Python如何思考数据、决策和流程 — 逐步进行，每个概念都有动画。" },
-      "beginner": { "audience": "首次学习Python", "description": "建立真正的编程习惯。通过逐步观看循环、函数和列表的执行来掌握它们。" },
-      "intermediate": { "audience": "开发脚本和应用的构建者", "description": "升级你的工具包。通过可视化状态跟踪探索字典、栈、队列和搜索算法。" },
-      "advanced": { "audience": "精进问题解决的工程师", "description": "用算法思维思考。实时观看排序和树算法的动画，通过观察理解Big O。" },
-      "mastery": { "audience": "探索内部机制的专家", "description": "推向前沿。图搜索、动态规划和面试级算法 — 全部实时可视化。" }
+      "foundation": {
+        "audience": "零基础初学者",
+        "description": "从零开始。学习Python如何思考数据、决策和流程 — 逐步进行，每个概念都有动画。"
+      },
+      "beginner": {
+        "audience": "首次学习Python",
+        "description": "建立真正的编程习惯。通过逐步观看循环、函数和列表的执行来掌握它们。"
+      },
+      "intermediate": {
+        "audience": "开发脚本和应用的构建者",
+        "description": "升级你的工具包。通过可视化状态跟踪探索字典、栈、队列和搜索算法。"
+      },
+      "advanced": {
+        "audience": "精进问题解决的工程师",
+        "description": "用算法思维思考。实时观看排序和树算法的动画，通过观察理解Big O。"
+      },
+      "mastery": {
+        "audience": "探索内部机制的专家",
+        "description": "推向前沿。图搜索、动态规划和面试级算法 — 全部实时可视化。"
+      }
     },
     "algorithms": {
       "hello-world": "你的第一个Python输出。看看print()如何将数据发送到控制台，以及为什么它是所有调试的基础。",
@@ -188,6 +203,707 @@
       "coin-change": "凑出金额所需的最少硬币。观看DP数组从0填充到目标值。",
       "bit-manipulation": "AND、OR、XOR、移位 — 密码学、图形学和竞赛编程背后的运算。"
     }
+  },
+  "Quizzes": {
+    "hello-world": {
+      "title": "知识检查",
+      "question": "`print()` 函数有什么作用？",
+      "options": {
+        "A": "将数据输出到控制台",
+        "B": "保存文件",
+        "C": "接受用户输入",
+        "D": "停止程序"
+      },
+      "correct": "A",
+      "successMessage": "正确的！ print() 用于输出。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "variables-types": {
+      "title": "知识检查",
+      "question": "以下哪项创建整型变量？",
+      "options": {
+        "A": "x = '5'",
+        "B": "x = 5",
+        "C": "x = 5.0",
+        "D": "x = 真"
+      },
+      "correct": "B",
+      "successMessage": "正确的！ 5 不带引号或小数点是 int。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "string-operations": {
+      "title": "知识检查",
+      "question": "字符串操作算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "arithmetic": {
+      "title": "知识检查",
+      "question": "算术算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "if-else": {
+      "title": "知识检查",
+      "question": "if else 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "while-loop": {
+      "title": "知识检查",
+      "question": "while 循环算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "for-loop": {
+      "title": "知识检查",
+      "question": "for循环算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "lists-basics": {
+      "title": "知识检查",
+      "question": "列表基础算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "functions-intro": {
+      "title": "知识检查",
+      "question": "函数介绍算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "input-output": {
+      "title": "知识检查",
+      "question": "输入输出算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "linear-search": {
+      "title": "知识检查",
+      "question": "线性搜索算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "count-occurrences": {
+      "title": "知识检查",
+      "question": "计数出现次数算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "find-min-max": {
+      "title": "知识检查",
+      "question": "查找最小-最大算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "sum-average": {
+      "title": "知识检查",
+      "question": "求和平均算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "loop-explorer": {
+      "title": "知识检查",
+      "question": "循环探索器算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "reverse-list": {
+      "title": "知识检查",
+      "question": "反向列表算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "palindrome": {
+      "title": "知识检查",
+      "question": "回文算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "fizzbuzz": {
+      "title": "知识检查",
+      "question": "fizzbuzz 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "factorial": {
+      "title": "知识检查",
+      "question": "阶乘算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "fibonacci-iterative": {
+      "title": "知识检查",
+      "question": "斐波那契迭代算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "binary-search": {
+      "title": "知识检查",
+      "question": "在执行二分查找之前，数组必须满足什么条件？",
+      "options": {
+        "A": "它的长度必须均匀",
+        "B": "它必须仅包含数字",
+        "C": "必须排序",
+        "D": "它必须没有重复项"
+      },
+      "correct": "C",
+      "successMessage": "正确的！二分查找需要排序的数据。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "selection-sort": {
+      "title": "知识检查",
+      "question": "选择排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "insertion-sort": {
+      "title": "知识检查",
+      "question": "插入排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "two-pointers": {
+      "title": "知识检查",
+      "question": "在排序数组上的双指针技术中，如果总和太大会发生什么？",
+      "options": {
+        "A": "将右指针向左移动",
+        "B": "将左指针向右移动",
+        "C": "将两个指针向内移动",
+        "D": "重新启动算法"
+      },
+      "correct": "A",
+      "successMessage": "正确的！向左移动右指针会减少总和。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "hash-map-counting": {
+      "title": "知识检查",
+      "question": "哈希映射计数算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "stack-ops": {
+      "title": "知识检查",
+      "question": "堆栈操作算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "queue-ops": {
+      "title": "知识检查",
+      "question": "队列操作算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "anagram-check": {
+      "title": "知识检查",
+      "question": "字谜检查算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "sliding-window": {
+      "title": "知识检查",
+      "question": "滑动窗口算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "merge-sorted": {
+      "title": "知识检查",
+      "question": "合并排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "bubble-sort": {
+      "title": "知识检查",
+      "question": "在一次完整的冒泡排序过程中会发生什么？",
+      "options": {
+        "A": "数组已完全排序",
+        "B": "最大的未排序元素“冒泡”到最后",
+        "C": "数组被分成两半",
+        "D": "找到中值元素"
+      },
+      "correct": "B",
+      "successMessage": "正确的！最大的元素在每次传递时都会浮动到正确的最终位置。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "merge-sort": {
+      "title": "知识检查",
+      "question": "合并排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "quick-sort": {
+      "title": "知识检查",
+      "question": "快速排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "heap-sort": {
+      "title": "知识检查",
+      "question": "堆排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "bfs": {
+      "title": "知识检查",
+      "question": "bfs 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "dfs": {
+      "title": "知识检查",
+      "question": "深度优先搜索中自然使用（通常隐式）哪种数据结构？",
+      "options": {
+        "A": "链表",
+        "B": "队列",
+        "C": "哈希映射",
+        "D": "堆栈/调用堆栈"
+      },
+      "correct": "D",
+      "successMessage": "正确的！ DFS 首先深入，它依赖于 LIFO 堆栈。",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "binary-tree-traversal": {
+      "title": "知识检查",
+      "question": "二叉树遍历算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "two-sum": {
+      "title": "知识检查",
+      "question": "二和算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "valid-parentheses": {
+      "title": "知识检查",
+      "question": "有效括号算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "fibonacci-recursive": {
+      "title": "知识检查",
+      "question": "斐波那契递归算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "dijkstra": {
+      "title": "知识检查",
+      "question": "dijkstra 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "knapsack": {
+      "title": "知识检查",
+      "question": "背包算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "lcs": {
+      "title": "知识检查",
+      "question": "lcs 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "topological-sort": {
+      "title": "知识检查",
+      "question": "拓扑排序算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "kruskals": {
+      "title": "知识检查",
+      "question": "kruskals 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "trie": {
+      "title": "知识检查",
+      "question": "trie 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "floyd-warshall": {
+      "title": "知识检查",
+      "question": "Floyd Warshall 算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "segment-tree": {
+      "title": "知识检查",
+      "question": "线段树算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "coin-change": {
+      "title": "知识检查",
+      "question": "硬币找零算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    },
+    "bit-manipulation": {
+      "title": "知识检查",
+      "question": "位操作算法的主要目标是什么？",
+      "options": {
+        "A": "以最佳方式处理数据",
+        "B": "在运行时抛出异常",
+        "C": "设置字符串格式",
+        "D": "执行 I/O 操作"
+      },
+      "correct": "A",
+      "successMessage": "回顾这个算法非常出色！",
+      "checkButton": "提交答案",
+      "nextButton": "继续下一课"
+    }
   }
 }
-

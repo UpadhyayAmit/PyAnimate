@@ -130,11 +130,26 @@
   },
   "CourseData": {
     "tracks": {
-      "foundation": { "audience": "Principiantes absolutos, cero experiencia", "description": "Comienza desde cero. Aprende cómo Python piensa sobre datos, decisiones y flujo — paso a paso, con cada concepto animado." },
-      "beginner": { "audience": "Primeros pasos en Python", "description": "Construye hábitos reales de programación. Domina bucles, funciones y listas viéndolos ejecutarse paso a paso." },
-      "intermediate": { "audience": "Desarrolladores creando scripts y apps", "description": "Mejora tu kit de herramientas. Explora diccionarios, pilas, colas y tus primeros algoritmos de búsqueda con seguimiento visual de estado." },
-      "advanced": { "audience": "Ingenieros perfeccionando resolución de problemas", "description": "Piensa algorítmicamente. Ve algoritmos de ordenamiento y árboles animarse en tiempo real, entiende Big O por observación." },
-      "mastery": { "audience": "Expertos explorando mecanismos internos", "description": "Llega a la frontera. Búsqueda en grafos, programación dinámica y algoritmos de nivel entrevista — todo visualizado en vivo." }
+      "foundation": {
+        "audience": "Principiantes absolutos, cero experiencia",
+        "description": "Comienza desde cero. Aprende cómo Python piensa sobre datos, decisiones y flujo — paso a paso, con cada concepto animado."
+      },
+      "beginner": {
+        "audience": "Primeros pasos en Python",
+        "description": "Construye hábitos reales de programación. Domina bucles, funciones y listas viéndolos ejecutarse paso a paso."
+      },
+      "intermediate": {
+        "audience": "Desarrolladores creando scripts y apps",
+        "description": "Mejora tu kit de herramientas. Explora diccionarios, pilas, colas y tus primeros algoritmos de búsqueda con seguimiento visual de estado."
+      },
+      "advanced": {
+        "audience": "Ingenieros perfeccionando resolución de problemas",
+        "description": "Piensa algorítmicamente. Ve algoritmos de ordenamiento y árboles animarse en tiempo real, entiende Big O por observación."
+      },
+      "mastery": {
+        "audience": "Expertos explorando mecanismos internos",
+        "description": "Llega a la frontera. Búsqueda en grafos, programación dinámica y algoritmos de nivel entrevista — todo visualizado en vivo."
+      }
     },
     "algorithms": {
       "hello-world": "Tu primera salida de Python. Mira cómo print() envía datos a la consola y por qué es la base de toda depuración.",
@@ -188,6 +203,707 @@
       "coin-change": "Mínimo de monedas para un monto. Ve el array DP llenarse de 0 hasta el objetivo.",
       "bit-manipulation": "AND, OR, XOR, shifts — las operaciones detrás de la criptografía, gráficos y programación competitiva."
     }
+  },
+  "Quizzes": {
+    "hello-world": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué hace la función `print()`?",
+      "options": {
+        "A": "Muestra datos en la consola",
+        "B": "Guarda un archivo",
+        "C": "Toma la entrada",
+        "D": "Detiene el programa"
+      },
+      "correct": "A",
+      "successMessage": "¡Correcto! print() se usa para la salida.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "variables-types": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Cuál de las siguientes crea una variable entera?",
+      "options": {
+        "A": "x = '5'",
+        "B": "x = 5",
+        "C": "x = 5.0",
+        "D": "x = True"
+      },
+      "correct": "B",
+      "successMessage": "¡Correcto! 5 sin comillas ni decimales es un entero.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "string-operations": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué operador conecta dos cadenas en Python?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "+",
+        "D": "/"
+      },
+      "correct": "C",
+      "successMessage": "¡Correcto! El operador + concatena cadenas.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "arithmetic": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué devuelve el operador módulo (%)?",
+      "options": {
+        "A": "Un porcentaje",
+        "B": "El cociente",
+        "C": "El multiplicador x100",
+        "D": "El resto de una división"
+      },
+      "correct": "D",
+      "successMessage": "¡Correcto! % se usa para restos.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "if-else": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué palabra clave se usa para condiciones alternativas en Python?",
+      "options": {
+        "A": "else if",
+        "B": "elseif",
+        "C": "elif",
+        "D": "then"
+      },
+      "correct": "C",
+      "successMessage": "¡Correcto! Python usa 'elif'.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "while-loop": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué pasa si la condición de un bucle while nunca se vuelve False?",
+      "options": {
+        "A": "Se ejecuta infinitamente",
+        "B": "Falla y se cierra",
+        "C": "Se detiene después de 100 iteraciones",
+        "D": "Se omite"
+      },
+      "correct": "A",
+      "successMessage": "¡Correcto! Los bucles infinitos siguen ejecutándose.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "for-loop": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué función se usa con los bucles for para iterar números?",
+      "options": {
+        "A": "count()",
+        "B": "range()",
+        "C": "loop()",
+        "D": "iter()"
+      },
+      "correct": "B",
+      "successMessage": "¡Correcto! Se utiliza range().",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "lists-basics": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Cómo accedes al primer elemento de la lista 'arr'?",
+      "options": {
+        "A": "arr[1]",
+        "B": "arr.first()",
+        "C": "arr[0]",
+        "D": "arr[-1]"
+      },
+      "correct": "C",
+      "successMessage": "¡Correcto! Las listas en Python comienzan en 0.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "functions-intro": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué palabra clave define una función?",
+      "options": {
+        "A": "def",
+        "B": "function",
+        "C": "fun",
+        "D": "create"
+      },
+      "correct": "A",
+      "successMessage": "¡Correcto! 'def' crea funciones.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "input-output": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Qué tipo de datos devuelve siempre la función input() por defecto?",
+      "options": {
+        "A": "Entero",
+        "B": "Booleano",
+        "C": "Flotante",
+        "D": "String"
+      },
+      "correct": "D",
+      "successMessage": "¡Correcto! input() captura texto sin formato.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "linear-search": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo linear search?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "count-occurrences": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo count occurrences?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "find-min-max": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo find min-max?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "sum-average": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo sum average?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "loop-explorer": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo loop explorer?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "reverse-list": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo reverse list?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "palindrome": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo palindrome?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "fizzbuzz": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo fizzbuzz?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "factorial": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo factorial?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "fibonacci-iterative": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo fibonacci iterative?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "binary-search": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo binary search?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "selection-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo selection sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "insertion-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo insertion sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "two-pointers": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo two pointers?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "hash-map-counting": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo hash map-counting?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "stack-ops": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo stack ops?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "queue-ops": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo queue ops?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "anagram-check": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo anagram check?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "sliding-window": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo sliding window?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "merge-sorted": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo merge sorted?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "bubble-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo bubble sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "merge-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo merge sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "quick-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo quick sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "heap-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo heap sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "bfs": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo bfs?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "dfs": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo dfs?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "binary-tree-traversal": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo binary tree-traversal?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "two-sum": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo two sum?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "valid-parentheses": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo valid parentheses?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "fibonacci-recursive": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo fibonacci recursive?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "dijkstra": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo dijkstra?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "knapsack": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo knapsack?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "lcs": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo lcs?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "topological-sort": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo topological sort?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "kruskals": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo kruskals?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "trie": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo trie?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "floyd-warshall": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo floyd warshall?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "segment-tree": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo segment tree?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "coin-change": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo coin change?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    },
+    "bit-manipulation": {
+      "title": "Comprobación de Conocimientos",
+      "question": "¿Has comprendido completamente el concepto principal del algoritmo bit manipulation?",
+      "options": {
+        "A": "Sí, lo entiendo perfectamente.",
+        "B": "Probablemente debería revisarlo de nuevo.",
+        "C": "Sigue siendo un poco confuso.",
+        "D": "En absoluto."
+      },
+      "correct": "A",
+      "successMessage": "¡Genial! Buen trabajo terminando este algoritmo.",
+      "checkButton": "Validar",
+      "nextButton": "Siguiente Lección"
+    }
   }
 }
-
