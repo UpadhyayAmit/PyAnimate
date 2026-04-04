@@ -116,22 +116,22 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
   return (
     <div className="space-y-3">
       {/* Chart */}
-      <div className="rounded-[16px] overflow-hidden bg-[#0f172a] p-1">
+      <div className="rounded-[16px] overflow-hidden chart-surface p-1">
         <svg viewBox={`0 0 ${W} ${H}`} width="100%" className="block" aria-label="Big O complexity curves">
           {/* Grid lines */}
           {gridY.map((y) => (
-            <line key={y} x1={PAD.left} y1={y} x2={PAD.left + PLOT_W} y2={y} stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+            <line key={y} x1={PAD.left} y1={y} x2={PAD.left + PLOT_W} y2={y} stroke="var(--border)" strokeWidth="1" />
           ))}
           {gridX.map((x) => (
-            <line key={x} x1={x} y1={PAD.top} x2={x} y2={PAD.top + PLOT_H} stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+            <line key={x} x1={x} y1={PAD.top} x2={x} y2={PAD.top + PLOT_H} stroke="var(--border)" strokeWidth="1" />
           ))}
 
           {/* Axes */}
-          <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + PLOT_H} stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
-          <line x1={PAD.left} y1={PAD.top + PLOT_H} x2={PAD.left + PLOT_W} y2={PAD.top + PLOT_H} stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
+          <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + PLOT_H} stroke="var(--border-warm)" strokeWidth="1.5" />
+          <line x1={PAD.left} y1={PAD.top + PLOT_H} x2={PAD.left + PLOT_W} y2={PAD.top + PLOT_H} stroke="var(--border-warm)" strokeWidth="1.5" />
 
           {/* Axis labels */}
-          <text x={PAD.left + PLOT_W / 2} y={H - 4} textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.35)">
+          <text x={PAD.left + PLOT_W / 2} y={H - 4} textAnchor="middle" fontSize="9" fill="var(--foreground)" opacity="0.45">
             n (input size)
           </text>
           <text
@@ -139,7 +139,8 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
             y={PAD.top + PLOT_H / 2}
             textAnchor="middle"
             fontSize="9"
-            fill="rgba(255,255,255,0.35)"
+            fill="var(--foreground)"
+            opacity="0.45"
             transform={`rotate(-90, 10, ${PAD.top + PLOT_H / 2})`}
           >
             ops
@@ -173,7 +174,7 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
                   y1={PAD.top}
                   x2={markerX}
                   y2={PAD.top + PLOT_H}
-                  stroke="rgba(255,255,255,0.30)"
+                  stroke="var(--border-warm)"
                   strokeWidth="1"
                   strokeDasharray="3,3"
                 />
@@ -220,14 +221,12 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
           return (
             <div
               key={c.id}
-              className={`flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold transition ${
-                isActive ? 'bg-white/8' : 'opacity-35'
-              }`}
+              className={`flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold transition ${isActive ? 'bg-ink/8' : 'opacity-35'}`}
             >
               <span className="h-2 w-2 rounded-full shrink-0" style={{ background: c.color }} />
               <span style={{ color: c.color }}>{c.label}</span>
-              {c.activeTime && <span className="text-white/40 text-[9px]">{t('timeLabel').toLowerCase()}</span>}
-              {c.activeSpace && <span className="text-white/40 text-[9px]">{t('spaceLabel').toLowerCase()}</span>}
+              {c.activeTime && <span className="text-ink/50 text-[9px]">{t('timeLabel').toLowerCase()}</span>}
+              {c.activeSpace && <span className="text-ink/50 text-[9px]">{t('spaceLabel').toLowerCase()}</span>}
             </div>
           );
         })}
@@ -235,7 +234,7 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
 
       {/* Interactive n slider */}
       <div className="space-y-2">
-        <div className="flex items-center justify-between text-[10px] text-white/40">
+        <div className="flex items-center justify-between text-[10px] text-ink/50">
           <span>n = {nValue}</span>
           <span>{rangeLabel}</span>
         </div>
@@ -249,11 +248,11 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
           style={{ accentColor: '#ff6535' }}
         />
         {/* At-n table */}
-        <div className="rounded-[12px] bg-[#0f172a] p-3">
-          <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/35">{atNLabel}</div>
+        <div className="rounded-[12px] p-3 chart-surface">
+          <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-ink/40">{atNLabel}</div>
           <table className="w-full text-[10px]">
             <thead>
-              <tr className="text-white/30">
+              <tr className="text-ink/35">
                 <th className="text-left pb-1 font-medium">{t('complexity')}</th>
                 <th className="text-right pb-1 font-medium">{t('operations')}</th>
               </tr>
@@ -270,7 +269,7 @@ export function ComplexityChart({ timeComplexity, spaceComplexity }: Props) {
                   <td className="py-0.5 font-mono" style={{ color: row.color }}>
                     {row.label}
                   </td>
-                  <td className="py-0.5 text-right text-white/60 font-mono">{row.value}</td>
+                  <td className="py-0.5 text-right font-mono text-ink/60">{row.value}</td>
                 </tr>
               ))}
             </tbody>

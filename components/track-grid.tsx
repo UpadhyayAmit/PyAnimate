@@ -1,87 +1,149 @@
-"use client";
+'use client';
 
-import { Link } from "@/i18n/routing";
-import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Code2, Database, GitBranch, Layers } from "lucide-react";
-import { trackLevels } from "@/data/course";
-import { useTranslations } from "next-intl";
+import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
+import { ArrowRight, BookOpen, Code2, Database, GitBranch, Layers } from 'lucide-react';
+import { trackLevels } from '@/data/course';
+import { useTranslations } from 'next-intl';
+import { useTheme } from '@/lib/theme';
 
 // Each level gets a distinct visual identity
-const trackStyles = [
+const trackStylesDark = [
   {
-    card: "bg-gradient-to-br from-violet-900/40 via-violet-800/20 to-transparent border-violet-500/40 hover:shadow-[0_8px_32px_rgba(139,92,246,0.18)]",
-    topBar: "bg-gradient-to-r from-violet-500 to-violet-400",
-    icon: "text-violet-400",
-    iconBg: "bg-violet-800/50",
-    number: "text-violet-400",
-    goal: "bg-violet-900/60 text-violet-300",
-    arrow: "text-violet-400",
-    count: "text-violet-400",
+    card: 'bg-gradient-to-br from-violet-900/40 via-violet-800/20 to-transparent border-violet-500/40 hover:shadow-[0_8px_32px_rgba(139,92,246,0.18)]',
+    topBar: 'bg-gradient-to-r from-violet-500 to-violet-400',
+    icon: 'text-violet-400',
+    iconBg: 'bg-violet-800/50',
+    number: 'text-violet-400',
+    goal: 'bg-violet-900/60 text-violet-300',
+    arrow: 'text-violet-400',
+    count: 'text-violet-400',
+    divider: 'border-white/8',
   },
   {
-    card: "bg-gradient-to-br from-sky-900/40 via-sky-800/20 to-transparent border-sky-500/40 hover:shadow-[0_8px_32px_rgba(56,189,248,0.18)]",
-    topBar: "bg-gradient-to-r from-sky-500 to-sky-400",
-    icon: "text-sky-400",
-    iconBg: "bg-sky-800/50",
-    number: "text-sky-400",
-    goal: "bg-sky-900/60 text-sky-300",
-    arrow: "text-sky-400",
-    count: "text-sky-400",
+    card: 'bg-gradient-to-br from-sky-900/40 via-sky-800/20 to-transparent border-sky-500/40 hover:shadow-[0_8px_32px_rgba(56,189,248,0.18)]',
+    topBar: 'bg-gradient-to-r from-sky-500 to-sky-400',
+    icon: 'text-sky-400',
+    iconBg: 'bg-sky-800/50',
+    number: 'text-sky-400',
+    goal: 'bg-sky-900/60 text-sky-300',
+    arrow: 'text-sky-400',
+    count: 'text-sky-400',
+    divider: 'border-white/8',
   },
   {
-    card: "bg-gradient-to-br from-emerald-900/40 via-emerald-800/20 to-transparent border-emerald-500/40 hover:shadow-[0_8px_32px_rgba(52,211,153,0.18)]",
-    topBar: "bg-gradient-to-r from-emerald-500 to-emerald-400",
-    icon: "text-emerald-400",
-    iconBg: "bg-emerald-800/50",
-    number: "text-emerald-400",
-    goal: "bg-emerald-900/60 text-emerald-300",
-    arrow: "text-emerald-400",
-    count: "text-emerald-400",
+    card: 'bg-gradient-to-br from-emerald-900/40 via-emerald-800/20 to-transparent border-emerald-500/40 hover:shadow-[0_8px_32px_rgba(52,211,153,0.18)]',
+    topBar: 'bg-gradient-to-r from-emerald-500 to-emerald-400',
+    icon: 'text-emerald-400',
+    iconBg: 'bg-emerald-800/50',
+    number: 'text-emerald-400',
+    goal: 'bg-emerald-900/60 text-emerald-300',
+    arrow: 'text-emerald-400',
+    count: 'text-emerald-400',
+    divider: 'border-white/8',
   },
   {
-    card: "bg-gradient-to-br from-rose-900/40 via-rose-800/20 to-transparent border-rose-500/40 hover:shadow-[0_8px_32px_rgba(251,113,133,0.18)]",
-    topBar: "bg-gradient-to-r from-rose-500 to-rose-400",
-    icon: "text-rose-400",
-    iconBg: "bg-rose-800/50",
-    number: "text-rose-400",
-    goal: "bg-rose-900/60 text-rose-300",
-    arrow: "text-rose-400",
-    count: "text-rose-400",
+    card: 'bg-gradient-to-br from-rose-900/40 via-rose-800/20 to-transparent border-rose-500/40 hover:shadow-[0_8px_32px_rgba(251,113,133,0.18)]',
+    topBar: 'bg-gradient-to-r from-rose-500 to-rose-400',
+    icon: 'text-rose-400',
+    iconBg: 'bg-rose-800/50',
+    number: 'text-rose-400',
+    goal: 'bg-rose-900/60 text-rose-300',
+    arrow: 'text-rose-400',
+    count: 'text-rose-400',
+    divider: 'border-white/8',
   },
   {
-    card: "bg-gradient-to-br from-amber-900/40 via-amber-800/20 to-transparent border-amber-500/40 hover:shadow-[0_8px_32px_rgba(251,191,36,0.18)]",
-    topBar: "bg-gradient-to-r from-amber-500 to-amber-400",
-    icon: "text-amber-400",
-    iconBg: "bg-amber-800/50",
-    number: "text-amber-400",
-    goal: "bg-amber-900/60 text-amber-300",
-    arrow: "text-amber-400",
-    count: "text-amber-400",
+    card: 'bg-gradient-to-br from-amber-900/40 via-amber-800/20 to-transparent border-amber-500/40 hover:shadow-[0_8px_32px_rgba(251,191,36,0.18)]',
+    topBar: 'bg-gradient-to-r from-amber-500 to-amber-400',
+    icon: 'text-amber-400',
+    iconBg: 'bg-amber-800/50',
+    number: 'text-amber-400',
+    goal: 'bg-amber-900/60 text-amber-300',
+    arrow: 'text-amber-400',
+    count: 'text-amber-400',
+    divider: 'border-white/8',
+  },
+];
+
+const trackStylesLight = [
+  {
+    card: 'bg-gradient-to-br from-violet-50 via-violet-100/60 to-white border-violet-300/60 hover:shadow-[0_8px_32px_rgba(139,92,246,0.14)]',
+    topBar: 'bg-gradient-to-r from-violet-500 to-violet-400',
+    icon: 'text-violet-600',
+    iconBg: 'bg-violet-100',
+    number: 'text-violet-600',
+    goal: 'bg-violet-100 text-violet-700',
+    arrow: 'text-violet-600',
+    count: 'text-violet-600',
+    divider: 'border-violet-200/70',
+  },
+  {
+    card: 'bg-gradient-to-br from-sky-50 via-sky-100/60 to-white border-sky-300/60 hover:shadow-[0_8px_32px_rgba(56,189,248,0.14)]',
+    topBar: 'bg-gradient-to-r from-sky-500 to-sky-400',
+    icon: 'text-sky-600',
+    iconBg: 'bg-sky-100',
+    number: 'text-sky-600',
+    goal: 'bg-sky-100 text-sky-700',
+    arrow: 'text-sky-600',
+    count: 'text-sky-600',
+    divider: 'border-sky-200/70',
+  },
+  {
+    card: 'bg-gradient-to-br from-emerald-50 via-emerald-100/60 to-white border-emerald-300/60 hover:shadow-[0_8px_32px_rgba(52,211,153,0.14)]',
+    topBar: 'bg-gradient-to-r from-emerald-500 to-emerald-400',
+    icon: 'text-emerald-600',
+    iconBg: 'bg-emerald-100',
+    number: 'text-emerald-600',
+    goal: 'bg-emerald-100 text-emerald-700',
+    arrow: 'text-emerald-600',
+    count: 'text-emerald-600',
+    divider: 'border-emerald-200/70',
+  },
+  {
+    card: 'bg-gradient-to-br from-rose-50 via-rose-100/60 to-white border-rose-300/60 hover:shadow-[0_8px_32px_rgba(251,113,133,0.14)]',
+    topBar: 'bg-gradient-to-r from-rose-500 to-rose-400',
+    icon: 'text-rose-600',
+    iconBg: 'bg-rose-100',
+    number: 'text-rose-600',
+    goal: 'bg-rose-100 text-rose-700',
+    arrow: 'text-rose-600',
+    count: 'text-rose-600',
+    divider: 'border-rose-200/70',
+  },
+  {
+    card: 'bg-gradient-to-br from-amber-50 via-amber-100/60 to-white border-amber-300/60 hover:shadow-[0_8px_32px_rgba(251,191,36,0.14)]',
+    topBar: 'bg-gradient-to-r from-amber-500 to-amber-400',
+    icon: 'text-amber-600',
+    iconBg: 'bg-amber-100',
+    number: 'text-amber-600',
+    goal: 'bg-amber-100 text-amber-700',
+    arrow: 'text-amber-600',
+    count: 'text-amber-600',
+    divider: 'border-amber-200/70',
   },
 ];
 
 const trackIcons = [BookOpen, Code2, Database, GitBranch, Layers];
 
 export function TrackGrid() {
-  const t = useTranslations("TrackGrid");
+  const t = useTranslations('TrackGrid');
+  const { theme } = useTheme();
+  const trackStyles = theme === 'light' ? trackStylesLight : trackStylesDark;
 
   return (
     <section id="tracks" className="px-6 py-10 sm:px-10 lg:px-16">
       <div className="site-shell">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">
-              {t("sectionLabel")}
-            </p>
-            <h2 className="mt-3 max-w-lg text-3xl font-semibold text-bright sm:text-4xl">
-              {t("heading")}
-            </h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-ink/42">{t('sectionLabel')}</p>
+            <h2 className="mt-3 max-w-lg text-3xl font-semibold text-bright sm:text-4xl">{t('heading')}</h2>
           </div>
           <Link
             href="/playground"
             className="shrink-0 inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-semibold text-signal transition hover:bg-signal/18"
           >
-            {t("startLearning")}
+            {t('startLearning')}
           </Link>
         </div>
 
@@ -106,38 +168,35 @@ export function TrackGrid() {
                   <div className={`h-1 w-full shrink-0 ${s.topBar}`} />
 
                   <div className="flex flex-col flex-1 p-5">
-                  {/* Icon badge + number */}
-                  <div className="mb-5 flex items-start justify-between">
-                    <span className={`text-sm font-bold ${s.number}`}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-[14px] ${s.iconBg}`}>
-                      <Icon className={`h-5 w-5 ${s.icon}`} />
+                    {/* Icon badge + number */}
+                    <div className="mb-5 flex items-start justify-between">
+                      <span className={`text-sm font-bold ${s.number}`}>{String(index + 1).padStart(2, '0')}</span>
+                      <div className={`flex h-10 w-10 items-center justify-center rounded-[14px] ${s.iconBg}`}>
+                        <Icon className={`h-5 w-5 ${s.icon}`} />
+                      </div>
                     </div>
-                  </div>
 
-                  <h3 className="text-xl font-semibold text-bright">{track.title}</h3>
-                  <p className="mt-1 text-xs leading-5 text-ink/55">{track.audience}</p>
+                    <h3 className="text-xl font-semibold text-bright">{track.title}</h3>
+                    <p className="mt-1 text-xs leading-5 text-ink/55">{track.audience}</p>
 
-                  <ul className="mt-4 flex-1 space-y-1.5">
-                    {track.goals.map((goal) => (
-                      <li
-                        key={goal}
-                        className={`rounded-full px-2.5 py-1 text-xs font-medium w-fit ${s.goal}`}
+                    <ul className="mt-4 flex-1 space-y-1.5">
+                      {track.goals.map((goal) => (
+                        <li key={goal} className={`rounded-full px-2.5 py-1 text-xs font-medium w-fit ${s.goal}`}>
+                          {goal}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className={`mt-5 flex items-center justify-between border-t pt-4 ${s.divider}`}>
+                      <span className={`text-xs font-medium ${s.count}`}>
+                        {track.lessonCount} {t('lessons')}
+                      </span>
+                      <span
+                        className={`inline-flex items-center gap-1 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.arrow}`}
                       >
-                        {goal}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-5 flex items-center justify-between border-t border-white/8 pt-4">
-                    <span className={`text-xs font-medium ${s.count}`}>
-                      {track.lessonCount} {t("lessons")}
-                    </span>
-                    <span className={`inline-flex items-center gap-1 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.arrow}`}>
-                      {t("explore")} <ArrowRight className="h-3 w-3" />
-                    </span>
-                  </div>
+                        {t('explore')} <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </motion.div>

@@ -1,21 +1,21 @@
-import { Link } from "@/i18n/routing";
-import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
-import { algorithmsByLevel, trackLevels } from "@/data/course";
-import { SiteHeader } from "@/components/site-header";
-import { TrackAlgorithmGrid } from "@/components/track-algorithm-grid";
-import { getTranslations } from "next-intl/server";
+import { Link } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
+import { algorithmsByLevel, trackLevels } from '@/data/course';
+import { SiteHeader } from '@/components/site-header';
+import { TrackAlgorithmGrid } from '@/components/track-algorithm-grid';
+import { TrackHeroCard } from '@/components/track-hero-card';
+import { getTranslations } from 'next-intl/server';
 
 type Props = { params: Promise<{ level: string }> };
-
 
 export default async function TrackPage({ params }: Props) {
   const { level } = await params;
   const track = trackLevels.find((t) => t.id === level);
   const allAlgorithms = algorithmsByLevel[level];
   const algorithms = allAlgorithms?.filter((algo) => algo.hasPlayground) ?? [];
-  const t = await getTranslations("TrackPage");
-  const tc = await getTranslations("CourseData");
+  const t = await getTranslations('TrackPage');
+  const tc = await getTranslations('CourseData');
 
   if (!track || !allAlgorithms) notFound();
 
@@ -26,37 +26,19 @@ export default async function TrackPage({ params }: Props) {
       {/* Hero */}
       <section className="px-4 pt-8 pb-6 sm:px-6 md:px-10 lg:px-16">
         <div className="site-shell">
-          <Link
-            href="/#tracks"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/55 transition hover:text-ink"
-          >
+          <Link href="/#tracks" className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/55 transition hover:text-ink">
             <ArrowLeft className="h-4 w-4" />
-            {t("allTracks")}
+            {t('allTracks')}
           </Link>
 
-          <div className={`card-elevated overflow-hidden rounded-[24px] sm:rounded-[32px] bg-gradient-to-br p-6 sm:p-8 ${track.accent}`}>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.22em] text-ink/40">
-                  {t("trackLabel")}
-                </div>
-                <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold text-bright">{track.title}</h1>
-                <p className="mt-2 text-base text-ink/60">{tc.has(`tracks.${track.id}.audience`) ? tc(`tracks.${track.id}.audience`) : track.audience}</p>
-                <p className="mt-4 max-w-xl text-sm leading-7 text-ink/65">{tc.has(`tracks.${track.id}.description`) ? tc(`tracks.${track.id}.description`) : track.description}</p>
-              </div>
-              <div className="flex shrink-0 flex-col gap-3 sm:items-end">
-                {track.goals.map((goal) => (
-                  <div
-                    key={goal}
-                    className="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-ink/60"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-ink/30" />
-                    {goal}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <TrackHeroCard
+            track={{
+              ...track,
+              description: tc.has(`tracks.${track.id}.description`) ? tc(`tracks.${track.id}.description`) : track.description,
+              audience: tc.has(`tracks.${track.id}.audience`) ? tc(`tracks.${track.id}.audience`) : track.audience,
+            }}
+            trackLabel={t('trackLabel')}
+          />
         </div>
       </section>
 

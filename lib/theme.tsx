@@ -1,43 +1,58 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+/**
+ * Theme system — powered by next-themes.
+ *
+ * Supported themes: dark | light | ocean | sepia
+ *
+ * next-themes manages:
+ *   - SSR-safe rendering (no flash)
+ *   - localStorage persistence
+ *   - system-preference detection
+ *   - setting data-theme on <html>
+ *
+ * Components should use ONLY CSS custom property tokens
+ * (text-bright, bg-parchment, text-ink, bg-mist, card-elevated …)
+ * and never branch on isDark. New themes = one CSS block in globals.css.
+ */
 
-type Theme = 'dark' | 'light';
+import React from 'react';
+import { ThemeProvider as NextThemesProvider, useTheme as useNextTheme } from 'next-themes';
 
-interface ThemeContextValue {
-  theme: Theme;
-  toggleTheme: () => void;
-}
+export type AppTheme = 'dark' | 'light' | 'ocean' | 'sepia';
 
-const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'dark',
-  toggleTheme: () => {},
-});
+export const THEMES: { id: AppTheme; label: string; preview: string }[] = [
+  { id: 'dark', label: 'Dark', preview: '#0a0f1a' },
+  { id: 'light', label: 'Light', preview: '#f8fafc' },
+  { id: 'ocean', label: 'Ocean', preview: '#0a1628' },
+  { id: 'sepia', label: 'Sepia', preview: '#f5efe6' },
+];
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
-
-  useEffect(() => {
-    const stored = localStorage.getItem('pyanimate-theme') as Theme | null;
-    if (stored === 'light' || stored === 'dark') {
-      setTheme(stored);
-      document.documentElement.setAttribute('data-theme', stored);
-    }
-  }, []);
-
-  function toggleTheme() {
-    const next: Theme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-    localStorage.setItem('pyanimate-theme', next);
-    document.documentElement.setAttribute('data-theme', next);
-  }
-
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+  return (
+    <NextThemesProvider
+      attribute="data-theme"
+      defaultTheme="dark"
+      enableSystem={false}
+      themes={['dark', 'light', 'ocean', 'sepia']}
+      storageKey="pyanimate-theme"
+    >
+      {children}
+    </NextThemesProvider>
+  );
 }
 
+/** Drop-in replacement — same shape as the old hook. */
 export function useTheme() {
-  return useContext(ThemeContext);
+  const { theme, setTheme, resolvedTheme } = useNextTheme();
+  const current = (resolvedTheme ?? theme ?? 'dark') as AppTheme;
+  return {
+    theme: current,
+    setTheme: (t: AppTheme) => setTheme(t),
+    /** Legacy helper — avoid new usage; prefer CSS tokens instead. */
+    isDark: current === 'dark' || current === 'ocean',
+  };
 }
 
-/** Inline script string — injected into <head> to prevent flash. */
-export const noFlashScript = `(function(){try{var t=localStorage.getItem('pyanimate-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);return;}var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',prefersDark?'dark':'light');}catch(e){}})();`;
+/** @deprecated — kept only for the layout <head> script; next-themes handles flash prevention natively. */
+export const noFlashScript = '';

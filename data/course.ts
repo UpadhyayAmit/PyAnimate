@@ -10,6 +10,7 @@ export type TrackLevel = {
   title: string;
   audience: string;
   accent: string;
+  accentLight: string;
   iconBg: string;
   goals: string[];
   lessonCount: number;
@@ -82,6 +83,7 @@ export const trackLevels: TrackLevel[] = [
     title: 'Foundation',
     audience: 'Absolute beginners, zero experience',
     accent: 'from-sky-900/60 to-blue-950/40',
+    accentLight: 'from-sky-50 via-blue-50/80 to-indigo-50/40',
     iconBg: 'bg-sky-50',
     goals: ['Print & variables', 'Types and comparisons', 'If / else logic'],
     lessonCount: 10,
@@ -92,6 +94,7 @@ export const trackLevels: TrackLevel[] = [
     title: 'Beginner',
     audience: 'First-time Python learners',
     accent: 'from-indigo-900/60 to-violet-950/40',
+    accentLight: 'from-indigo-50 via-violet-50/80 to-purple-50/40',
     iconBg: 'bg-blue-50',
     goals: ['Loops & iteration', 'Functions & scope', 'List operations'],
     lessonCount: 10,
@@ -102,6 +105,7 @@ export const trackLevels: TrackLevel[] = [
     title: 'Intermediate',
     audience: 'Builders shipping scripts and apps',
     accent: 'from-emerald-900/60 to-teal-950/40',
+    accentLight: 'from-emerald-50 via-teal-50/80 to-cyan-50/40',
     iconBg: 'bg-green-50',
     goals: ['Data structures', 'Searching algorithms', 'OOP foundations'],
     lessonCount: 10,
@@ -112,6 +116,7 @@ export const trackLevels: TrackLevel[] = [
     title: 'Advanced',
     audience: 'Engineers refining problem solving',
     accent: 'from-amber-900/60 to-orange-950/40',
+    accentLight: 'from-amber-50 via-orange-50/80 to-yellow-50/40',
     iconBg: 'bg-amber-50',
     goals: ['Sorting algorithms', 'Recursion & trees', 'Time complexity'],
     lessonCount: 10,
@@ -122,6 +127,7 @@ export const trackLevels: TrackLevel[] = [
     title: 'Mastery',
     audience: 'Experts exploring internals',
     accent: 'from-rose-900/60 to-red-950/40',
+    accentLight: 'from-rose-50 via-red-50/80 to-pink-50/40',
     iconBg: 'bg-orange-50',
     goals: ['Graph traversal', 'Dynamic programming', 'System-level thinking'],
     lessonCount: 10,

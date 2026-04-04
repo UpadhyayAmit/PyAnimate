@@ -36,6 +36,7 @@ import { usePyodide } from '@/lib/use-pyodide';
 import { useProgress } from '@/lib/use-progress';
 import type { ExecutionFrame } from '@/data/course';
 import { useLocale, useTranslations } from 'next-intl';
+import { useTheme } from '@/lib/theme';
 
 const SPEEDS = [
   { label: '0.5×', ms: 3600 },
@@ -53,6 +54,7 @@ export function PlaygroundShell() {
   const shouldReduceMotion = useReducedMotion();
   const { status: pyStatus, runCode } = usePyodide();
   const { markComplete, markStepComplete, isComplete, totalXP, lastLessonId, setLastLessonId } = useProgress();
+  const { isDark } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Derive initial lesson from ?lesson= query param
@@ -364,10 +366,10 @@ export function PlaygroundShell() {
               const trackFirstLesson = grouped.find((g) => g.level === e.target.value)?.items[0];
               if (trackFirstLesson) selectLesson(trackFirstLesson.id);
             }}
-            className="rounded-full bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/80 outline-none hover:bg-black/40 border border-white/10"
+            className="rounded-full bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bright outline-none hover:bg-black/40 border border-white/10"
           >
             {levelOrder.map((lvl) => (
-              <option key={lvl} value={lvl} className="bg-[#161b22] text-white/90">
+              <option key={lvl} value={lvl} className="bg-mist text-ink/90">
                 {lvl}
               </option>
             ))}
@@ -400,7 +402,7 @@ export function PlaygroundShell() {
                   <div key={item.id} className="relative flex flex-col items-center shrink-0 min-w-[120px] group">
                     <button
                       onClick={() => selectLesson(item.id)}
-                      className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 bg-[#0c121a] transition-all duration-300 ${
+                      className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 pipeline-node-bg transition-all duration-300 ${
                         active
                           ? 'border-signal scale-110 shadow-[inset_0_0_12px_rgba(232,98,42,0.4),0_0_24px_rgba(232,98,42,0.4)]'
                           : completed
@@ -418,7 +420,7 @@ export function PlaygroundShell() {
                       {completed && !active ? (
                         <CheckCircle2 className="h-6 w-6 text-leaf" />
                       ) : (
-                        <span className={`text-sm font-bold ${active ? 'text-signal' : 'text-white/40'}`}>{String(i + 1).padStart(2, '0')}</span>
+                        <span className={`text-sm font-bold ${active ? 'text-signal' : 'text-ink/50'}`}>{String(i + 1).padStart(2, '0')}</span>
                       )}
                     </button>
                     <div
@@ -681,12 +683,9 @@ export function PlaygroundShell() {
                 {visibleOutput.length} lines
               </div>
             </div>
-            <div
-              dir="ltr"
-              className="rounded-[20px] bg-[#0c121a] border border-black/50 px-5 py-4 font-mono text-sm leading-8 text-white/80 min-h-[120px]"
-            >
+            <div dir="ltr" className="rounded-[20px] code-surface border border-black/50 px-5 py-4 font-mono text-sm leading-8 min-h-[120px]">
               {visibleOutput.length === 0 ? (
-                <span className="text-white/20 italic">{t('noOutputYet')}</span>
+                <span className="text-ink/30 italic">{t('noOutputYet')}</span>
               ) : (
                 <AnimatePresence mode="popLayout">
                   {visibleOutput.map((line, index) => (
@@ -757,9 +756,7 @@ export function PlaygroundShell() {
                       setFrameIndex(index);
                     }}
                     className={`flex w-full items-start gap-4 rounded-[20px] px-4 py-3 text-left transition ${
-                      active
-                        ? 'bg-signal/15 border border-signal/20 shadow-[0_4px_16px_rgba(232,98,42,0.15)]'
-                        : 'bg-white/[0.03] hover:bg-white/[0.08]'
+                      active ? 'bg-signal/15 border border-signal/20 shadow-[0_4px_16px_rgba(232,98,42,0.15)]' : 'timeline-item'
                     } ${isRtlLocale ? 'flex-row-reverse text-right' : ''}`}
                   >
                     <motion.div
@@ -769,7 +766,7 @@ export function PlaygroundShell() {
                     />
                     <div className="min-w-0 flex-1">
                       <div className={`text-xs font-bold uppercase tracking-wider ${active ? 'text-signal' : 'text-ink/60'}`}>line {item.line}</div>
-                      <div className={`mt-0.5 text-sm font-medium ${active ? 'text-white' : 'text-ink/60'}`}>{item.summary}</div>
+                      <div className={`mt-0.5 text-sm font-medium ${active ? 'text-bright' : 'text-ink/60'}`}>{item.summary}</div>
                     </div>
                   </button>
                 );
@@ -786,7 +783,7 @@ export function PlaygroundShell() {
 
             <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-6">
               {frame?.memory.length === 0 && (
-                <div className="flex flex-col items-center justify-center h-full min-h-[160px] rounded-[24px] border border-dashed border-white/10 text-center px-4 bg-black/10">
+                <div className="flex flex-col items-center justify-center h-full min-h-[160px] rounded-[24px] border border-dashed border-ink/10 text-center px-4 memory-empty-state">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/30 mb-2">{t('memoryMatrixEmpty')}</span>
                   <span className="text-xs font-medium text-ink/50">{t('memoryMatrixHint')}</span>
                 </div>
@@ -813,8 +810,8 @@ export function PlaygroundShell() {
                     {/* Call Stack Panel */}
                     {stackVars.length > 0 && (
                       <div className="space-y-3">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 border-b border-white/5 pb-2">
-                          {t('callStack')} <span className="text-white/20 ml-1">({t('primitives')})</span>
+                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40 border-b border-ink/10 pb-2">
+                          {t('callStack')} <span className="text-ink/30 ml-1">({t('primitives')})</span>
                         </div>
                         <AnimatePresence mode="popLayout">
                           {stackVars.map((entry) => {
@@ -831,11 +828,11 @@ export function PlaygroundShell() {
                                 animate={{
                                   opacity: 1,
                                   x: 0,
-                                  backgroundColor: changed ? 'rgba(56, 189, 248, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                                  borderColor: changed ? 'rgba(56, 189, 248, 0.4)' : 'rgba(255, 255, 255, 0.05)',
+                                  backgroundColor: changed ? 'rgba(56, 189, 248, 0.15)' : 'var(--timeline-bg)',
+                                  borderColor: changed ? 'rgba(56, 189, 248, 0.4)' : 'var(--memory-card-border)',
                                 }}
                                 transition={{ duration: 0.4 }}
-                                className="flex flex-col gap-2 rounded-[16px] border border-white/5 bg-[#0c121a] py-3 px-4 shadow-inner"
+                                className="flex flex-col gap-2 rounded-[16px] border border-white/5 memory-var-card py-3 px-4 shadow-inner"
                               >
                                 <div className="flex items-center justify-between">
                                   <div className="flex items-center gap-2">
@@ -844,9 +841,9 @@ export function PlaygroundShell() {
                                       {typeLabel}
                                     </span>
                                   </div>
-                                  <div className="text-[8px] tracking-widest text-white/20">{t('stackValue')}</div>
+                                  <div className="text-[8px] tracking-widest text-ink/30">{t('stackValue')}</div>
                                 </div>
-                                <div className="font-mono text-sm font-bold text-white bg-black/40 rounded-lg px-3 py-1.5 border border-white/5 border-l-2 border-l-sky-400/50">
+                                <div className="font-mono text-sm font-bold text-bright bg-black/40 rounded-lg px-3 py-1.5 border border-white/5 border-l-2 border-l-sky-400/50">
                                   {entry.value}
                                 </div>
                               </motion.div>
@@ -859,8 +856,8 @@ export function PlaygroundShell() {
                     {/* Heap Space Panel */}
                     {heapVars.length > 0 && (
                       <div className="space-y-3 mt-6">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber/40 border-b border-white/5 pb-2">
-                          {t('heapSpace')} <span className="text-white/20 ml-1">({t('objects')})</span>
+                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber/60 border-b border-ink/10 pb-2">
+                          {t('heapSpace')} <span className="text-ink/30 ml-1">({t('objects')})</span>
                         </div>
                         <AnimatePresence mode="popLayout">
                           {heapVars.map((entry) => {
@@ -888,11 +885,11 @@ export function PlaygroundShell() {
                                 animate={{
                                   opacity: 1,
                                   scale: 1,
-                                  backgroundColor: changed ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                                  borderColor: changed ? 'rgba(245, 158, 11, 0.4)' : 'rgba(255, 255, 255, 0.05)',
+                                  backgroundColor: changed ? 'rgba(245, 158, 11, 0.15)' : 'var(--timeline-bg)',
+                                  borderColor: changed ? 'rgba(245, 158, 11, 0.4)' : 'var(--memory-card-border)',
                                 }}
                                 transition={{ duration: 0.4 }}
-                                className="rounded-[24px] border border-white/5 bg-[#0c121a] p-4 shadow-inner relative"
+                                className="rounded-[24px] border border-white/5 memory-var-card p-4 shadow-inner relative"
                               >
                                 <div className="absolute top-4 right-4 text-[9px] font-bold tracking-widest text-amber/30">
                                   HEAP • 0x{getStableHeapAddress(entry.name)}
@@ -912,16 +909,16 @@ export function PlaygroundShell() {
                                       <motion.div
                                         layout
                                         key={item.key}
-                                        className="relative flex h-10 min-w-[40px] items-center justify-center rounded-[12px] border border-amber/30 bg-gradient-to-br from-amber/20 to-amber-600/10 px-3 font-mono text-sm font-bold text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_12px_rgba(0,0,0,0.4)]"
+                                        className="relative flex h-10 min-w-[40px] items-center justify-center rounded-[12px] border border-amber/30 bg-gradient-to-br from-amber/20 to-amber-600/10 px-3 font-mono text-sm font-bold text-bright shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_12px_rgba(0,0,0,0.4)]"
                                       >
-                                        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 bg-[#0c121a] px-1 text-[8px] font-bold text-amber/50">
+                                        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 bg-inherit px-1 text-[8px] font-bold text-amber/50">
                                           {idx}
                                         </div>
                                         {item.val}
                                       </motion.div>
                                     ))
                                   ) : (
-                                    <span className="text-white/20 text-xs italic">{t('emptyList')}</span>
+                                    <span className="text-ink/30 text-xs italic">{t('emptyList')}</span>
                                   )}
                                 </div>
                               </motion.div>

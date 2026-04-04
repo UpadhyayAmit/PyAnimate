@@ -2,7 +2,7 @@ import { Link } from '@/i18n/routing';
 import { PyAnimateLogo } from '@/components/icons/pyanimate-logo';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/language-selector';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { ThemeSelector } from '@/components/theme-selector';
 
 type SiteHeaderProps = {
   compactLabel?: string;
@@ -12,8 +12,8 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
   const t = useTranslations('Navigation');
 
   return (
-    <header className="px-4 pt-4 sm:px-6 sm:pt-6 lg:px-16">
-      <div className="site-shell flex flex-wrap items-center justify-between gap-3 rounded-[24px] sm:rounded-full border border-white/10 bg-parchment/90 px-4 py-3 sm:px-5 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+    <header className="relative z-50 px-4 pt-4 sm:px-6 sm:pt-6 lg:px-16">
+      <div className="site-shell flex flex-wrap items-center justify-between gap-3 rounded-[24px] sm:rounded-full border nav-border bg-parchment/90 px-4 py-3 sm:px-5 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.2)]">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <PyAnimateLogo className="h-8 w-8 shadow-[0_2px_12px_rgba(255,101,53,0.4)] rounded-[10px]" />
           <span className="text-gradient-signal text-lg font-bold neon-text-signal ml-1 hidden sm:block">PyAnimate</span>
@@ -43,9 +43,9 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
             </nav>
           )}
 
-          <div className="hidden sm:block w-[1px] h-6 bg-white/10" />
+          <div className="hidden sm:block w-[1px] h-6 nav-separator" />
           <LanguageSelector />
-          <ThemeToggle />
+          <ThemeSelector />
         </div>
       </div>
     </header>
