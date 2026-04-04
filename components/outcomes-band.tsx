@@ -55,10 +55,18 @@ const outcomeStylesLight = [
 
 const outcomeIcons = [Eye, Layers, FlaskConical];
 
+import { useState, useEffect } from 'react';
+
 export function OutcomesBand() {
   const t = useTranslations('Outcomes');
   const { theme } = useTheme();
-  const outcomeStyles = theme === 'light' ? outcomeStylesLight : outcomeStylesDark;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const outcomeStyles = mounted && theme === 'light' ? outcomeStylesLight : outcomeStylesDark;
 
   const outcomes = [
     { titleKey: 'traceTitle' as const, descKey: 'traceDesc' as const },

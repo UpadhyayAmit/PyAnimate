@@ -131,41 +131,41 @@
   "CourseData": {
     "tracks": {
       "foundation": {
-        "audience": "Bilkul beginners, zero experience",
-        "description": "Zero se start karein. Seekhein ki Python data, decisions, aur flow ke baare mein kaise sochta hai — step by step, har concept animated."
+        "audience": "Bilkul naye beginners, zero experience",
+        "description": "Ekdum shunya se shuru karein. Hum fikar karne wale academic concepts ko chhod kar seedha sikhenge ki Python actual me memory, state aur logic ko kaise chalaata hai. Aap memory ko live bante dekhenge."
       },
       "beginner": {
-        "audience": "Pehli baar Python seekhne waale",
-        "description": "Real programming habits banayein. Loops, functions, aur lists ko ek ek step mein chalte dekhkar master karein."
+        "audience": "Pehli baar Python seekhne wale",
+        "description": "Ab time hai asli engineering habits banane ka. Hum explicitly trace karenge ki loops, functions aur arrays hood ke andar kaise chalte hain taaki aap sirf andeje se scripts na likhein."
       },
       "intermediate": {
-        "audience": "Scripts aur apps ship karne waale builders",
-        "description": "Apni toolkit upgrade karein. Visual state tracking ke saath dictionaries, stacks, queues aur pehle search algorithms explore karein."
+        "audience": "Scripts aur apps banane wale builders",
+        "description": "Apne logic toolkit ko upgrade karein. Hum dictionaries, stacks, queues aur classic search algorithms me deep dive karenge. Ye aapke har production backend ke building blocks hain."
       },
       "advanced": {
-        "audience": "Problem solving refine karne waale engineers",
-        "description": "Algorithmically sochein. Sorting aur tree algorithms ko real time mein animate hote dekhein, observation se Big O samjhein."
+        "audience": "Problem solving refine karne wale engineers",
+        "description": "Algorithmic thinking shuru karein. Dekhein kaise recursion stack banata hai, real-time me sort hotey dekhein aur finally samjhein ki actual server par Big O matters kyu theek hai."
       },
       "mastery": {
-        "audience": "Internals explore karne waale experts",
-        "description": "Frontier tak pahunchein. Graph search, dynamic programming, aur interview-level algorithms — sab live visualized."
+        "audience": "Internals samajhne wale experts",
+        "description": "The deep end. Ab scripts chodiye systems banana sikhiye. Un graph aur dynamic programming pattern ko master karein jo Staff/Principal engineers technical interviews me maangte hain."
       }
     },
     "algorithms": {
-      "hello-world": "Aapka pehla Python output. Dekhein ki print() console par data kaise bhejta hai aur yeh sabhi debugging ki neenv kyun hai.",
-      "variables-types": "Ek variable ko memory mein jeevant hote dekhein. int, float, str, aur bool ko living boxes ke roop mein dekhein jo values hold karte hain.",
-      "string-operations": "Strings sequences hain. Slicing, concatenation aur methods ko character arrays par animate hote dekhein.",
-      "arithmetic": "Numbers, operators aur integer division. Dekhein ki Python step by step expressions evaluate kaise karta hai.",
-      "if-else": "Decisions lene wala code. Truthiness ke basis par execution ko branches ke beech jump karte dekhein.",
-      "while-loop": "Condition se driven repetition. Dekhein ki loop guard har iteration se pehle check karta hai aur infinite loops kyun hote hain.",
-      "for-loop": "Sequences par iterate karein. Dekhein ki Python ka for loop asli mein andar se ek iterator kaise hai.",
-      "lists-basics": "Python ka sabse useful container. Append, pop aur index ko animated memory block par operations ke roop mein dekhein.",
-      "functions-intro": "Logic ke reusable blocks. Ek function call ko stack frame push karte aur return value ko caller tak flow hote dekhein.",
-      "input-output": "Users se baat karne waale programs. Dekhein ki input() execution kaise pause karta hai aur ek string value return karta hai.",
-      "linear-search": "Har element ko tab tak check karein jab tak target na mil jaaye. O(n) — sabse simple search algorithm.",
-      "count-occurrences": "Count karein ki koi value kitni baar dikhti hai. Hash map ko har pass ke saath counts accumulate karte dekhein.",
-      "find-min-max": "Ek hi pass mein running minimum aur maximum track karein. Dekhein ki ek loop kyun kaafi hai.",
-      "sum-average": "Values accumulate karein aur mean compute karein. Woh accumulator pattern dekhein jo kai algorithms ko power deta hai.",
+      "hello-world": "System se apka first entry point. Live dekhiye kaise print() console me data dalta hai — production me aaj tak print debugging sabse badhiya tool hai.",
+      "variables-types": "Dekhein variables RAM memory block kaise claim karte hain. ints vs floats samjhein, aur dynamically typed bhashayen kitni forgiving ho sakti hain.",
+      "string-operations": "Sach pucho toh backend me 80% kaam sirf string slicing aur parsing hi karta hai. In strings ko join karna aur substring split practically dekho.",
+      "arithmetic": "Asli logic ka flow. Dekho compiler math expression pe kitni jaldi memory operations calculate karke exact output return kardeta hai.",
+      "if-else": "Business logic ki jaan. Branching ko actual code me handle karna bohut zaroori ho jata hai taaki apke booleans ghalat authenticate na karein.",
+      "while-loop": "Execution tab tak ghumta hai jab tak condition chalo ho. Dekhein iterations guard checks mein kahan fas ke infinitely server block karti hai.",
+      "for-loop": "Array manipulation aur data processing! In collections mein hum pipelines pe iteration array objects yaha map hote dekhte hai.",
+      "lists-basics": "Python ka apna array container. Apko practically pata chalega ki bich (middle) mein push/pop karna kitna process slow down kardeta hai.",
+      "functions-intro": "Don't Repeat Yourself (DRY) block ka standard. Call stack allocates frames memory clear karke execution pause karta return bhejta hai.",
+      "input-output": "Sync input operations user ko block karte hai. Pata chalega ki Type casting (int) strings par kitni important error prevention technique hai.",
+      "linear-search": "Har element iterate karne wali brute force. Par chote arrays lists prod me array linear search completely O(n) fine rehta hia.",
+      "count-occurrences": "Logs tracking. HashMap Dictionary logs frequency parsing me O(1) reads fast aggregate count increment save state mapping fast.",
+      "find-min-max": "Ek hi pass mein minimum aur maximum dono track karo. Array sort karna bilkul zaroori nahi — ek simple loop kafi hai aur CPU cycles bhi bachte hain.",
+      "sum-average": "Values accumulate karo, average nikalo. Python ka built-in sum() C-level pe optimize hai — apna manual loop use karne ki zaroorat hi nahi, yeh usse hamesha faster chalega.",
       "loop-explorer": "Dekhein ki loop iterations shared state kaise update karte hain. Score ko har pass ke saath accumulate hote dekhein.",
       "reverse-list": "Dono sides se two-pointer swap. Pointers ko beech mein milne tak andar move karte dekhein.",
       "palindrome": "Dono sides se characters compare karein. Dekhein ki two-pointer technique symmetry confirm kaise karti hai.",
@@ -175,16 +175,16 @@
       "binary-search": "Har step par search space ko aadha karein. Sorted input zaroori. O(log n) ko live hote dekhein.",
       "selection-sort": "Har pass mein minimum dhundhein aur front mein move karein. n passes ko sorted array produce karte dekhein.",
       "insertion-sort": "Har element ko already-sorted prefix mein sahi position par insert karein. Nearly sorted data ke liye efficient.",
-      "two-pointers": "O(n²) ki jagah O(n) mein array problems solve karne ke liye ek dusre ki taraf move karte do indices use karein.",
+      "two-pointers": "O(n²) double loop ki jagah do edge indexes ek doosre ki taraf chalao. Array problems ko linear time mein solve karo — bina extra memory kharach kiye.",
       "hash-map-counting": "O(1) per lookup mein count karne ke liye dictionary use karein. Kai frequency problems ki foundation.",
       "stack-ops": "LIFO action mein. List par stack ke roop mein push, pop, aur peek animate hote dekhein.",
       "queue-ops": "FIFO action mein. Enqueue aur dequeue animate hote dekhein aur samjhein ki deque list se better kyun hai.",
       "anagram-check": "Kya do strings ek dusre ki rearrangements hain? O(n) mein character counting se solve karte dekhein.",
       "sliding-window": "Size k ki har window mein maximum sum dhundhein. Window ko array par slide karte dekhein.",
       "merge-sorted": "Do sorted arrays ko ek mein combine karein. Merge sort ke peeche ka core operation.",
-      "bubble-sort": "Adjacent pairs compare karein. Bade elements har pass mein upar bubble karte hain.",
-      "merge-sort": "Divide karein, halves sort karein, merge karein. Recursion tree ko split aur recombine hote dekhein.",
-      "quick-sort": "Ek pivot choose karein, uske around partition karein, recurse karein. Average O(n log n) great cache performance ke saath.",
+      "bubble-sort": "Adjacent pairs compare karo, bade elements har pass mein bubble up hote hain. Production mein kabhi mat lagana — lekin loop invariants aur boundary conditions samajhne ka ye sabse easy entry point hai.",
+      "merge-sort": "Divide karo, dono halves sort karo, merge karo. Recursion tree ko split aur recombine hote live dekhein. Stable aur guaranteed O(n log n) — koi worst case nahi.",
+      "quick-sort": "Ek pivot choose karo, uske around partition karo, recurse karo. Average O(n log n) ke saath amazing cache performance — lekin galat pivot choose karo toh O(n²) ka khatara pakka hai.",
       "heap-sort": "Max-heap banayein, elements ko order mein extract karein. Quicksort ke unlike guaranteed O(n log n).",
       "bfs": "Queue use karke graph ko level by level explore karein. Unweighted graphs mein shortest paths dhundhein.",
       "dfs": "Backtracking se pehle jitna deep ho sake explore karein. Har recursive step ke saath call stack badhte dekhein.",
@@ -215,7 +215,7 @@
         "D": "प्रोग्राम रोक देता है"
       },
       "correct": "A",
-      "successMessage": "सही! आउटपुट के लिए print() का उपयोग किया जाता है।",
+      "successMessage": "Bilkul sahi! `print()` hi vo tool hai jo state console pe dikhata hai. Senior log bhi debug karne ke liye isko hi daily use karte hain.",
       "checkButton": "Answer Submit Karein",
       "nextButton": "Next Lesson Par Jayein"
     },
@@ -243,7 +243,7 @@
         "D": "/"
       },
       "correct": "C",
-      "successMessage": "Bilkul sahi! + operator strings ko concatenate karta hai.",
+      "successMessage": "Sahi baat! `+` operator strings ko concatenate karta hai. Yaad raho — integer ko string mein seedha add mat karna, pehle str() mein convert karo warna TypeError aayega.",
       "checkButton": "Answer Submit Karein",
       "nextButton": "Next Lesson Par Jayein"
     },
@@ -551,7 +551,7 @@
         "D": "O(n²)"
       },
       "correct": "C",
-      "successMessage": "Bilkul! Hash Maps hashing se average O(1) lookup dete hain.",
+      "successMessage": "Ekdum sahi! Dictionary O(1) average lookup deti hai — nested double loop se permanently chutkara. Frequency problems mein hash map ek real game changer hai.",
       "checkButton": "Answer Submit Karein",
       "nextButton": "Next Lesson Par Jayein"
     },
@@ -775,7 +775,7 @@
         "D": "Queue"
       },
       "correct": "C",
-      "successMessage": "Bilkul! Hash Map seen values store karta hai O(1) complement lookups ke liye.",
+      "successMessage": "Spot on! Hash Map mein thoda RAM invest karo aur O(n²) brute force se hamesha ke liye chutkara pao. FAANG interviews mein yahi approach expect ki jaati hai.",
       "checkButton": "Answer Submit Karein",
       "nextButton": "Next Lesson Par Jayein"
     },

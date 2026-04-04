@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Explicitly set immutable cache for static assets
+        // Explicit immutable cache for static assets (JS/CSS bundles)
         source: '/_next/static/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },

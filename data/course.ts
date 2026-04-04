@@ -837,14 +837,14 @@ export const playgroundLessons: PlaygroundLesson[] = [
     level: 'Beginner',
     levelColor: 'text-wave',
     duration: '12 min',
-    objective: 'Understand how loop iterations update shared state.',
+    objective: 'Master state management by tracking variables across execution boundaries.',
     prompt: 'Modify the list to produce a final score of 20. Which iteration changed the total most?',
-    hint: 'Watch the score cell after each loop pass and compare how much each step adds.',
+    hint: 'Keep a close eye on the score variable. State bugs in production typically happen when variables bleed over iterations.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: ['Summing totals in a shopping cart', 'Accumulating sensor readings', 'Running totals in financial reports'],
+    useCases: ['Summing totals in e-commerce carts', 'Aggregating server memory metrics', 'Rolling financial totals'],
     approach:
-      'We use a single accumulator variable (score) and iterate through a list once. This is the accumulator pattern — one of the most fundamental patterns in programming. O(n) time because we visit each element exactly once, O(1) space because we only need one extra variable regardless of list size.',
+      'We use the fundamental Accumulator Pattern. By anchoring a `score` variable outside the loop, we persist state across iterations. It runs in O(n) time—visiting each node once—and O(1) space, since we only mutate a single integer regardless of payload size.',
     output: ['score: 2', 'score: 6', 'score: 12', 'final: 12'],
     starterCode: `score = 0
 steps = [2, 4, 6]
@@ -860,7 +860,7 @@ print("final:", score)
         line: 1,
         event: 'Create score',
         summary: 'Initialize score with 0.',
-        why: "We must initialize score to 0 before the loop. Python has no default numeric value — uninitialized variables cause NameError. Choosing 0 is the additive identity: adding 0 changes nothing, so it's the correct neutral starting point.",
+        why: 'Never assume execution state! If you don\'t explicitly initialize `score` to 0, Python throws a NameError. In production, uninitialized states cause brutal bugs. We start at 0—the additive identity—so the loop starts clean.',
         memory: [{ name: 'score', value: '0' }],
         output: [],
       },
@@ -868,7 +868,7 @@ print("final:", score)
         line: 2,
         event: 'Load steps',
         summary: 'Store a list of incoming steps.',
-        why: 'We store the data in a list so we can iterate over it with a for loop. A list is ordered and allows duplicates — perfect for a sequence of steps. Defining it before the loop means we can change the input data without touching the loop logic.',
+        why: 'We store the payload in a list `steps`. Lists preserve chronological order and allow duplicates. Defining this outside the loop gives us a clean separation of concerns—data on top, processing below.',
         memory: [
           { name: 'score', value: '0' },
           { name: 'steps', value: '[2, 4, 6]' },
@@ -879,7 +879,7 @@ print("final:", score)
         line: 5,
         event: 'Iteration 1',
         summary: 'First pass: score = 0 + 2 = 2.',
-        why: "The for loop automatically assigns each element to 'step' in order. We add step to score instead of reassigning because we want to accumulate — keep a running total. score = score + step is the classic accumulator update.",
+        why: 'The loop binds the current item to `step`. We re-assign `score = score + step`. This is why mutability matters: rather than allocating a new variable, we forcefully overwrite the old score, saving memory.',
         memory: [
           { name: 'score', value: '2' },
           { name: 'step', value: '2' },
@@ -891,7 +891,7 @@ print("final:", score)
         line: 5,
         event: 'Iteration 2',
         summary: 'Second pass: score = 2 + 4 = 6.',
-        why: 'score retains its value between iterations because it was defined outside the loop. Variables inside a loop body reset each iteration; variables outside persist. This scope rule is why we defined score = 0 before the for statement.',
+        why: 'Scope matters! `score` retains its value specifically because we declared it outside the loop block. If we initialized it inside, it would wipe back to zero every pass.',
         memory: [
           { name: 'score', value: '6' },
           { name: 'step', value: '4' },
@@ -903,7 +903,7 @@ print("final:", score)
         line: 5,
         event: 'Iteration 3',
         summary: 'Third pass: score = 6 + 6 = 12.',
-        why: "The loop runs exactly len(steps) = 3 times. Python's for loop knows when to stop because lists have a known length. No off-by-one errors — unlike a while loop, there's no index to mismanage.",
+        why: 'The loop binds the current item to `step`. We re-assign `score = score + step`. This is why mutability matters: rather than allocating a new variable, we forcefully overwrite the old score, saving memory.',
         memory: [
           { name: 'score', value: '12' },
           { name: 'step', value: '6' },
@@ -915,7 +915,7 @@ print("final:", score)
         line: 8,
         event: 'Return output',
         summary: 'Print the final accumulated value.',
-        why: 'We print outside the loop because we only want the final result once, not after every step. This separation — compute inside loop, report outside — is a clean pattern that keeps accumulation and reporting independent.',
+        why: 'Scope matters! `score` retains its value specifically because we declared it outside the loop block. If we initialized it inside, it would wipe back to zero every pass.',
         memory: [
           { name: 'score', value: '12' },
           { name: 'steps', value: '[2, 4, 6]' },
@@ -932,18 +932,14 @@ print("final:", score)
     level: 'Advanced',
     levelColor: 'text-gold',
     duration: '15 min',
-    objective: 'See how adjacent comparisons and swaps move larger elements toward the end each pass.',
+    objective: 'Understand array mutation, iteration bounds, and algorithm inefficiency at scale.',
     prompt: 'Change the array to [9, 1, 5, 3, 7]. Predict how many swaps it takes before sorted.',
-    hint: 'Count the orange swap events in the timeline. Each swap moves the larger element one position right.',
+    hint: 'Watch the heaviest item literally bubble to the far right. Notice how the inner loop shrinks every pass.',
     timeComplexity: 'O(n²)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Teaching sorting concepts — most visual algorithm',
-      'Detecting nearly-sorted arrays (early exit optimization)',
-      'Embedded systems with tiny memory where O(1) space matters',
-    ],
+    useCases: ['Teaching array boundaries', 'Small micro-controllers with massive memory constraints', '(Never use in modern web apps)'],
     approach:
-      "Bubble sort compares every adjacent pair and swaps if out of order. After each full outer pass, the largest unsorted element is guaranteed to be in its correct final position. We use nested loops: outer controls passes (n-1 needed), inner controls comparisons (shrinks each pass because the end is already sorted). This is NOT efficient for large data — O(n²) — but it's the most visual algorithm for learning comparison-based sorting.",
+      'Let’s be real: you are never shipping Bubble Sort to production. It’s an O(n²) nightmare. We learn it because it teaches pointer boundaries and nested loops. Notice how each pass guarantees the largest element locks into its final position at the end. Understanding this "boundary shrinking" prepares you for writing complex matrix algorithms.',
     output: [
       'swap: [3, 5, 8, 1, 2]',
       'swap: [3, 5, 1, 8, 2]',
@@ -1075,19 +1071,14 @@ print("sorted:", arr)
     level: 'Intermediate',
     levelColor: 'text-leaf',
     duration: '12 min',
-    objective: 'See how halving the search space each step achieves O(log n) time complexity.',
+    objective: 'Slash massive search spaces in half logarithmically using sorted bounds.',
     prompt: 'Change target to 11. Predict how many steps it takes to find it.',
-    hint: 'The search space halves every iteration: 7 → 4 → 2 → 1 elements. Count mid calculations.',
+    hint: 'Watch the \'left\' and \'right\' pointers aggressively pinch the search space. It only works if the list is sorted!',
     timeComplexity: 'O(log n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Dictionary lookups (words are sorted)',
-      'Database index traversal',
-      'Finding a version that introduced a bug (git bisect)',
-      'Searching a sorted leaderboard',
-    ],
+    useCases: ['Database primary key indices', 'Finding commits in Git (git bisect)', 'Routing traffic tables'],
     approach:
-      "Binary search requires a sorted array. We maintain two pointers (low, high) that define the current search space. Each iteration we check the middle element: if it matches, done; if target is larger, discard the left half; if smaller, discard the right half. This halving means we need at most ⌈log₂(n)⌉ steps. For n=1,000,000 that's only 20 comparisons — vs 500,000 average for linear search.",
+      'This is the foundation of modern databases. Instead of checking every item (O(n)), we check the middle and discard half the problem instantly. It achieves breathtaking O(log n) performance. Searching 1 billion records takes ~30 checks instead of 1 billion. The catch? The data must be strictly sorted first.',
     output: ['mid=3, arr[3]=7', 'target found! result: 3'],
     starterCode: `arr = [1, 3, 5, 7, 9, 11, 13]
 target = 7
@@ -1185,18 +1176,14 @@ while low <= high:
     level: 'Beginner',
     levelColor: 'text-wave',
     duration: '8 min',
-    objective: 'See how checking every element one by one finds a target — and why O(n) matters.',
+    objective: 'Implement O(n) brute-force scanning for unsorted data sets.',
     prompt: 'Change the target to a value NOT in the list. What does the algorithm return?',
-    hint: 'Watch the index climb from 0 to the end. When it reaches len(arr) without a match, we return -1.',
+    hint: 'It checks every single item. Slow at scale, but for tiny arrays, the overhead is actually faster than setting up a complex search.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Searching an unsorted list (e.g., names in a contact list)',
-      'Finding first occurrence of a value in a stream',
-      'Baseline for benchmarking faster algorithms',
-    ],
+    useCases: ['Searching raw log files', 'Finding items in a small unsorted array', 'Simple memory lookups'],
     approach:
-      'Linear search is the simplest possible search: start at index 0, check each element, return when found. No sorting needed. Its strength is simplicity and universality — it works on any collection. Its weakness is O(n) time: for a list of 1 million items, you might check 1 million elements. Use it when the list is small, unsorted, or searched only once.',
+      'O(n) straight down the line. It’s the brute force approach. While acadmics obsess over O(log n), linear search is often perfectly acceptable in production if your array size is capped (like searching 50 states). It avoids the overhead of sorting entirely.',
     output: ['checking index 0: 3', 'checking index 1: 9', 'checking index 2: 7', 'found 7 at index 2'],
     starterCode: `arr = [3, 9, 7, 1, 5]
 target = 7
@@ -1289,18 +1276,14 @@ print(f"found {target} at index {result}" if result != -1 else "not found")
     level: 'Intermediate',
     levelColor: 'text-leaf',
     duration: '12 min',
-    objective: 'See how finding the minimum each pass guarantees a sorted prefix grows by one each time.',
+    objective: 'Isolate the absolute minimum value per pass to minimize total write operations.',
     prompt: 'Try arr = [64, 25, 12, 22, 11]. Count how many swaps are made total.',
-    hint: "Selection sort makes exactly n-1 swaps — one per pass. Count the 'Swap minimum' events in the timeline.",
+    hint: 'Notice it only swaps ONCE per pass. It searches the entire remaining list just to find the exact right element to place.',
     timeComplexity: 'O(n²)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Writing to flash memory (minimizes writes — only n-1 swaps)',
-      'Teaching sorting algorithms — very visual and intuitive',
-      'Small datasets where code simplicity matters more than speed',
-    ],
+    useCases: ['Systems where writing to disk/RAM is extremely slow', 'Embedded systems', 'Teaching basic invariants'],
     approach:
-      'Selection sort divides the array into a sorted prefix and unsorted suffix. Each pass scans the entire unsorted portion to find the minimum, then swaps it into the next sorted position. This guarantees exactly n-1 swaps — compared to bubble sort which can make O(n²) swaps. This makes it better when write operations are expensive (flash storage). Time complexity is still O(n²) for comparisons.',
+      'Unlike Bubble Sort which violently swaps elements endlessly, Selection Sort patiently scans the entire unsorted section for the absolute minimum, then executes exactly ONE swap. It’s O(n²), but wildly useful in hardware environments where "writes" degrade the flash memory faster than "reads".',
     output: [
       'pass 1: [11, 64, 25, 12, 22]',
       'pass 2: [11, 12, 64, 25, 22]',
@@ -1408,18 +1391,14 @@ print("sorted:", arr)
     level: 'Beginner',
     levelColor: 'text-wave',
     duration: '6 min',
-    objective: 'Understand the accumulator multiplication pattern and why 0! equals 1.',
+    objective: 'Trace recursive state buildup and evaluate exponential memory scaling.',
     prompt: 'Compute 10!. What happens if you pass 0? Why does 0! = 1 make mathematical sense?',
-    hint: "The identity for multiplication is 1 — multiplying by 1 changes nothing. That's why result starts at 1, not 0.",
+    hint: 'Keep an eye on the base case! If the base case misses, the process infinitely devours memory.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Counting permutations (how many ways to arrange n items)',
-      'Combinatorics in probability calculations',
-      'Denominator in nCr and nPr formulas',
-    ],
+    useCases: ['Understanding mathematical accumulation', 'Debugging recursive call stacks (Stack overflow)', 'Permutation logic'],
     approach:
-      "We use the multiplicative accumulator pattern: result starts at 1 (the identity for multiplication), then we multiply each integer from 1 to n in sequence. Iterative is preferred over recursive for this because it uses O(1) space — no call stack growth — and avoids Python's recursion limit.",
+      'Factorials literally explode in exponential growth. We study this not because we need factorials in production web backends, but because it teaches you how to strictly bind a recursive call (or iterative accumulator). Missing a base condition here instantly freezes hardware.',
     output: ['step 1: 1 × 1 = 1', 'step 2: 1 × 2 = 2', 'step 3: 2 × 3 = 6', 'step 4: 6 × 4 = 24', '5! = 120'],
     starterCode: `n = 5
 result = 1
@@ -1507,18 +1486,14 @@ print(f"{n}! = {result}")
     level: 'Beginner',
     levelColor: 'text-wave',
     duration: '8 min',
-    objective: 'See the rolling-variable pattern and why O(1) space beats recursion for Fibonacci.',
+    objective: 'Optimize memory allocation down to O(1) by only tracking the absolute necessary prior states.',
     prompt: 'Change n to 10 and trace the sequence. Why do we only need two variables — not the whole sequence?',
-    hint: 'Each new Fibonacci number only depends on the previous two. We never look back further — so we only keep two.',
+    hint: 'Notice we do not allocate an entire array of size N! We just swap the last two variables repeatedly.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      "Nature's growth patterns (spirals, branching)",
-      'Financial models and golden ratio approximations',
-      'Memoization tutorial baseline (compare recursive version)',
-    ],
+    useCases: ['High-performance sliding sequences', 'Replacing deadly recursive tree patterns', 'System architecture logic'],
     approach:
-      'We use two rolling variables (a, b) that always hold the last two Fibonacci numbers. Each step: new value = a + b, then shift — b becomes the old a, a becomes the new value. This is O(1) space because we only ever need two variables, regardless of n. The recursive approach uses O(n) stack space and O(2ⁿ) time without memoization.',
+      'A naive recursive Fibonacci will destroy a machine with O(2ⁿ) complexity, recalculating the exact same numbers endlessly. The iterative approach violently cuts this down. We simply track the `prev` and `curr` numbers in O(1) space, constantly dropping the history we no longer need. It’s a masterclass in shedding unnecessary state.',
     output: ['F(1) = 0', 'F(2) = 1', 'F(3) = 1', 'F(4) = 2', 'F(5) = 3', 'F(6) = 5', 'F(7) = 8'],
     starterCode: `n = 7
 a, b = 0, 1
@@ -1607,19 +1582,14 @@ print(f"The {n}th Fibonacci number is:", a)
     level: 'Intermediate',
     levelColor: 'text-leaf',
     duration: '10 min',
-    objective: 'See LIFO in action — push, pop, and peek on a stack backed by a Python list.',
+    objective: 'Observe Last-In, First-Out (LIFO) behavior governing system state changes.',
     prompt: 'Add two more pushes after the pops and observe how the stack evolves. What is the top after all operations?',
-    hint: "After each operation watch the 'stack' memory card. The rightmost element is always the top.",
+    hint: 'Whatever gets pushed onto the pile last is guaranteed to be popped off first.',
     timeComplexity: 'O(1) per operation',
     spaceComplexity: 'O(n)',
-    useCases: [
-      "Function call stack (Python's own execution uses a stack)",
-      'Undo/redo in editors',
-      'Browser back/forward history',
-      'Balanced parentheses checking',
-    ],
+    useCases: ['Undo/Redo command architectures', 'Browser \'Back\' buttons', 'Compiler syntax parsing'],
     approach:
-      "A stack is a LIFO (Last In, First Out) data structure. In Python, a list is the natural stack implementation: append() for push (add to top) and pop() for pop (remove from top) are both O(1) amortized. We avoid pop(0) or insert(0) which are O(n). The 'top' is always the last element — index -1.",
+      'A Stack is just restrictively disciplined memory. You can only access the bleeding edge (the top). Whenever you write features that require "reversing time" or "unwinding actions" (like a text editor undo tree or a routing history), you must use LIFO mechanics. It guarantees strict chronological backtracking.',
     output: [
       'push 10 → [10]',
       'push 20 → [10, 20]',
@@ -1729,18 +1699,14 @@ print("top is now:", stack[-1])
     level: 'Advanced',
     levelColor: 'text-gold',
     duration: '12 min',
-    objective: 'See how a hash map turns an O(n²) brute-force problem into an O(n) single-pass solution.',
+    objective: 'Flatten multi-dimensional combinations via Hash Map caching.',
     prompt: 'Change target to 11. Which pair adds up to 11? Can there be multiple valid pairs?',
-    hint: "For each number, we ask: 'does target - this_number already exist in seen?' The hash map answers that in O(1).",
+    hint: 'Store the "complement" you need to see. If you find it later, you instantly win.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(n)',
-    useCases: [
-      'Most common LeetCode interview question (#1 most submitted)',
-      'Financial: find two transactions that sum to a target amount',
-      'Two-factor authentication: finding matching token pairs',
-    ],
+    useCases: ['Instant fraud combination checks', 'Authentication pairing', 'Classic algorithm interview gatekeeper'],
     approach:
-      'Brute force: check every pair → O(n²). Hash map: for each number, compute its complement (target - num), check if the complement was seen before. If yes, done. If no, store current number in the hash map. One pass, O(1) lookup per element → O(n) total. We trade O(n) space for O(n²) → O(n) time improvement.',
+      'The amateur pairs every number with every other number (O(n²)). The professional asks: "I have 5, I need 4 to make 9. I will log that I need a 4." The moment your one-pass loop encounters a 4 in the Hash Map, the system instantly halts. Perfect O(n) supremacy.',
     output: ['i=0, num=2, need=7, seen={}', 'i=1, num=7, need=2, seen={2:0}', 'found! indices [0, 1] → values [2, 7]'],
     starterCode: `nums = [2, 7, 11, 15]
 target = 9
@@ -1824,19 +1790,14 @@ for i, num in enumerate(nums):
     level: 'Advanced',
     levelColor: 'text-gold',
     duration: '10 min',
-    objective: 'See how a stack naturally models nested bracket matching without any complex logic.',
+    objective: 'Validate chronological pairing integrity flawlessly utilizing a LIFO Stack.',
     prompt: "Try s = '({)}'. Why does this fail even though the counts are equal?",
-    hint: "The stack checks ORDER, not just count. '({)}' fails because ) tries to close ( but the top of the stack is {.",
+    hint: 'The last bracket opened MUST be the first bracket closed. Strict reverse-chronological discipline.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(n)',
-    useCases: [
-      'Code editor syntax checking (unmatched brackets)',
-      'XML/HTML tag validation',
-      'Math expression evaluation',
-      'Compiler tokenizer verification',
-    ],
+    useCases: ['Compilers validating code blocks', 'Checking JSON structure syntax', 'HTML strict parsing'],
     approach:
-      'A stack is the natural data structure for matching nested brackets. Rule: push every opening bracket. When we see a closing bracket, check if the top of the stack is its matching opener — if not, invalid. At the end, the stack must be empty (every opener was closed). We use a hash map for the bracket pairs to keep the logic clean.',
+      'This is the exact same logic your IDE and compiler use to read your code. By using a Stack, you push all openers onto a pile. The second a closer appears, it mathematically must match the top of the pile, or the entire syntax structure is fundamentally corrupted.',
     output: ["( → push, stack=['(']", "( → push, stack=['(', '(']", ") → pop '(' ✓, stack=['(']", ") → pop '(' ✓, stack=[]", 'valid: True'],
     starterCode: `s = "(())"
 stack = []
@@ -1929,14 +1890,14 @@ print("valid:", len(stack) == 0)
     level: 'Foundation',
     levelColor: 'text-sky-400',
     duration: '8 min',
-    objective: 'See how Python binds names to objects in memory.',
+    objective: 'Allocate strict memory namespaces to safely control execution states dynamically.',
     prompt: 'Change x to a float and y to a boolean. What does type() return?',
-    hint: 'Python shows the type right after assignment — watch the Memory View update.',
+    hint: 'Python dynamic types are beautiful but merciless if you accidentally cast poorly.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(1)',
-    useCases: ['Understanding mutability in data pipelines', 'Debugging type errors', 'API input validation'],
+    useCases: ['Tracking configuration flags', 'Memory mapping strings vs ints', 'API Payload casting'],
     approach:
-      'Each assignment binds a name to a new object in memory. Python is dynamically typed — the variable holds a reference, not the value itself.',
+      'Strongly typed variables define predictable state machines. Because Python is dynamically typed, it will happily swap a string pointer to a float, forcing you to maintain extreme testing discipline to avoid throwing brutal TypeErrors deep inside complex pipelines.',
     output: [],
     starterCode: `x = 42
 y = "hello"
@@ -2025,13 +1986,13 @@ print(x, y, z)
     level: 'Foundation',
     levelColor: 'text-sky-400',
     duration: '8 min',
-    objective: 'Watch execution jump between branches based on truthiness.',
+    objective: 'Map and safeguard strict pipeline execution flows utilizing Boolean guards.',
     prompt: 'Change score to 45. Which branch runs? What if score equals exactly 50?',
-    hint: "Watch the highlighted line jump — it skips the branch that doesn't match.",
+    hint: 'A single misaligned Boolean boundary causes authorization breaches. The flow splits relentlessly.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(1)',
-    useCases: ['Input validation in web forms', 'Business rule engines', 'Access control logic'],
-    approach: 'Python evaluates the condition expression and jumps to the matching branch. Only one branch executes per if/elif/else chain.',
+    useCases: ['Access control (AuthZ/AuthN)', 'Error bubbling routines', 'Payment flow validations'],
+    approach: 'Control flow branching is the foundation of architectural logic. A solid backend avoids deeply nested statements (callback hell/pyramid of doom) by returning early, utilizing clean guard clauses at the beginning of the execution block.',
     output: [],
     starterCode: `score = 75
 
@@ -2103,14 +2064,14 @@ print("Grade:", grade)
     level: 'Foundation',
     levelColor: 'text-sky-400',
     duration: '10 min',
-    objective: 'See how condition-driven repetition works step by step.',
+    objective: 'Sustain state-driven repetitive execution while guarding aggressively against infinite deadlocks.',
     prompt: 'Change the while condition to n < 8. How many iterations run?',
-    hint: 'Watch the condition check before each iteration — when it becomes False, the loop exits.',
+    hint: 'The loop guard check is the absolute most critical piece of architecture here.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: ['Polling until a server responds', 'Game loops', 'Reading input until valid'],
+    useCases: ['Event listeners in Node.js', 'Polling remote server queues', 'Game development core loops'],
     approach:
-      'A while loop re-evaluates its condition before every iteration. When the condition is False, execution falls through to after the loop.',
+      'A while loop doesn\'t inherently care about array length. It executes indefinitely until the state manually mutates to False. It powers the fundamental event loops in modern asynchronous systems.',
     output: [],
     starterCode: `n = 1
 total = 0
@@ -2367,18 +2328,14 @@ print("Reversed:", nums)
     level: 'Intermediate',
     levelColor: 'text-emerald-400',
     duration: '12 min',
-    objective: 'Sort by growing a sorted prefix one element at a time.',
+    objective: 'Leverage naturally sorted sub-arrays to insert elements in O(1) best-case time.',
     prompt: 'What is the minimum swaps needed for [1,2,3,5,4]? Why is it faster than bubble sort here?',
-    hint: 'Watch the key element shift left only as far as needed — this is why nearly-sorted input is fast.',
+    hint: 'Watch how an element slides left until it naturally hits order. It never overwrites data blindly.',
     timeComplexity: 'O(n²) worst, O(n) best',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Sorting small arrays (faster than quicksort below ~16 elements)',
-      'Online sorting as data streams in',
-      'Used as subroutine in timsort',
-    ],
+    useCases: ['Handling strictly almost-sorted real-world data', 'Hybridizing giant sorts like Timsort (Python’s default)'],
     approach:
-      'For each element, shift it left past every larger element until it finds its sorted position. The left portion is always sorted; we extend it by one each pass.',
+      'Insertion sort is fantastic when your data is already partially sorted (which happens constantly in the real world). It picks the next item and slides it leftward until it finds its natural resting place. Unlike Bubble Sort, it stops comparing the split second it hits a smaller number, breaking early and saving massive CPU cycles.',
     output: [],
     starterCode: `arr = [5, 2, 4, 1, 3]
 
@@ -2470,14 +2427,14 @@ print("Sorted:", arr)
     level: 'Intermediate',
     levelColor: 'text-emerald-400',
     duration: '10 min',
-    objective: 'Use a dict to find the most common word in O(n) time.',
+    objective: 'Trade finite RAM for massive speedups by mapping states into O(1) dictionaries.',
     prompt: "Add 'the' three more times to the text. Does it become the most frequent?",
-    hint: 'Watch how the dict handles collisions — each key maps to exactly one count bucket.',
+    hint: 'We don\'t sort the array (O(n log n)). We just drop tallies into a lookup table (dictionary) in O(n).',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(k)',
-    useCases: ['Search autocomplete ranking', 'Log anomaly detection', 'Trending hashtags on social media'],
+    useCases: ['Parsing high-traffic live server logs', 'Aggregating API limits', 'Counting exact instances'],
     approach:
-      'Build a frequency dict in one pass, then find the max. Total O(n) — far better than the O(n²) approach of counting each word separately with .count().',
+      'Sorting an array just to count occurrences is a massive waste of processing power. Instead, we allocate a dictionary (Hash Map). As we walk down the array via a single pass, we tally the counts. Reading/writing from a hash map takes O(1) amortized time, completely bypassing slow iteration overhead.',
     output: [],
     starterCode: `words = ["the", "quick", "the", "fox", "the", "quick", "jumps"]
 freq = {}
@@ -2548,18 +2505,14 @@ print("Most common:", most_common, "→", freq[most_common], "times")
     level: 'Foundation',
     levelColor: 'text-sky-400',
     duration: '12 min',
-    objective: "See how Python's for loop iterates over sequences using an iterator protocol.",
+    objective: 'Iterate rigidly defined memory sequences efficiently using Python native iterators.',
     prompt: 'Change range(1, 6) to range(0, 10, 2). How many iterations run? What does the third argument do?',
-    hint: 'range(start, stop, step) — the third argument is the step size. range(0, 10, 2) gives [0, 2, 4, 6, 8].',
+    hint: 'Python abstracts index math natively. It iterates strictly over the objects themselves.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Iterating over lists, strings, or any sequence',
-      'Generating number sequences with range()',
-      'Accumulating totals across fixed-size data',
-    ],
+    useCases: ['Bulk record processing in databases', 'Dispatching pipeline notifications', 'Transforming arrays'],
     approach:
-      "Python's for loop uses the iterator protocol under the hood — calling __iter__ and __next__ on the sequence. range() generates integers lazily (no list in memory). The loop variable is automatically assigned each value in order.",
+      'Using natively mapped iterators bypasses the archaic math of manual indices boundaries. Processing known-sets securely powers data pipelines and reduces cognitive load significantly.',
     output: ['i=1, squared=1', 'i=2, squared=4', 'i=3, squared=9', 'i=4, squared=16', 'i=5, squared=25', 'Sum of squares: 55'],
     starterCode: `total = 0
 
@@ -2731,18 +2684,14 @@ print("is palindrome:", s == reversed_s)
     level: 'Intermediate',
     levelColor: 'text-leaf',
     duration: '10 min',
-    objective: 'See how two pointers moving inward can check a sorted array in O(n) with O(1) space.',
+    objective: 'Dismantle O(n²) nested loop traps by dynamically marching indices from opposing boundaries.',
     prompt: 'Change target to 17. Which pair sums to 17? What if no pair exists?',
-    hint: 'If nums[left] + nums[right] < target, move left forward. If > target, move right backward. If = target, found!',
+    hint: 'Pinch the array from both ends. Shrinking the physical bounds logically eliminates bad possibilities without calculating them.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Two Sum on a sorted array (O(1) space vs O(n) for hash map)',
-      'Checking if a string is a palindrome (char comparison from both ends)',
-      'Container with most water — maximize area between two lines',
-    ],
+    useCases: ['Validating database index symmetry', 'Processing sorted arrays elegantly', 'Interview survival'],
     approach:
-      'Two pointers work on sorted arrays. Start left=0 and right=n-1. Each step: if sum < target, move left right (increase sum); if sum > target, move right left (decrease sum); if equal, found. Each element is visited at most once — O(n). No extra space needed — O(1).',
+      'The Two Pointer strategy is the ultimate fix to the "nested for-loop" disaster. Instead of checking every element against every other element, you position a left and right pointer. Based on mathematical bounds, you instantly skip bad paths by shifting the correct pointer inward. O(n²) plummets to O(n).',
     output: ['left=0(1) right=5(14) sum=15 < 17', 'left=1(3) right=5(14) sum=17 == target!', 'found pair: (3, 14) at indices [1, 5]'],
     starterCode: `nums = [1, 3, 5, 7, 9, 14]
 target = 17
@@ -2956,19 +2905,14 @@ print("sorted:", sorted_arr)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '18 min',
-    objective: 'Watch partition divide the array around a pivot, then recurse on each half.',
+    objective: 'Leverage spatial locality and caching to sort massive architectures.',
     prompt: 'Change arr to [3, 6, 8, 10, 1, 2, 1]. What pivot gets chosen each time and why?',
-    hint: 'The pivot is always arr[high]. Try tracing which element becomes the pivot in each recursive call.',
+    hint: 'Watch the pivot strictly segregate the lesser and greater values into cleanly divided sub-arrays.',
     timeComplexity: 'O(n log n) avg / O(n²) worst',
     spaceComplexity: 'O(log n)',
-    useCases: [
-      'Default sort in many standard libraries (V8, C++ std::sort uses introsort based on quicksort)',
-      'Cache-friendly in-place sorting — no extra array needed',
-      'Quickselect variant finds kth smallest in O(n) average',
-      'Database query optimisers use variants for in-memory sorting',
-    ],
+    useCases: ['Python\'s underlying list sorting (Timsort hybrid)', 'V8 Javascript Engine array sorting', 'High-performance memory bounds'],
     approach:
-      'Quick sort picks a pivot (last element here) and partitions the array so all elements ≤ pivot go left and all > pivot go right. The pivot ends up in its final sorted position after each partition call. Recursing on both halves gives O(n log n) average time. The worst case O(n²) occurs when the pivot is always the smallest or largest — randomising pivot selection avoids this.',
+      'Quick Sort rules the world because it operates perfectly inside CPU caches. Unlike Merge Sort which copies memory everywhere, Quick Sort violently partitions the original array in-place. O(n log n) average speed is legendary, but choosing a bad pivot hurls this algorithm into a black hole of O(n²).',
     output: ['[11, 12, 22, 25, 34, 64, 90]'],
     starterCode: `def partition(arr, low, high):
     pivot = arr[high]
@@ -3108,19 +3052,14 @@ print(arr)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '20 min',
-    objective: 'Build a max-heap from the array, then extract the maximum element one by one into sorted order.',
+    objective: 'Exploit binary tree mapping atop flat arrays to guarantee hard-capped O(n log n) sorting.',
     prompt: 'Change arr to [4, 10, 3, 5, 1]. Draw the heap tree after building it. Which element is always at index 0?',
-    hint: 'In a max-heap, arr[0] is always the largest element. After each extraction, heapify restores this property.',
+    hint: 'The absolute largest element is forcibly rippled to the top (root), then swapped to the back.',
     timeComplexity: 'O(n log n)',
     spaceComplexity: 'O(1)',
-    useCases: [
-      'Priority queues — always extract the maximum/minimum efficiently',
-      'Operating system schedulers use heap-based priority queues',
-      'Guaranteed O(n log n) worst case — unlike quicksort',
-      'Finding the k largest elements in a stream',
-    ],
+    useCases: ['Linux Kernel schedulers', 'Systems strictly prohibiting O(n²) degradation', 'Real-time OS'],
     approach:
-      'Heap sort has two phases. First, build a max-heap from the array in O(n) by calling heapify from the bottom up (starting at n//2-1). Second, repeatedly swap the root (maximum) with the last element, shrink the heap size by 1, and heapify the root to restore the heap property. Each extraction is O(log n) and we do n extractions, giving O(n log n). Space is O(1) because everything happens in-place.',
+      'When you absolutely cannot risk Quick Sort failing on bad data, you use a Heap. Heap Sort logically maps a binary tree directly onto a flat array, enforcing a strict hierarchy. It guarantees O(n log n) time no matter what, at the cost of being slightly less cache-friendly than Quick Sort.',
     output: ['[5, 6, 7, 11, 12, 13]'],
     starterCode: `def heapify(arr, n, i):
     largest = i
@@ -3254,19 +3193,14 @@ print(arr)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '18 min',
-    objective: 'Explore a graph level by level using a queue. BFS finds shortest paths in unweighted graphs.',
+    objective: 'Guarantee the absolute shortest path on unweighted graphs via concentric sweeps.',
     prompt: 'Change the start node to 0. What order are nodes visited? How does BFS guarantee the shortest path?',
-    hint: 'BFS visits all neighbors at distance 1 before distance 2. The first time you reach a node is always via the shortest path.',
+    hint: 'The Queue (FIFO) engine guarantees we completely exhaust one depth perimeter before stepping deeper.',
     timeComplexity: 'O(V + E)',
     spaceComplexity: 'O(V)',
-    useCases: [
-      'Shortest path in unweighted graphs (GPS routing on simple maps)',
-      'Web crawlers explore links level by level',
-      'Social network degree of separation (6 degrees of Kevin Bacon)',
-      'Peer-to-peer network discovery (BitTorrent node lookup)',
-    ],
+    useCases: ['Social network "Degrees of Separation"', 'GPS immediate neighbor routing', 'Garbage collection in RAM'],
     approach:
-      'BFS uses a queue (FIFO) to explore the graph level by level. Start by enqueuing the start node and marking it visited. At each step, dequeue a node, process it, then enqueue all unvisited neighbors and mark them visited. Marking as visited when enqueuing (not dequeuing) is critical — it prevents adding the same node to the queue multiple times, keeping time complexity O(V+E). The result visits nodes in order of increasing distance from the start.',
+      'Breadth-First Search radiates outward like a radar pulse. By strictly enforcing a Queue infrastructure, we systematically explore Level 1 entirely before touching Level 2. Because of this disciplined sweeping, BFS gives you the shortest path natively without complex math.',
     output: ['[2, 0, 3, 1]'],
     starterCode: `from collections import deque
 
@@ -3402,19 +3336,14 @@ print(result)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '18 min',
-    objective: 'Explore as deep as possible before backtracking. Watch the call stack grow with each recursive step.',
+    objective: 'Drive deep into graph perimeters to exhaust entire sub-architectures quickly.',
     prompt: 'Change the start node to 2. How does the traversal order change? What happens if you remove node 3 from the graph?',
-    hint: 'DFS follows one path to its end before backtracking. The call stack depth equals the depth of the current path.',
+    hint: 'The Stack (LIFO) engine forces us downward. We only back up when we hit a total dead end.',
     timeComplexity: 'O(V + E)',
     spaceComplexity: 'O(V)',
-    useCases: [
-      'Detecting cycles in a graph (used in deadlock detection)',
-      'Topological sorting of dependencies (build systems, package managers)',
-      'Solving mazes and puzzles (backtracking)',
-      "Finding connected components and strongly connected components (Tarjan's algorithm)",
-    ],
+    useCases: ['Solving complex mazes', 'Finding connected components in topology', 'Git commit history tracing'],
     approach:
-      'DFS uses the call stack (recursion) to explore as far as possible along each branch before backtracking. We add the current node to visited before recursing on its neighbors — this prevents infinite loops on cycles. The recursive structure mirrors the tree structure of the DFS traversal. Each node is visited exactly once and each edge examined once, giving O(V+E) time. Stack space is O(V) in the worst case (a path graph where DFS goes to depth V).',
+      'Depth-First Search doesn\'t scan widely, it dives aggressively. Using a Stack (or native recursion), it burrows down a single path until it fractures, then backtracks. It\'s the engine of choice for topological sorting and aggressively validating whether a deep path exists.',
     output: ['[0, 1, 3, 2]'],
     starterCode: `def dfs(graph, node, visited=None):
     if visited is None:
@@ -3540,19 +3469,14 @@ print(result)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '15 min',
-    objective: 'See how in-order traversal visits a binary search tree in sorted order. Understand left-root-right recursion.',
+    objective: 'Navigate abstract tree hierarchies organically via structural node rules.',
     prompt: 'Add root.right.left = Node(5) and root.right.right = Node(7). What does the in-order result become?',
-    hint: 'In-order visits left subtree, then root, then right subtree. For a BST this always gives sorted ascending order.',
+    hint: 'In-order traversal of a well-balanced tree yields perfectly sorted data for free.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(h) — h = tree height',
-    useCases: [
-      'In-order traversal of a BST produces sorted output — used in tree-sort',
-      'Expression tree evaluation (post-order gives Reverse Polish Notation)',
-      'Directory tree traversal (pre-order to print file paths)',
-      'Serialisation and deserialisation of trees for storage/transmission',
-    ],
+    useCases: ['Rendering structural DOM trees', 'Compiling mathematical logic expressions', 'Writing JSON parsers'],
     approach:
-      'Binary tree traversal visits every node exactly once. In-order (Left→Root→Right) visits the left subtree recursively, then the current node, then the right subtree. For a Binary Search Tree (BST), this produces sorted ascending output because all left subtree values are smaller and all right subtree values are larger. The recursion depth equals the tree height h: O(log n) for balanced trees, O(n) for degenerate (linked-list shaped) trees.',
+      'Trees aren\'t flat. You have to decide when you process the current node vs its children. Pre-order is great for copying trees, Post-order is required to safely delete trees from the bottom up, and In-order automatically prints out sorted data organically.',
     output: ['[1, 2, 3, 4, 6]'],
     starterCode: `class Node:
     def __init__(self, val):
@@ -3682,19 +3606,14 @@ print(result)
     level: 'Advanced',
     levelColor: 'text-rose-400',
     duration: '15 min',
-    objective: 'See the call tree fan out exponentially without memoization, then watch memoization collapse it to linear.',
+    objective: 'Visualize pure, unmitigated exponential failure architectures.',
     prompt: 'Increase fib(8) to fib(12). Count the total function calls. Now try fib_memo(30) — instant! Why?',
-    hint: 'Naive fib(n) makes 2^n calls. Memoized fib_memo(n) makes exactly 2n-1 calls — once for each unique subproblem.',
+    hint: 'Notice how the system brutally re-calculates the exact same branch over and over. It is intentionally terrible.',
     timeComplexity: 'O(2ⁿ) naive / O(n) memoized',
     spaceComplexity: 'O(n)',
-    useCases: [
-      'Dynamic programming pattern — memoize overlapping subproblems',
-      'Fibonacci numbers appear in nature (spiral patterns, golden ratio)',
-      'Understanding exponential vs polynomial time complexity',
-      'Template for top-down DP: LCS, edit distance, knapsack',
-    ],
+    useCases: ['Teaching how easily systems crash', 'Why caching architectures exist', 'Stress-testing recursion constraints'],
     approach:
-      "Naive recursive Fibonacci recalculates the same subproblems exponentially many times. fib(5) calls fib(4) and fib(3). fib(4) also calls fib(3) — that's a duplicate. The call tree has 2^n leaves, making it O(2^n). Memoization stores each result in a dict the first time it's computed. On subsequent calls, we return the cached result in O(1). This reduces the call tree from an exponential bush to a linear chain, making it O(n) time and O(n) space.",
+      'This exists primarily as a warning. Naive recursive Fibonacci forks the execution tree into a massive O(2ⁿ) explosion. The system recalculates `fib(2)` a horrifying number of times. It perfectly demonstrates why manual memoization (caching) is mandatory for complex routing.',
     output: ['Naive: 21', 'Memo: 55'],
     starterCode: `def fib(n):
     if n <= 1:
@@ -3818,14 +3737,14 @@ print("Memo:", fib_memo(10))
     level: 'mastery',
     levelColor: 'text-amber-400',
     duration: '25 min',
-    objective: 'Use a min-heap priority queue to greedily explore the nearest unvisited node and find shortest paths from a source.',
+    objective: 'Navigate complex weighted networks relentlessly to cement the true minimum-cost distance.',
     prompt: 'Add a new node 4 connected from node 3 with weight 2. What is the shortest path from 0 to 4?',
-    hint: "Extend the graph dict with node 4 and add (4,2) to node 3's adjacency list. Run dijkstra and check dist[4].",
+    hint: 'Prioritize exploring the cheapest known path aggressively before touching heavier routes.',
     timeComplexity: 'O((V + E) log V)',
     spaceComplexity: 'O(V)',
-    useCases: ['GPS navigation', 'Network routing', 'Game pathfinding', 'Social network shortest paths'],
+    useCases: ['Google Maps / Apple Maps core routing engines', 'IP Routing protocol paths (OSPF)', 'Logistics mapping constraints'],
     approach:
-      'Dijkstra uses a min-heap priority queue to greedily explore the nearest unvisited node. It maintains a distance table initialized to infinity, updating shorter paths as they are discovered. The algorithm is optimal for non-negative weighted graphs. It processes each edge at most once per relaxation.',
+      'Dijkstra expands outward cautiously, aggressively prioritizing the cheapest edges available using a Priority Queue. It anchors costs down. It is blindingly fast for physical maps, but it instantly breaks down dynamically if any path introduces a negative weight (a black hole).',
     output: ['{0: 0, 1: 3, 2: 1, 3: 4}'],
     starterCode: `import heapq
 
@@ -3939,14 +3858,14 @@ print(dijkstra(graph, 0))
     level: 'mastery',
     levelColor: 'text-amber-400',
     duration: '25 min',
-    objective: 'Build a 2D DP table to find the maximum value that fits within a weight capacity.',
+    objective: 'Map overlapping substructures to 2D matrices to dismantle complex combinatorics.',
     prompt: 'Add a 5th item: weight=1, value=2. Does it change the optimal value for capacity=8?',
-    hint: 'Add 1 to weights and 2 to values. The DP table gains an extra row. Check dp[5][8].',
+    hint: 'Greedy logic fails here. We must evaluate every item against the remaining capacity and store the highest yield.',
     timeComplexity: 'O(n × W)',
     spaceComplexity: 'O(n × W)',
-    useCases: ['Resource allocation', 'Portfolio optimization', 'Project selection', 'Cargo loading'],
+    useCases: ['Cargo shipment payload optimization', 'Investment maximum yield tracking', 'Micro-service CPU load balancing'],
     approach:
-      'The 0/1 knapsack uses a 2D DP table where dp[i][w] = max value using the first i items with capacity w. For each item we decide: skip it (take dp[i-1][w]) or take it (dp[i-1][w-weight]+value), choosing the max. Bottom-up filling avoids recomputation, giving O(n×W) time and space.',
+      'A pure greedy approach grabs the most valuable item immediately, but often locks out a combination of smaller items worth infinitely more overall. The DP Matrix constructs a rigorous table crossing "capacity" with "items", perfectly calculating the global maximum profit without any guesswork.',
     output: ['10'],
     starterCode: `def knapsack(weights, values, capacity):
     n = len(weights)
@@ -4057,14 +3976,14 @@ print(knapsack(weights, values, capacity))
     level: 'mastery',
     levelColor: 'text-amber-400',
     duration: '20 min',
-    objective: 'Fill a 2D DP table to find the length of the longest subsequence common to two strings.',
+    objective: 'Expose structural disparity patterns via Longest Common Subsequence DP traces.',
     prompt: "Try lcs('AGGTAB', 'GXTXAYB'). What is the LCS length? Which characters form it?",
-    hint: 'The LCS of AGGTAB and GXTXAYB is GTAB with length 4. The DP table shows how diagonal moves mark matches.',
+    hint: 'We build a 2D matrix comparing character to character. Diagonal progression tracks the matching backbone.',
     timeComplexity: 'O(m × n)',
     spaceComplexity: 'O(m × n)',
-    useCases: ['Diff tools (git diff)', 'DNA sequence alignment', 'Plagiarism detection', 'File comparison'],
+    useCases: ['The engine underneath `git diff`', 'DNA / Genomic sequencing', 'Levenshtein autocorrect bases'],
     approach:
-      'LCS builds a 2D table where dp[i][j] = length of LCS of s1[:i] and s2[:j]. When characters match, dp[i][j] = dp[i-1][j-1]+1 (extend the previous LCS). When they differ, dp[i][j] = max(dp[i-1][j], dp[i][j-1]) (best without one character). The answer is dp[m][n].',
+      'When Git tells you exactly what code changed across two files, this logic runs underneath. By dynamically scoring matching characters and propagating those scores through a matrix, we seamlessly extract the longest unbroken sequence, enabling systems to intelligently map variances in raw unstructured data.',
     output: ['4'],
     starterCode: `def lcs(s1, s2):
     m, n = len(s1), len(s2)
@@ -4291,14 +4210,14 @@ print(coin_change([1, 5, 6, 9], 11))
     level: 'mastery',
     levelColor: 'text-amber-400',
     duration: '20 min',
-    objective: "Use BFS with in-degree tracking (Kahn's algorithm) to produce a valid topological ordering of a DAG.",
+    objective: 'Resolve unyielding system dependencies gracefully into linear execution chains.',
     prompt: 'Add edge (4,5) and vertex 5. Does the topological order still include all vertices? What is the new order?',
-    hint: "With 6 vertices, the valid order becomes [0,1,2,3,4,5]. Kahn's algorithm processes node 5 after node 4 since 4→5.",
+    hint: 'Hunt down nodes with an in-degree of 0 (no dependencies). Process them, then detach them.',
     timeComplexity: 'O(V + E)',
     spaceComplexity: 'O(V)',
-    useCases: ['Build systems (make/gradle)', 'Course prerequisites', 'Task scheduling', 'Package dependency resolution'],
+    useCases: ['NPM/Yarn package installs', 'Vite / Webpack module bundling builds', 'Database foreign-key creation schemas'],
     approach:
-      "Kahn's algorithm maintains an in-degree count for each node. Nodes with in-degree 0 (no prerequisites) start in the queue. We repeatedly dequeue a node, append it to the order, and decrement the in-degree of its neighbors — adding any that reach 0. If the final order contains all vertices, the graph is a valid DAG.",
+      'When Module A requires Module B, and they both require Module C, which builds first? Topological Sort handles strict DAG logic by continually isolating and processing dependencies that require nothing, pushing the exact safe build order forward.',
     output: ['[0, 1, 2, 3, 4]'],
     starterCode: `from collections import deque
 
@@ -4414,14 +4333,14 @@ print(topo_sort(5, edges))
     level: 'foundation',
     levelColor: 'text-violet-400',
     duration: '3 min',
-    objective: 'Learn how to output text to the console using print().',
+    objective: 'Validate total system connectivity by dumping raw runtime state strictly to STDOUT.',
     prompt: 'Use print() to display messages to the console. This is the foundation of all programming.',
-    hint: 'print() can take multiple arguments separated by commas',
+    hint: 'It’s more than text. It proves the thread is active and STDOUT routing is functional.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(1)',
-    useCases: ['First program', 'Output testing', 'Debugging', 'Quick checks'],
+    useCases: ['Confirming compiler/interpreter viability', 'Quick sanity checks', 'Pipeline terminal monitoring'],
     approach:
-      'The print() function sends output to the console. Python executes statements line by line from top to bottom. Comments (starting with #) are ignored by the interpreter. String literals are enclosed in quotes.',
+      'No matter how advanced logging telemetry gets, `print()` to a standard console remains the fundamental method to instantly assert whether a remote system has initialized properly or crashed silently into the dark.',
     output: ['Hello, World!', 'Welcome to PyAnimate!', 'Hello, Learner'],
     starterCode: `# This is a comment in Python
 print("Hello, World!")
@@ -4474,14 +4393,14 @@ print("Hello,", name)
     level: 'foundation',
     levelColor: 'text-violet-400',
     duration: '3 min',
-    objective: 'Master string manipulation methods and indexing.',
+    objective: 'Parse and slice massive unstructured textual payloads decisively.',
     prompt: 'Modify the text to see how string methods transform data. Try different slicing ranges.',
-    hint: 'Remember that indexing starts at 0 and negative indices count from the end',
+    hint: 'String structures are immutable in Python! Every modification inherently spawns a totally new memory block.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(n)',
-    useCases: ['Text processing', 'User input validation', 'Data cleaning', 'Format conversion'],
+    useCases: ['Parsing Regex / Log files', 'Sanitizing user-input arrays', 'Rendering JSON/HTML buffers'],
     approach:
-      'Strings in Python are immutable sequences. Methods like upper() and lower() create new strings. Indexing starts at 0, negative indices count from the end. Slicing [start:end] extracts substrings.',
+      'If you constantly concatenate strings in a tight loop, you spawn thousands of shredded blocks of garbage memory, freezing the system. Real systems aggregate strings cleanly across buffers or join mapped arrays natively.',
     output: ['PYTHON python 6', 'P n yth'],
     starterCode: `text = "Python"
 upper = text.upper()
@@ -4611,14 +4530,14 @@ print(first, last, slice_text)
     level: 'foundation',
     levelColor: 'text-violet-400',
     duration: '3 min',
-    objective: "Understand Python's arithmetic operators and their behavior.",
+    objective: 'Evaluate hardware-level mathematical compilation limits.',
     prompt: 'Change a and b to see how different operators work. Notice the difference between / and //.',
-    hint: 'Division (/) always returns a float, while floor division (//) returns an integer',
+    hint: 'Python evaluates complex operations cleanly. Note the integer division truncating raw precision.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(1)',
-    useCases: ['Calculations', 'Game logic', 'Financial apps', 'Scientific computing'],
+    useCases: ['Financial aggregation logic', 'Core logic gates', 'Graphics transformation calculations'],
     approach:
-      'Python supports standard arithmetic operators: +, -, *, / (float division), // (integer division), % (remainder), ** (exponentiation). Operations follow standard mathematical precedence.',
+      'Basic math isn\'t basic backend-side. The way a language handles floating point limitations, integer casting, and remainder wrapping dictates how safely you can process high-precision APIs or cryptographic bounds.',
     output: ['13 7 30', '3.3333333333333335 3 1 100'],
     starterCode: `a = 10
 b = 3
@@ -4751,14 +4670,14 @@ print(divide, floor_div, modulo, power)
     level: 'foundation',
     levelColor: 'text-violet-400',
     duration: '3 min',
-    objective: 'Learn how to create and manipulate Python lists.',
+    objective: 'Manage mutable contiguous memory arrays in real-time logic pipelines.',
     prompt: 'Add more fruits and try different list operations. Watch how the list grows and shrinks.',
-    hint: 'append() adds to the end (O(1)), insert() can add anywhere (O(n))',
+    hint: 'Notice appending is fast, but inserting dead center causes the entire array to violently shift!',
     timeComplexity: 'O(n) for insert/remove',
     spaceComplexity: 'O(n)',
-    useCases: ['Collections', 'Queues', 'Stacks', 'Dynamic arrays'],
+    useCases: ['Stack architectures', 'Collecting unsorted application state', 'JSON payload containers'],
     approach:
-      'Lists are mutable, ordered collections. append() adds to end (O(1)), insert() adds at position (O(n)), remove() finds and deletes (O(n)), pop() removes last (O(1)). Indexing is O(1).',
+      'Lists are powerful but physically restrictive under the hood. Appending to the end is O(1). Inserting at the start forces the CPU to slide every single element in memory physically to the right (O(n)). Understanding this defines the difference between a Junior and Senior memory architect.',
     output: ["['apple', 'apricot', 'cherry', 'date']", 'apple date 5 cherry'],
     starterCode: `fruits = ["apple", "banana", "cherry"]
 fruits.append("date")
@@ -4876,14 +4795,14 @@ print(first, last, length, popped)
     level: 'foundation',
     levelColor: 'text-violet-400',
     duration: '3 min',
-    objective: 'Understand how to define and call functions with parameters and return values.',
+    objective: 'Enforce extreme DRY (Don’t Repeat Yourself) architecture to insulate scope and logic.',
     prompt: 'Create your own function that takes parameters and returns a result.',
-    hint: "Functions create a local scope - variables inside don't affect variables outside",
+    hint: 'Data flows strictly into arguments and out of return values. Internal parameters do not leak.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(1)',
-    useCases: ['Code reuse', 'Modularity', 'Abstraction', 'Testing'],
+    useCases: ['Microservice logic separation', 'Unit testing isolation boundaries', 'Clean code composition'],
     approach:
-      'Functions are defined with def keyword, take parameters, and return values. They create a local scope for variables. Functions can be called multiple times with different arguments.',
+      'Functions abstract complexity. The calling block pushes parameters into a completely detached execution frame on the Call Stack. It processes secretly, and surgically returns the precise requested state, shutting down the memory frame behind it protecting system integrity.',
     output: ['Hello, Alice!', '12'],
     starterCode: `def greet(name):
     message = "Hello, " + name + "!"
@@ -5637,14 +5556,14 @@ print("Average:", average)
     level: 'intermediate',
     levelColor: 'text-emerald-400',
     duration: '8 min',
-    objective: 'Understand FIFO (First-In-First-Out) and why deque is O(1) for both enqueue and dequeue.',
+    objective: 'Enforce chronological task processing via First-In, First-Out (FIFO) logic.',
     prompt: "Add 'Diana' to the queue. Predict the order of removal.",
-    hint: 'The first person added (Alice) will be the first removed. Dequeue uses popleft() for O(1) removal.',
+    hint: 'Tasks enter the back and exit the front. First come, first served. The ultimate fairness doctrine.',
     timeComplexity: 'O(1) per operation',
     spaceComplexity: 'O(n)',
-    useCases: ['Task scheduling', 'Message queues', 'Breadth-first search', 'Print spooling'],
+    useCases: ['Message brokers (RabbitMQ/Kafka)', 'Rate limiting network requests', 'Asynchronous task workers'],
     approach:
-      "Queues follow FIFO (First-In-First-Out). Python's deque (double-ended queue) provides O(1) append (enqueue) and popleft (dequeue). Lists would be O(n) for pop(0). Queues are essential for BFS and job scheduling.",
+      'Queues run the internet. If millions of users request a server simultaneously, you cannot process them all instantly without crashing. You put them into a FIFO queue. The server grabs the oldest task from the front, processes it, and grabs the next. It’s how systems handle massive load asynchronously.',
     output: ["Queue: ['Alice', 'Bob', 'Charlie']", 'Removed: Alice Bob', "Remaining: ['Charlie']"],
     starterCode: `from collections import deque
 
@@ -5763,14 +5682,14 @@ print("Remaining:", list(queue))
     level: 'intermediate',
     levelColor: 'text-emerald-400',
     duration: '8 min',
-    objective: 'Use hash map counting to determine if two strings are anagrams in O(n) time.',
+    objective: 'Validate character parity by mapping strings to strict frequency tables in O(n).',
     prompt: "Change s2 to 'lisent'. Is it still an anagram?",
-    hint: 'Count characters in s1, then decrement for each character in s2. Any mismatch means not an anagram.',
+    hint: 'Ignore the temptation to sort both strings! Sorting is slow. Just tally the letters.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(k) — k = unique chars',
-    useCases: ['Word games', 'Text analysis', 'Cryptography', 'Spell checkers'],
+    useCases: ['Comparing textual configurations', 'Fast validation guards', 'Data integrity scraping'],
     approach:
-      'Use a hash map to count character frequencies in first string, then decrement for second string. If any character is missing or count goes negative, not an anagram. More efficient than sorting (O(n log n)).',
+      'Amateurs sort both strings to see if they match (which costs O(n log n)). Senior engineers map the character frequencies of the first string into a dictionary, then simply subtract frequencies while reading the second string. If everything zeroes out cleanly, it’s an anagram. We crush the time complexity down to O(n).',
     output: ['Anagram: True'],
     starterCode: `def is_anagram(s1, s2):
     if len(s1) != len(s2):
@@ -5905,14 +5824,14 @@ print("Anagram:", result)
     level: 'intermediate',
     levelColor: 'text-emerald-400',
     duration: '8 min',
-    objective: 'Use the sliding window technique to find maximum sum subarray in O(n) instead of O(n×k).',
+    objective: 'Maintain moving aggregates in O(1) time without catastrophic full-window recalculations.',
     prompt: "Change k to 4. What's the new maximum sum?",
-    hint: 'For each slide, subtract the element leaving the window and add the element entering. Compare to max.',
+    hint: 'When the window slides right, just subtract the outgoing left element and add the incoming right element.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)',
-    useCases: ['Time series analysis', 'Moving averages', 'Network packet analysis', 'Stream processing'],
+    useCases: ['Live traffic bandwidth analysis', 'Rate limit intervals', 'Subarray threshold monitoring'],
     approach:
-      'Sliding window maintains a fixed-size window over data. Instead of recalculating sum for each window (O(nk)), we slide by removing the leftmost element and adding the new rightmost (O(n)). Essential pattern for array/string problems.',
+      'Never recalculate subsets repeatedly! If we need the sum of 5 consecutive elements over an array of 1,000, we don\'t do 5,000 additions. We establish a "window", slide it forward, add the new leading edge, and subtract the trailing edge. We transition between states locally in O(1) time, avoiding terrifying O(n*k) overhead.',
     output: ['Max sum: 9'],
     starterCode: `def max_sum_subarray(arr, k):
     n = len(arr)
@@ -6067,14 +5986,14 @@ print("Max sum:", result)
     level: 'intermediate',
     levelColor: 'text-emerald-400',
     duration: '8 min',
-    objective: 'Use two-pointer technique to merge two sorted arrays in O(m+n) time.',
+    objective: 'Iteratively zip two distinct sorted lists into a master list without disrupting chronicity.',
     prompt: 'Add 9 to arr1. Trace which pointer advances at each step.',
-    hint: 'Compare arr1[i] and arr2[j]. Take the smaller one, advance that pointer. Repeat until one array exhausted.',
+    hint: 'Use two pointers tracking both arrays. Just pick the smaller of the two visible elements and slide that pointer forward.',
     timeComplexity: 'O(m + n)',
     spaceComplexity: 'O(m + n)',
-    useCases: ['Merge sort subroutine', 'Database joins', 'Sorted stream merging', 'K-way merge'],
+    useCases: ['Database shard compaction', 'The core subroutine driving Merge Sort', 'Merging cron log files'],
     approach:
-      'Two-pointer technique: compare elements from both arrays, always taking the smaller one. After one array is exhausted, append the remainder. This is the merge step in merge sort and merges two sorted sequences in linear time.',
+      'When bringing two pre-sorted datasets together, dropping them and instantly resorting them is a massive waste. Instead, we perform the zipper merge. We point at the head of both lists, compare the two, pull the smallest one into the final array, and advance. It guarantees a flawless merge in strictly O(m+n) time.',
     output: ['[1, 2, 3, 4, 5, 6, 7, 8]'],
     starterCode: `def merge_sorted_arrays(arr1, arr2):
     merged = []
@@ -6410,14 +6329,14 @@ print(result)
     level: 'mastery',
     levelColor: 'text-amber-400',
     duration: '15 min',
-    objective: 'Build a prefix tree that stores words character-by-character for fast search and autocomplete.',
+    objective: 'Supercharge massive lexicon parsing by indexing strings down to microscopic branch prefixes.',
     prompt: "Insert 'dog' and search for 'cat'. Why does search('ca') return False even though 'cat' was inserted?",
-    hint: "search() checks is_end at the final node. 'ca' exists as a path but is_end=False — it's not a complete word.",
+    hint: 'Look how an entire dictionary collapses over overlapping root branches. Massive data compression.',
     timeComplexity: 'O(m) — m = word length',
     spaceComplexity: 'O(n × m) — n = words',
-    useCases: ['Autocomplete', 'Spell checkers', 'IP routing', 'Dictionary lookups'],
+    useCases: ['Search bar auto-complete', 'Network IP routing verification', 'Spellchecking dictionaries'],
     approach:
-      'Trie (prefix tree) stores strings character-by-character in a tree structure. Each path from root to leaf represents a word. Sharing prefixes saves space. Search/insert/delete are all O(m) where m is word length.',
+      'A Trie fundamentally breaks text strings apart. Instead of iterating through an array of 500,000 words looking for "apple", the Trie crawls node-by-node down the "a" -> "p" path. Searching a million-word dictionary executes purely based on the length of the requested word (O(L)). Jaw-dropping performance.',
     output: ['True', 'False'],
     starterCode: `class TrieNode:
     def __init__(self):

@@ -43,7 +43,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         {/* Warm up the CDN connection used by Pyodide before the playground loads */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />

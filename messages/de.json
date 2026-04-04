@@ -131,77 +131,77 @@
   "CourseData": {
     "tracks": {
       "foundation": {
-        "audience": "Absolute Anfänger, keine Erfahrung",
-        "description": "Starten Sie bei Null. Lernen Sie, wie Python über Daten, Entscheidungen und Ablauf denkt — Schritt für Schritt, jedes Konzept animiert."
+        "audience": "Absolute Anfänger, null Erfahrung",
+        "description": "Fangen wir bei Null an. Wir überspringen den akademischen Jargon und steigen direkt ein, wie Python Zustand verwaltet, Entscheidungen trifft und Logik ausführt."
       },
       "beginner": {
-        "audience": "Python-Erstlerner",
-        "description": "Bauen Sie echte Programmiergewohnheiten auf. Meistern Sie Schleifen, Funktionen und Listen, indem Sie sie Schritt für Schritt ausführen sehen."
+        "audience": "Erste Schritte in Python",
+        "description": "Zeit für echte Engineering-Gewohnheiten. Wir verfolgen exakt, wie Loops und Arrays unter der Haube arbeiten, damit Sie aufhören zu raten."
       },
       "intermediate": {
-        "audience": "Entwickler, die Skripte und Apps erstellen",
-        "description": "Erweitern Sie Ihr Werkzeugset. Erkunden Sie Dictionaries, Stacks, Queues und erste Suchalgorithmen mit visuellem State-Tracking."
+        "audience": "Entwickler von Skripten und Apps",
+        "description": "Erweitern Sie Ihr Toolkit. Wir tauchen tief in Dictionaries, Stacks, Queues und klassische Suchen ein. Die Motoren jedes soliden Backends."
       },
       "advanced": {
-        "audience": "Ingenieure, die Problemlösung verfeinern",
-        "description": "Denken Sie algorithmisch. Sehen Sie Sortier- und Baumalgorithmen in Echtzeit animiert, verstehen Sie Big O durch Beobachtung."
+        "audience": "Problemlösende Ingenieure",
+        "description": "Fangen Sie an, algorithmisch zu denken. Beobachten Sie, wie Rekursion den Call Stack befüllt und warum Big O in Produktion extrem wichtig ist."
       },
       "mastery": {
-        "audience": "Experten, die Interna erkunden",
-        "description": "Stoßen Sie an die Grenzen. Graphsuche, dynamische Programmierung und Interview-Algorithmen — alles live visualisiert."
+        "audience": "Experten, die die Interna erforschen",
+        "description": "Das tiefe Ende. Hören Sie auf zu skripten, beginnen Sie Systeme zu bauen. Meistern Sie Graphen- und DP-Algorithmen für Staff-Level Interviews."
       }
     },
     "algorithms": {
-      "hello-world": "Ihre erste Python-Ausgabe. Sehen Sie, wie print() Daten an die Konsole sendet und warum es die Grundlage allen Debuggens ist.",
-      "variables-types": "Beobachten Sie eine Variable im Speicher zum Leben erwachen. Sehen Sie int, float, str und bool als lebende Boxen, die Werte halten.",
-      "string-operations": "Strings sind Sequenzen. Sehen Sie Slicing, Verkettung und Methoden über Zeichenarrays animiert.",
-      "arithmetic": "Zahlen, Operatoren und Ganzzahldivision. Sehen Sie genau, wie Python Ausdrücke Schritt für Schritt auswertet.",
-      "if-else": "Code, der Entscheidungen trifft. Beobachten Sie die Ausführung zwischen Zweigen basierend auf Wahrheitswerten springen.",
-      "while-loop": "Wiederholung durch eine Bedingung gesteuert. Sehen Sie die Schleifenwache vor jeder Iteration prüfen und warum Endlosschleifen entstehen.",
-      "for-loop": "Iterieren Sie über Sequenzen. Sehen Sie, wie Pythons for-Schleife intern ein Iterator ist.",
-      "lists-basics": "Pythons nützlichster Container. Sehen Sie append, pop und index als Operationen auf einem animierten Speicherblock.",
-      "functions-intro": "Wiederverwendbare Logikblöcke. Beobachten Sie einen Funktionsaufruf einen Stapelrahmen pushen und den Rückgabewert zum Aufrufer zurückfließen.",
-      "input-output": "Programme, die mit Benutzern sprechen. Sehen Sie, wie input() die Ausführung pausiert und einen String-Wert zurückgibt.",
-      "linear-search": "Prüfen Sie jedes Element, bis Sie das Ziel finden. O(n) — der einfachste Suchalgorithmus.",
-      "count-occurrences": "Zählen Sie, wie oft ein Wert vorkommt. Sehen Sie eine Hash Map bei jedem Durchlauf Zählungen akkumulieren.",
-      "find-min-max": "Verfolgen Sie das laufende Minimum und Maximum in einem einzigen Durchlauf. Sehen Sie, warum eine Schleife genügt.",
+      "hello-world": "Ihr echter Einstiegspunkt. Sehen Sie exakt, wie print() Daten an die Konsole weitergibt—denn ehrlich, 'Print Debugging' verschwindet nie ganz.",
+      "variables-types": "Sehen Sie, wie Variablen Speicher reservieren. Verstehen Sie int, float, string und warum Python Ihnen dynamisch so viel verzeiht.",
+      "string-operations": "Strings sind eigentlich Arrays. Sehen Sie in Backend-Systemen, wie String-Manipulation oft 80% Ihrer Web-Aufgaben darstellt.",
+      "arithmetic": "Mathe unter der Haube. Sehen Sie genau, wie komplexe Ausdrücke ausgewertet werden und verstehen Sie Divisionen.",
+      "if-else": "Das Herzstück der Business-Logik. Sehen Sie Branches live und warum falsche Conditions die Quelle endloser Auth-Bugs sind.",
+      "while-loop": "Wiederholung bis zum Abbruch. Verstehen Sie Guard Checks und lernen Sie, sich nicht versehentlich selbst via Endlosschleife zu DDoS-en.",
+      "for-loop": "Das Arbeitstier der Datenverarbeitung. Beobachten Sie Iteratoren beim Abrufen der Elemente—der Motor starker Datenpipelines.",
+      "lists-basics": "Pythons bestes Werkzeug. Verstehen Sie, warum es enorm viel CPU frisst, in der Mitte eines großen Arrays einzufügen.",
+      "functions-intro": "Der Grundbaustein sauberen Codes. Beobachten Sie, wie ein Stack-Frame zugewiesen wird und Werte sicher zurückkehren (DRY).",
+      "input-output": "Interaktive Skripte. Sehen Sie, wie der Main-Thread blockt, und warum das Casting zum korrekten Datentyp zwingend erforderlich ist.",
+      "linear-search": "Brute-Force pro Element. O(n) skaliert linear. Bei kleinem Datensatz ist das völlig in Ordnung in der Praxis.",
+      "count-occurrences": "Frequenzen map-en. Ein Dictionary zu nutzen ist ein essentielles Aggregationsmuster für riesige Log-Analysen.",
+      "find-min-max": "Tracking-Grenzen. Nur ein Pass. Verhindern Sie, sinnlos CPU-Zyklen beim teuren Sortieren des Datensatzes zu verschwenden.",
       "sum-average": "Akkumulieren Sie Werte und berechnen Sie den Durchschnitt. Sehen Sie das Akkumulator-Muster, das viele Algorithmen antreibt.",
       "loop-explorer": "Beobachten Sie, wie Schleifeniterationen den gemeinsamen Zustand aktualisieren. Sehen Sie den Score bei jedem Durchlauf wachsen.",
       "reverse-list": "Zwei-Zeiger-Tausch von beiden Enden. Beobachten Sie die Zeiger sich zur Mitte bewegen.",
-      "palindrome": "Vergleichen Sie Zeichen von beiden Enden. Sehen Sie, wie die Zwei-Zeiger-Technik Symmetrie bestätigt.",
-      "fizzbuzz": "Klassische Teilbarkeitsprüfung. Sehen Sie Modulo die bedingte Ausgabe über 100 Iterationen steuern.",
-      "factorial": "Multiplizieren Sie von 1 bis n. Sehen Sie das Produkt Schritt für Schritt wachsen und verstehen Sie, warum 0! = 1.",
-      "fibonacci-iterative": "Erzeugen Sie die Sequenz mit zwei rollenden Variablen. Sehen Sie, warum dies die rekursive Version im Speicher schlägt.",
-      "binary-search": "Halbieren Sie den Suchraum bei jedem Schritt. Sortierte Eingabe erforderlich. Sehen Sie O(log n) live geschehen.",
-      "selection-sort": "Finden Sie das Minimum bei jedem Durchlauf und verschieben Sie es nach vorne. Sehen Sie n Durchläufe ein sortiertes Array erzeugen.",
-      "insertion-sort": "Fügen Sie jedes Element an seiner korrekten Position im bereits sortierten Präfix ein. Effizient für nahezu sortierte Daten.",
-      "two-pointers": "Verwenden Sie zwei Indizes, die sich aufeinander zu bewegen, um Array-Probleme in O(n) statt O(n²) zu lösen.",
-      "hash-map-counting": "Verwenden Sie ein Dictionary zum Zählen in O(1) pro Suche. Die Grundlage vieler Häufigkeitsprobleme.",
-      "stack-ops": "LIFO in Aktion. Sehen Sie push, pop und peek auf einer als Stack verwendeten Liste animiert.",
-      "queue-ops": "FIFO in Aktion. Sehen Sie enqueue und dequeue animiert und verstehen Sie, warum deque eine Liste schlägt.",
-      "anagram-check": "Sind zwei Strings Umordnungen voneinander? Sehen Sie Zeichenzählung es in O(n) lösen.",
-      "sliding-window": "Finden Sie die maximale Summe in jedem Fenster der Größe k. Beobachten Sie das Fenster über das Array gleiten.",
-      "merge-sorted": "Kombinieren Sie zwei sortierte Arrays zu einem. Die zentrale Operation hinter Merge Sort.",
-      "bubble-sort": "Vergleichen Sie benachbarte Paare. Größere Elemente steigen bei jedem Durchlauf auf.",
-      "merge-sort": "Teilen, Hälften sortieren, zusammenführen. Sehen Sie den Rekursionsbaum sich teilen und rekombinieren.",
-      "quick-sort": "Wählen Sie einen Pivot, partitionieren Sie darum, rekursieren Sie. Durchschnittlich O(n log n) mit großartiger Cache-Leistung.",
+      "palindrome": "Symmetrieprüfung via Zwei-Zeiger vom Rand. Ein Mismatch — und der Algorithmus stoppt sofort. Kein überflüssiger Durchlauf bis zum Ende.",
+      "fizzbuzz": "Der Klassiker im Vorstellungsgespräch. Die absolute Reihenfolge Ihrer Bedingungen entscheidet alles — vertauschen Sie sie, und FizzBuzz wird zur Bug-Fabrik.",
+      "factorial": "Exponentielles Kettenprodukt. Die Akkumulation zeigt, warum Basis-Bedingungen und Start bei 1 (niemals 0) absolut zwingend sind.",
+      "fibonacci-iterative": "Lineare Generierung mit O(1) Speicher schlägt jeden naiven Rekursionsansatz. Nur die letzten zwei Werte behalten — der Rest ist Ballast.",
+      "binary-search": "Datenbank-Indizes basieren hierauf. Brutales Aussortieren der Hälften via O(log n)—aber nur, wenn die Arrays vorab sortiert wurden.",
+      "selection-sort": "Findet das Minimum pro Durchlauf, setzt es an die sortierte Grenze. Genau ein Swap pro Iteration — nützlich wenn Schreiboperationen auf der Hardware teuer sind.",
+      "insertion-sort": "Blitzschnell bei fast sortierten Daten — was in der Praxis häufiger vorkommt als man denkt. Der Grundbaustein des gewaltigen Timsort.",
+      "two-pointers": "Zwei Indizes, die aufeinander zukonvergieren, knäcken Array-Probleme in O(n). Kein doppelter For-Loop-Albtraum in O(n²) mehr nötig.",
+      "hash-map-counting": "O(1)-Magie. Frequenzen in einem Dictionary cachen lässt Sie doppelt verschachtelten Loops entkommen. RAM gegen Geschwindigkeit — der beste Trade in der Informatik.",
+      "stack-ops": "LIFO im echten Leben. So funktionieren Browser-Verlauf, Undo-Funktion und jeder Call Stack. Schauen Sie, wie push und pop Zustände verwalten.",
+      "queue-ops": "FIFO im echten Einsatz. Aufgaben rein, Aufgaben raus in Reihenfolge — der Motor hinter Node.js, Web-Servern und asynchronen Task-Executors.",
+      "anagram-check": "Sortieren wäre O(n log n). Stattdessen: Zeichenhäufigkeiten in ein Dictionary hashen und vergleichen. Das echte O(n)-Fundament jeder Anagramm-Erkennung.",
+      "sliding-window": "Festes Fenster über ein Array schieben. Nie neu berechnen — einfach den austretenden Wert subtrahieren und den einfahrenden addieren. O(n) statt O(n²).",
+      "merge-sorted": "Zwei sortierte Arrays in einem einzigen Pass zusammenführen. Das ist die zentrale Merge-Operation, die das gesamte Merge Sort antreibt.",
+      "bubble-sort": "Nie in Produktion! (wirklich nie). Aber das Beobachten, wie schwere Elemente aufsteigen, lehrt Array-Grenzmechaniken — Grundlage für jedes bessere Sortierverfahren.",
+      "merge-sort": "Teile, sortiere Hälften, führe zusammen. Die Rekursion zerhackt Arrays und verwebt sie wieder zu O(n log n) — garantiert, ohne Worst Case.",
+      "quick-sort": "Cache-freundlich und blitzschnell. Wählen Sie aber einen schlechten Pivot, stürzt es brutal auf extrem langsame O(n²) ab.",
       "heap-sort": "Bauen Sie einen Max-Heap, extrahieren Sie Elemente in Reihenfolge. Garantiert O(n log n) anders als Quicksort.",
-      "bfs": "Erkunden Sie einen Graphen Ebene für Ebene mit einer Queue. Finden Sie kürzeste Wege in ungewichteten Graphen.",
-      "dfs": "Erkunden Sie so tief wie möglich, bevor Sie zurückgehen. Sehen Sie den Aufrufstapel mit jedem rekursiven Schritt wachsen.",
-      "binary-tree-traversal": "In-order, Pre-order, Post-order. Beobachten Sie Knoten in verschiedenen Reihenfolgen am selben Baum besucht werden.",
-      "two-sum": "Finden Sie zwei Zahlen, die sich zu einem Ziel addieren. Sehen Sie, wie eine Hash Map O(n²) in O(n) verwandelt.",
-      "valid-parentheses": "Verwenden Sie einen Stack zum Abgleichen offener und geschlossener Klammern. Klassische Stack-Interview-Frage.",
-      "fibonacci-recursive": "Sehen Sie den Aufrufbaum exponentiell wachsen. Verstehen Sie, warum Memoization essentiell ist.",
-      "dijkstra": "Finden Sie kürzeste Wege von einer Quelle zu allen Knoten mit einer Prioritätswarteschlange. Das Rückgrat der GPS-Navigation.",
-      "knapsack": "Maximieren Sie den Wert innerhalb einer Gewichtsgrenze. Sehen Sie die DP-Tabelle Zeile für Zeile füllen.",
-      "lcs": "Finden Sie die längste gemeinsame Teilsequenz zweier Strings. Kern von Diff-Tools und DNA-Alignment.",
-      "topological-sort": "Ordnen Sie Aufgaben unter Beachtung von Abhängigkeiten. Sehen Sie Kahns Algorithmus Knoten mit Eingangsgrad Null entfernen.",
-      "kruskals": "Bauen Sie einen minimalen Spannbaum, indem Sie gierig Kanten mit dem niedrigsten Gewicht ohne Zyklenbildung hinzufügen.",
-      "trie": "Fügen Sie Strings Buchstabe für Buchstabe ein und suchen Sie sie. Sehen Sie, wie Autovervollständigung unter der Haube funktioniert.",
-      "floyd-warshall": "Kürzeste Wege aller Paare mit 3-Schleifen-DP. Sehen Sie die Distanzmatrix in O(V³) aktualisiert werden.",
-      "segment-tree": "Bereichsabfragen und Punktaktualisierungen in O(log n). Sehen Sie den Baum aufgebaut und Summen nach oben propagiert werden.",
-      "coin-change": "Minimale Münzen für einen Betrag. Sehen Sie das DP-Array von 0 bis zum Ziel füllen.",
-      "bit-manipulation": "AND, OR, XOR, Shifts — die Operationen hinter Kryptographie, Grafik und Wettbewerbsprogrammierung."
+      "bfs": "Ebene für Ebene ausbreiten. Die Queue stellt sicher, dass alle nahen Knoten zuerst geprüft werden — der Schlüssel zu kürzesten Pfaden in ungewichteten Graphen.",
+      "dfs": "So tief wie möglich erst, dann Backtracking. Der Call Stack wächst mit jedem rekursiven Abstieg — perfekt für Labyrinthe, Baumdurchläufe und Zyklusfindung.",
+      "binary-tree-traversal": "In-order, Pre-order, Post-order. In-order auf einem BST liefert die Daten automatisch sortiert — das Rückgrat jeder Binärbaum-Implementierung.",
+      "two-sum": "Der absolute Interviewklassiker. RAM gegen eine Hash Map tauschen — aus O(n²) Brute-Force wird elegantes O(n). Genau das wollen FAANG-Interviewer sehen.",
+      "valid-parentheses": "Der ultimative LIFO-Test. Jeden Öffner pushen, bei jedem Schließer poppen und matchen. So lesen Parser, Compiler und Interpreter Ihren Code.",
+      "fibonacci-recursive": "Exponentielles Chaos ohne Memoisierung — O(2ⁿ) friert den Prozessor ein. Sehen Sie, wie dieselben Fibonacci-Zweige immer und immer wieder berechnet werden.",
+      "dijkstra": "Das Rückgrat von Google Maps. Findet aggressiv kürzeste Pfade per Prioritätswarteschlange — aber negative Kantengewichte werden ihn zerstören.",
+      "knapsack": "Die heilige Mutter aller DP-Probleme. Eine 2D-Tabelle modelliert alle Gewichts-/Wert-Grenzen — und schlägt jeden Greedy-Algorithmus brutal.",
+      "lcs": "Die Logik hinter `git diff`. Die DP-Matrix verfolgt übereinstimmende Zeichen zwischen zwei Strings beliebiger Länge — elegant und unverzichtbar.",
+      "topological-sort": "Aufgaben in Abhängigkeitsreihenfolge sortieren. Genau das macht npm oder pip bei der Paketinstallation. Ohne es: zirkuläre Abhängigkeiten überall.",
+      "kruskals": "Der billigste Brückenbau. Gierig die günstigste Kante greifen, Union-Find verhindert Zyklen. Resultat: ein minimaler Spannbaum, der alles verbindet.",
+      "trie": "Der Motor hinter jeder Autovervollständigung. Strings Buchstabe für Buchstabe in Äste gefaltet — Präfix-Suche in O(Länge), nicht O(n × Länge).",
+      "floyd-warshall": "Brutale Dreifach-Schleife berechnet kürzeste Pfade zwischen allen Paaren in O(V³). Funktioniert für kleine Graphen, aber nicht skalierbar.",
+      "segment-tree": "Bereichsabfragen in O(log n) statt O(n). Unverzichtbar für Live-Dashboards mit Millionen von Updates — einmal bauen, ewig ernten.",
+      "coin-change": "Das Paradebeispiel, warum Greedy versagt. Ungewöhnliche Münzgrößen brechen gierige Ansätze — die DP-Tabelle von 0 bis zum Ziel ist die einzige verlässliche Lösung.",
+      "bit-manipulation": "Rohe CPU-Mechanik. AND, OR, XOR und Shifts — das Arsenal hinter Verschlüsselung, Grafik-Buffering und Wettbewerbs-Programmierung. Alles auf Binär-Ebene."
     }
   },
   "Quizzes": {
@@ -215,7 +215,7 @@
         "D": "Stoppt das Programm"
       },
       "correct": "A",
-      "successMessage": "Richtig! print() wird zur Ausgabe verwendet.",
+      "successMessage": "Exakt! Dies ist Ihr Lebensretter für Konsolen-Debugging im echten Backend-Alltag jeden Tag.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -229,7 +229,7 @@
         "D": "x = True"
       },
       "correct": "B",
-      "successMessage": "Richtig! 5 ohne Anführungszeichen oder Dezimalstellen ist ein int.",
+      "successMessage": "Korrekt. Spezifische Type-Zuweisung garantiert eine unglaublich cleane Speicherzuteilung ab Tag eins.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -243,7 +243,7 @@
         "D": "/"
       },
       "correct": "C",
-      "successMessage": "Richtig! Der +-Operator verbindet Strings.",
+      "successMessage": "Genau. Der `+`-Operator ist überladen, um Strings zu verbinden. Aber niemals einen Integer roh zu einem String addieren — das gibt sofort einen TypeError.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -257,7 +257,7 @@
         "D": "Rest einer Division"
       },
       "correct": "D",
-      "successMessage": "Richtig! % berechnet Reste.",
+      "successMessage": "Exakt. Modulo `%` liefert den Rest — absolut unverzichtbar beim Prüfen ob etwas gerade oder ungerade ist und beim Zyklieren über Array-Grenzen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -271,7 +271,7 @@
         "D": "then"
       },
       "correct": "C",
-      "successMessage": "Richtig! Python verwendet 'elif'.",
+      "successMessage": "Korrekt. `elif` rettet uns davor, `else if`-Statements endlos schachteln zu müssen. Halten Sie Ihre zyklomatische Komplexität flach und der Code bleibt lesbar.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -285,7 +285,7 @@
         "D": "Sie wird übersprungen"
       },
       "correct": "A",
-      "successMessage": "Richtig! Unendliche Schleifen laufen weiter.",
+      "successMessage": "Genau. Eine Guard-Bedingung, die nie `False` wird, blockiert den Haupt-Thread komplett. Auf Wiedersehen, CPU.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -299,7 +299,7 @@
         "D": "iter()"
       },
       "correct": "B",
-      "successMessage": "Richtig! Dafür wird range() verwendet.",
+      "successMessage": "Stimmt. Range generiert Ihnen zuverlässig Laufgrenzen, ohne das der Buffer überschrieben wird oder ausbricht.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -313,7 +313,7 @@
         "D": "arr[-1]"
       },
       "correct": "C",
-      "successMessage": "Richtig! Python-Listen sind nullindiziert.",
+      "successMessage": "Korrekt. Null-indiziert, weil der Index die Speicher-Verschiebung vom Anfang des Arrays darstellt. Diese Konvention gilt in fast jeder Sprache.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -327,7 +327,7 @@
         "D": "create"
       },
       "correct": "A",
-      "successMessage": "Richtig! 'def' erstellt Funktionen.",
+      "successMessage": "Exakt. `def` allokiert diesen Block als aufrufbares Objekt. Wiederverwendbarkeit ist alles — wiederholen Sie sich nie in Ihren Skripten.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -341,7 +341,7 @@
         "D": "String"
       },
       "correct": "D",
-      "successMessage": "Richtig! input() erfasst Text.",
+      "successMessage": "Richtig. `input()` gibt immer einen String zurück. Sie MÜSSEN via `int()` oder `float()` casten — ohne das explodiert Ihre Mathe beim ersten Versuch.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -355,7 +355,7 @@
         "D": "O(n²)"
       },
       "correct": "A",
-      "successMessage": "Richtig! Lineare Suche prüft jedes Element — O(n) im schlechtesten Fall.",
+      "successMessage": "Ganz genau. Brutale Suche mag alt wirken, ist für minimale Speichermodule auf Produktion jedoch vollends verlässlich.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -411,7 +411,7 @@
         "D": "end"
       },
       "correct": "C",
-      "successMessage": "Richtig! 'break' beendet die Schleife sofort.",
+      "successMessage": "Richtig. `break` tötet die Schleife sofort. Nutzen Sie es zum Kurzschließen, sobald Sie das Gesuchte gefunden haben — keine überflüssigen Iterationen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -425,7 +425,7 @@
         "D": "Eine unveränderte Kopie der Liste"
       },
       "correct": "B",
-      "successMessage": "Richtig! Der Slice [::-1] kehrt jede Sequenz um.",
+      "successMessage": "Exakt. `[::-1]` erzeugt eine neue, gespiegelte Kopie — eleganter Python-Zucker, aber technisch nicht O(1) In-place-Speicher wie bei Zwei-Zeiger-Tausch.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -439,7 +439,7 @@
         "D": "In alphabetischer Reihenfolge"
       },
       "correct": "C",
-      "successMessage": "Richtig! 'racecar' ist in beide Richtungen identisch.",
+      "successMessage": "Richtig. Zwei Zeiger vom Rand her konvergieren — scheitert blitzschnell beim ersten Mismatch. Kein überflüssiger O(n)-Durchlauf bis zum Ende.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -481,7 +481,7 @@
         "D": "Der quadrierten Vorgängerzahl"
       },
       "correct": "B",
-      "successMessage": "Richtig! F(n) = F(n-1) + F(n-2).",
+      "successMessage": "Korrekt. F(n) = F(n-1) + F(n-2) mit nur zwei rollenden Variablen — O(1) Speicher statt eines explodierenden Rekursionsbaums. Der oft übersehene Gewinner.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -551,7 +551,7 @@
         "D": "O(n²)"
       },
       "correct": "C",
-      "successMessage": "Richtig! Hash-Maps bieten O(1) durchschnittliche Suche durch Hashing.",
+      "successMessage": "Genau. O(1)-Zugriff rettet Sie aus der verschachtelten Loop-Hölle. Tauschen Sie etwas RAM gegen rohe Geschwindigkeit — der klassische Space-Time-Tradeoff.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -565,7 +565,7 @@
         "D": "Das kleinste Element"
       },
       "correct": "C",
-      "successMessage": "Richtig! LIFO — Zuletzt Hinein, Zuerst Heraus.",
+      "successMessage": "Korrekt. LIFO ist die Basis von Browser-Verlauf, Undo-Funktion und dem Call Stack selbst. Fundamentaler als er aussieht.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
@@ -579,7 +579,7 @@
         "D": "Das größte Element"
       },
       "correct": "C",
-      "successMessage": "Richtig! FIFO — Zuerst Hinein, Zuerst Heraus.",
+      "successMessage": "Genau. FIFO — Aufgaben rein, Aufgaben raus in Reihenfolge. Exakt der Motor hinter Node.js, Message Brokern und asynchronen Task-Executors.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },

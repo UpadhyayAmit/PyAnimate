@@ -132,37 +132,37 @@
     "tracks": {
       "foundation": {
         "audience": "零基础初学者",
-        "description": "从零开始。学习Python如何思考数据、决策和流程 — 逐步进行，每个概念都有动画。"
+        "description": "从零开始。跳过学术术语，直接了解Python如何跟踪状态、做出决策并执行逻辑。"
       },
       "beginner": {
-        "audience": "首次学习Python",
-        "description": "建立真正的编程习惯。通过逐步观看循环、函数和列表的执行来掌握它们。"
+        "audience": "初学Python者",
+        "description": "培养真正的工程习惯。我们跟踪循环、函数和数组在底层的真实运行机制，让你告别盲目猜测。"
       },
       "intermediate": {
-        "audience": "开发脚本和应用的构建者",
-        "description": "升级你的工具包。通过可视化状态跟踪探索字典、栈、队列和搜索算法。"
+        "audience": "脚本和应用开发者",
+        "description": "升级工具箱。深入探究字典、栈、队列和经典搜索算法。这是每个后端系统的日常驱动力。"
       },
       "advanced": {
-        "audience": "精进问题解决的工程师",
-        "description": "用算法思维思考。实时观看排序和树算法的动画，通过观察理解Big O。"
+        "audience": "提升解决问题能力的工程师",
+        "description": "开始算法思维。观察递归如何构建调用栈，实时查看排序，并最终理解为何Big O在生产环境中如此重要。"
       },
       "mastery": {
-        "audience": "探索内部机制的专家",
-        "description": "推向前沿。图搜索、动态规划和面试级算法 — 全部实时可视化。"
+        "audience": "探索内部原理的专家",
+        "description": "深水区。掌握能够通过高级技术面试的图算法和动态规划模式，开始真正的系统工程。"
       }
     },
     "algorithms": {
-      "hello-world": "你的第一个Python输出。看看print()如何将数据发送到控制台，以及为什么它是所有调试的基础。",
-      "variables-types": "观察变量在内存中诞生。将int、float、str和bool视为保存值的活动容器。",
-      "string-operations": "字符串是序列。观看切片、拼接和方法在字符数组上的动画效果。",
-      "arithmetic": "数字、运算符和整数除法。逐步观看Python如何计算表达式。",
-      "if-else": "做决定的代码。观察执行根据真值在分支之间跳转。",
-      "while-loop": "条件驱动的重复。观看循环守卫在每次迭代前检查以及无限循环发生的原因。",
-      "for-loop": "遍历序列。了解Python的for循环实际上是一个迭代器。",
-      "lists-basics": "Python最有用的容器。将append、pop和index视为动画内存块上的操作。",
-      "functions-intro": "可重用的逻辑块。观察函数调用推入栈帧和返回值流回调用者。",
+      "hello-world": "真正的起点。准确查看print()如何将数据转储到控制台——相信我，'打印调试'永远不会过时。",
+      "variables-types": "查看变量如何占用内存。理解动态语言(Python)为何能让你随心所欲。",
+      "string-operations": "字符串只是高级数组。在Web后端中，字符串操作占据了80%的实际工作。",
+      "arithmetic": "底层的数学。查看Python如何评估复杂表达式，并了解浮点除法与整数除法的特性。",
+      "if-else": "业务逻辑的核心。实时观察分支流向，理解布尔运算符错误为何产生无尽的验证Bug。",
+      "while-loop": "打破条件的重复。观察每次迭代前的检查，避免在无意中对自己的机器发动DDoS攻击。",
+      "for-loop": "数据处理的主力。观察迭代器按顺序获取集合中的元素，这是数据管道的动力源泉。",
+      "lists-basics": "Python的神级容器。理解为什么在数组中间插入元素实际上成本极高。",
+      "functions-intro": "纯净代码的基础。函数调用如何暂停执行并分配栈帧(DRY原则)。",
       "input-output": "与用户交流的程序。看看input()如何暂停执行并返回字符串值。",
-      "linear-search": "检查每个元素直到找到目标。O(n) — 最简单的搜索算法。",
+      "linear-search": "全要素暴力搜索。在处理小数据集的生产环境中，O(n)实际上完全可以接受。",
       "count-occurrences": "计算一个值出现了多少次。观看哈希表在每次遍历中累积计数。",
       "find-min-max": "在一次遍历中跟踪当前最小值和最大值。看看为什么一个循环就够了。",
       "sum-average": "累积值并计算平均值。看看驱动许多算法的累加器模式。",
@@ -175,15 +175,15 @@
       "binary-search": "每步将搜索空间减半。需要排序输入。实时观看O(log n)发生。",
       "selection-sort": "每次遍历找到最小值并移到前面。观看n次遍历产生排序数组。",
       "insertion-sort": "将每个元素插入已排序前缀的正确位置。对几乎排序的数据高效。",
-      "two-pointers": "使用两个相向移动的索引在O(n)而非O(n²)中解决数组问题。",
-      "hash-map-counting": "使用字典以O(1)每次查找进行计数。许多频率问题的基础。",
+      "two-pointers": "收敛索引。通过移动左右指针，以O(n)优雅解决问题，避开O(n²)的双重循环灾难。",
+      "hash-map-counting": "O(1)的魔法。在字典中存储状态绝对是摆脱嵌套缓慢循环的最佳基石。",
       "stack-ops": "LIFO实战。观看push、pop和peek在用作栈的列表上的动画。",
       "queue-ops": "FIFO实战。观看入队和出队动画，理解为什么deque优于列表。",
       "anagram-check": "两个字符串是彼此的重排吗？观看字符计数在O(n)中解决问题。",
-      "sliding-window": "找到大小为k的每个窗口中的最大和。观察窗口在数组上滑动。",
+      "sliding-window": "固定滑窗。进入时加上，离开时减去，彻底避免噩梦般的O(n*k)重复计算。",
       "merge-sorted": "将两个排序数组合并为一个。归并排序背后的核心操作。",
-      "bubble-sort": "比较相邻对。较大元素在每次遍历中冒泡到顶部。",
-      "merge-sort": "分割、排序两半、合并。观看递归树分裂和重新组合。",
+      "bubble-sort": "永远不要发布到生产环境的低效排序。但相邻元素的交换能最好地教授边界条件。",
+      "merge-sort": "分治法。将数组分解并完美拼接的递归。快速且稳定的O(n log n)引擎。",
       "quick-sort": "选择基准，围绕它分区，递归。平均O(n log n)，出色的缓存性能。",
       "heap-sort": "构建最大堆，按序提取元素。与快速排序不同，保证O(n log n)。",
       "bfs": "使用队列逐层探索图。在无权图中找到最短路径。",
@@ -215,7 +215,7 @@
         "D": "停止程序"
       },
       "correct": "A",
-      "successMessage": "正确的！ print() 用于输出。",
+      "successMessage": "正确！`print()`是控制台输出状态的生命线。资深工程师每天都用它进行快速检查。",
       "checkButton": "提交答案",
       "nextButton": "继续下一课"
     },
@@ -243,7 +243,7 @@
         "D": "执行 I/O 操作"
       },
       "correct": "C",
-      "successMessage": "回顾这个算法非常出色！",
+      "successMessage": "太完美了。`+`运算符经过重载以拼接字符串。切记，将整数加上字符串会导致脚本崩溃。",
       "checkButton": "提交答案",
       "nextButton": "继续下一课"
     },
@@ -551,7 +551,7 @@
         "D": "O(n²)"
       },
       "correct": "C",
-      "successMessage": "正确！哈希映射通过哈希提供平均O(1)查找。",
+      "successMessage": "做的好。HashMap提供O(1)查找。保存状态就能避开嵌套双循环的灾难。",
       "checkButton": "提交答案",
       "nextButton": "继续下一课"
     },
@@ -775,7 +775,7 @@
         "D": "队列"
       },
       "correct": "C",
-      "successMessage": "正确！哈希映射存储已见值以进行O(1)补数查找。",
+      "successMessage": "完全正确！用少许内存换取HashMap查询，将时间复杂度压缩至O(n)，这是极致的工程权衡。",
       "checkButton": "提交答案",
       "nextButton": "继续下一课"
     },
