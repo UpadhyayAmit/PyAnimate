@@ -347,561 +347,617 @@
     },
     "linear-search": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the linear search algorithm?",
+      "question": "What is the worst-case time complexity of Linear Search?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
       "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "successMessage": "Correct! Linear Search checks every element — O(n) in the worst case.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "count-occurrences": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the count occurrences algorithm?",
+      "question": "What does 'count occurrences' do?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Counts how many times a value appears in the list",
+        "B": "Sorts the list by frequency",
+        "C": "Removes duplicate values",
+        "D": "Finds the maximum value"
       },
       "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "successMessage": "Correct! It tallies how often each value appears.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "find-min-max": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the find min-max algorithm?",
+      "question": "How many passes over the list are needed to find both the minimum and maximum?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Two separate passes",
+        "B": "One single pass",
+        "C": "n passes",
+        "D": "log n passes"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! One pass is enough to track both min and max simultaneously.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "sum-average": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the sum average algorithm?",
+      "question": "Which Python built-in returns the sum of all elements in a list?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "add()",
+        "B": "total()",
+        "C": "sum()",
+        "D": "accumulate()"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! sum(list) adds all elements in a single call.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "loop-explorer": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the loop explorer algorithm?",
+      "question": "Which Python keyword exits a loop immediately?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "end"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! 'break' terminates the loop immediately.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "reverse-list": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the reverse list algorithm?",
+      "question": "What does arr[::-1] return in Python?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Every other element",
+        "B": "The list in reversed order",
+        "C": "The sorted list",
+        "D": "A copy of the list unchanged"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! The slice [::-1] reverses any sequence in Python.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "palindrome": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the palindrome algorithm?",
+      "question": "A palindrome reads the same...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Forward only",
+        "B": "Backward only",
+        "C": "Forward and backward",
+        "D": "In alphabetical order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! 'racecar' is the same forwards and backwards.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fizzbuzz": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fizzbuzz algorithm?",
+      "question": "In FizzBuzz, what is printed for a number divisible by both 3 and 5?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Fizz",
+        "B": "Buzz",
+        "C": "FizzBuzz",
+        "D": "0"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Numbers divisible by both print 'FizzBuzz'.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "factorial": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the factorial algorithm?",
+      "question": "What is the value of 0! (zero factorial)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "0",
+        "B": "1",
+        "C": "Undefined",
+        "D": "Infinity"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! By convention, 0! = 1 (the empty product).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fibonacci-iterative": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fibonacci iterative algorithm?",
+      "question": "In the Fibonacci sequence, each number equals...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The previous number doubled",
+        "B": "The sum of the two preceding numbers",
+        "C": "The previous number plus 1",
+        "D": "The previous number squared"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! F(n) = F(n-1) + F(n-2).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "binary-search": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the binary search algorithm?",
+      "question": "What must be true about an array before applying Binary Search?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "It must have an even length",
+        "B": "It must contain only integers",
+        "C": "It must be sorted",
+        "D": "It must have no duplicates"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Binary Search requires a sorted array to halve the search space.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "selection-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the selection sort algorithm?",
+      "question": "In Selection Sort, what happens during each pass?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The largest element bubbles to the end",
+        "B": "The array is divided in half",
+        "C": "The minimum element is found and swapped to the front",
+        "D": "Adjacent pairs are swapped"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Each pass selects the minimum and places it at the sorted boundary.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "insertion-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the insertion sort algorithm?",
+      "question": "Insertion Sort is most efficient when applied to...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Completely random data",
+        "B": "Reverse-sorted data",
+        "C": "Nearly sorted data",
+        "D": "Very large datasets"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Nearly sorted input requires very few insertions, giving O(n) best case.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "two-pointers": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the two pointers algorithm?",
+      "question": "In a sorted array two-pointer sum problem, if the current sum is too large, what should you do?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Move the left pointer right",
+        "B": "Move the right pointer left",
+        "C": "Move both pointers inward",
+        "D": "Restart the algorithm"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Moving the right pointer left decreases the sum.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "hash-map-counting": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the hash map-counting algorithm?",
+      "question": "What is the average-case time complexity for a hash map lookup?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Hash maps provide O(1) average lookup via hashing.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "stack-ops": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the stack ops algorithm?",
+      "question": "In a Stack, which element is removed first (LIFO principle)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The first element added",
+        "B": "A random element",
+        "C": "The last element added",
+        "D": "The smallest element"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! LIFO — Last In, First Out. The most recently pushed element pops first.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "queue-ops": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the queue ops algorithm?",
+      "question": "In a Queue, which element is served first (FIFO principle)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The last element added",
+        "B": "A random element",
+        "C": "The first element added",
+        "D": "The largest element"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! FIFO — First In, First Out. The earliest element dequeues first.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "anagram-check": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the anagram check algorithm?",
+      "question": "Two strings are anagrams of each other if they contain...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The same characters in the same order",
+        "B": "The same characters in any order",
+        "C": "Different characters with equal length",
+        "D": "Characters that start the same way"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Anagrams use identical characters, just rearranged.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "sliding-window": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the sliding window algorithm?",
+      "question": "The sliding window technique typically reduces time complexity from...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n³) to O(n)",
+        "B": "O(n²) to O(n)",
+        "C": "O(n log n) to O(n)",
+        "D": "O(n) to O(1)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! The window slides in O(n) instead of recomputing from scratch each time.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "merge-sorted": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the merge sorted algorithm?",
+      "question": "Merging two sorted arrays of sizes m and n takes time...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(m × n)",
+        "B": "O(m + n)",
+        "C": "O(min(m, n))",
+        "D": "O(max(m, n))"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Each element from both arrays is visited exactly once — O(m + n).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bubble-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bubble sort algorithm?",
+      "question": "After one complete pass of Bubble Sort over an unsorted array, what is guaranteed?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The array is fully sorted",
+        "B": "The largest unsorted element is at its final position",
+        "C": "The array is split in half",
+        "D": "The median element is found"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Each pass bubbles the current maximum to its correct final position.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "merge-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the merge sort algorithm?",
+      "question": "What is the time complexity of Merge Sort in all cases?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n²)",
+        "B": "O(n)",
+        "C": "O(n log n)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Merge Sort always splits and merges in O(n log n).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "quick-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the quick sort algorithm?",
+      "question": "What is the worst-case time complexity of Quick Sort?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n log n)",
+        "B": "O(n)",
+        "C": "O(n²)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! A bad pivot choice (e.g., always the smallest) causes O(n²) worst case.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "heap-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the heap sort algorithm?",
+      "question": "What data structure does Heap Sort rely on?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Tree",
+        "D": "Heap"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! Heap Sort builds a max-heap, then extracts elements in sorted order.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "counting-sort": {
+      "title": "Knowledge Check",
+      "question": "What type of input does Counting Sort work best with?",
+      "options": {
+        "A": "Any real numbers",
+        "B": "Integers within a small, known range",
+        "C": "Already sorted arrays",
+        "D": "String data"
+      },
+      "correct": "B",
+      "successMessage": "Correct! Counting Sort is optimal for integers in a bounded range.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "recursion-basics": {
+      "title": "Knowledge Check",
+      "question": "What prevents a recursive function from running forever?",
+      "options": {
+        "A": "A loop counter",
+        "B": "A global variable",
+        "C": "A base case",
+        "D": "The return type"
+      },
+      "correct": "C",
+      "successMessage": "Correct! Every recursive function must have a base case to stop recursion.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "dp-basics": {
+      "title": "Knowledge Check",
+      "question": "What technique does Dynamic Programming use to avoid recomputing subproblems?",
+      "options": {
+        "A": "Recursion",
+        "B": "Sorting",
+        "C": "Memoization or tabulation",
+        "D": "Binary search"
+      },
+      "correct": "C",
+      "successMessage": "Correct! DP stores solved subproblem results to reuse them instead of recomputing.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bfs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bfs algorithm?",
+      "question": "Which data structure does Breadth-First Search use to explore nodes level by level?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Array",
+        "D": "Hash map"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! BFS uses a Queue (FIFO) to process nodes in order of discovery.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "dfs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the dfs algorithm?",
+      "question": "Which data structure does Depth-First Search naturally use (recursively)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Queue",
+        "B": "Linked list",
+        "C": "Array",
+        "D": "Stack / call stack"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! DFS dives deep first, using a stack (or call stack) for backtracking.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "binary-tree-traversal": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the binary tree-traversal algorithm?",
+      "question": "Which traversal order visits nodes as Left → Root → Right?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Pre-order",
+        "B": "In-order",
+        "C": "Post-order",
+        "D": "Level-order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! In-order traversal of a BST produces nodes in ascending order.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "two-sum": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the two sum algorithm?",
+      "question": "What data structure makes Two Sum solvable in O(n) time?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Array",
+        "B": "Stack",
+        "C": "Hash map",
+        "D": "Queue"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! A hash map stores seen values for O(1) complement lookups.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "valid-parentheses": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the valid parentheses algorithm?",
+      "question": "Which data structure is used to solve Valid Parentheses?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Queue",
+        "B": "Array",
+        "C": "Hash map",
+        "D": "Stack"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! A stack tracks opening brackets and matches them with closing ones.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fibonacci-recursive": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fibonacci recursive algorithm?",
+      "question": "What is the time complexity of naive recursive Fibonacci (no memoization)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(n log n)",
+        "C": "O(n²)",
+        "D": "O(2ⁿ)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! The call tree doubles at every level, giving exponential O(2ⁿ) time.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "dijkstra": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the dijkstra algorithm?",
+      "question": "What is required for Dijkstra's algorithm to produce correct results?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Edge weights must be integers",
+        "B": "The graph must be a tree",
+        "C": "All edge weights must be non-negative",
+        "D": "The graph must be directed"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Dijkstra fails with negative weights; use Bellman-Ford instead.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "bellman-ford": {
+      "title": "Knowledge Check",
+      "question": "What advantage does Bellman-Ford have over Dijkstra's algorithm?",
+      "options": {
+        "A": "It is faster on dense graphs",
+        "B": "It uses less memory",
+        "C": "It correctly handles negative edge weights",
+        "D": "It finds all-pairs shortest paths"
+      },
+      "correct": "C",
+      "successMessage": "Correct! Bellman-Ford relaxes edges V-1 times and handles negative weights.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "knapsack": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the knapsack algorithm?",
+      "question": "The 0/1 Knapsack problem is solved using which technique?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Greedy algorithm",
+        "B": "Binary search",
+        "C": "Dynamic programming",
+        "D": "Depth-first search"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! DP builds a table of optimal subproblem solutions to find the answer.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "lcs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the lcs algorithm?",
+      "question": "What does LCS stand for?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Linked Circular Stack",
+        "B": "Least Common String",
+        "C": "Longest Common Subsequence",
+        "D": "Largest Computed Segment"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! LCS finds the longest sequence of characters appearing in the same order in both strings.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "topological-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the topological sort algorithm?",
+      "question": "Topological Sort is only applicable to which type of graph?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Any undirected graph",
+        "B": "Any directed graph",
+        "C": "Directed Acyclic Graphs (DAGs)",
+        "D": "Weighted graphs only"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Cycles make a topological order impossible; only DAGs can be sorted.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "kruskals": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the kruskals algorithm?",
+      "question": "Kruskal's algorithm is used to find the...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Shortest path between two nodes",
+        "B": "Minimum Spanning Tree",
+        "C": "Maximum flow in a network",
+        "D": "Longest path in a graph"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Kruskal's greedily adds the cheapest edge that doesn't form a cycle.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "trie": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the trie algorithm?",
+      "question": "A Trie data structure is most commonly used for...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Sorting numbers",
+        "B": "Graph traversal",
+        "C": "Prefix-based string search and autocomplete",
+        "D": "Matrix operations"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Tries store strings by prefix, enabling fast prefix lookups.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "floyd-warshall": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the floyd warshall algorithm?",
+      "question": "Floyd-Warshall computes...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Single-source shortest paths",
+        "B": "Minimum spanning tree",
+        "C": "All-pairs shortest paths",
+        "D": "Topological order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Floyd-Warshall finds shortest paths between every pair of nodes in O(V³).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "segment-tree": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the segment tree algorithm?",
+      "question": "A Segment Tree supports range queries in what time complexity?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(n log n)",
+        "D": "O(1)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Both range queries and point updates run in O(log n).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "coin-change": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the coin change algorithm?",
+      "question": "Coin Change (minimum coins) is best solved using...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Greedy algorithm",
+        "B": "Binary search",
+        "C": "Backtracking only",
+        "D": "Dynamic programming"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! DP fills a table of minimum coins for every amount from 0 to target.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bit-manipulation": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bit manipulation algorithm?",
+      "question": "What does x XOR x always equal?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "x itself",
+        "B": "0",
+        "C": "1",
+        "D": "2x"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Any number XORed with itself is always 0.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     }

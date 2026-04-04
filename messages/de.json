@@ -347,561 +347,617 @@
     },
     "linear-search": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des linear search-Algorithmus vollständig verstanden?",
+      "question": "Was ist die Worst-Case-Zeitkomplexität der linearen Suche?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
       "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "successMessage": "Richtig! Lineare Suche prüft jedes Element — O(n) im schlechtesten Fall.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "count-occurrences": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des count occurrences-Algorithmus vollständig verstanden?",
+      "question": "Was macht 'Vorkommen zählen'?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Zählt, wie oft ein Wert in der Liste vorkommt",
+        "B": "Sortiert die Liste nach Häufigkeit",
+        "C": "Entfernt Duplikate",
+        "D": "Findet den Maximalwert"
       },
       "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "successMessage": "Richtig! Es zählt, wie oft jeder Wert vorkommt.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "find-min-max": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des find min-max-Algorithmus vollständig verstanden?",
+      "question": "Wie viele Durchläufe werden benötigt, um Minimum und Maximum zu finden?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Zwei separate Durchläufe",
+        "B": "Ein einziger Durchlauf",
+        "C": "n Durchläufe",
+        "D": "log n Durchläufe"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Ein Durchlauf genügt, um beide gleichzeitig zu verfolgen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "sum-average": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des sum average-Algorithmus vollständig verstanden?",
+      "question": "Welche Python-Funktion gibt die Summe aller Listenelemente zurück?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "add()",
+        "B": "total()",
+        "C": "sum()",
+        "D": "accumulate()"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! sum(liste) addiert alle Elemente in einem Aufruf.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "loop-explorer": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des loop explorer-Algorithmus vollständig verstanden?",
+      "question": "Welches Python-Schlüsselwort beendet eine Schleife sofort?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "end"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! 'break' beendet die Schleife sofort.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "reverse-list": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des reverse list-Algorithmus vollständig verstanden?",
+      "question": "Was gibt arr[::-1] in Python zurück?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Jedes zweite Element",
+        "B": "Die Liste in umgekehrter Reihenfolge",
+        "C": "Die sortierte Liste",
+        "D": "Eine unveränderte Kopie der Liste"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Der Slice [::-1] kehrt jede Sequenz um.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "palindrome": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des palindrome-Algorithmus vollständig verstanden?",
+      "question": "Ein Palindrom liest sich...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Nur vorwärts",
+        "B": "Nur rückwärts",
+        "C": "Vorwärts und rückwärts gleich",
+        "D": "In alphabetischer Reihenfolge"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! 'racecar' ist in beide Richtungen identisch.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "fizzbuzz": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des fizzbuzz-Algorithmus vollständig verstanden?",
+      "question": "Was gibt FizzBuzz für eine durch 3 und 5 teilbare Zahl aus?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Fizz",
+        "B": "Buzz",
+        "C": "FizzBuzz",
+        "D": "0"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Zahlen, die durch beide teilbar sind, geben 'FizzBuzz' aus.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "factorial": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des factorial-Algorithmus vollständig verstanden?",
+      "question": "Was ist der Wert von 0! (Null-Fakultät)?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "0",
+        "B": "1",
+        "C": "Undefined",
+        "D": "Infinity"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Per Konvention ist 0! = 1 (das leere Produkt).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "fibonacci-iterative": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des fibonacci iterative-Algorithmus vollständig verstanden?",
+      "question": "In der Fibonacci-Folge ist jede Zahl gleich...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Der doppelten Vorgängerzahl",
+        "B": "Der Summe der zwei vorherigen Zahlen",
+        "C": "Der Vorgängerzahl plus 1",
+        "D": "Der quadrierten Vorgängerzahl"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! F(n) = F(n-1) + F(n-2).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "binary-search": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des binary search-Algorithmus vollständig verstanden?",
+      "question": "Was muss vor der Binärsuche über das Array gelten?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Es muss eine gerade Länge haben",
+        "B": "Es darf nur ganze Zahlen enthalten",
+        "C": "Es muss sortiert sein",
+        "D": "Es darf keine Duplikate enthalten"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Binärsuche benötigt ein sortiertes Array, um den Suchraum zu halbieren.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "selection-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des selection sort-Algorithmus vollständig verstanden?",
+      "question": "Was passiert in jedem Durchlauf von Selection Sort?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Das größte Element wandert ans Ende",
+        "B": "Das Array wird halbiert",
+        "C": "Das Minimum wird gefunden und nach vorne getauscht",
+        "D": "Benachbarte Paare werden getauscht"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Jeder Durchlauf wählt das Minimum und platziert es an der sortierten Grenze.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "insertion-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des insertion sort-Algorithmus vollständig verstanden?",
+      "question": "Insertion Sort ist am effizientesten bei...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Vollständig zufälligen Daten",
+        "B": "Umgekehrt sortierten Daten",
+        "C": "Fast sortierten Daten",
+        "D": "Sehr großen Datensätzen"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Fast sortierte Eingaben benötigen wenige Einfügungen — O(n) im besten Fall.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "two-pointers": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des two pointers-Algorithmus vollständig verstanden?",
+      "question": "Bei einem sortierten Zwei-Zeiger-Problem: Was tun, wenn die Summe zu groß ist?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Linken Zeiger nach rechts verschieben",
+        "B": "Rechten Zeiger nach links verschieben",
+        "C": "Beide Zeiger nach innen bewegen",
+        "D": "Algorithmus neu starten"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Den rechten Zeiger nach links verschieben verringert die Summe.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "hash-map-counting": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des hash map-counting-Algorithmus vollständig verstanden?",
+      "question": "Was ist die durchschnittliche Zeitkomplexität für eine Hash-Map-Suche?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Hash-Maps bieten O(1) durchschnittliche Suche durch Hashing.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "stack-ops": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des stack ops-Algorithmus vollständig verstanden?",
+      "question": "Welches Element wird bei einem Stack zuerst entfernt (LIFO-Prinzip)?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Das zuerst hinzugefügte Element",
+        "B": "Ein zufälliges Element",
+        "C": "Das zuletzt hinzugefügte Element",
+        "D": "Das kleinste Element"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! LIFO — Zuletzt Hinein, Zuerst Heraus.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "queue-ops": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des queue ops-Algorithmus vollständig verstanden?",
+      "question": "Welches Element wird in einer Queue zuerst bedient (FIFO-Prinzip)?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Das zuletzt hinzugefügte Element",
+        "B": "Ein zufälliges Element",
+        "C": "Das zuerst hinzugefügte Element",
+        "D": "Das größte Element"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! FIFO — Zuerst Hinein, Zuerst Heraus.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "anagram-check": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des anagram check-Algorithmus vollständig verstanden?",
+      "question": "Zwei Strings sind Anagramme, wenn sie...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Die gleichen Zeichen in gleicher Reihenfolge enthalten",
+        "B": "Die gleichen Zeichen in beliebiger Reihenfolge enthalten",
+        "C": "Verschiedene Zeichen gleicher Länge haben",
+        "D": "Mit denselben Zeichen beginnen"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Anagramme verwenden identische Zeichen, nur anders angeordnet.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "sliding-window": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des sliding window-Algorithmus vollständig verstanden?",
+      "question": "Die Sliding-Window-Technik reduziert die Zeitkomplexität typischerweise von...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n³) to O(n)",
+        "B": "O(n²) to O(n)",
+        "C": "O(n log n) to O(n)",
+        "D": "O(n) to O(1)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Das Fenster gleitet in O(n) statt jedes Mal neu zu berechnen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "merge-sorted": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des merge sorted-Algorithmus vollständig verstanden?",
+      "question": "Das Zusammenführen zweier sortierter Arrays der Größen m und n dauert...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(m × n)",
+        "B": "O(m + n)",
+        "C": "O(min(m, n))",
+        "D": "O(max(m, n))"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Jedes Element beider Arrays wird genau einmal besucht — O(m + n).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "bubble-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des bubble sort-Algorithmus vollständig verstanden?",
+      "question": "Was ist nach einem vollständigen Durchlauf von Bubble Sort garantiert?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Das Array ist vollständig sortiert",
+        "B": "Das größte unsortierte Element steht an seiner endgültigen Position",
+        "C": "Das Array ist halbiert",
+        "D": "Das Medianelement wurde gefunden"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Jeder Durchlauf bringt das aktuelle Maximum an seine endgültige Position.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "merge-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des merge sort-Algorithmus vollständig verstanden?",
+      "question": "Was ist die Zeitkomplexität von Merge Sort in allen Fällen?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n²)",
+        "B": "O(n)",
+        "C": "O(n log n)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Merge Sort teilt und führt immer zusammen — O(n log n) garantiert.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "quick-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des quick sort-Algorithmus vollständig verstanden?",
+      "question": "Was ist die Worst-Case-Zeitkomplexität von Quick Sort?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n log n)",
+        "B": "O(n)",
+        "C": "O(n²)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Eine schlechte Pivot-Wahl verursacht O(n²) im schlechtesten Fall.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "heap-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des heap sort-Algorithmus vollständig verstanden?",
+      "question": "Auf welcher Datenstruktur basiert Heap Sort?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Tree",
+        "D": "Heap"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "D",
+      "successMessage": "Richtig! Heap Sort erstellt einen Max-Heap und extrahiert dann Elemente in sortierter Reihenfolge.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "counting-sort": {
+      "title": "Wissensüberprüfung",
+      "question": "Für welche Eingabetypen ist Counting Sort am besten geeignet?",
+      "options": {
+        "A": "Beliebige reelle Zahlen",
+        "B": "Ganze Zahlen in einem kleinen, bekannten Bereich",
+        "C": "Bereits sortierte Arrays",
+        "D": "String-Daten"
+      },
+      "correct": "B",
+      "successMessage": "Richtig! Counting Sort ist optimal für ganze Zahlen in einem begrenzten Bereich.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "recursion-basics": {
+      "title": "Wissensüberprüfung",
+      "question": "Was verhindert, dass eine rekursive Funktion endlos läuft?",
+      "options": {
+        "A": "Ein Schleifenzähler",
+        "B": "Eine globale Variable",
+        "C": "Ein Basisfall",
+        "D": "Der Rückgabetyp"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! Jede rekursive Funktion benötigt einen Basisfall zum Stoppen.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "dp-basics": {
+      "title": "Wissensüberprüfung",
+      "question": "Welche Technik verwendet Dynamische Programmierung, um Teilprobleme nicht neu zu berechnen?",
+      "options": {
+        "A": "Rekursion",
+        "B": "Sortierung",
+        "C": "Memoisierung oder Tabellierung",
+        "D": "Binärsuche"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! DP speichert gelöste Teilproblem-Ergebnisse zur Wiederverwendung.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "bfs": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des bfs-Algorithmus vollständig verstanden?",
+      "question": "Welche Datenstruktur verwendet BFS, um Knoten Ebene für Ebene zu erkunden?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Array",
+        "D": "Hash-Map"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! BFS verwendet eine Queue (FIFO), um Knoten in Entdeckungsreihenfolge zu verarbeiten.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "dfs": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des dfs-Algorithmus vollständig verstanden?",
+      "question": "Welche Datenstruktur verwendet DFS natürlicherweise (rekursiv)?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Queue",
+        "B": "Verkettete Liste",
+        "C": "Array",
+        "D": "Stack / Aufrufstack"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "D",
+      "successMessage": "Richtig! DFS taucht zuerst tief ein, mit einem Stack für das Backtracking.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "binary-tree-traversal": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des binary tree-traversal-Algorithmus vollständig verstanden?",
+      "question": "Welche Traversierungsreihenfolge besucht Knoten als Links → Wurzel → Rechts?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Pre-order",
+        "B": "In-order",
+        "C": "Post-order",
+        "D": "Level-order"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! In-order-Traversal eines BST liefert Knoten in aufsteigender Reihenfolge.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "two-sum": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des two sum-Algorithmus vollständig verstanden?",
+      "question": "Welche Datenstruktur macht Two Sum in O(n) Zeit lösbar?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Array",
+        "B": "Stack",
+        "C": "Hash-Map",
+        "D": "Queue"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Eine Hash-Map speichert gesehene Werte für O(1)-Komplement-Suchen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "valid-parentheses": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des valid parentheses-Algorithmus vollständig verstanden?",
+      "question": "Welche Datenstruktur wird für Valid Parentheses verwendet?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Queue",
+        "B": "Array",
+        "C": "Hash-Map",
+        "D": "Stack"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "D",
+      "successMessage": "Richtig! Ein Stack verfolgt öffnende Klammern und gleicht sie mit schließenden ab.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "fibonacci-recursive": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des fibonacci recursive-Algorithmus vollständig verstanden?",
+      "question": "Was ist die Zeitkomplexität naiver rekursiver Fibonacci (ohne Memoisierung)?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n)",
+        "B": "O(n log n)",
+        "C": "O(n²)",
+        "D": "O(2ⁿ)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "D",
+      "successMessage": "Richtig! Der Aufrufbaum verdoppelt sich auf jeder Ebene — exponentielles O(2ⁿ).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "dijkstra": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des dijkstra-Algorithmus vollständig verstanden?",
+      "question": "Was ist für Dijkstras Algorithmus erforderlich, um korrekte Ergebnisse zu liefern?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Kantengewichte müssen ganze Zahlen sein",
+        "B": "Der Graph muss ein Baum sein",
+        "C": "Alle Kantengewichte müssen nicht-negativ sein",
+        "D": "Der Graph muss gerichtet sein"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Dijkstra versagt bei negativen Gewichten; stattdessen Bellman-Ford verwenden.",
+      "checkButton": "Überprüfen",
+      "nextButton": "Nächste Lektion"
+    },
+    "bellman-ford": {
+      "title": "Wissensüberprüfung",
+      "question": "Welchen Vorteil hat Bellman-Ford gegenüber Dijkstra?",
+      "options": {
+        "A": "Er ist schneller auf dichten Graphen",
+        "B": "Er verwendet weniger Speicher",
+        "C": "Er verarbeitet negative Kantengewichte korrekt",
+        "D": "Er findet Alle-Paare kürzeste Pfade"
+      },
+      "correct": "C",
+      "successMessage": "Richtig! Bellman-Ford entspannt Kanten V-1 Mal und verarbeitet negative Gewichte.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "knapsack": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des knapsack-Algorithmus vollständig verstanden?",
+      "question": "Das 0/1-Rucksackproblem wird mit welcher Technik gelöst?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Greedy-Algorithmus",
+        "B": "Binärsuche",
+        "C": "Dynamische Programmierung",
+        "D": "Tiefensuche"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! DP erstellt eine Tabelle optimaler Teilproblem-Lösungen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "lcs": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des lcs-Algorithmus vollständig verstanden?",
+      "question": "Wofür steht LCS?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Verketteter zirkulärer Stack",
+        "B": "Kürzester gemeinsamer String",
+        "C": "Längste gemeinsame Teilfolge",
+        "D": "Größtes berechnetes Segment"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! LCS findet die längste Zeichenfolge in gleicher Reihenfolge in beiden Strings.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "topological-sort": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des topological sort-Algorithmus vollständig verstanden?",
+      "question": "Topologische Sortierung ist nur auf welchen Graphentyp anwendbar?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Jeden ungerichteten Graphen",
+        "B": "Jeden gerichteten Graphen",
+        "C": "Gerichtete azyklische Graphen (DAGs)",
+        "D": "Nur gewichtete Graphen"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Zyklen machen topologische Reihenfolge unmöglich; nur DAGs.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "kruskals": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des kruskals-Algorithmus vollständig verstanden?",
+      "question": "Kruskals Algorithmus findet den...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Kürzesten Pfad zwischen zwei Knoten",
+        "B": "Minimalen Spannbaum",
+        "C": "Maximalen Fluss in einem Netzwerk",
+        "D": "Längsten Pfad in einem Graphen"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Kruskal fügt gierig die günstigste Kante hinzu, die keinen Zyklus bildet.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "trie": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des trie-Algorithmus vollständig verstanden?",
+      "question": "Eine Trie-Datenstruktur wird am häufigsten verwendet für...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Zahlen sortieren",
+        "B": "Graphentraversal",
+        "C": "Präfixbasierte String-Suche und Autovervollständigung",
+        "D": "Matrixoperationen"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Tries speichern Strings nach Präfix für schnelle Präfix-Suchen.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "floyd-warshall": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des floyd warshall-Algorithmus vollständig verstanden?",
+      "question": "Floyd-Warshall berechnet...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Kürzeste Pfade von einer Quelle",
+        "B": "Minimalen Spannbaum",
+        "C": "Alle-Paare kürzeste Pfade",
+        "D": "Topologische Reihenfolge"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "C",
+      "successMessage": "Richtig! Floyd-Warshall findet kürzeste Pfade zwischen allen Knotenpaaren in O(V³).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "segment-tree": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des segment tree-Algorithmus vollständig verstanden?",
+      "question": "Ein Segment-Baum unterstützt Bereichsabfragen in welcher Zeitkomplexität?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(n log n)",
+        "D": "O(1)"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Sowohl Bereichsabfragen als auch Punktaktualisierungen laufen in O(log n).",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "coin-change": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des coin change-Algorithmus vollständig verstanden?",
+      "question": "Coin Change (minimale Münzanzahl) wird am besten gelöst mit...",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "Greedy-Algorithmus",
+        "B": "Binärsuche",
+        "C": "Nur Backtracking",
+        "D": "Dynamische Programmierung"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "D",
+      "successMessage": "Richtig! DP füllt eine Tabelle mit minimalen Münzen für jeden Betrag von 0 bis Ziel.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     },
     "bit-manipulation": {
       "title": "Wissensüberprüfung",
-      "question": "Haben Sie das Konzept des bit manipulation-Algorithmus vollständig verstanden?",
+      "question": "Was ergibt x XOR x immer?",
       "options": {
-        "A": "Ja, ich verstehe es.",
-        "B": "Ich sollte es wahrscheinlich noch einmal durchgehen.",
-        "C": "Es ist immer noch verwirrend.",
-        "D": "Überhaupt nicht."
+        "A": "x itself",
+        "B": "0",
+        "C": "1",
+        "D": "2x"
       },
-      "correct": "A",
-      "successMessage": "Klasse! Gute Arbeit beim Abschluss.",
+      "correct": "B",
+      "successMessage": "Richtig! Jede Zahl XOR mit sich selbst ergibt immer 0.",
       "checkButton": "Überprüfen",
       "nextButton": "Nächste Lektion"
     }

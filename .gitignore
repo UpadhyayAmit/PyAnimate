@@ -14,3 +14,6 @@ next-env.d.ts
 
 .claude
 .claude/settings.local.json
+instructions/
+
+scripts/

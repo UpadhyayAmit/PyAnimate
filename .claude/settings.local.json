@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm run:*)",
       "Bash(\"/c/Program Files/nodejs/node.exe\" \"/c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" run build)",
-      "Bash(\"/c/Program Files/nodejs/npm.cmd\" run build)"
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" run build)",
+      "Bash(npm show:*)",
+      "Bash(\"/c/Program Files/nodejs/npm\" show next version)",
+      "Bash(PATH=\"/c/Program Files/nodejs:$PATH\" npm show next version)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" show next version)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" show next versions --json)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(v.filter\\(x=>x.startsWith\\(''''15.''''\\)\\).slice\\(-5\\).join\\(''''\\\\n''''\\)\\)\")",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" show next@15 version)",
+      "Bash(git checkout:*)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install --package-lock-only)"
     ]
   }
 }
