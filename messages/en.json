@@ -2,7 +2,7 @@
   "Navigation": {
     "interactiveLab": "Interactive Python Lab",
     "headline": "Learn, edit, replay, and understand each step before moving on.",
-    "subheadline": "The playground auto-runs on load. Hit <strong>Run My Code</strong> to trace your own Python — every step animated live.",
+    "subheadline": "The playground auto-runs on load. Hit <strong>Run My Code</strong> to trace your own Python \u2014 every step animated live.",
     "tracks": "Tracks",
     "algorithms": "Algorithms",
     "playground": "Playground",
@@ -33,7 +33,7 @@
   "TrackGrid": {
     "sectionLabel": "Skill Tracks",
     "heading": "Progress from first print statement to expert-level reasoning.",
-    "startLearning": "Start learning →",
+    "startLearning": "Start learning \u2192",
     "lessons": "lessons",
     "explore": "Explore"
   },
@@ -49,7 +49,7 @@
   "AlgorithmPipeline": {
     "sectionLabel": "How it works",
     "heading": "Every algorithm follows the same pipeline.",
-    "liveTrace": "Live trace example — Bubble Sort"
+    "liveTrace": "Live trace example \u2014 Bubble Sort"
   },
   "LessonSpotlight": {
     "sectionLabel": "Algorithm Lessons",
@@ -76,7 +76,7 @@
   "Playground": {
     "interactiveLab": "Interactive Python Lab",
     "headline": "Learn, edit, replay, and understand each step before moving on.",
-    "subheadline": "The playground auto-runs on load. Hit {runMyCode} to trace your own Python — every step animated live.",
+    "subheadline": "The playground auto-runs on load. Hit {runMyCode} to trace your own Python \u2014 every step animated live.",
     "explainLabel": "Explain",
     "replayLabel": "Replay",
     "challengeLabel": "Challenge",
@@ -122,8 +122,8 @@
     "emptyList": "Empty List",
     "realWorldApplications": "Real-World Applications",
     "runStatus": {
-      "loading": "Loading Python…",
-      "running": "Running…",
+      "loading": "Loading Python\u2026",
+      "running": "Running\u2026",
       "error": "Python error",
       "ready": "Python ready"
     }
@@ -132,76 +132,76 @@
     "tracks": {
       "foundation": {
         "audience": "Absolute beginners, zero experience",
-        "description": "Start from zero. Learn how Python thinks about data, decisions, and flow — step by step, with every concept animated."
+        "description": "Start from zero. We'll skip the academic jargon and jump straight into how Python actually tracks state, makes decisions, and runs your logic. You'll see memory behave live."
       },
       "beginner": {
         "audience": "First-time Python learners",
-        "description": "Build real programming habits. Master loops, functions, and lists by watching them execute one step at a time."
+        "description": "Time to build real engineering habits. We'll trace how loops, functions, and arrays actually work under the hood so you don't just guess-and-run your scripts."
       },
       "intermediate": {
         "audience": "Builders shipping scripts and apps",
-        "description": "Upgrade your toolkit. Explore dictionaries, stacks, queues, and your first search algorithms with visual state tracking."
+        "description": "Upgrade your toolkit. We'll dive into dictionaries, stacks, queues, and classic searches. These are the daily drivers you'll use in every backend you ever build."
       },
       "advanced": {
         "audience": "Engineers refining problem solving",
-        "description": "Think algorithmically. See sorting and tree algorithms animate in real time, understand Big O through observation."
+        "description": "Start thinking algorithmically. Watch how recursion builds up call stacks, see sorting in real-time, and finally actually understand why Big O notation matters in prod."
       },
       "mastery": {
         "audience": "Experts exploring internals",
-        "description": "Push to the frontier. Graph search, dynamic programming, and interview-level algorithms — all visualized live."
+        "description": "The deep end. This is where we stop writing scripts and start engineering systems. Master the graph algorithms and dynamic programming patterns that get you through staff-level screens."
       }
     },
     "algorithms": {
-      "hello-world": "Your first Python output. See how print() sends data to the console and why it's the foundation of all debugging.",
-      "variables-types": "Watch a variable come to life in memory. See int, float, str, and bool as living boxes that hold values.",
-      "string-operations": "Strings are sequences. See slicing, concatenation, and methods animate over character arrays.",
-      "arithmetic": "Numbers, operators, and integer division. See exactly how Python evaluates expressions step by step.",
-      "if-else": "Code that makes decisions. Watch execution jump between branches based on truthiness.",
-      "while-loop": "Repetition driven by a condition. See the loop guard check before every iteration and why infinite loops happen.",
-      "for-loop": "Iterate over sequences. See how Python's for loop is really an iterator under the hood.",
-      "lists-basics": "Python's most useful container. See append, pop, and index as operations on an animated memory block.",
-      "functions-intro": "Reusable blocks of logic. Watch a function call push a stack frame and return value flow back to the caller.",
-      "input-output": "Programs that talk to users. See how input() pauses execution and returns a string value.",
-      "linear-search": "Check every element until you find the target. O(n) — the simplest search algorithm there is.",
-      "count-occurrences": "Count how many times a value appears. See a hash map accumulate counts with each pass.",
-      "find-min-max": "Track the running minimum and maximum through a single pass. See why one loop is enough.",
-      "sum-average": "Accumulate values and compute the mean. See the accumulator pattern that powers many algorithms.",
-      "loop-explorer": "Watch how loop iterations update shared state. See score accumulate with each pass.",
-      "reverse-list": "Two-pointer swap from both ends. Watch pointers move inward until they meet in the middle.",
-      "palindrome": "Compare characters from both ends. See how the two-pointer technique confirms symmetry.",
-      "fizzbuzz": "Classic divisibility check. See modulo drive conditional output across 100 iterations.",
-      "factorial": "Multiply from 1 to n. See the product grow step by step and understand why 0! = 1.",
-      "fibonacci-iterative": "Generate the sequence with two rolling variables. See why this beats the recursive version in space.",
-      "binary-search": "Halve the search space every step. Requires sorted input. Watch O(log n) happen live.",
-      "selection-sort": "Find the minimum each pass and move it to the front. See n passes produce a sorted array.",
-      "insertion-sort": "Insert each element into its correct position in the already-sorted prefix. Efficient for nearly sorted data.",
-      "two-pointers": "Use two indices moving toward each other to solve array problems in O(n) instead of O(n²).",
-      "hash-map-counting": "Use a dictionary to count in O(1) per lookup. The foundation of many frequency problems.",
-      "stack-ops": "LIFO in action. See push, pop, and peek animate on a list used as a stack.",
-      "queue-ops": "FIFO in action. See enqueue and dequeue animate and understand why deque beats a list.",
-      "anagram-check": "Are two strings rearrangements of each other? See character counting solve it in O(n).",
-      "sliding-window": "Find the maximum sum in every window of size k. Watch the window glide across the array.",
-      "merge-sorted": "Combine two sorted arrays into one. The core operation behind merge sort.",
-      "bubble-sort": "Compare adjacent pairs. Larger elements bubble to the top each pass.",
-      "merge-sort": "Divide, sort halves, merge. See the recursion tree split and recombine.",
-      "quick-sort": "Choose a pivot, partition around it, recurse. Average O(n log n) with great cache performance.",
-      "heap-sort": "Build a max-heap, extract elements in order. Guaranteed O(n log n) unlike quicksort.",
-      "bfs": "Explore a graph level by level using a queue. Find shortest paths in unweighted graphs.",
-      "dfs": "Explore as deep as possible before backtracking. See the call stack grow with each recursive step.",
-      "binary-tree-traversal": "In-order, pre-order, post-order. Watch nodes visit in different sequences on the same tree.",
-      "two-sum": "Find two numbers that add to a target. See how a hash map turns O(n²) into O(n).",
-      "valid-parentheses": "Use a stack to match open and close brackets. Classic stack application interview question.",
-      "fibonacci-recursive": "See the call tree fan out exponentially. Understand why memoization is essential.",
-      "dijkstra": "Find shortest paths from a source to all nodes using a priority queue. The backbone of GPS navigation.",
-      "knapsack": "Maximise value within a weight limit. See the DP table fill row by row.",
-      "lcs": "Find the longest subsequence shared by two strings. Core of diff tools and DNA alignment.",
-      "topological-sort": "Order tasks respecting dependencies. See Kahn's algorithm remove nodes with zero in-degree.",
-      "kruskals": "Build a minimum spanning tree by greedily adding lowest-weight edges without forming cycles.",
-      "trie": "Insert and search strings letter by letter. See how autocomplete works under the hood.",
-      "floyd-warshall": "All-pairs shortest paths with a 3-loop DP. See the distance matrix update in O(V³).",
-      "segment-tree": "Range queries and point updates in O(log n). See the tree build and propagate sums upward.",
-      "coin-change": "Minimum coins to make an amount. See the DP array fill from 0 up to the target.",
-      "bit-manipulation": "AND, OR, XOR, shifts — the operations behind cryptography, graphics, and competitive programming."
+      "hello-world": "Your real entry point. See exactly how print() dumps data to standard out\u2014because trust me, print debugging never really goes away.",
+      "variables-types": "Watch variables claim memory. Understand ints vs floats vs strings, and see why dynamically typed languages like Python let you get away with murder.",
+      "string-operations": "Strings are just fancy arrays. See slicing, slicing with steps, and concatenation. In a web backend, string manipulation is 80% of what you'll do.",
+      "arithmetic": "Math under the hood. See precisely how Python evaluates complex expressions, and learn about the quirks of float division versus integer division.",
+      "if-else": "The core of business logic. Watch branching happen in real-time and see why getting your truthiness operators wrong is the source of endless auth bugs.",
+      "while-loop": "Repetition until a condition trips. See the guard check fire before every iteration and learn how to avoid accidentally DDoS-ing your own machine.",
+      "for-loop": "The workhorse of data processing. See how Python iterators yank elements from collections one by one\u2014this is what powers massive data pipelines.",
+      "lists-basics": "Python's god-tier container. Watch memory shift as we append, pop, and index into arrays. Understand why inserting in the middle is secretly expensive.",
+      "functions-intro": "The building block of clean code. See how calling a function pauses execution, allocates a new stack frame, and pipes the return value back.",
+      "input-output": "Programs that talk back. See how fetching input blocks the main thread completely until the user responds\u2014and why type casting is mandatory.",
+      "linear-search": "Brute-force check every element. O(n) is the simplest search there is\u2014and frankly, for small arrays in memory, it's usually all you need.",
+      "count-occurrences": "Building a frequency map. Watch a hash dictionary accumulate tallies in a single pass. This is a foundational pattern for log analysis.",
+      "find-min-max": "Tracking boundaries. Look at how one pass is enough to track both limits simultaneously without wasting CPU cycles sorting the data.",
+      "sum-average": "The accumulator pattern. See how sum() elegantly iterates arrays underneath. You'll write this pattern a thousand times before you retire.",
+      "loop-explorer": "Watch how loop bodies modify shared state variables across passes. Getting iteration boundaries right is how you prevent off-by-one errors in prod.",
+      "reverse-list": "The two-pointer squeeze. Watch them march inward and swap elements. A classic O(n) in-place technique that saves you from allocating new arrays.",
+      "palindrome": "Symmetry checking. See how the two-pointer approach confirms matches from both ends while instantly bailing at the first failed check.",
+      "fizzbuzz": "The classic interview gatekeeper. See how modulo operators dictate flow control across a loop, and why the order of your conditions is everything.",
+      "factorial": "Multiplying 1 to n. Witness the accumulator pattern grow exponentially. This teaches you why base conditions and correctly starting at 1 (not 0) are vital.",
+      "fibonacci-iterative": "Generating sequences with rolling variables. Understand why tracking just the last two values in O(1) space completely destroys the recursive approach.",
+      "binary-search": "The foundation of database indices. Watch how aggressively O(log n) searches eliminate half the problem at every step, requiring sorted inputs first.",
+      "selection-sort": "Scan for the absolute minimum, then anchor it at the front. It guarantees exactly n-1 swaps\u2014useful in systems where writing data is much costlier than reading it.",
+      "insertion-sort": "Slide elements left until they hit order. It's actually incredibly fast for naturally 'nearly sorted' data, which happens in the real world constantly.",
+      "two-pointers": "Converging indices. See how marching a left and right pointer can elegantly solve array problems in O(n) time, bypassing the classic O(n\u00b2) double loop.",
+      "hash-map-counting": "The O(1) dictionary trick. This is the bedrock for counting frequencies\u2014an essential pattern when you're querying fast instead of looping slow.",
+      "stack-ops": "Last In, First Out (LIFO). Push, pop, and peek your way to understanding how undo-trees, browser histories, and function call stacks actually operate.",
+      "queue-ops": "First In, First Out (FIFO). Tasks in, tasks out. This animates the core mechanism behind task workers, event loops, and rate limiters.",
+      "anagram-check": "Are these strings just scrambled? Watch how mapping character frequencies in a dictionary solves this gracefully without the overhead of sorting strings.",
+      "sliding-window": "Gliding a fixed frame over an array. See how it subtracts the outgoing element and adds the incoming one, saving you from disastrous O(n*k) recalculations.",
+      "merge-sorted": "Zipper two sorted arrays together. This is the cornerstone sub-routine that powers the beast that is Merge Sort.",
+      "bubble-sort": "The classic teaching tool. You'll never ship this slow O(n\u00b2) sort to production, but watching adjacent elements swap teaches invaluable loop boundary mechanics.",
+      "merge-sort": "Divide, branch, and conquer. Watch the recursion split arrays down to single elements, then seamlessly stitch them back into sorted perfection. A fast, stable O(n log n) engine.",
+      "quick-sort": "The workhorse sort. Pick a pivot, partition around it, and recurse. It's fast, boasts legendary cache locality, but see why bad pivots cause worst-case nightmares.",
+      "heap-sort": "Visualize the max-heap. Pull the highest priority element out and re-balance. It guarantees O(n log n) even in worst-cases, heavily utilized in priority-queue systems.",
+      "bfs": "Explore outward like a ripple. See Breadth-First Search utilize a queue to guarantee the shortest path in unweighted networks\u2014essential for pathfinding.",
+      "dfs": "Plunge deep before backtracking. Depth-First Search stacks recursive calls, perfect for exhausting possibilities in maze solving or topological sorting.",
+      "binary-tree-traversal": "Navigating the node network. See the dramatic differences when you process roots before, between, or after children (pre/in/post-order).",
+      "two-sum": "The most famous leetcode question. See how building an on-the-fly hash map trades a tiny bit of RAM to nosedive the time complexity down to O(n).",
+      "valid-parentheses": "The ultimate stack test. Watch pushing openers and popping them when a closer arrives\u2014this is literally how your code compiler checks syntax.",
+      "fibonacci-recursive": "Exponential explosion. Watch the call tree branch out horrifyingly out of control. An excellent warning on why raw recursion desperately needs memoization.",
+      "dijkstra": "The backbone of Google Maps. Watch Dijkstra's leverage a priority queue to definitively find cheapest routes across weighted graphs, completely dodging cycles.",
+      "knapsack": "The DP classic. You have a weight limit; cram in the max value. See the 2D matrix build up sub-answers row by row so you don't repeat work.",
+      "lcs": "Longest Common Subsequence. Core to how `git diff` works. Watch DP align two strings character by character without scrambling their relative order.",
+      "topological-sort": "Task resolution. See Kahn\u2019s algorithm strip out zero-dependency nodes one by one\u2014the exact logic underlying package managers like npm or pip.",
+      "kruskals": "Spanning trees on a budget. Greedily grab the cheapest edges and rely on a union-find structure to guarantee you never accidentally close a cycle.",
+      "trie": "The auto-complete engine. Watch strings break into single-character nodes, building a prefix tree that makes searching incredibly scalable over massive dictionaries.",
+      "floyd-warshall": "All pairs, everywhere. A savage 3-nested-loop DP that updates a massive matrix until it knows the shortest path between literally every single node.",
+      "segment-tree": "Fast interval crunching. Watch the tree build upwards, enabling O(log n) range queries and point updates. Perfect for high-frequency live dashboard stats.",
+      "coin-change": "Finding exact change with minimal coins. See how dynamic programming sweeps away the failures of the greedy approach when coin denominations get weird.",
+      "bit-manipulation": "Bare metal mechanics. AND, OR, XOR, and bit-shifts. These power cryptography, graphics systems, and crazy low-level micro-optimizations. Learn to speak CPU."
     }
   },
   "Quizzes": {
@@ -215,7 +215,7 @@
         "D": "Stops the program"
       },
       "correct": "A",
-      "successMessage": "Correct! print() is used for output.",
+      "successMessage": "Spot on! `print()` is your lifeline for dumping state to the console. Even seniors use it daily for quick sanity checks.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -229,7 +229,7 @@
         "D": "x = True"
       },
       "correct": "B",
-      "successMessage": "Correct! 5 without quotes or decimals is an int.",
+      "successMessage": "Correct. In Python, an int is an int. Drop quotes, drop decimals. Clean and simple memory allocation.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -243,7 +243,7 @@
         "D": "/"
       },
       "correct": "C",
-      "successMessage": "Correct! The + operator joins strings.",
+      "successMessage": "Nailed it. The `+` operator overloads specifically to stitch strings together. Just watch out for adding ints to strings\u2014that'll crash the script.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -257,7 +257,7 @@
         "D": "Remainder of a division"
       },
       "correct": "D",
-      "successMessage": "Correct! % is for remainders.",
+      "successMessage": "Exactly. Modulo `%` is the remainder. We use this constantly to check if things are even, odd, or cycling over array boundaries.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -271,7 +271,7 @@
         "D": "then"
       },
       "correct": "C",
-      "successMessage": "Correct! Python uses 'elif'.",
+      "successMessage": "Correct. `elif` saves us from deeply nesting `else if` statements. Keep your cyclomatic complexity flat and your code stays readable.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -285,7 +285,7 @@
         "D": "It skips"
       },
       "correct": "A",
-      "successMessage": "Correct! Infinite loops keep running.",
+      "successMessage": "Right! A guard condition that never goes `False` blocks the main thread completely. Kiss your CPU goodbye.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -299,7 +299,7 @@
         "D": "iter()"
       },
       "correct": "B",
-      "successMessage": "Correct! range() is used.",
+      "successMessage": "Yep, `range()` is the standard factory for pushing out integer sequences. Perfect for indexing or running a block exactly N times.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -313,7 +313,7 @@
         "D": "arr[-1]"
       },
       "correct": "C",
-      "successMessage": "Correct! Python lists are 0-indexed.",
+      "successMessage": "Correct. Arrays are 0-indexed across almost every language, because the index represents the memory offset from the start of the array.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -327,7 +327,7 @@
         "D": "create"
       },
       "correct": "A",
-      "successMessage": "Correct! 'def' makes functions.",
+      "successMessage": "Exactly. `def` allocates that block as a callable object. Reusability is everything; don't repeat yourself inside scripts.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
@@ -341,567 +341,623 @@
         "D": "String"
       },
       "correct": "D",
-      "successMessage": "Correct! Use int() to cast.",
+      "successMessage": "Correct! `input()` always dumps a string payload. Remember: you MUST cast it via `int()` or `float()` to do math on it.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "linear-search": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the linear search algorithm?",
+      "question": "What is the worst-case time complexity of Linear Search?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n\u00b2)"
       },
       "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "successMessage": "Correct. It's O(n) brute force. Sure it scales linearly, but frankly, if the dataset is small, it's totally acceptable in prod.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "count-occurrences": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the count occurrences algorithm?",
+      "question": "What does 'count occurrences' do?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Counts how many times a value appears in the list",
+        "B": "Sorts the list by frequency",
+        "C": "Removes duplicate values",
+        "D": "Finds the maximum value"
       },
       "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "successMessage": "Spot on. Tallying via hash map is an essential aggregation pattern when doing raw data processing or log analysis.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "find-min-max": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the find min-max algorithm?",
+      "question": "How many passes over the list are needed to find both the minimum and maximum?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Two separate passes",
+        "B": "One single pass",
+        "C": "n passes",
+        "D": "log n passes"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Absolutely. One loop is enough when you stash both the running highest and lowest states. Avoid sorting just to find extremums.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "sum-average": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the sum average algorithm?",
+      "question": "Which Python built-in returns the sum of all elements in a list?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "add()",
+        "B": "total()",
+        "C": "sum()",
+        "D": "accumulate()"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct. `sum()` is extremely hyper-optimized in C underneath. Trust the built-in standard library over rolling your own loop here.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "loop-explorer": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the loop explorer algorithm?",
+      "question": "Which Python keyword exits a loop immediately?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "end"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Right! `break` decisively kills the loop mid-execution. Use it to short-circuit processing the moment you find what you need.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "reverse-list": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the reverse list algorithm?",
+      "question": "What does arr[::-1] return in Python?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Every other element",
+        "B": "The list in reversed order",
+        "C": "The sorted list",
+        "D": "A copy of the list unchanged"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Exactly. Slicing with `[::-1]` allocates a new, flipped copy. It's elegant Pythonic sugar, though technically not O(1) in-place space.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "palindrome": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the palindrome algorithm?",
+      "question": "A palindrome reads the same...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Forward only",
+        "B": "Backward only",
+        "C": "Forward and backward",
+        "D": "In alphabetical order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct. Testing symmetry from both ends simultaneously is the classic two-pointer validation pattern.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fizzbuzz": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fizzbuzz algorithm?",
+      "question": "In FizzBuzz, what is printed for a number divisible by both 3 and 5?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Fizz",
+        "B": "Buzz",
+        "C": "FizzBuzz",
+        "D": "0"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Nailed it. Overlapping conditions (like modulo 15) must be checked *first*, or the single conditions will incorrectly trap the execution.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "factorial": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the factorial algorithm?",
+      "question": "What is the value of 0! (zero factorial)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "0",
+        "B": "1",
+        "C": "Undefined",
+        "D": "Infinity"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Yup, the empty product is mathematically 1. Essential when your accumulator loops need a clean, non-zero multiplicative start.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fibonacci-iterative": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fibonacci iterative algorithm?",
+      "question": "In the Fibonacci sequence, each number equals...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The previous number doubled",
+        "B": "The sum of the two preceding numbers",
+        "C": "The previous number plus 1",
+        "D": "The previous number squared"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Tracking just the last two values avoids eating immense amounts of memory. Good algorithms minimize state.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "binary-search": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the binary search algorithm?",
+      "question": "What must be true about an array before applying Binary Search?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "It must have an even length",
+        "B": "It must contain only integers",
+        "C": "It must be sorted",
+        "D": "It must have no duplicates"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Slashing the search space by half yields breathtaking performance on huge arrays, but don't forget it mandates pre-sorted data.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "selection-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the selection sort algorithm?",
+      "question": "In Selection Sort, what happens during each pass?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The largest element bubbles to the end",
+        "B": "The array is divided in half",
+        "C": "The minimum element is found and swapped to the front",
+        "D": "Adjacent pairs are swapped"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Exactly. Unlike other basic sorts, it locks down exactly one swap per pass. Good for environments where writing to disk/memory is highly throttled.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "insertion-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the insertion sort algorithm?",
+      "question": "Insertion Sort is most efficient when applied to...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Completely random data",
+        "B": "Reverse-sorted data",
+        "C": "Nearly sorted data",
+        "D": "Very large datasets"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Right. It performs bizarrely well on lists that are 'almost sorted'\u2014which is why elite sort algorithms (like Timsort) fall back to it.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "two-pointers": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the two pointers algorithm?",
+      "question": "In a sorted array two-pointer sum problem, if the current sum is too large, what should you do?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Move the left pointer right",
+        "B": "Move the right pointer left",
+        "C": "Move both pointers inward",
+        "D": "Restart the algorithm"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Pinching the bounds inward lets you gracefully skip entire ranges of bad combinations, plunging O(n\u00b2) time down to O(n).",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "hash-map-counting": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the hash map-counting algorithm?",
+      "question": "What is the average-case time complexity for a hash map lookup?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n\u00b2)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Nailed it. Hashmaps give you O(1) amortized reads. Stashing state like this is how you cheat your way out of doing nested loops.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "stack-ops": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the stack ops algorithm?",
+      "question": "In a Stack, which element is removed first (LIFO principle)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The first element added",
+        "B": "A random element",
+        "C": "The last element added",
+        "D": "The smallest element"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct. The Last In is the First Out. Any time you find yourself needing to 'undo' or 'rewind' operations, you need a stack.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "queue-ops": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the queue ops algorithm?",
+      "question": "In a Queue, which element is served first (FIFO principle)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The last element added",
+        "B": "A random element",
+        "C": "The first element added",
+        "D": "The largest element"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Right. First In, First Out. This underpins message brokers, task runners, and basically all async queueing architectures.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "anagram-check": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the anagram check algorithm?",
+      "question": "Two strings are anagrams of each other if they contain...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The same characters in the same order",
+        "B": "The same characters in any order",
+        "C": "Different characters with equal length",
+        "D": "Characters that start the same way"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! Don't sort the strings (which takes O(n log n)). Just hash the character counts in O(n) and compare dictionaries.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "sliding-window": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the sliding window algorithm?",
+      "question": "The sliding window technique typically reduces time complexity from...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n\u00b3) to O(n)",
+        "B": "O(n\u00b2) to O(n)",
+        "C": "O(n log n) to O(n)",
+        "D": "O(n) to O(1)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Exactly. Don't recalculate the entire window! Add the right edge, instantly subtract the left edge. O(1) transitions.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "merge-sorted": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the merge sorted algorithm?",
+      "question": "Merging two sorted arrays of sizes m and n takes time...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(m \u00d7 n)",
+        "B": "O(m + n)",
+        "C": "O(min(m, n))",
+        "D": "O(max(m, n))"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Spot on. Zipping them together is incredibly fast (O(m+n)) and serves as the workhorse logic for Merge Sort.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bubble-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bubble sort algorithm?",
+      "question": "After one complete pass of Bubble Sort over an unsorted array, what is guaranteed?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "The array is fully sorted",
+        "B": "The largest unsorted element is at its final position",
+        "C": "The array is split in half",
+        "D": "The median element is found"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct. The heaviest elements 'bubble' rightward. And again\u2014never, ever ship this to production if performance matters.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "merge-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the merge sort algorithm?",
+      "question": "What is the time complexity of Merge Sort in all cases?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n\u00b2)",
+        "B": "O(n)",
+        "C": "O(n log n)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! It splits log n times and merges over n elements, delivering that rock-solid O(n log n) bound we love.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "quick-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the quick sort algorithm?",
+      "question": "What is the worst-case time complexity of Quick Sort?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n log n)",
+        "B": "O(n)",
+        "C": "O(n\u00b2)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Yep, bad pivots trigger devastating O(n\u00b2) performance drops. Modern implementations randomize pivots specifically to avoid this trap.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "heap-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the heap sort algorithm?",
+      "question": "What data structure does Heap Sort rely on?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Tree",
+        "D": "Heap"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct! Max-heaps guarantee you're plucking the highest remaining value out in log n time, keeping the sort completely sorted.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "counting-sort": {
+      "title": "Knowledge Check",
+      "question": "What type of input does Counting Sort work best with?",
+      "options": {
+        "A": "Any real numbers",
+        "B": "Integers within a small, known range",
+        "C": "Already sorted arrays",
+        "D": "String data"
+      },
+      "correct": "B",
+      "successMessage": "Right. When you have tiny, bound integer ranges, you completely bypass the slow O(n log n) comparisons of typical sorts.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "recursion-basics": {
+      "title": "Knowledge Check",
+      "question": "What prevents a recursive function from running forever?",
+      "options": {
+        "A": "A loop counter",
+        "B": "A global variable",
+        "C": "A base case",
+        "D": "The return type"
+      },
+      "correct": "C",
+      "successMessage": "Correct. A missing base case translates to a blown call stack. Always anchor your recursive loops.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "dp-basics": {
+      "title": "Knowledge Check",
+      "question": "What technique does Dynamic Programming use to avoid recomputing subproblems?",
+      "options": {
+        "A": "Recursion",
+        "B": "Sorting",
+        "C": "Memoization or tabulation",
+        "D": "Binary search"
+      },
+      "correct": "C",
+      "successMessage": "Absolutely. Caching previous permutations stops exponential slowdown. DP is just 'remembering the past so you don't repeat it'.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bfs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bfs algorithm?",
+      "question": "Which data structure does Breadth-First Search use to explore nodes level by level?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Array",
+        "D": "Hash map"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Yes! A Queue mechanically ensures you scrape all adjacent neighbors first before diving deeper.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "dfs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the dfs algorithm?",
+      "question": "Which data structure does Depth-First Search naturally use (recursively)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Queue",
+        "B": "Linked list",
+        "C": "Array",
+        "D": "Stack / call stack"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Right. The Call Stack fundamentally acts as an implicit stack data structure, propelling you deep into a path before backtracking out.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "binary-tree-traversal": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the binary tree-traversal algorithm?",
+      "question": "Which traversal order visits nodes as Left \u2192 Root \u2192 Right?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Pre-order",
+        "B": "In-order",
+        "C": "Post-order",
+        "D": "Level-order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct. In-order tree traversal against a Binary Search Tree natively streams the values out completely sorted.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "two-sum": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the two sum algorithm?",
+      "question": "What data structure makes Two Sum solvable in O(n) time?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Array",
+        "B": "Stack",
+        "C": "Hash map",
+        "D": "Queue"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Spot on. It caches the complements in a hash map. It's the ultimate example of trading a little RAM for a massive speedup.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "valid-parentheses": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the valid parentheses algorithm?",
+      "question": "Which data structure is used to solve Valid Parentheses?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Queue",
+        "B": "Array",
+        "C": "Hash map",
+        "D": "Stack"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Correct. Pushing openers and immediately matching them to incoming closers is how compilers actively parse your code syntax.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "fibonacci-recursive": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the fibonacci recursive algorithm?",
+      "question": "What is the time complexity of naive recursive Fibonacci (no memoization)?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(n log n)",
+        "C": "O(n\u00b2)",
+        "D": "O(2\u207f)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Right. Without caching, the function insanely computes the exact same nodes endlessly. Exponential O(2\u207f) time will freeze your box instantly.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "dijkstra": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the dijkstra algorithm?",
+      "question": "What is required for Dijkstra's algorithm to produce correct results?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Edge weights must be integers",
+        "B": "The graph must be a tree",
+        "C": "All edge weights must be non-negative",
+        "D": "The graph must be directed"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Dijkstra is blissfully unaware of negative weights\u2014it'd plunge into infinite cycles. Keep weights strictly non-negative.",
+      "checkButton": "Submit Answer",
+      "nextButton": "Continue to Next Lesson"
+    },
+    "bellman-ford": {
+      "title": "Knowledge Check",
+      "question": "What advantage does Bellman-Ford have over Dijkstra's algorithm?",
+      "options": {
+        "A": "It is faster on dense graphs",
+        "B": "It uses less memory",
+        "C": "It correctly handles negative edge weights",
+        "D": "It finds all-pairs shortest paths"
+      },
+      "correct": "C",
+      "successMessage": "Yep! It'll tolerate negative weights by relentlessly relaxing edges V-1 times. Fantastic algorithm, though mathematically heavier.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "knapsack": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the knapsack algorithm?",
+      "question": "The 0/1 Knapsack problem is solved using which technique?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Greedy algorithm",
+        "B": "Binary search",
+        "C": "Dynamic programming",
+        "D": "Depth-first search"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Spot on. A DP matrix caches sub-answers so you can figure out exact maximal loading without rerunning the combinations.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "lcs": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the lcs algorithm?",
+      "question": "What does LCS stand for?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Linked Circular Stack",
+        "B": "Least Common String",
+        "C": "Longest Common Subsequence",
+        "D": "Largest Computed Segment"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Tracking characters that persist in the same relative order is the exact logic `git diff` uses to highlight code changes.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "topological-sort": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the topological sort algorithm?",
+      "question": "Topological Sort is only applicable to which type of graph?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Any undirected graph",
+        "B": "Any directed graph",
+        "C": "Directed Acyclic Graphs (DAGs)",
+        "D": "Weighted graphs only"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Exactly. It's impossible to linearly sequence tasks if they circularly depend on each other. DAGs only.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "kruskals": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the kruskals algorithm?",
+      "question": "Kruskal's algorithm is used to find the...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Shortest path between two nodes",
+        "B": "Minimum Spanning Tree",
+        "C": "Maximum flow in a network",
+        "D": "Longest path in a graph"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Right on! Always grab the cheapest edge possible and instantly rely on union-find checks to prevent horrific cycle loops.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "trie": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the trie algorithm?",
+      "question": "A Trie data structure is most commonly used for...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Sorting numbers",
+        "B": "Graph traversal",
+        "C": "Prefix-based string search and autocomplete",
+        "D": "Matrix operations"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Correct! Prefix routing turns staggering datasets into ultra-fast, shallow traversals\u2014which is inherently what makes 'autocomplete' pop up so fast.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "floyd-warshall": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the floyd warshall algorithm?",
+      "question": "Floyd-Warshall computes...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Single-source shortest paths",
+        "B": "Minimum spanning tree",
+        "C": "All-pairs shortest paths",
+        "D": "Topological order"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "C",
+      "successMessage": "Yep. It crushes through absolutely every permutation of midpoints until the shortest distances across V nodes are fully locked.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "segment-tree": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the segment tree algorithm?",
+      "question": "A Segment Tree supports range queries in what time complexity?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(n log n)",
+        "D": "O(1)"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Correct! A structural tree dramatically shrinks painful linear sweeping. This allows you to surgically pull out and update ranges instantly.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "coin-change": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the coin change algorithm?",
+      "question": "Coin Change (minimum coins) is best solved using...",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "Greedy algorithm",
+        "B": "Binary search",
+        "C": "Backtracking only",
+        "D": "Dynamic programming"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "D",
+      "successMessage": "Right. Standard greedy loops completely collapse on awkward coin sizes. You need DP to build an impregnable table of correct partial states.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     },
     "bit-manipulation": {
       "title": "Knowledge Check",
-      "question": "Have you grasped the core concept behind the bit manipulation algorithm?",
+      "question": "What does x XOR x always equal?",
       "options": {
-        "A": "Yes, I understand it perfectly.",
-        "B": "I should probably review it again.",
-        "C": "It is still a bit confusing.",
-        "D": "Not at all."
+        "A": "x itself",
+        "B": "0",
+        "C": "1",
+        "D": "2x"
       },
-      "correct": "A",
-      "successMessage": "Awesome! Great job finishing this algorithm.",
+      "correct": "B",
+      "successMessage": "Spot on. XOR-ing a value cancels itself out, evaporating data directly at the binary level. Pure algorithmic magic.",
       "checkButton": "Submit Answer",
       "nextButton": "Continue to Next Lesson"
     }

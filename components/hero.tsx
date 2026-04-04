@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { Link } from "@/i18n/routing";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { PlayCircle, Sparkles } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { executionFrames, heroStats } from "@/data/course";
+import { useEffect, useState } from 'react';
+import { Link } from '@/i18n/routing';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { PlayCircle, Sparkles } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { executionFrames, heroStats } from '@/data/course';
 
 const heroPreviewLines = [
-  { number: 1, code: "score = 0" },
-  { number: 2, code: "steps = [2, 4, 6]" },
-  { number: 4, code: "for step in steps:" },
-  { number: 5, code: "    score = score + step" },
+  { number: 1, code: 'score = 0' },
+  { number: 2, code: 'steps = [2, 4, 6]' },
+  { number: 4, code: 'for step in steps:' },
+  { number: 5, code: '    score = score + step' },
   { number: 6, code: '    print("score:", score)' },
   { number: 8, code: 'print("final:", score)' },
 ];
 
 export function Hero() {
-  const t = useTranslations("Hero");
+  const t = useTranslations('Hero');
   const shouldReduceMotion = useReducedMotion();
   const [frameIndex, setFrameIndex] = useState(0);
   const frame = executionFrames[frameIndex];
@@ -41,35 +41,37 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="mb-6 inline-flex items-center gap-2 rounded-full bg-parchment px-4 py-2 text-sm font-medium text-ink/65"
           >
             <Sparkles className="h-3.5 w-3.5 text-signal" />
-            {t("badge")}
+            {t('badge')}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.08, ease: 'easeOut' }}
             className="max-w-xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl"
           >
-            {t("headlineStart")}<span className="text-gradient-signal">{t("headlineHighlight1")}</span>{" "}<span className="text-gradient-wave">{t("headlineHighlight2")}</span>
+            {t('headlineStart')}
+            <span className="text-gradient-signal">{t('headlineHighlight1')}</span>{' '}
+            <span className="text-gradient-wave">{t('headlineHighlight2')}</span>
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16, ease: "easeOut" }}
+            transition={{ duration: 0.55, delay: 0.16, ease: 'easeOut' }}
             className="mt-6 max-w-md text-base leading-8 text-ink/65"
           >
-            {t("description")}
+            {t('description')}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.24, ease: 'easeOut' }}
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link
@@ -77,13 +79,13 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-signal to-amber px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(255,101,53,0.4)] glow-signal transition hover:opacity-90"
             >
               <PlayCircle className="h-4 w-4" />
-              {t("openPlayground")}
+              {t('openPlayground')}
             </Link>
             <a
               href="#tracks"
               className="inline-flex items-center rounded-full bg-parchment px-6 py-3 text-sm font-semibold text-ink transition hover:bg-mist"
             >
-              {t("exploreTracks")}
+              {t('exploreTracks')}
             </a>
           </motion.div>
 
@@ -91,16 +93,16 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.32, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.32, ease: 'easeOut' }}
             className="mt-10 flex flex-wrap gap-4"
           >
             {heroStats.map((item) => {
               const statKeyMap: Record<string, string> = {
-                "Guided tracks": "guidedTracks",
-                "Algorithm lessons": "algorithmLessons",
+                'Guided tracks': 'guidedTracks',
+                'Algorithm lessons': 'algorithmLessons',
               };
-              const labelKey = statKeyMap[item.label] || "installBrowserFirst";
-              
+              const labelKey = statKeyMap[item.label] || 'installBrowserFirst';
+
               return (
                 <div key={item.label} className="flex items-baseline gap-2">
                   <span className="text-2xl font-semibold text-bright">{item.value}</span>
@@ -115,22 +117,22 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
           className="card-elevated relative overflow-hidden rounded-[24px] sm:rounded-[32px] p-4 sm:p-5"
         >
           {/* Header */}
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-ink/42">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-signal" />
-              {t("executionPreview")}
+              {t('executionPreview')}
             </div>
             <span>
-              {t("step")} {frameIndex + 1} / {executionFrames.length}
+              {t('step')} {frameIndex + 1} / {executionFrames.length}
             </span>
           </div>
 
           {/* Code lines */}
-          <div className="rounded-[20px] bg-[#080c12] p-4">
+          <div className="rounded-[20px] code-preview-box p-4">
             <div className="space-y-1 font-mono text-sm">
               {heroPreviewLines.map((item) => {
                 const active = item.number === frame.line;
@@ -138,14 +140,10 @@ export function Hero() {
                   <motion.div
                     key={item.number}
                     layout
-                    transition={{ type: "spring", stiffness: 280, damping: 24 }}
-                    className={`rounded-xl px-3 py-2 ${
-                      active
-                        ? "bg-signal/25 text-white shadow-[0_0_16px_rgba(255,101,53,0.25)]"
-                        : "text-white/45"
-                    }`}
+                    transition={{ type: 'spring', stiffness: 280, damping: 24 }}
+                    className={`rounded-xl px-3 py-2 ${active ? 'bg-signal/20 text-bright shadow-[0_0_16px_rgba(255,101,53,0.25)]' : 'text-ink/45'}`}
                   >
-                    <span className="mr-3 select-none text-white/25">{item.number}</span>
+                    <span className="mr-3 select-none text-ink/28">{item.number}</span>
                     {item.code}
                   </motion.div>
                 );
@@ -164,12 +162,8 @@ export function Hero() {
                 transition={{ delay: index * 0.06 }}
                 className="rounded-[16px] bg-parchment p-3"
               >
-                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/42">
-                  {item.name}
-                </div>
-                <div className="mt-1.5 truncate font-mono text-xl font-semibold text-ink">
-                  {item.value}
-                </div>
+                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/42">{item.name}</div>
+                <div className="mt-1.5 truncate font-mono text-xl font-semibold text-ink">{item.value}</div>
               </motion.div>
             ))}
           </div>
@@ -186,19 +180,17 @@ export function Hero() {
             >
               <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-signal" />
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-signal/70">
-                  {frame.event}
-                </div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-signal/70">{frame.event}</div>
                 <div className="mt-0.5 text-sm leading-6 text-ink/70">{frame.summary}</div>
               </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Progress bar */}
-          <div className="mt-4 h-1 overflow-hidden rounded-full bg-white/8">
+          <div className="mt-4 h-1 overflow-hidden rounded-full progress-track">
             <motion.div
               animate={{ width: `${((frameIndex + 1) / executionFrames.length) * 100}%` }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
               className="h-full rounded-full bg-signal"
             />
           </div>

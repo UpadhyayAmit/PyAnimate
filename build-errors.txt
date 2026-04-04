@@ -1,0 +1,188 @@
+
+> pyanimate@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.5.14
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./locales/ar/binary-tree-traversal.ts
+Error:   x Unexpected token `╪º┘ä╪¬╪▒╪¬┘è╪¿`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
+    ,-[C:\Projects\POC\PyAnimate\locales\ar\binary-tree-traversal.ts:23:1]
+ 20 | 4   5
+ 21 | ┘à╪º ╪¿╪╣╪»: 4 5 2 3 1
+ 22 | ┘ü┘è ╪º┘ä╪¬╪▒╪¬┘è╪¿: 4 2 5 1 3`,
+ 23 | ┘ü┘è ╪º┘ä╪¬╪▒╪¬┘è╪¿: 4 2 5 1 3',
+    :    ^^^^^^^
+ 24 |       commonMistakes: [
+ 25 |         '╪º┘ä╪«┘ä╪╖ ╪¿┘è┘å ╪¬╪▒╪¬┘è╪¿╪º╪¬ ╪º┘ä╪º╪¼╪¬┘è╪º╪▓ ╪º┘ä╪½┘ä╪º╪½╪⌐',
+ 25 |         '╪º┘ä╪º╪¼╪¬┘è╪º╪▓ ╪¿╪º┘ä┘à╪│╪¬┘ê┘ë ┘è╪¡╪¬╪º╪¼ ╪╖╪º╪¿┘ê╪▒┘ï╪º ┘ä╪º ┘à┘â╪»╪│┘ï╪º',
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./locales/ar/binary-tree-traversal.ts
+./locales/index.ts
+./data/course.ts
+./components/playground-shell.tsx
+
+./locales/de/binary-tree-traversal.ts
+Error:   x Unterminated string constant
+    ,-[C:\Projects\POC\PyAnimate\locales\de\binary-tree-traversal.ts:16:1]
+ 13 |         'Postorder: traversiere(links); traversiere(rechts); besuche(Wurzel).',
+ 14 |         'Levelorder (BFS): verwende eine Queue.',
+ 15 |       ],
+ 16 |       visual: '    1
+    :               ^^^^^^
+ 17 |    / \\
+ 18 |   2   3
+ 18 | Inorder: 2,1,3  Preorder: 1,2,3  Postorder: 2,3,1',
+    `----
+  x Expected unicode escape
+    ,-[C:\Projects\POC\PyAnimate\locales\de\binary-tree-traversal.ts:17:1]
+ 14 |         'Levelorder (BFS): verwende eine Queue.',
+ 15 |       ],
+ 16 |       visual: '    1
+ 17 |    / \\
+    :       ^
+ 18 |   2   3
+ 19 | Inorder: 2,1,3  Preorder: 1,2,3  Postorder: 2,3,1',
+ 19 |       commonMistakes: [
+    `----
+  x Expected unicode escape
+    ,-[C:\Projects\POC\PyAnimate\locales\de\binary-tree-traversal.ts:17:1]
+ 14 |         'Levelorder (BFS): verwende eine Queue.',
+ 15 |       ],
+ 16 |       visual: '    1
+ 17 |    / \\
+    :      ^
+ 18 |   2   3
+ 19 | Inorder: 2,1,3  Preorder: 1,2,3  Postorder: 2,3,1',
+ 19 |       commonMistakes: [
+    `----
+  x Expression expected
+    ,-[C:\Projects\POC\PyAnimate\locales\de\binary-tree-traversal.ts:17:1]
+ 14 |         'Levelorder (BFS): verwende eine Queue.',
+ 15 |       ],
+ 16 |       visual: '    1
+ 17 |    / \\
+    :      ^
+ 18 |   2   3
+ 19 | Inorder: 2,1,3  Preorder: 1,2,3  Postorder: 2,3,1',
+ 19 |       commonMistakes: [
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./locales/de/binary-tree-traversal.ts
+./locales/index.ts
+./data/course.ts
+./components/playground-shell.tsx
+
+./locales/es/anagram-check.ts
+Error:   x Unterminated string constant
+    ,-[C:\Projects\POC\PyAnimate\locales\es\anagram-check.ts:16:1]
+ 13 |         'O compara sus contadores de caracteres',
+ 14 |         'O usa Counter(s1) == Counter(s2)',
+ 15 |       ],
+ 16 |       visual: '"listen" ΓåÆ sorted ΓåÆ "eilnst"
+    :               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 17 | "silent" ΓåÆ sorted ΓåÆ "eilnst"
+ 18 | ┬íSon iguales ΓåÆ Anagrama!',
+ 18 |       commonMistakes: [
+    `----
+  x Expected ',', got 'string literal (silent, "silent")'
+    ,-[C:\Projects\POC\PyAnimate\locales\es\anagram-check.ts:17:1]
+ 14 |         'O usa Counter(s1) == Counter(s2)',
+ 15 |       ],
+ 16 |       visual: '"listen" ΓåÆ sorted ΓåÆ "eilnst"
+ 17 | "silent" ΓåÆ sorted ΓåÆ "eilnst"
+    : ^^^^^^^^
+ 18 | ┬íSon iguales ΓåÆ Anagrama!',
+ 19 |       commonMistakes: [
+ 19 |         'Olvidar convertir a min├║sculas',
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./locales/es/anagram-check.ts
+./locales/index.ts
+./data/course.ts
+./components/playground-shell.tsx
+
+./locales/es/arithmetic.ts
+Error:   x Unterminated string constant
+    ,-[C:\Projects\POC\PyAnimate\locales\es\arithmetic.ts:15:1]
+ 12 |         '* multiplica, / divide (siempre float)',
+ 13 |         '// divisi├│n entera, % m├│dulo, ** potencia',
+ 14 |       ],
+ 15 |       visual: '10 + 3 = 13
+    :               ^^^^^^^^^^^^
+ 16 | 10 / 3 = 3.333
+ 17 | 10 // 3 = 3
+ 17 | 10 % 3 = 1
+    `----
+  x Expected ',', got 'numeric literal (10, 10)'
+    ,-[C:\Projects\POC\PyAnimate\locales\es\arithmetic.ts:16:1]
+ 13 |         '// divisi├│n entera, % m├│dulo, ** potencia',
+ 14 |       ],
+ 15 |       visual: '10 + 3 = 13
+ 16 | 10 / 3 = 3.333
+    : ^^
+ 17 | 10 // 3 = 3
+ 18 | 10 % 3 = 1
+ 18 | 2 ** 8 = 256',
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./locales/es/arithmetic.ts
+./locales/index.ts
+./data/course.ts
+./components/playground-shell.tsx
+
+./locales/es/bellman-ford.ts
+Error:   x Unterminated string constant
+    ,-[C:\Projects\POC\PyAnimate\locales\es\bellman-ford.ts:22:1]
+ 19 |         'Para relajar (u,v,w): si dist[u]+w < dist[v], actualiza dist[v]',
+ 20 |         'Pasada extra: si alguna distancia cambia, hay ciclo negativo',
+ 21 |       ],
+ 22 |       visual: 'V=4 v├⌐rtices ΓåÆ 3 rondas
+    :               ^^^^^^^^^^^^^^^^^^^^^^^^
+ 23 | Cada ronda relaja todas las aristas
+ 24 | Si la ronda 4 actualiza algo ΓåÆ ciclo negativo',
+ 24 |       commonMistakes: [
+    `----
+  x Expected ',', got 'Cada'
+    ,-[C:\Projects\POC\PyAnimate\locales\es\bellman-ford.ts:23:1]
+ 20 |         'Pasada extra: si alguna distancia cambia, hay ciclo negativo',
+ 21 |       ],
+ 22 |       visual: 'V=4 v├⌐rtices ΓåÆ 3 rondas
+ 23 | Cada ronda relaja todas las aristas
+    : ^^^^
+ 24 | Si la ronda 4 actualiza algo ΓåÆ ciclo negativo',
+ 25 |       commonMistakes: [
+ 25 |         'Olvidar las V-1 rondas necesarias para convergencia',
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./locales/es/bellman-ford.ts
+./locales/index.ts
+./data/course.ts
+./components/playground-shell.tsx
+
+
+> Build failed because of webpack errors

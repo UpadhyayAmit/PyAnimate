@@ -131,77 +131,81 @@
   "CourseData": {
     "tracks": {
       "foundation": {
-        "audience": "Débutants absolus, zéro expérience",
-        "description": "Partez de zéro. Découvrez comment Python gère les données, les décisions et le flux — pas à pas, chaque concept animé."
+        "audience": "Débutants absolus, aucune expérience",
+        "description": "Partez de zéro. Oubliez le jargon académique, nous allons directement voir comment Python gère la mémoire, prend des décisions et exécute votre logique en temps réel."
       },
       "beginner": {
         "audience": "Premiers pas en Python",
-        "description": "Construisez de vraies habitudes de programmation. Maîtrisez boucles, fonctions et listes en les voyant s'exécuter pas à pas."
+        "description": "Il est temps d'acquérir de vraies habitudes d'ingénieur. Nous allons tracer les boucles, les fonctions et les tableaux pour que vous arrêtiez de coder à l'aveugle."
       },
       "intermediate": {
-        "audience": "Développeurs créant des scripts et des apps",
-        "description": "Améliorez votre boîte à outils. Explorez dictionnaires, piles, files et vos premiers algorithmes de recherche avec suivi visuel d'état."
+        "audience": "Développeurs créant des scripts et des applications",
+        "description": "Passez au niveau supérieur. Nous allons plonger dans les dictionnaires, piles, files et recherches classiques. C'est le cœur de tout backend robuste."
       },
       "advanced": {
-        "audience": "Ingénieurs perfectionnant la résolution de problèmes",
-        "description": "Pensez algorithmiquement. Voyez tri et arbres s'animer en temps réel, comprenez Big O par l'observation."
+        "audience": "Ingénieurs affinant la résolution de problèmes",
+        "description": "Commencez à penser algorithmique. Regardez la récursivité empiler les appels, voyez le tri en temps réel et comprenez enfin pourquoi la notation Big O compte en production."
       },
       "mastery": {
-        "audience": "Experts explorant les mécanismes internes",
-        "description": "Repoussez les limites. Recherche de graphes, programmation dynamique et algorithmes de niveau entretien — le tout visualisé en direct."
+        "audience": "Experts explorant les rouages internes",
+        "description": "Le grand bain. On arrête les scripts pour concevoir des systèmes. Maîtrisez les graphes et la programmation dynamique qui vous feront réussir les entretiens de niveau Staff."
       }
     },
     "algorithms": {
-      "hello-world": "Votre premier résultat Python. Voyez comment print() envoie des données à la console et pourquoi c'est la base de tout débogage.",
-      "variables-types": "Voyez une variable prendre vie en mémoire. Découvrez int, float, str et bool comme des boîtes vivantes qui contiennent des valeurs.",
-      "string-operations": "Les strings sont des séquences. Voyez slicing, concaténation et méthodes s'animer sur des tableaux de caractères.",
-      "arithmetic": "Nombres, opérateurs et division entière. Voyez exactement comment Python évalue les expressions étape par étape.",
-      "if-else": "Du code qui prend des décisions. Voyez l'exécution sauter entre les branches selon la véracité.",
-      "while-loop": "Répétition pilotée par une condition. Voyez la garde de boucle vérifier avant chaque itération et pourquoi les boucles infinies se produisent.",
-      "for-loop": "Itérez sur des séquences. Voyez comment la boucle for de Python est en réalité un itérateur sous le capot.",
-      "lists-basics": "Le conteneur le plus utile de Python. Voyez append, pop et index comme des opérations sur un bloc mémoire animé.",
-      "functions-intro": "Blocs de logique réutilisables. Voyez un appel de fonction empiler un frame de pile et la valeur de retour revenir à l'appelant.",
-      "input-output": "Des programmes qui parlent aux utilisateurs. Voyez comment input() met l'exécution en pause et retourne une valeur string.",
-      "linear-search": "Vérifiez chaque élément jusqu'à trouver la cible. O(n) — l'algorithme de recherche le plus simple.",
-      "count-occurrences": "Comptez combien de fois une valeur apparaît. Voyez une hash map accumuler les comptages à chaque passage.",
-      "find-min-max": "Suivez le minimum et maximum courants en un seul passage. Voyez pourquoi une seule boucle suffit.",
-      "sum-average": "Accumulez des valeurs et calculez la moyenne. Voyez le pattern d'accumulateur qui alimente de nombreux algorithmes.",
-      "loop-explorer": "Voyez comment les itérations de boucle mettent à jour l'état partagé. Voyez le score s'accumuler à chaque passage.",
-      "reverse-list": "Échange à deux pointeurs depuis les deux extrémités. Voyez les pointeurs se rapprocher jusqu'à se rencontrer au milieu.",
-      "palindrome": "Comparez les caractères depuis les deux extrémités. Voyez comment la technique à deux pointeurs confirme la symétrie.",
-      "fizzbuzz": "Vérification classique de divisibilité. Voyez le modulo piloter la sortie conditionnelle sur 100 itérations.",
-      "factorial": "Multipliez de 1 à n. Voyez le produit grandir étape par étape et comprenez pourquoi 0! = 1.",
-      "fibonacci-iterative": "Générez la séquence avec deux variables glissantes. Voyez pourquoi cela bat la version récursive en espace.",
-      "binary-search": "Divisez l'espace de recherche par deux à chaque étape. Entrée triée requise. Voyez O(log n) se produire en direct.",
-      "selection-sort": "Trouvez le minimum à chaque passage et déplacez-le au début. Voyez n passages produire un tableau trié.",
-      "insertion-sort": "Insérez chaque élément à sa position correcte dans le préfixe déjà trié. Efficace pour les données presque triées.",
-      "two-pointers": "Utilisez deux indices se déplaçant l'un vers l'autre pour résoudre des problèmes de tableau en O(n) au lieu de O(n²).",
-      "hash-map-counting": "Utilisez un dictionnaire pour compter en O(1) par recherche. La base de nombreux problèmes de fréquence.",
-      "stack-ops": "LIFO en action. Voyez push, pop et peek s'animer sur une liste utilisée comme pile.",
-      "queue-ops": "FIFO en action. Voyez enqueue et dequeue s'animer et comprenez pourquoi deque bat une liste.",
-      "anagram-check": "Deux strings sont-elles des réarrangements l'une de l'autre ? Voyez le comptage de caractères résoudre le problème en O(n).",
-      "sliding-window": "Trouvez la somme maximale dans chaque fenêtre de taille k. Voyez la fenêtre glisser sur le tableau.",
-      "merge-sorted": "Combinez deux tableaux triés en un seul. L'opération centrale derrière merge sort.",
-      "bubble-sort": "Comparez les paires adjacentes. Les éléments plus grands montent à chaque passage.",
-      "merge-sort": "Divisez, triez les moitiés, fusionnez. Voyez l'arbre de récursion se diviser et se recombiner.",
-      "quick-sort": "Choisissez un pivot, partitionnez autour, récursez. O(n log n) en moyenne avec d'excellentes performances cache.",
-      "heap-sort": "Construisez un max-heap, extrayez les éléments en ordre. O(n log n) garanti contrairement à quicksort.",
-      "bfs": "Explorez un graphe niveau par niveau avec une file. Trouvez les plus courts chemins dans les graphes non pondérés.",
-      "dfs": "Explorez aussi profondément que possible avant de revenir en arrière. Voyez la pile d'appels grandir à chaque étape récursive.",
-      "binary-tree-traversal": "In-order, pre-order, post-order. Voyez les nœuds visités dans différentes séquences sur le même arbre.",
-      "two-sum": "Trouvez deux nombres qui s'additionnent pour atteindre une cible. Voyez comment une hash map transforme O(n²) en O(n).",
-      "valid-parentheses": "Utilisez une pile pour apparier les crochets ouvrants et fermants. Question classique d'entretien sur les piles.",
-      "fibonacci-recursive": "Voyez l'arbre d'appels se déployer exponentiellement. Comprenez pourquoi la mémoïsation est essentielle.",
-      "dijkstra": "Trouvez les plus courts chemins d'une source à tous les nœuds avec une file de priorité. La colonne vertébrale de la navigation GPS.",
-      "knapsack": "Maximisez la valeur dans une limite de poids. Voyez la table DP se remplir ligne par ligne.",
-      "lcs": "Trouvez la plus longue sous-séquence commune à deux strings. Au cœur des outils de diff et de l'alignement ADN.",
-      "topological-sort": "Ordonnez les tâches en respectant les dépendances. Voyez l'algorithme de Kahn retirer les nœuds de degré entrant zéro.",
-      "kruskals": "Construisez un arbre couvrant minimal en ajoutant goulûment les arêtes de poids le plus faible sans former de cycles.",
-      "trie": "Insérez et recherchez des strings lettre par lettre. Voyez comment l'autocomplétion fonctionne sous le capot.",
-      "floyd-warshall": "Plus courts chemins toutes paires avec un DP à 3 boucles. Voyez la matrice de distances se mettre à jour en O(V³).",
-      "segment-tree": "Requêtes d'intervalle et mises à jour ponctuelles en O(log n). Voyez l'arbre se construire et propager les sommes vers le haut.",
-      "coin-change": "Nombre minimal de pièces pour un montant. Voyez le tableau DP se remplir de 0 jusqu'à la cible.",
-      "bit-manipulation": "AND, OR, XOR, shifts — les opérations derrière la cryptographie, le graphisme et la programmation compétitive."
+      "hello-world": "Votre véritable point d'entrée. Regardez comment print() envoie les données à la sortie standard—parce que le 'print debugging' restera toujours votre meilleur ami.",
+      "variables-types": "Regardez les variables réclamer de la mémoire. Comprenez int, float, string, et voyez pourquoi Python, typé dynamiquement, vous pardonne autant.",
+      "string-operations": "Les chaînes ne sont que des tableaux sophistiqués. La manipulation de chaînes représente 80% du travail réel dans un backend web.",
+      "arithmetic": "Les mathématiques sous le capot. Voyez précisément comment Python évalue les expressions complexes et gère les bizarreries de la division.",
+      "if-else": "Le cœur de la logique métier. Voyez les branches en temps réel et pourquoi rater un opérateur booléen cause tant de bugs d'authentification.",
+      "while-loop": "Répétition jusqu'à la limite. Regardez le contrôle s'activer avant chaque itération et apprenez à éviter un déni de service (DDoS) sur votre propre machine.",
+      "for-loop": "La bête de somme du traitement de données. Regardez les itérateurs Python avaler les collections—c'est ce qui fait tourner les pipelines de données.",
+      "lists-basics": "Le conteneur suprême de Python. Comprenez pourquoi insérer un élément au milieu d'un tableau est secrètement très coûteux.",
+      "functions-intro": "La base du code propre (DRY). Voyez comment un appel suspend l'exécution, alloue de la mémoire et gère les portées.",
+      "input-output": "Programmes interactifs. Voyez comment l'attente d'une saisie bloque complètement le thread principal et pourquoi forcer le type (cast) est obligatoire.",
+      "linear-search": "Brute force, élément par élément. O(n) est le plus simple—et honnêtement, pour les petits tableaux, c'est parfaitement acceptable en production.",
+      "count-occurrences": "Construction d'une carte de fréquences. L'accumulation via dictionnaire est un modèle vital pour l'analyse de logs sur les serveurs.",
+      "find-min-max": "Suivi des limites. Regardez comment un seul passage boucle les extrêmes de données pour éviter des cycles CPU en triant inutilement.",
+      "sum-average": "Le modèle accumulateur. Regardez comment sum() itère élégamment. C'est hyper-optimisé en C en coulisses.",
+      "loop-explorer": "Gestion d'état partagé. Gérer précisément les limites de la boucle évite les fameux 'off-by-one errors' qui font planter la prod.",
+      "reverse-list": "Double pointeurs. Regardez-les converger pour échanger en place O(n). Un modèle classique pour éviter d'allouer de nouveaux tableaux coûteux.",
+      "palindrome": "Vérification de symétrie. L'approche à deux pointeurs valide depuis les deux extrémités et s'arrête net à la première erreur.",
+      "fizzbuzz": "Le classique des entretiens. Voyez comment l'ordre absolu de vos conditions dicte la logique sans écraser les autres règles.",
+      "factorial": "Multiplication en chaîne. Le modèle d'accumulation exponentielle montre pourquoi une vraie condition de base et débuter à 1 sont vitaux.",
+      "fibonacci-iterative": "Suivi linéaire parfait sans détruire la mémoire. Ne conserver que les deux dernières valeurs en O(1) anéantit l'approche récursive naïve.",
+      "binary-search": "Le fondement des index de bases de données. Taillez massivement O(log n) en jetant la moitié du problème—si et seulement si le tableau est trié.",
+      "selection-sort": "Cherche le minimum, puis le verrouille. Ça garantit exactement un échange par itération. C'est utile quand écrire en mémoire est matériellement lent.",
+      "insertion-sort": "Très rapide sur des données 'presque triées' naturellement, ce qui arrive souvent dans la réalité. La brique de base du gigantesque Timsort.",
+      "two-pointers": "Faites converger vos indices gauche et droit pour résoudre des tableaux en temps O(n) au lieu de subir un double for destructeur en O(n²).",
+      "hash-map-counting": "La magie garantie en O(1). Stocker l'état dans un index mémoire est le meilleur moyen d'échapper à la prison des boucles imbriquées.",
+      "stack-ops": "Dernier entré, premier sorti (LIFO). Comprenez comment fonctionnent réellement l'historique d'un navigateur, le bouton 'Annuler' et le call stack.",
+      "queue-ops": "Premier entré, premier sorti (FIFO). Les tâches entrent, les tâches sortent. Le cœur de Node, des serveurs Web et des exécuteurs de tâches asynchrones.",
+      "anagram-check": "Ne triez pas les chaînes (ça coûte cher). Hachez les fréquences dans un dictionnaire en O(n) et comparez la taille et présence.",
+      "sliding-window": "Une fenêtre glissante fixe. Ne recalculez jamais toute la section! Soustrayez la sortie, ajoutez l'entrée. Passage en O(1) pour sauver le CPU.",
+      "merge-sorted": "Zippez deux tableaux triés sans accroc. Exécutez ce travail avec la routine d'excellence qui fait fonctionner le fameux Merge Sort.",
+      "bubble-sort": "L'exemple à ne jamais shipper en prod (c'est lent, O(n²)). Mais voir les éléments lourds bouillonner enseigne la mutation aux frontières.",
+      "merge-sort": "Divisez, réglez, rassemblez. Voyez la récursivité atomiser les tableaux et les tresser en O(n log n). Un moteur rapide et totalement stable.",
+      "quick-sort": "Le tri des titans. Hyper optimisé pour la mémoire cache, mais regardez un horrible pivot détruire l'algo et le jeter dans un puit de goudron O(n²).",
+      "heap-sort": "Le max-heap garantit toujours le plus grand élément au sommet, assurant une protection massive O(n log n) contre les cas extrèmes.",
+      "bfs": "Une vague qui s'étend concentriquement. La File (Queue) garantit de balayer chaque voisin proche avant de creuser. Parfait pour les routes courtes.",
+      "dfs": "Plongée directe avant retour en arrière (backtracking). Empiler pour explorer tout un chemin de labyrinthe avant de tester une nouvelle route.",
+      "binary-tree-traversal": "Naviguer l'arbre proprement. Le balayage In-Order d'un arbre binaire donne la structure de données parfaitement triée (Sorted) gratuitement.",
+      "two-sum": "La star absolue des entretiens algorithmiques. Troquez un peu de RAM pour un HashMap afin d'aplatir un massacre en O(n²) vers un pur O(n).",
+      "valid-parentheses": "Le test LIFO ultime. Poussez chaque ouvreur et 'pop' à l'arrivée d'un fermeur—c'est ce que votre compilateur fait face à votre code.",
+      "fibonacci-recursive": "L'explosion exponentielle (O(2ⁿ)) pure. Sans cache, le CPU tourne sur la même misère pour toujours. La machine freeze.",
+      "dijkstra": "Le pilier de Google Maps. Il cherche agressivement le chemin le plus court, mais méfiez-vous... des poids négatifs créeront un trou noir infini.",
+      "knapsack": "La bête sacrée de la programmation dynamique. Une matrice 2D table vos limites et balaye complètement l'avidité (Greedy algorithm) obsolète.",
+      "lcs": "L'alignement puriste utilisé sous le capot de `git diff`. La matrice DP trace chaque correspondance de lettres entre deux cordes asymétriques.",
+      "topological-sort": "Tri DAG. Retirer les nœuds sans dépendances l'un après l'autre. C'est exactement l'artillerie gérant les installations NPM ou les dépendances système.",
+      "kruskals": "Attrapez le pont le moins cher (Greedy) et fiez-vous au 'Union-Find' pour garantir absolument de ne boucler aucun cycle désastreux.",
+      "trie": "Le moteur d'autocomplétion Web. Il fracture des chaînes colossales de dictionnaire en feuilles, assurant une requête préfixe microscopiquement courte.",
+      "floyd-warshall": "La broyeuse totale avec 3 for loops matricielles imbriquées mettant à plat la toile complexe du chemin absolument le plus court V³ pour tous les noeuds.",
+      "segment-tree": "Arbres d'intervalle. Rétrécissez drastiquement les grands balayages. Un atout absolu pour mettre à jour instantanément les compteurs de Live Dashboards O(log n).",
+      "coin-change": "Exécution DP féroce. Une boucle greddy classique s'effondre avec des tailles de monnaie bizarres, mais le fameux tableau DP bâtit l'infaillible certitude.",
+      "bit-manipulation": "Mécanique CPU nue. AND, OR, XOR annihilations de données au point zéro en binaire pur. L'ultime magie d'optimisation bas-niveau système.",
+      "counting-sort": "Oubliez O(n log n). Si vos limites d'entiers sont petites, comptez-les simplement et reformez le tableau, balayant la comparaison classique.",
+      "recursion-basics": "Le manque d'une condition d'arrêt fait instantanément exploser le Call Stack. C'est le crash (Stack Overflow) garanti.",
+      "dp-basics": "Mettre en cache. Éviter le ralentissement exponentiel insensé. C'est juste 'se souvenir du passé pour ne pas le recalculer'.",
+      "bellman-ford": "Il digère bien les poids négatifs en frappant inlassablement les bords V-1 fois, prouvant son talent, au prix d'être mathématiquement plus lent."
     }
   },
   "Quizzes": {
@@ -215,7 +219,7 @@
         "D": "Arrête le programme"
       },
       "correct": "A",
-      "successMessage": "Correct ! print() est utilisé pour la sortie.",
+      "successMessage": "Dans le mille ! `print()` est la corde de sécurité pour vider l'état en console. Même les développeurs confirmés l'utilisent au quotidien pour gagner du temps.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -229,7 +233,7 @@
         "D": "x = True"
       },
       "correct": "B",
-      "successMessage": "Correct ! 5 sans guillemets ni décimales est un int.",
+      "successMessage": "Exactement. En Python, un int est un int. Adieu virgules et résidus, l'allocation est belle et propre en mémoire.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -243,7 +247,7 @@
         "D": "/"
       },
       "correct": "C",
-      "successMessage": "Correct ! L'opérateur + concatène les chaînes.",
+      "successMessage": "Parfait. Le `+` est surchargé justement pour fusionner les chaînes. Faites juste attention à ne jamais concaténer du texte pur avec un Integer brut.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -257,7 +261,7 @@
         "D": "Le reste d'une division"
       },
       "correct": "D",
-      "successMessage": "Correct ! % calcule les restes.",
+      "successMessage": "Bien joué. Le Modulo (`%`) repêche le reste de division—essentiel pour vérifier pairs/impairs ou boucler proprement sans déborder des index.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -271,7 +275,7 @@
         "D": "then"
       },
       "correct": "C",
-      "successMessage": "Correct ! Python utilise 'elif'.",
+      "successMessage": "Exact. `elif` écrase visuellement la nécessité d'empiler indéfiniment des «else if» laborieux, maintenant votre complexité cyclomatique ultra lisible.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -285,7 +289,7 @@
         "D": "Elle est ignorée"
       },
       "correct": "A",
-      "successMessage": "Correct ! Les boucles infinies continuent de tourner.",
+      "successMessage": "Totalement exact ! Si votre guard (garde) ne déclenche jamais un «False», le thread principal suffoque, et la ressource CPU est définitivement morte en boucle.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -299,7 +303,7 @@
         "D": "iter()"
       },
       "correct": "B",
-      "successMessage": "Correct ! range() est utilisé pour cela.",
+      "successMessage": "C’est ça. `range()` génère massivement les séries entières de test, pilier parfait limitant rigoureusement une boucle au calcul souhaité `N` fois sans déborder.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -313,7 +317,7 @@
         "D": "arr[-1]"
       },
       "correct": "C",
-      "successMessage": "Correct ! Les listes Python commencent à 0.",
+      "successMessage": "Exact! Les PC basent naturellement les index sur `0` car c'est le multiplicateur physique du premier décalage mathématique du tout premier nœud d'un tableau alloué en RAM pure.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -327,7 +331,7 @@
         "D": "create"
       },
       "correct": "A",
-      "successMessage": "Correct ! 'def' crée des fonctions.",
+      "successMessage": "Tout à fait. `def` bloque la structure sans la lancer, s'imposant ainsi comme le moteur du principe DRY (Ne Vous Répétez Jamais), clé vers la consécration du code architectural digne d'un architecte système.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
@@ -341,567 +345,623 @@
         "D": "String"
       },
       "correct": "D",
-      "successMessage": "Correct ! input() capture du texte.",
+      "successMessage": "Boulonné à la perfection ! `input()` vous crachera obligatoirement de la donnée morte au format string; forcer une conversion (type-casting) vers le bon type évitera la panne catastrophique et fatale en Prod au tout premier calcul mathématique lancé...",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "linear-search": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme linear search ?",
+      "question": "Quelle est la complexité temporelle dans le pire cas de la recherche linéaire ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
       "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "successMessage": "Juste. C'est la force brute matricielle absolue en O(n). En réalité, sur les tableaux mineurs, ça se comporte mieux qu'un sort complexe.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "count-occurrences": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme count occurrences ?",
+      "question": "Que fait 'compter les occurrences' ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Compte combien de fois une valeur apparaît dans la liste",
+        "B": "Trie la liste par fréquence",
+        "C": "Supprime les valeurs en double",
+        "D": "Trouve la valeur maximale"
       },
       "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "successMessage": "Correct ! Cela compte combien de fois chaque valeur apparaît.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "find-min-max": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme find min-max ?",
+      "question": "Combien de passes sur la liste sont nécessaires pour trouver le minimum et le maximum ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Deux passes séparées",
+        "B": "Une seule passe",
+        "C": "n passes",
+        "D": "log n passes"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Une seule passe suffit pour suivre le min et le max simultanément.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "sum-average": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme sum average ?",
+      "question": "Quelle fonction intégrée de Python retourne la somme de tous les éléments d'une liste ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "add()",
+        "B": "total()",
+        "C": "sum()",
+        "D": "accumulate()"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! sum(liste) additionne tous les éléments en un seul appel.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "loop-explorer": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme loop explorer ?",
+      "question": "Quel mot-clé Python quitte immédiatement une boucle ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "end"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! 'break' met fin à la boucle immédiatement.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "reverse-list": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme reverse list ?",
+      "question": "Que retourne arr[::-1] en Python ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Un élément sur deux",
+        "B": "La liste dans l'ordre inverse",
+        "C": "La liste triée",
+        "D": "Une copie de la liste inchangée"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Le slice [::-1] inverse toute séquence.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "palindrome": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme palindrome ?",
+      "question": "Un palindrome se lit...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Uniquement vers l'avant",
+        "B": "Uniquement vers l'arrière",
+        "C": "Pareil dans les deux sens",
+        "D": "Dans l'ordre alphabétique"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! 'racecar' est identique dans les deux sens.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "fizzbuzz": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme fizzbuzz ?",
+      "question": "Dans FizzBuzz, qu'affiche-t-on pour un nombre divisible par 3 et 5 ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Fizz",
+        "B": "Buzz",
+        "C": "FizzBuzz",
+        "D": "0"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Les nombres divisibles par les deux affichent 'FizzBuzz'.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "factorial": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme factorial ?",
+      "question": "Quelle est la valeur de 0! (factorielle zéro) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "0",
+        "B": "1",
+        "C": "Undefined",
+        "D": "Infinity"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Par convention, 0! = 1 (le produit vide).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "fibonacci-iterative": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme fibonacci iterative ?",
+      "question": "Dans la suite de Fibonacci, chaque nombre est égal à...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le double du nombre précédent",
+        "B": "La somme des deux nombres précédents",
+        "C": "Le nombre précédent plus 1",
+        "D": "Le carré du nombre précédent"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! F(n) = F(n-1) + F(n-2).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "binary-search": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme binary search ?",
+      "question": "Que doit-on vérifier avant d'appliquer la Recherche Binaire ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Il doit avoir une longueur paire",
+        "B": "Il ne doit contenir que des entiers",
+        "C": "Il doit être trié",
+        "D": "Il ne doit pas avoir de doublons"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! La Recherche Binaire nécessite un tableau trié pour diviser l'espace de recherche.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "selection-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme selection sort ?",
+      "question": "Dans Selection Sort, que se passe-t-il à chaque passe ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le plus grand élément remonte à la fin",
+        "B": "Le tableau est divisé en deux",
+        "C": "L'élément minimum est trouvé et échangé vers le début",
+        "D": "Les paires adjacentes sont échangées"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Chaque passe sélectionne le minimum et le place à la frontière triée.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "insertion-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme insertion sort ?",
+      "question": "Insertion Sort est le plus efficace sur...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Des données complètement aléatoires",
+        "B": "Des données triées en ordre inverse",
+        "C": "Des données presque triées",
+        "D": "De très grands ensembles de données"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Les entrées presque triées nécessitent peu d'insertions — O(n) dans le meilleur cas.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "two-pointers": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme two pointers ?",
+      "question": "Dans un problème de deux pointeurs sur tableau trié, si la somme est trop grande, que faire ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Déplacer le pointeur gauche vers la droite",
+        "B": "Déplacer le pointeur droit vers la gauche",
+        "C": "Déplacer les deux pointeurs vers l'intérieur",
+        "D": "Redémarrer l'algorithme"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Déplacer le pointeur droit vers la gauche diminue la somme.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "hash-map-counting": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme hash map-counting ?",
+      "question": "Quelle est la complexité temporelle moyenne pour une recherche dans une table de hachage ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(1)",
+        "D": "O(n²)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Les tables de hachage offrent une recherche O(1) en moyenne grâce au hachage.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "stack-ops": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme stack ops ?",
+      "question": "Dans une Pile, quel élément est supprimé en premier (principe LIFO) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le premier élément ajouté",
+        "B": "Un élément aléatoire",
+        "C": "Le dernier élément ajouté",
+        "D": "Le plus petit élément"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! LIFO — Dernier entré, premier sorti.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "queue-ops": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme queue ops ?",
+      "question": "Dans une File, quel élément est servi en premier (principe FIFO) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le dernier élément ajouté",
+        "B": "Un élément aléatoire",
+        "C": "Le premier élément ajouté",
+        "D": "Le plus grand élément"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! FIFO — Premier entré, premier sorti.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "anagram-check": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme anagram check ?",
+      "question": "Deux chaînes sont des anagrammes si elles contiennent...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Les mêmes caractères dans le même ordre",
+        "B": "Les mêmes caractères dans n'importe quel ordre",
+        "C": "Des caractères différents de même longueur",
+        "D": "Des caractères qui commencent pareillement"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Les anagrammes utilisent des caractères identiques, juste réarrangés.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "sliding-window": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme sliding window ?",
+      "question": "La technique de fenêtre glissante réduit généralement la complexité temporelle de...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n³) to O(n)",
+        "B": "O(n²) to O(n)",
+        "C": "O(n log n) to O(n)",
+        "D": "O(n) to O(1)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! La fenêtre glisse en O(n) au lieu de recalculer depuis le début à chaque fois.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "merge-sorted": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme merge sorted ?",
+      "question": "Fusionner deux tableaux triés de tailles m et n prend...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(m × n)",
+        "B": "O(m + n)",
+        "C": "O(min(m, n))",
+        "D": "O(max(m, n))"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Chaque élément des deux tableaux est visité exactement une fois — O(m + n).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "bubble-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme bubble sort ?",
+      "question": "Après une passe complète de Bubble Sort, qu'est-ce qui est garanti ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le tableau est entièrement trié",
+        "B": "Le plus grand élément non trié est à sa position finale",
+        "C": "Le tableau est divisé en deux",
+        "D": "L'élément médian est trouvé"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Très vrai. Son mécanisme propulse laborieusement par swaps imbriqués le poids à droite. Il se fige sur les tableaux de volume. Jamais déployer ça publiquement.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "merge-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme merge sort ?",
+      "question": "Quelle est la complexité temporelle de Merge Sort dans tous les cas ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n²)",
+        "B": "O(n)",
+        "C": "O(n log n)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Merge Sort divise et fusionne toujours — O(n log n) garanti.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "quick-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme quick sort ?",
+      "question": "Quelle est la complexité temporelle dans le pire cas de Quick Sort ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n log n)",
+        "B": "O(n)",
+        "C": "O(n²)",
+        "D": "O(log n)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Absolument foudroyant ! Le risque est de piocher le pivot fatal. Les algorithmes de classe mondiale pivotent aléatoirement de base contre des dégradations atrocement violentes de O(n²).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "heap-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme heap sort ?",
+      "question": "Sur quelle structure de données repose Heap Sort ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Stack",
+        "B": "Queue",
+        "C": "Tree",
+        "D": "Heap"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "D",
+      "successMessage": "Correct ! Heap Sort construit un tas max, puis extrait les éléments dans l'ordre.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "counting-sort": {
+      "title": "Vérification des Connaissances",
+      "question": "Avec quel type d'entrée Counting Sort fonctionne-t-il le mieux ?",
+      "options": {
+        "A": "N'importe quel nombre réel",
+        "B": "Des entiers dans une plage petite et connue",
+        "C": "Des tableaux déjà triés",
+        "D": "Des données chaînes"
+      },
+      "correct": "B",
+      "successMessage": "Correct ! Counting Sort est optimal pour les entiers dans une plage bornée.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "recursion-basics": {
+      "title": "Vérification des Connaissances",
+      "question": "Qu'est-ce qui empêche une fonction récursive de tourner indéfiniment ?",
+      "options": {
+        "A": "Un compteur de boucle",
+        "B": "Une variable globale",
+        "C": "Un cas de base",
+        "D": "Le type de retour"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! Toute fonction récursive doit avoir un cas de base pour s'arrêter.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "dp-basics": {
+      "title": "Vérification des Connaissances",
+      "question": "Quelle technique la Programmation Dynamique utilise-t-elle pour éviter de recalculer les sous-problèmes ?",
+      "options": {
+        "A": "Récursion",
+        "B": "Tri",
+        "C": "Mémoïsation ou tabulation",
+        "D": "Recherche binaire"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! La PD stocke les résultats des sous-problèmes résolus pour les réutiliser.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "bfs": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme bfs ?",
+      "question": "Quelle structure de données BFS utilise-t-elle pour explorer les nœuds niveau par niveau ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Pile",
+        "B": "File",
+        "C": "Tableau",
+        "D": "Table de hachage"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! BFS utilise une File (FIFO) pour traiter les nœuds dans l'ordre de découverte.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "dfs": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme dfs ?",
+      "question": "Quelle structure de données DFS utilise-t-elle naturellement (récursivement) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "File",
+        "B": "Liste chaînée",
+        "C": "Tableau",
+        "D": "Pile / pile d'appels"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "D",
+      "successMessage": "Correct ! DFS plonge d'abord en profondeur, en utilisant une pile pour le retour en arrière.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "binary-tree-traversal": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme binary tree-traversal ?",
+      "question": "Quel ordre de parcours visite les nœuds en Gauche → Racine → Droite ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Pré-ordre",
+        "B": "In-ordre",
+        "C": "Post-ordre",
+        "D": "Par niveau"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Le parcours in-ordre d'un BST produit les nœuds en ordre croissant.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "two-sum": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme two sum ?",
+      "question": "Quelle structure de données rend Two Sum soluble en O(n) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Tableau",
+        "B": "Pile",
+        "C": "Table de hachage",
+        "D": "File"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Une table de hachage stocke les valeurs vues pour des recherches de complément en O(1).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "valid-parentheses": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme valid parentheses ?",
+      "question": "Quelle structure de données est utilisée pour résoudre Valid Parentheses ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "File",
+        "B": "Tableau",
+        "C": "Table de hachage",
+        "D": "Pile"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "D",
+      "successMessage": "Correct ! Une pile suit les crochets ouvrants et les associe aux fermants.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "fibonacci-recursive": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme fibonacci recursive ?",
+      "question": "Quelle est la complexité temporelle du Fibonacci récursif naïf (sans mémoïsation) ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n)",
+        "B": "O(n log n)",
+        "C": "O(n²)",
+        "D": "O(2ⁿ)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "D",
+      "successMessage": "Correct ! L'arbre d'appels double à chaque niveau — O(2ⁿ) exponentiel.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "dijkstra": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme dijkstra ?",
+      "question": "Que faut-il pour que l'algorithme de Dijkstra produise des résultats corrects ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Les poids des arêtes doivent être entiers",
+        "B": "Le graphe doit être un arbre",
+        "C": "Tous les poids des arêtes doivent être non négatifs",
+        "D": "Le graphe doit être orienté"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Dijkstra échoue avec des poids négatifs ; utilisez Bellman-Ford à la place.",
+      "checkButton": "Valider",
+      "nextButton": "Leçon Suivante"
+    },
+    "bellman-ford": {
+      "title": "Vérification des Connaissances",
+      "question": "Quel avantage Bellman-Ford a-t-il sur l'algorithme de Dijkstra ?",
+      "options": {
+        "A": "Il est plus rapide sur les graphes denses",
+        "B": "Il utilise moins de mémoire",
+        "C": "Il gère correctement les poids d'arêtes négatifs",
+        "D": "Il trouve les plus courts chemins entre toutes les paires"
+      },
+      "correct": "C",
+      "successMessage": "Correct ! Bellman-Ford relaxe les arêtes V-1 fois et gère les poids négatifs.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "knapsack": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme knapsack ?",
+      "question": "Le problème du sac à dos 0/1 est résolu avec quelle technique ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Algorithme glouton",
+        "B": "Recherche binaire",
+        "C": "Programmation dynamique",
+        "D": "Recherche en profondeur"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! La PD construit un tableau de solutions optimales des sous-problèmes.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "lcs": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme lcs ?",
+      "question": "Que signifie LCS ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Pile Circulaire Liée",
+        "B": "Chaîne Commune la plus Courte",
+        "C": "Plus Longue Sous-séquence Commune",
+        "D": "Segment Calculé le plus Grand"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! LCS trouve la plus longue séquence apparaissant dans le même ordre dans les deux chaînes.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "topological-sort": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme topological sort ?",
+      "question": "Le tri topologique ne s'applique qu'à quel type de graphe ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "N'importe quel graphe non orienté",
+        "B": "N'importe quel graphe orienté",
+        "C": "Graphes Orientés Acycliques (DAGs)",
+        "D": "Uniquement les graphes pondérés"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Les cycles rendent un ordre topologique impossible ; seuls les DAGs.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "kruskals": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme kruskals ?",
+      "question": "L'algorithme de Kruskal est utilisé pour trouver...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Le plus court chemin entre deux nœuds",
+        "B": "L'Arbre Couvrant Minimum",
+        "C": "Le flux maximum dans un réseau",
+        "D": "Le chemin le plus long dans un graphe"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Kruskal ajoute avidement l'arête la moins chère qui ne forme pas de cycle.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "trie": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme trie ?",
+      "question": "Une structure de données Trie est le plus souvent utilisée pour...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Trier des nombres",
+        "B": "Parcourir des graphes",
+        "C": "Recherche de chaînes basée sur les préfixes et autocomplétion",
+        "D": "Opérations matricielles"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Les Tries stockent les chaînes par préfixe pour des recherches rapides.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "floyd-warshall": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme floyd warshall ?",
+      "question": "Floyd-Warshall calcule...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Les plus courts chemins depuis une source",
+        "B": "L'arbre couvrant minimum",
+        "C": "Les plus courts chemins entre toutes les paires",
+        "D": "L'ordre topologique"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "C",
+      "successMessage": "Correct ! Floyd-Warshall trouve les plus courts chemins entre chaque paire de nœuds en O(V³).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "segment-tree": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme segment tree ?",
+      "question": "Un arbre de segments supporte les requêtes de plage en quelle complexité ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "O(n)",
+        "B": "O(log n)",
+        "C": "O(n log n)",
+        "D": "O(1)"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Les requêtes de plage et les mises à jour de points s'exécutent toutes deux en O(log n).",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "coin-change": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme coin change ?",
+      "question": "Coin Change (minimum de pièces) est mieux résolu avec...",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "Algorithme glouton",
+        "B": "Recherche binaire",
+        "C": "Retour en arrière seulement",
+        "D": "Programmation dynamique"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "D",
+      "successMessage": "Correct ! La PD remplit un tableau de pièces minimales pour chaque montant de 0 à la cible.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     },
     "bit-manipulation": {
       "title": "Vérification des Connaissances",
-      "question": "Avez-vous bien compris le concept principal de l'algorithme bit manipulation ?",
+      "question": "Que vaut toujours x XOR x ?",
       "options": {
-        "A": "Oui, je le comprends parfaitement.",
-        "B": "Je devrais probablement le revoir.",
-        "C": "C'est encore un peu confus.",
-        "D": "Pas du tout."
+        "A": "x itself",
+        "B": "0",
+        "C": "1",
+        "D": "2x"
       },
-      "correct": "A",
-      "successMessage": "Super ! Beau travail pour avoir terminé cet algorithme.",
+      "correct": "B",
+      "successMessage": "Correct ! Tout nombre XOR avec lui-même vaut toujours 0.",
       "checkButton": "Valider",
       "nextButton": "Leçon Suivante"
     }
