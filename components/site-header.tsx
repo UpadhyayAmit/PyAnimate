@@ -31,12 +31,9 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
               <a href="#tracks" className="hidden md:block transition hover:text-wave hover:neon-text-wave">
                 {t('tracks')}
               </a>
-              <a href="#algorithms" className="hidden md:block transition hover:text-wave">
-                {t('algorithms')}
-              </a>
               <Link
                 href="/playground"
-                className="rounded-full bg-gradient-to-r from-signal to-amber px-3 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-sm font-bold text-white shadow-[0_2px_14px_rgba(255,101,53,0.4)] transition hover:opacity-90 glow-signal shrink-0"
+                className="rounded-full bg-signal px-3 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-sm font-semibold text-white shadow-[0_2px_12px_rgba(232,98,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(232,98,42,0.45)] shrink-0"
               >
                 {t('playground')}
               </Link>

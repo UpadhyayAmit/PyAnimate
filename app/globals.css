@@ -1,6 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Content scanning — replaces tailwind.config.ts content array */
+@source '../app/**/*.{js,ts,jsx,tsx,mdx}';
+@source '../components/**/*.{js,ts,jsx,tsx,mdx}';
+@source '../data/**/*.{js,ts,tsx}';
+
+/* Custom theme variants */
+@variant light ([data-theme='light'] &);
+@variant ocean ([data-theme='ocean'] &);
+@variant sepia ([data-theme='sepia'] &);
+@variant midnight ([data-theme='midnight'] &);
+@variant nord ([data-theme='nord'] &);
+@variant rose ([data-theme='rose'] &);
+
+/* ─── Brand & adaptive color tokens ────────────────────────────────────────
+   Tailwind 4 @theme: auto-generates bg-signal, text-ink, shadow-panel, etc.
+   Adaptive colors reference --ink/--bright/etc. vars from theme blocks below.
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Static brand colors */
+  --color-signal: #ff6535;
+  --color-wave: #38bdf8;
+  --color-leaf: #4ade80;
+  --color-gold: #fcd34d;
+  --color-neon: #a78bfa;
+
+  /* Adaptive semantic colors — resolved via CSS vars that change per-theme */
+  --color-ink: var(--ink);
+  --color-bright: var(--bright);
+  --color-cream: var(--cream);
+  --color-parchment: var(--parchment);
+  --color-mist: var(--mist);
+
+  /* Other utilities */
+  --font-family-sans: var(--font-sans), sans-serif;
+  --shadow-panel: 0 24px 60px rgba(8, 17, 31, 0.12);
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
    THEME SYSTEM
@@ -8,7 +43,7 @@
    Adding a new theme = one new [data-theme='x'] block below. Nothing else.
 
    Semantic tokens:
-     --color-ink        body / secondary text (rgb triplet for Tailwind alpha)
+     --color-ink        body / secondary text
      --color-bright     headings / primary text
      --color-cream      page background
      --color-parchment  card / elevated surface background
@@ -33,11 +68,11 @@
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --color-ink: 168 179 190;
-  --color-bright: 226 234 243;
-  --color-cream: 13 17 23;
-  --color-parchment: 22 27 34;
-  --color-mist: 28 33 40;
+  --ink: rgb(168 179 190);
+  --bright: rgb(226 234 243);
+  --cream: rgb(13 17 23);
+  --parchment: rgb(22 27 34);
+  --mist: rgb(28 33 40);
 
   --background: #0a0f1a;
   --foreground: #a8b3be;
@@ -88,66 +123,66 @@
 [data-theme='light'] {
   color-scheme: light;
 
-  --color-ink: 51 65 85;
-  --color-bright: 15 23 42;
-  --color-cream: 241 245 249;
-  --color-parchment: 255 255 255;
-  --color-mist: 226 232 240;
+  --ink: rgb(30 41 59);
+  --bright: rgb(15 23 42);
+  --cream: rgb(248 250 252);
+  --parchment: rgb(255 255 255);
+  --mist: rgb(241 245 249);
 
-  --background: #f1f5f9;
-  --foreground: #334155;
-  --panel: rgba(255, 255, 255, 0.97);
-  --panel-strong: #f8fafc;
-  --border: rgba(15, 23, 42, 0.1);
-  --border-warm: rgba(15, 23, 42, 0.12);
+  --background: #f6f8fb;
+  --foreground: #0f172a;
+  --panel: rgba(255, 255, 255, 0.75);
+  --panel-strong: rgba(255, 255, 255, 0.95);
+  --border: rgba(15, 23, 42, 0.12);
+  --border-warm: rgba(14, 165, 233, 0.15);
 
-  --surface-code: #e8eef6;
-  --surface-code-text: rgba(15, 23, 42, 0.88);
-  --surface-chart: #eef2f9;
+  --surface-code: #ffffff;
+  --surface-code-text: #0f172a;
+  --surface-chart: #f8fafc;
   --surface-node: #ffffff;
-  --surface-preview: #eef2fb;
+  --surface-preview: rgba(255, 255, 255, 0.85);
 
-  --nav-border-color: rgba(15, 23, 42, 0.1);
-  --pill-bg: rgba(15, 23, 42, 0.06);
-  --pill-text: #334155;
-  --pill-border: rgba(15, 23, 42, 0.12);
+  --nav-border-color: rgba(15, 23, 42, 0.14);
+  --pill-bg: rgba(14, 165, 233, 0.08); /* changed from grayscale to subtle sky blue */
+  --pill-text: #0369a1;
+  --pill-border: rgba(14, 165, 233, 0.15);
 
-  --card-bg: #ffffff;
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.04);
-  --card-hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 16px 40px rgba(0, 0, 0, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 1px 4px rgba(15, 23, 42, 0.08), 0 4px 16px -4px rgba(15, 23, 42, 0.06);
+  --card-hover-shadow: 0 12px 30px -4px rgba(14, 165, 233, 0.12), 0 1px 4px rgba(15, 23, 42, 0.08);
 
-  --glass-bg: rgba(255, 255, 255, 0.92);
-  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.07);
 
-  --timeline-bg: rgba(15, 23, 42, 0.03);
-  --timeline-hover: rgba(15, 23, 42, 0.07);
-  --memory-card-bg: #f8fafc;
-  --memory-card-border: rgba(15, 23, 42, 0.09);
-  --memory-empty-bg: rgba(241, 245, 249, 0.9);
+  --timeline-bg: rgba(15, 23, 42, 0.02);
+  --timeline-hover: rgba(15, 23, 42, 0.05);
+  --memory-card-bg: rgba(255, 255, 255, 0.8);
+  --memory-card-border: rgba(15, 23, 42, 0.05);
+  --memory-empty-bg: rgba(241, 245, 249, 0.6);
 
-  --scrollbar-thumb: rgba(15, 23, 42, 0.15);
-  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.28);
+  --scrollbar-thumb: rgba(15, 23, 42, 0.1);
+  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.2);
 
-  --progress-track: rgba(15, 23, 42, 0.08);
-  --pipeline-node-bg: #ffffff;
-  --pipeline-node-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  --progress-track: rgba(15, 23, 42, 0.05);
+  --pipeline-node-bg: rgba(255, 255, 255, 0.8);
+  --pipeline-node-shadow: 0 4px 15px -3px rgba(14, 165, 233, 0.06);
 
+  /* Very subtle, wide gradient to give the white background an organic premium feel */
   --body-gradient:
-    radial-gradient(ellipse 70% 45% at 8% -8%, rgba(255, 101, 53, 0.07), transparent),
-    radial-gradient(ellipse 55% 40% at 92% 4%, rgba(56, 189, 248, 0.06), transparent),
-    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(74, 222, 128, 0.04), transparent),
-    radial-gradient(ellipse 40% 35% at 75% 50%, rgba(167, 139, 250, 0.03), transparent);
+    radial-gradient(circle 800px at 0% 0%, rgba(224, 242, 254, 0.6), transparent),
+    radial-gradient(circle 600px at 100% 50%, rgba(219, 234, 254, 0.5), transparent),
+    radial-gradient(circle 800px at 50% 100%, rgba(204, 251, 241, 0.4), transparent);
 }
 
 /* ── OCEAN ──────────────────────────────────────────────────────────────── */
 [data-theme='ocean'] {
   color-scheme: dark;
 
-  --color-ink: 148 193 220;
-  --color-bright: 224 242 254;
-  --color-cream: 4 16 32;
-  --color-parchment: 8 24 44;
-  --color-mist: 12 32 56;
+  --ink: rgb(148 193 220);
+  --bright: rgb(224 242 254);
+  --cream: rgb(4 16 32);
+  --parchment: rgb(8 24 44);
+  --mist: rgb(12 32 56);
 
   --background: #040f1e;
   --foreground: #94c1dc;
@@ -198,11 +233,11 @@
 [data-theme='sepia'] {
   color-scheme: light;
 
-  --color-ink: 101 78 55;
-  --color-bright: 41 25 10;
-  --color-cream: 245 235 220;
-  --color-parchment: 254 249 242;
-  --color-mist: 237 223 205;
+  --ink: rgb(101 78 55);
+  --bright: rgb(41 25 10);
+  --cream: rgb(245 235 220);
+  --parchment: rgb(254 249 242);
+  --mist: rgb(237 223 205);
 
   --background: #f5efe6;
   --foreground: #5a4a38;
@@ -247,6 +282,170 @@
     radial-gradient(ellipse 55% 40% at 92% 4%, rgba(180, 120, 60, 0.06), transparent),
     radial-gradient(ellipse 50% 50% at 50% 100%, rgba(120, 80, 40, 0.04), transparent),
     radial-gradient(ellipse 40% 35% at 75% 50%, rgba(200, 150, 80, 0.03), transparent);
+}
+
+/* ── MIDNIGHT ────────────────────────────────────────────────────────────── */
+[data-theme='midnight'] {
+  color-scheme: dark;
+
+  --ink: rgb(189 180 210);
+  --bright: rgb(230 224 245);
+  --cream: rgb(13 11 20);
+  --parchment: rgb(20 17 30);
+  --mist: rgb(27 23 40);
+
+  --background: #0d0b14;
+  --foreground: #bdb4d2;
+  --panel: rgba(20, 17, 30, 0.95);
+  --panel-strong: #1a1626;
+  --border: rgba(189, 147, 249, 0.1);
+  --border-warm: rgba(189, 147, 249, 0.16);
+
+  --surface-code: #0b0910;
+  --surface-code-text: rgba(230, 224, 245, 0.85);
+  --surface-chart: #0f0d1a;
+  --surface-node: #0b0910;
+  --surface-preview: #080610;
+
+  --nav-border-color: rgba(189, 147, 249, 0.12);
+  --pill-bg: rgba(189, 147, 249, 0.08);
+  --pill-text: rgba(189, 180, 210, 0.85);
+  --pill-border: rgba(189, 147, 249, 0.14);
+
+  --card-bg: #16122a;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 16px 40px rgba(13, 0, 30, 0.5);
+  --card-hover-shadow: 0 4px 24px rgba(189, 147, 249, 0.14), 0 16px 40px rgba(13, 0, 30, 0.5);
+
+  --glass-bg: rgba(20, 17, 30, 0.92);
+  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(13, 0, 30, 0.4);
+
+  --timeline-bg: rgba(189, 147, 249, 0.04);
+  --timeline-hover: rgba(189, 147, 249, 0.1);
+  --memory-card-bg: #0f0d1a;
+  --memory-card-border: rgba(189, 147, 249, 0.08);
+  --memory-empty-bg: rgba(189, 147, 249, 0.03);
+
+  --scrollbar-thumb: rgba(189, 147, 249, 0.18);
+  --scrollbar-thumb-hover: rgba(189, 147, 249, 0.32);
+
+  --progress-track: rgba(189, 147, 249, 0.1);
+  --pipeline-node-bg: #16122a;
+  --pipeline-node-shadow: 0 0 12px rgba(189, 147, 249, 0.1);
+
+  --body-gradient:
+    radial-gradient(ellipse 70% 45% at 8% -8%, rgba(189, 147, 249, 0.16), transparent),
+    radial-gradient(ellipse 55% 40% at 92% 4%, rgba(99, 102, 241, 0.12), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(139, 92, 246, 0.1), transparent),
+    radial-gradient(ellipse 40% 35% at 75% 50%, rgba(244, 114, 182, 0.07), transparent);
+}
+
+/* ── NORD ─────────────────────────────────────────────────────────────────── */
+[data-theme='nord'] {
+  color-scheme: dark;
+
+  --ink: rgb(216 222 233);
+  --bright: rgb(236 239 244);
+  --cream: rgb(46 52 64);
+  --parchment: rgb(59 66 82);
+  --mist: rgb(67 76 94);
+
+  --background: #2e3440;
+  --foreground: #d8dee9;
+  --panel: rgba(59, 66, 82, 0.95);
+  --panel-strong: #3b4252;
+  --border: rgba(136, 192, 208, 0.14);
+  --border-warm: rgba(136, 192, 208, 0.2);
+
+  --surface-code: #292e39;
+  --surface-code-text: rgba(236, 239, 244, 0.85);
+  --surface-chart: #2e3440;
+  --surface-node: #292e39;
+  --surface-preview: #252b36;
+
+  --nav-border-color: rgba(136, 192, 208, 0.14);
+  --pill-bg: rgba(136, 192, 208, 0.08);
+  --pill-text: rgba(216, 222, 233, 0.85);
+  --pill-border: rgba(136, 192, 208, 0.16);
+
+  --card-bg: #3b4252;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 4px 24px rgba(136, 192, 208, 0.14), 0 16px 40px rgba(0, 0, 0, 0.3);
+
+  --glass-bg: rgba(59, 66, 82, 0.92);
+  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  --timeline-bg: rgba(136, 192, 208, 0.04);
+  --timeline-hover: rgba(136, 192, 208, 0.1);
+  --memory-card-bg: #2e3440;
+  --memory-card-border: rgba(136, 192, 208, 0.1);
+  --memory-empty-bg: rgba(136, 192, 208, 0.04);
+
+  --scrollbar-thumb: rgba(136, 192, 208, 0.18);
+  --scrollbar-thumb-hover: rgba(136, 192, 208, 0.32);
+
+  --progress-track: rgba(136, 192, 208, 0.1);
+  --pipeline-node-bg: #3b4252;
+  --pipeline-node-shadow: 0 0 12px rgba(136, 192, 208, 0.08);
+
+  --body-gradient:
+    radial-gradient(ellipse 70% 45% at 8% -8%, rgba(136, 192, 208, 0.14), transparent),
+    radial-gradient(ellipse 55% 40% at 92% 4%, rgba(129, 161, 193, 0.1), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(94, 129, 172, 0.09), transparent),
+    radial-gradient(ellipse 40% 35% at 75% 50%, rgba(163, 190, 140, 0.06), transparent);
+}
+
+/* ── ROSE ─────────────────────────────────────────────────────────────────── */
+[data-theme='rose'] {
+  color-scheme: light;
+
+  --ink: rgb(64 32 48);
+  --bright: rgb(33 11 22);
+  --cream: rgb(255 246 250);
+  --parchment: rgb(255 249 252);
+  --mist: rgb(252 231 243);
+
+  --background: #fdf2f8;
+  --foreground: #4a1942;
+  --panel: rgba(255, 249, 252, 0.9);
+  --panel-strong: rgba(255, 255, 255, 0.95);
+  --border: rgba(219, 39, 119, 0.12);
+  --border-warm: rgba(219, 39, 119, 0.18);
+
+  --surface-code: #fff0f6;
+  --surface-code-text: #3d0f2a;
+  --surface-chart: #fcf0f7;
+  --surface-node: #fff5fa;
+  --surface-preview: #ffe8f4;
+
+  --nav-border-color: rgba(219, 39, 119, 0.14);
+  --pill-bg: rgba(219, 39, 119, 0.07);
+  --pill-text: #9d174d;
+  --pill-border: rgba(219, 39, 119, 0.14);
+
+  --card-bg: rgba(255, 249, 252, 0.75);
+  --card-shadow: 0 1px 4px rgba(219, 39, 119, 0.07), 0 4px 16px rgba(219, 39, 119, 0.05);
+  --card-hover-shadow: 0 8px 30px rgba(219, 39, 119, 0.13), 0 1px 4px rgba(219, 39, 119, 0.08);
+
+  --glass-bg: rgba(255, 249, 252, 0.8);
+  --glass-shadow: 0 8px 32px rgba(219, 39, 119, 0.07);
+
+  --timeline-bg: rgba(219, 39, 119, 0.02);
+  --timeline-hover: rgba(219, 39, 119, 0.06);
+  --memory-card-bg: rgba(255, 249, 252, 0.9);
+  --memory-card-border: rgba(219, 39, 119, 0.08);
+  --memory-empty-bg: rgba(252, 231, 243, 0.7);
+
+  --scrollbar-thumb: rgba(219, 39, 119, 0.14);
+  --scrollbar-thumb-hover: rgba(219, 39, 119, 0.26);
+
+  --progress-track: rgba(219, 39, 119, 0.07);
+  --pipeline-node-bg: rgba(255, 249, 252, 0.85);
+  --pipeline-node-shadow: 0 2px 10px rgba(219, 39, 119, 0.07);
+
+  --body-gradient:
+    radial-gradient(circle 700px at 0% 0%, rgba(253, 209, 238, 0.7), transparent),
+    radial-gradient(circle 600px at 100% 50%, rgba(251, 207, 232, 0.5), transparent),
+    radial-gradient(circle 700px at 50% 100%, rgba(245, 208, 254, 0.4), transparent);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -487,6 +686,12 @@ select option {
   background: rgba(232, 98, 42, 0.14);
   border: 1px solid rgba(232, 98, 42, 0.3);
   border-radius: 6px;
+}
+
+/* ── Section dividers for light/sepia themes ─────────────────────────────── */
+[data-theme='light'] section:not(:last-of-type),
+[data-theme='sepia'] section:not(:last-of-type) {
+  border-bottom: 1px solid var(--border);
 }
 
 .pyanimate-active-line-glyph {

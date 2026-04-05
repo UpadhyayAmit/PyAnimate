@@ -2,10 +2,10 @@ export default function NotFound() {
   return (
     <html data-scroll-behavior="smooth">
       <body>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'system-ui, sans-serif', color: '#1e293b' }}>
-          <h1 style={{ fontSize: '4rem', fontWeight: 'bold', margin: '0' }}>404</h1>
-          <p style={{ fontSize: '1.25rem', marginTop: '1rem' }}>Page not found.</p>
-          <a href="/" style={{ marginTop: '2rem', padding: '0.75rem 1.5rem', backgroundColor: '#0ea5e9', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: '500' }}>
+        <div className="flex flex-col items-center justify-center h-screen font-sans text-slate-800">
+          <h1 className="text-6xl font-bold m-0">404</h1>
+          <p className="text-xl mt-4">Page not found.</p>
+          <a href="/" className="mt-8 px-6 py-3 bg-sky-500 text-white rounded-lg no-underline font-medium hover:bg-sky-600 transition-colors">
             Return Home
           </a>
         </div>

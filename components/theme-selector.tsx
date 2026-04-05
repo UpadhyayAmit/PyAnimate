@@ -47,7 +47,7 @@ export function ThemeSelector() {
         aria-label="Change theme"
         aria-expanded={open}
         className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium
-                   text-[rgb(var(--color-ink))] hover:text-[rgb(var(--color-bright))]
+                   text-ink hover:text-bright
                    border border-[var(--border)] hover:border-[var(--border-warm)]
                    bg-[var(--pill-bg)] hover:bg-[var(--timeline-hover)]
                    transition-all duration-150"
@@ -80,7 +80,7 @@ export function ThemeSelector() {
         >
           <div
             className="px-2 py-1.5 text-[10px] font-semibold uppercase tracking-widest opacity-40
-                          text-[rgb(var(--color-ink))] border-b border-[var(--border)]"
+                          text-ink border-b border-[var(--border)]"
           >
             Theme
           </div>
@@ -95,11 +95,7 @@ export function ThemeSelector() {
                 }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm text-left
                             transition-colors duration-100
-                            ${
-                              active
-                                ? 'text-[rgb(var(--color-bright))] bg-[var(--timeline-hover)]'
-                                : 'text-[rgb(var(--color-ink))] hover:text-[rgb(var(--color-bright))] hover:bg-[var(--timeline-bg)]'
-                            }`}
+                            ${active ? 'text-bright bg-[var(--timeline-hover)]' : 'text-ink hover:text-bright hover:bg-[var(--timeline-bg)]'}}`}
               >
                 {/* Color swatch */}
                 <span
@@ -109,7 +105,7 @@ export function ThemeSelector() {
                 <span className="flex-1">{t.label}</span>
                 {/* Checkmark for active */}
                 {active && (
-                  <svg className="w-3.5 h-3.5 text-[#ff6535] flex-shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-3.5 h-3.5 text-signal flex-shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
                     <path d="M3 8l3.5 3.5 6.5-7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}

@@ -6,61 +6,35 @@ import { ArrowRight } from 'lucide-react';
 import { lessonCards } from '@/data/course';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useTheme } from '@/lib/theme';
 
-const cardStylesDark = [
+// Dark is the base. light: and sepia: prefixes override for light/sepia themes.
+const cardStyles = [
   {
-    card: 'bg-gradient-to-br from-sky-950/70 to-indigo-900/40 border-sky-700/30',
-    pill: 'bg-sky-900/60 text-sky-300',
-    link: 'text-sky-400',
-    duration: 'bg-sky-900/40 text-sky-400',
-    divider: 'border-sky-800/40',
+    card: 'bg-gradient-to-br from-sky-950/70 to-indigo-900/40 border-sky-700/30 light:from-sky-100 light:to-indigo-100 light:border-sky-200 sepia:from-sky-50 sepia:to-amber-50/40 sepia:border-sky-200',
+    pill: 'bg-sky-900/60 text-sky-300 light:bg-sky-100 light:text-sky-700 sepia:bg-sky-100 sepia:text-sky-700',
+    link: 'text-sky-400 light:text-sky-600 sepia:text-sky-700',
+    duration: 'bg-sky-900/40 text-sky-400 light:bg-sky-100 light:text-sky-600 sepia:bg-sky-100 sepia:text-sky-700',
+    divider: 'border-sky-800/40 light:border-sky-200 sepia:border-sky-200',
   },
   {
-    card: 'bg-gradient-to-br from-emerald-950/70 to-teal-900/40 border-emerald-700/30',
-    pill: 'bg-emerald-900/60 text-emerald-300',
-    link: 'text-emerald-400',
-    duration: 'bg-emerald-900/40 text-emerald-400',
-    divider: 'border-emerald-800/40',
+    card: 'bg-gradient-to-br from-emerald-950/70 to-teal-900/40 border-emerald-700/30 light:from-emerald-100 light:to-teal-100 light:border-emerald-200 sepia:from-emerald-50 sepia:to-amber-50/40 sepia:border-emerald-200',
+    pill: 'bg-emerald-900/60 text-emerald-300 light:bg-emerald-100 light:text-emerald-700 sepia:bg-emerald-100 sepia:text-emerald-700',
+    link: 'text-emerald-400 light:text-emerald-600 sepia:text-emerald-700',
+    duration: 'bg-emerald-900/40 text-emerald-400 light:bg-emerald-100 light:text-emerald-600 sepia:bg-emerald-100 sepia:text-emerald-700',
+    divider: 'border-emerald-800/40 light:border-emerald-200 sepia:border-emerald-200',
   },
   {
-    card: 'bg-gradient-to-br from-orange-950/70 to-amber-900/40 border-orange-700/30',
-    pill: 'bg-orange-900/60 text-orange-300',
-    link: 'text-orange-400',
-    duration: 'bg-orange-900/40 text-orange-400',
-    divider: 'border-orange-800/40',
-  },
-];
-
-const cardStylesLight = [
-  {
-    card: 'bg-gradient-to-br from-sky-50 to-indigo-50/70 border-sky-200/60',
-    pill: 'bg-sky-100 text-sky-700',
-    link: 'text-sky-600',
-    duration: 'bg-sky-50 text-sky-600',
-    divider: 'border-sky-200/60',
-  },
-  {
-    card: 'bg-gradient-to-br from-emerald-50 to-teal-50/70 border-emerald-200/60',
-    pill: 'bg-emerald-100 text-emerald-700',
-    link: 'text-emerald-600',
-    duration: 'bg-emerald-50 text-emerald-600',
-    divider: 'border-emerald-200/60',
-  },
-  {
-    card: 'bg-gradient-to-br from-orange-50 to-amber-50/70 border-orange-200/60',
-    pill: 'bg-orange-100 text-orange-700',
-    link: 'text-orange-600',
-    duration: 'bg-orange-50 text-orange-600',
-    divider: 'border-orange-200/60',
+    card: 'bg-gradient-to-br from-orange-950/70 to-amber-900/40 border-orange-700/30 light:from-orange-100 light:to-amber-100 light:border-orange-200 sepia:from-orange-50 sepia:to-amber-100/60 sepia:border-orange-200',
+    pill: 'bg-orange-900/60 text-orange-300 light:bg-orange-100 light:text-orange-700 sepia:bg-orange-100 sepia:text-orange-700',
+    link: 'text-orange-400 light:text-orange-600 sepia:text-orange-700',
+    duration: 'bg-orange-900/40 text-orange-400 light:bg-orange-100 light:text-orange-600 sepia:bg-orange-100 sepia:text-orange-700',
+    divider: 'border-orange-800/40 light:border-orange-200 sepia:border-orange-200',
   },
 ];
 
 export function LessonSpotlight() {
   const t = useTranslations('LessonSpotlight');
   const router = useRouter();
-  const { theme } = useTheme();
-  const cardStyles = theme === 'light' ? cardStylesLight : cardStylesDark;
   return (
     <section id="algorithms" className="px-6 py-10 sm:px-10 lg:px-16">
       <div className="site-shell">

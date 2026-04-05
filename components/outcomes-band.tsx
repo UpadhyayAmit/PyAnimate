@@ -3,70 +3,36 @@
 import { motion } from 'framer-motion';
 import { Eye, FlaskConical, Layers } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useTheme } from '@/lib/theme';
 
-const outcomeStylesDark = [
+// Dark is the base. light: prefix overrides for light theme — same pattern as track-grid / lesson-spotlight.
+const outcomeStyles = [
   {
-    card: 'bg-gradient-to-br from-sky-950/80 to-blue-900/50 border-sky-500/40',
-    iconBg: 'bg-sky-500/20 border border-sky-500/30',
-    icon: 'text-wave neon-text-wave',
+    card: 'bg-gradient-to-br from-sky-950/80 to-blue-900/50 border-sky-500/40 light:bg-none light:bg-parchment light:border-sky-200/70 light:shadow-[0_2px_16px_rgba(56,189,248,0.1)] light:hover:shadow-[0_6px_28px_rgba(56,189,248,0.18)]',
+    iconBg: 'bg-sky-500/20 border border-sky-500/30 light:bg-sky-50 light:border-sky-200',
+    icon: 'text-wave light:text-sky-600',
     titleColor: 'text-bright',
     descColor: 'text-ink/60',
   },
   {
-    card: 'bg-gradient-to-br from-emerald-950/80 to-teal-900/50 border-emerald-500/40',
-    iconBg: 'bg-emerald-500/20 border border-emerald-500/30',
-    icon: 'text-leaf neon-text-leaf',
+    card: 'bg-gradient-to-br from-emerald-950/80 to-teal-900/50 border-emerald-500/40 light:bg-none light:bg-parchment light:border-emerald-200/70 light:shadow-[0_2px_16px_rgba(52,211,153,0.1)] light:hover:shadow-[0_6px_28px_rgba(52,211,153,0.18)]',
+    iconBg: 'bg-emerald-500/20 border border-emerald-500/30 light:bg-emerald-50 light:border-emerald-200',
+    icon: 'text-leaf light:text-emerald-600',
     titleColor: 'text-bright',
     descColor: 'text-ink/60',
   },
   {
-    card: 'bg-gradient-to-br from-orange-950/80 to-amber-900/50 border-orange-500/40',
-    iconBg: 'bg-orange-500/20 border border-orange-500/30',
-    icon: 'text-signal neon-text-signal',
-    titleColor: 'text-bright',
-    descColor: 'text-ink/60',
-  },
-];
-
-const outcomeStylesLight = [
-  {
-    card: 'bg-white border-sky-200/70 shadow-[0_2px_16px_rgba(56,189,248,0.1)] hover:shadow-[0_6px_28px_rgba(56,189,248,0.18)]',
-    iconBg: 'bg-sky-50 border border-sky-200',
-    icon: 'text-sky-600',
-    titleColor: 'text-slate-900',
-    descColor: 'text-slate-500',
-  },
-  {
-    card: 'bg-white border-emerald-200/70 shadow-[0_2px_16px_rgba(52,211,153,0.1)] hover:shadow-[0_6px_28px_rgba(52,211,153,0.18)]',
-    iconBg: 'bg-emerald-50 border border-emerald-200',
-    icon: 'text-emerald-600',
-    titleColor: 'text-slate-900',
-    descColor: 'text-slate-500',
-  },
-  {
-    card: 'bg-white border-orange-200/70 shadow-[0_2px_16px_rgba(232,98,42,0.1)] hover:shadow-[0_6px_28px_rgba(232,98,42,0.18)]',
-    iconBg: 'bg-orange-50 border border-orange-200',
+    card: 'bg-gradient-to-br from-orange-950/80 to-amber-900/50 border-orange-500/40 light:bg-none light:bg-parchment light:border-orange-200/70 light:shadow-[0_2px_16px_rgba(232,98,42,0.1)] light:hover:shadow-[0_6px_28px_rgba(232,98,42,0.18)]',
+    iconBg: 'bg-orange-500/20 border border-orange-500/30 light:bg-orange-50 light:border-orange-200',
     icon: 'text-signal',
-    titleColor: 'text-slate-900',
-    descColor: 'text-slate-500',
+    titleColor: 'text-bright',
+    descColor: 'text-ink/60',
   },
 ];
 
 const outcomeIcons = [Eye, Layers, FlaskConical];
 
-import { useState, useEffect } from 'react';
-
 export function OutcomesBand() {
   const t = useTranslations('Outcomes');
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const outcomeStyles = mounted && theme === 'light' ? outcomeStylesLight : outcomeStylesDark;
 
   const outcomes = [
     { titleKey: 'traceTitle' as const, descKey: 'traceDesc' as const },
