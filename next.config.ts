@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      // Serve the site logo SVG as favicon to stop browser 404 for /favicon.ico
+      { source: '/favicon.ico', destination: '/icon.svg' },
+    ];
+  },
   async headers() {
     return [
       {

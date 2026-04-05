@@ -5,6 +5,10 @@
 @source '../components/**/*.{js,ts,jsx,tsx,mdx}';
 @source '../data/**/*.{js,ts,tsx}';
 
+/* Dynamic class safelist — Tailwind 4 doesn't extract classes from JS object values,
+   so any class built at runtime (eventConfig, varCardStyles) must be listed here. */
+@source inline("bg-signal/8 bg-signal/20 text-signal/70 border-signal/30 bg-wave/8 bg-wave/20 text-wave/70 border-wave/30 bg-neon/8 bg-neon/20 text-neon/70 border-neon/30 from-wave/15 to-wave/5 border-wave/25 text-wave text-wave/60 from-gold/15 to-gold/5 border-gold/25 text-gold text-gold/60 from-leaf/15 to-leaf/5 border-leaf/25 text-leaf text-leaf/60 bg-gradient-to-br");
+
 /* Custom theme variants */
 @variant light ([data-theme='light'] &);
 @variant ocean ([data-theme='ocean'] &);
@@ -20,6 +24,7 @@
 @theme {
   /* Static brand colors */
   --color-signal: #ff6535;
+  --color-amber: #fbbf24;
   --color-wave: #38bdf8;
   --color-leaf: #4ade80;
   --color-gold: #fcd34d;
@@ -468,9 +473,11 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 pre,
