@@ -5,35 +5,150 @@ import { Link } from '@/i18n/routing';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { PlayCircle, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { executionFrames, heroStats } from '@/data/course';
+import { heroStats } from '@/data/course';
 
 const heroPreviewLines = [
-  { number: 1, code: 'score = 0' },
-  { number: 2, code: 'steps = [2, 4, 6]' },
-  { number: 4, code: 'for step in steps:' },
-  { number: 5, code: '    score = score + step' },
-  { number: 6, code: '    print("score:", score)' },
-  { number: 8, code: 'print("final:", score)' },
+  { number: 1, code: 'level = "Beginner"' },
+  { number: 2, code: 'topics = ["Lists", "Trees", "Graphs"]' },
+  { number: 4, code: 'for topic in topics:' },
+  { number: 5, code: '    if topic == "Trees":' },
+  { number: 6, code: '        level = "Intermediate"' },
+  { number: 7, code: '    if topic == "Graphs":' },
+  { number: 8, code: '        level = "Expert"' },
+];
+
+const heroExecutionFrames = [
+  { line: 1, summary: 'Start your journey as a Beginner.', event: 'assign', memory: [{ name: 'level', value: '"Beginner"' }] },
+  {
+    line: 2,
+    summary: 'Plan out the curriculum topics.',
+    event: 'assign',
+    memory: [
+      { name: 'level', value: '"Beginner"' },
+      { name: 'topics', value: '[...]' },
+    ],
+  },
+  {
+    line: 4,
+    summary: 'Begin daily practice (Topic: Lists).',
+    event: 'loop',
+    memory: [
+      { name: 'topic', value: '"Lists"' },
+      { name: 'level', value: '"Beginner"' },
+    ],
+  },
+  {
+    line: 5,
+    summary: 'Check intermediate milestone.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Lists"' },
+      { name: 'level', value: '"Beginner"' },
+    ],
+  },
+  {
+    line: 7,
+    summary: 'Check expert milestone.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Lists"' },
+      { name: 'level', value: '"Beginner"' },
+    ],
+  },
+  {
+    line: 4,
+    summary: 'Continue practice (Topic: Trees).',
+    event: 'loop',
+    memory: [
+      { name: 'topic', value: '"Trees"' },
+      { name: 'level', value: '"Beginner"' },
+    ],
+  },
+  {
+    line: 5,
+    summary: 'Trees reached! Milestone met.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Trees"' },
+      { name: 'level', value: '"Beginner"' },
+    ],
+  },
+  {
+    line: 6,
+    summary: 'Level up to Intermediate.',
+    event: 'assign',
+    memory: [
+      { name: 'topic', value: '"Trees"' },
+      { name: 'level', value: '"Intermediate"' },
+    ],
+  },
+  {
+    line: 7,
+    summary: 'Check expert milestone.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Trees"' },
+      { name: 'level', value: '"Intermediate"' },
+    ],
+  },
+  {
+    line: 4,
+    summary: 'Master advanced topics (Topic: Graphs).',
+    event: 'loop',
+    memory: [
+      { name: 'topic', value: '"Graphs"' },
+      { name: 'level', value: '"Intermediate"' },
+    ],
+  },
+  {
+    line: 5,
+    summary: 'Check intermediate milestone.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Graphs"' },
+      { name: 'level', value: '"Intermediate"' },
+    ],
+  },
+  {
+    line: 7,
+    summary: 'Graphs reached! Final milestone met.',
+    event: 'condition',
+    memory: [
+      { name: 'topic', value: '"Graphs"' },
+      { name: 'level', value: '"Intermediate"' },
+    ],
+  },
+  {
+    line: 8,
+    summary: 'Achieve Expert status.',
+    event: 'assign',
+    memory: [
+      { name: 'topic', value: '"Graphs"' },
+      { name: 'level', value: '"Expert"' },
+    ],
+  },
 ];
 
 export function Hero() {
   const t = useTranslations('Hero');
   const shouldReduceMotion = useReducedMotion();
   const [frameIndex, setFrameIndex] = useState(0);
-  const frame = executionFrames[frameIndex];
+  const frame = heroExecutionFrames[frameIndex];
 
   useEffect(() => {
     if (shouldReduceMotion) return;
     const timer = window.setInterval(() => {
-      setFrameIndex((current) => (current + 1) % executionFrames.length);
+      setFrameIndex((current) => (current + 1) % heroExecutionFrames.length);
     }, 1800);
     return () => window.clearInterval(timer);
   }, [shouldReduceMotion]);
 
   return (
     <section className="relative overflow-hidden px-4 pb-12 pt-8 sm:px-10 lg:px-16">
-      <div className="ambient-orb left-[6%] top-16 h-48 w-48 bg-amber/20" />
-      <div className="ambient-orb ambient-orb--slow ambient-orb--delay right-[8%] top-20 h-56 w-56 bg-wave/15" />
+      {/* Massive ambient background orbs */}
+      <div className="ambient-orb left-[-10%] top-0 h-[600px] w-[600px] bg-signal/15 opacity-60 blur-[100px]" />
+      <div className="ambient-orb ambient-orb--slow right-[-5%] top-20 h-[500px] w-[500px] bg-wave/20 opacity-50 blur-[100px]" />
+      <div className="ambient-orb ambient-orb--delay left-[40%] top-[-20%] h-[400px] w-[400px] bg-neon/15 opacity-40 blur-[80px]" />
 
       <div className="site-shell grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center xl:gap-16">
         {/* Left: headline + CTAs + stats */}
@@ -76,7 +191,7 @@ export function Hero() {
           >
             <Link
               href="/playground"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-signal to-amber px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(255,101,53,0.4)] glow-signal transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(232,98,42,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,98,42,0.4)]"
             >
               <PlayCircle className="h-4 w-4" />
               {t('openPlayground')}
@@ -126,8 +241,8 @@ export function Hero() {
               <span className="h-2 w-2 rounded-full bg-signal" />
               {t('executionPreview')}
             </div>
-            <span>
-              {t('step')} {frameIndex + 1} / {executionFrames.length}
+            <span suppressHydrationWarning>
+              {t('step')} {frameIndex + 1} / {heroExecutionFrames.length}
             </span>
           </div>
 
@@ -154,7 +269,7 @@ export function Hero() {
           {/* Memory cards + step label */}
           <div className="mt-4 grid grid-cols-2 gap-3">
             {/* Memory cards — show only numeric/short vars */}
-            {frame.memory.slice(0, 2).map((item, index) => (
+            {frame.memory.slice(0, 2).map((item: { name: string; value: string }, index: number) => (
               <motion.div
                 key={`${frameIndex}-${item.name}`}
                 initial={{ opacity: 0, scale: 0.94 }}
@@ -189,7 +304,7 @@ export function Hero() {
           {/* Progress bar */}
           <div className="mt-4 h-1 overflow-hidden rounded-full progress-track">
             <motion.div
-              animate={{ width: `${((frameIndex + 1) / executionFrames.length) * 100}%` }}
+              animate={{ width: `${((frameIndex + 1) / heroExecutionFrames.length) * 100}%` }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
               className="h-full rounded-full bg-signal"
             />

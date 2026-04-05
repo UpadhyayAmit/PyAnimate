@@ -3,7 +3,7 @@
 /**
  * Theme system — powered by next-themes.
  *
- * Supported themes: dark | light | ocean | sepia
+ * Supported themes: dark | light | ocean | sepia | midnight | nord | rose
  *
  * next-themes manages:
  *   - SSR-safe rendering (no flash)
@@ -19,13 +19,16 @@
 import React from 'react';
 import { ThemeProvider as NextThemesProvider, useTheme as useNextTheme } from 'next-themes';
 
-export type AppTheme = 'dark' | 'light' | 'ocean' | 'sepia';
+export type AppTheme = 'dark' | 'light' | 'ocean' | 'sepia' | 'midnight' | 'nord' | 'rose';
 
 export const THEMES: { id: AppTheme; label: string; preview: string }[] = [
   { id: 'dark', label: 'Dark', preview: '#0a0f1a' },
   { id: 'light', label: 'Light', preview: '#f8fafc' },
   { id: 'ocean', label: 'Ocean', preview: '#0a1628' },
   { id: 'sepia', label: 'Sepia', preview: '#f5efe6' },
+  { id: 'midnight', label: 'Midnight', preview: '#0d0b14' },
+  { id: 'nord', label: 'Nord', preview: '#2e3440' },
+  { id: 'rose', label: 'Rose', preview: '#fdf2f8' },
 ];
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -34,7 +37,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       attribute="data-theme"
       defaultTheme="dark"
       enableSystem={false}
-      themes={['dark', 'light', 'ocean', 'sepia']}
+      themes={['dark', 'light', 'ocean', 'sepia', 'midnight', 'nord', 'rose']}
       storageKey="pyanimate-theme"
     >
       {children}

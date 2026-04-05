@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
 import { Clock, Database, ExternalLink, Lock, Zap, CheckCircle2 } from 'lucide-react';
 import { useProgress } from '@/lib/use-progress';
 import { useEffect, useState } from 'react';
@@ -64,82 +65,122 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
 
       <TrackProgress algorithms={algorithms} />
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {algorithms.map((algo, index) => {
-          const completed = mounted && isComplete(algo.id);
-          const translatedDesc = tc.has(`algorithms.${algo.id}`) ? tc(`algorithms.${algo.id}`) : algo.description;
-          return (
-            <article
-              key={algo.id}
-              className={`card-elevated group relative flex flex-col rounded-[24px] overflow-hidden p-5 transition-all hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.18)] ${
-                completed ? 'ring-2 ring-leaf/30 border-leaf/40 bg-leaf/5' : ''
-              }`}
-            >
-              <div className={`absolute top-0 left-0 right-0 h-0.5 rounded-t-[24px] ${difficultyGradient[algo.difficulty] ?? ''}`} />
+      <div className="relative mx-auto mt-12 max-w-3xl md:max-w-5xl pb-10">
+        {/* Animated vertical data pipe — left on mobile, centered on md+ */}
+        <div className="absolute left-5 sm:left-8 md:left-1/2 md:-translate-x-1/2 top-10 bottom-10 w-[3px] rounded-full overflow-hidden bg-gradient-to-b from-ink/10 to-transparent">
+          <motion.div
+            className="w-full h-48 rounded-full shadow-[0_0_12px_var(--tw-shadow-color)] shadow-signal bg-signal"
+            animate={{ y: ['-200%', '800%'] }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          />
+        </div>
 
-              <span className="pointer-events-none absolute right-4 top-3 text-[28px] font-black text-ink/[0.07] leading-none select-none">
-                {String(index + 1).padStart(2, '0')}
-              </span>
+        <div className="space-y-10 sm:space-y-16">
+          {algorithms.map((algo, index) => {
+            const completed = mounted && isComplete(algo.id);
+            const translatedDesc = tc.has(`algorithms.${algo.id}`) ? tc(`algorithms.${algo.id}`) : algo.description;
 
-              <div className="mb-3 flex items-center justify-between">
-                <span className="text-xs font-bold text-ink/30 invisible">{String(index + 1).padStart(2, '0')}</span>
-                <span className={`diff-${algo.difficulty} rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em]`}>
-                  {difficultyLabel[algo.difficulty]}
-                </span>
-              </div>
-
-              <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-ink/40">
-                {categoryEmoji[algo.category.toLowerCase()] ?? ''} {algo.category}
-              </div>
-              <h3 className="text-base sm:text-lg font-semibold text-bright flex items-start sm:items-center gap-2">
-                <span className="leading-tight">{algo.title}</span>
-                {completed && <CheckCircle2 className="mt-0.5 sm:mt-0 h-4 w-4 shrink-0 text-leaf" />}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-6 text-ink/58">{translatedDesc}</p>
-
-              {algo.difficulty === 'easy' ? (
+            const isLeft = index % 2 === 0;
+            return (
+              <motion.div
+                key={algo.id}
+                initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className={`relative pl-14 sm:pl-20 ${isLeft ? 'md:pl-0 md:pr-[calc(50%+1.5rem)]' : 'md:pl-[calc(50%+1.5rem)]'}`}
+              >
+                {/* Node Dot — on left line for mobile, center line for md+ */}
                 <div
-                  className="mt-4 flex items-center gap-1.5 rounded-full bg-ink/5 px-4 py-1.5 text-xs text-ink/40 w-fit cursor-help"
-                  title={t('complexityHidden')}
+                  className={`absolute left-5 sm:left-8 md:left-1/2 top-1/2 w-4 h-4 rounded-full -translate-x-1/2 -translate-y-1/2 border-[3px] border-parchment z-10 transition-colors duration-500 ${completed ? 'bg-leaf shadow-[0_0_12px_rgba(52,211,153,0.8)]' : 'bg-ink/20'}`}
+                />
+
+                {/* Branch Line — connects card edge to center dot */}
+                <div
+                  className={`absolute top-1/2 h-[2px] -translate-y-1/2 -z-10 transition-colors duration-500 ${completed ? 'bg-leaf/30' : 'bg-ink/10'} ${
+                    isLeft ? 'left-5 sm:left-8 w-9 sm:w-12 md:left-auto md:right-1/2 md:w-6' : 'left-5 sm:left-8 w-9 sm:w-12 md:left-1/2 md:w-6'
+                  }`}
+                />
+
+                <article
+                  className={`card-elevated group relative flex flex-col rounded-[24px] overflow-hidden p-6 sm:p-8 transition-all hover:shadow-[0_12px_45px_rgba(0,0,0,0.12)] ${
+                    completed ? 'ring-[1.5px] ring-leaf/30 border-leaf/20 bg-leaf/5' : ''
+                  }`}
                 >
-                  <Zap className="h-3 w-3 opacity-50" />
-                  <span>{t('complexityHidden')}</span>
-                </div>
-              ) : (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <div className="flex items-center gap-1.5 rounded-full bg-signal/8 px-3 py-1 text-xs text-signal/80">
-                    <Zap className="h-3 w-3" />
-                    <span>
-                      {t('time')}: {algo.timeComplexity}
-                    </span>
+                  <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-[24px] ${difficultyGradient[algo.difficulty] ?? ''}`} />
+
+                  <span className="pointer-events-none absolute right-6 top-6 text-[48px] font-black text-ink/[0.04] leading-none select-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className={`diff-${algo.difficulty} rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em]`}>
+                        {difficultyLabel[algo.difficulty]}
+                      </span>
+                      <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink/40">
+                        {categoryEmoji[algo.category.toLowerCase()] ?? ''} {algo.category}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-wave/8 px-3 py-1 text-xs text-wave/80">
-                    <Database className="h-3 w-3" />
-                    <span>
-                      {t('space')}: {algo.spaceComplexity}
-                    </span>
+
+                  <h3 className="text-xl sm:text-2xl font-bold text-bright flex items-center gap-3">
+                    <span className="leading-tight">{algo.title}</span>
+                    {completed && (
+                      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="shrink-0">
+                        <CheckCircle2 className="h-6 w-6 text-leaf drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
+                      </motion.div>
+                    )}
+                  </h3>
+                  <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink/60">{translatedDesc}</p>
+
+                  {algo.difficulty === 'easy' ? (
+                    <div
+                      className="mt-6 flex items-center gap-1.5 rounded-full bg-ink/5 px-4 py-2 text-xs font-medium text-ink/40 w-fit cursor-help border border-ink/5"
+                      title={t('complexityHidden')}
+                    >
+                      <Zap className="h-3.5 w-3.5 opacity-50" />
+                      <span>{t('complexityHidden')}</span>
+                    </div>
+                  ) : (
+                    <div className="mt-6 flex flex-wrap gap-2 sm:gap-3">
+                      <div className="flex items-center gap-2 rounded-full bg-signal/10 border border-signal/15 px-4 py-1.5 text-[13px] font-mono text-signal/90">
+                        <Zap className="h-3.5 w-3.5 text-signal" />
+                        <span>
+                          {t('time')}: {algo.timeComplexity}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 rounded-full bg-wave/10 border border-wave/15 px-4 py-1.5 text-[13px] font-mono text-wave/90">
+                        <Database className="h-3.5 w-3.5 text-wave" />
+                        <span>
+                          {t('space')}: {algo.spaceComplexity}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/5 pt-6">
+                    <div className="flex items-center gap-2 text-[13px] font-semibold text-ink/40 uppercase tracking-widest">
+                      <Clock className="h-4 w-4" />
+                      {algo.duration}
+                    </div>
+
+                    <Link
+                      href={`/playground?lesson=${algo.id}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(232,98,42,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,98,42,0.4)]"
+                    >
+                      {completed ? t('review') : t('start')} <ExternalLink className="h-4 w-4" />
+                    </Link>
                   </div>
-                </div>
-              )}
-
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink/6 pt-4">
-                <div className="flex items-center gap-1.5 text-xs text-ink/40">
-                  <Clock className="h-3.5 w-3.5" />
-                  {algo.duration}
-                </div>
-
-                <Link
-                  href={`/playground?lesson=${algo.id}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2 text-sm font-bold text-white shadow-[0_4px_14px_rgba(232,98,42,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,98,42,0.4)]"
-                >
-                  {completed ? t('review') : t('start')} <ExternalLink className="h-4 w-4" />
-                </Link>
-              </div>
-
-              <div className="absolute right-5 top-5 h-2 w-2 rounded-full bg-leaf animate-pulse" />
-            </article>
-          );
-        })}
+                </article>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

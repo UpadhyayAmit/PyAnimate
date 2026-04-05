@@ -100,9 +100,12 @@ export function AlgorithmPipeline() {
                   className="flex-1"
                 >
                   <div
-                    className={`rounded-[18px] border p-4 ${stage.bg} ${stage.border}`}
-                    style={{ boxShadow: `0 0 32px ${stage.color}28, inset 0 1px 0 ${stage.color}20` }}
+                    className={`glass-panel relative overflow-hidden rounded-[24px] border ${stage.bg} ${stage.border} p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2`}
+                    style={{ boxShadow: `0 8px 32px ${stage.color}15, inset 0 1px 0 ${stage.color}20` }}
                   >
+                    {/* Ambient glow inside card */}
+                    <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full opacity-30 blur-2xl" style={{ backgroundColor: stage.color }} />
+
                     {/* Stage label — programming terms stay English */}
                     <div className={`text-xs font-bold uppercase tracking-[0.18em] ${stage.textColor}`}>
                       {stage.label}
@@ -121,41 +124,32 @@ export function AlgorithmPipeline() {
                   </div>
                 </motion.div>
 
-                {/* SVG arrow connector */}
+                {/* Animated Flowing Data Pipe Connector */}
                 {index < pipelineStages.length - 1 && (
-                  <motion.div
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    whileInView={{ opacity: 1, scaleX: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.35, delay: index * 0.08 + 0.2 }}
-                    className="mx-1 shrink-0"
-                    style={{ transformOrigin: "left" }}
-                  >
-                    <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
-                      <defs>
-                        <linearGradient id={`arrow-grad-${index}`} x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor={arrows[index].from} stopOpacity="0.7" />
-                          <stop offset="100%" stopColor={arrows[index].to} stopOpacity="0.7" />
-                        </linearGradient>
-                      </defs>
-                      {/* Line */}
-                      <line
-                        x1="0" y1="8" x2="26" y2="8"
-                        stroke={`url(#arrow-grad-${index})`}
-                        strokeWidth="1.5"
-                      />
-                      {/* Arrowhead */}
-                      <path
-                        d="M22 4 L30 8 L22 12"
-                        stroke={arrows[index].to}
-                        strokeWidth="1.5"
-                        strokeOpacity="0.7"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </motion.div>
+                  <div className="relative mx-2 sm:mx-4 flex h-1 w-8 sm:w-16 shrink-0 items-center overflow-hidden rounded-full">
+                    {/* Dim track line */}
+                    <div
+                      className="absolute inset-0 opacity-20"
+                      style={{
+                        background: `linear-gradient(90deg, ${arrows[index].from}, ${arrows[index].to})`,
+                      }}
+                    />
+                    {/* Glowing moving data packet */}
+                    <motion.div
+                      className="h-full w-1/2 rounded-full shadow-[0_0_8px_currentColor]"
+                      style={{
+                        background: arrows[index].to,
+                        color: arrows[index].to,
+                      }}
+                      animate={{ x: ['-100%', '300%'] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: 'linear',
+                        delay: index * 0.3,
+                      }}
+                    />
+                  </div>
                 )}
               </div>
             ))}
