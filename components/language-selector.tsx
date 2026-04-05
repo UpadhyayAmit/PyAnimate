@@ -31,7 +31,7 @@ export function LanguageSelector() {
 
   return (
     <div className="relative inline-flex items-center">
-      <svg className="absolute left-2 w-4 h-4 text-ink/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="absolute left-2 w-4 h-4 text-ink/50 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -43,7 +43,7 @@ export function LanguageSelector() {
         defaultValue={locale}
         onChange={onSelectChange}
         disabled={isPending}
-        className="pl-8 pr-4 py-1.5 bg-transparent text-sm font-medium text-ink/72 outline-none cursor-pointer border border-white/10 rounded-full hover:bg-white/5 disabled:opacity-50 appearance-none"
+        className="w-9 sm:w-auto pl-8 pr-0 sm:pr-4 py-1.5 bg-transparent text-sm font-medium text-ink/72 outline-none cursor-pointer border border-white/10 rounded-full hover:bg-white/5 disabled:opacity-50 appearance-none"
       >
         {languages.map((lang) => (
           <option key={lang.code} value={lang.code} className="bg-parchment text-bright">

@@ -10,6 +10,7 @@ import { heroStats } from '@/data/course';
 const heroPreviewLines = [
   { number: 1, code: 'level = "Beginner"' },
   { number: 2, code: 'topics = ["Lists", "Trees", "Graphs"]' },
+  { number: 3, code: '' },
   { number: 4, code: 'for topic in topics:' },
   { number: 5, code: '    if topic == "Trees":' },
   { number: 6, code: '        level = "Intermediate"' },
@@ -25,7 +26,7 @@ const heroExecutionFrames = [
     event: 'assign',
     memory: [
       { name: 'level', value: '"Beginner"' },
-      { name: 'topics', value: '[...]' },
+      { name: 'topics', value: '["Lists","Trees","Graphs"]' },
     ],
   },
   {
@@ -135,6 +136,90 @@ export function Hero() {
   const [frameIndex, setFrameIndex] = useState(0);
   const frame = heroExecutionFrames[frameIndex];
 
+  // ── Event-type colour config ──────────────────────────────────────────────
+  // ── Event colour config (inline styles — bypasses Tailwind class scanning) ─
+  type EventStyles = {
+    headerDotStyle: React.CSSProperties;
+    activeLineStyle: React.CSSProperties;
+    stripStyle: React.CSSProperties;
+    dotStyle: React.CSSProperties;
+    labelStyle: React.CSSProperties;
+    progressStyle: React.CSSProperties;
+  };
+  const eventConfig: Record<string, EventStyles> = {
+    assign: {
+      headerDotStyle: { backgroundColor: '#ff6535' },
+      activeLineStyle: {
+        backgroundColor: 'color-mix(in srgb,#ff6535 20%,transparent)',
+        color: 'var(--bright)',
+        boxShadow: '0 0 16px rgba(255,101,53,0.3)',
+      },
+      stripStyle: { backgroundColor: 'color-mix(in srgb,#ff6535 8%,transparent)', borderColor: 'color-mix(in srgb,#ff6535 30%,transparent)' },
+      dotStyle: { backgroundColor: '#ff6535' },
+      labelStyle: { color: 'color-mix(in srgb,#ff6535 70%,transparent)' },
+      progressStyle: { backgroundColor: '#ff6535' },
+    },
+    loop: {
+      headerDotStyle: { backgroundColor: '#38bdf8' },
+      activeLineStyle: {
+        backgroundColor: 'color-mix(in srgb,#38bdf8 20%,transparent)',
+        color: 'var(--bright)',
+        boxShadow: '0 0 16px rgba(56,189,248,0.3)',
+      },
+      stripStyle: { backgroundColor: 'color-mix(in srgb,#38bdf8 8%,transparent)', borderColor: 'color-mix(in srgb,#38bdf8 30%,transparent)' },
+      dotStyle: { backgroundColor: '#38bdf8' },
+      labelStyle: { color: 'color-mix(in srgb,#38bdf8 70%,transparent)' },
+      progressStyle: { backgroundColor: '#38bdf8' },
+    },
+    condition: {
+      headerDotStyle: { backgroundColor: '#a78bfa' },
+      activeLineStyle: {
+        backgroundColor: 'color-mix(in srgb,#a78bfa 20%,transparent)',
+        color: 'var(--bright)',
+        boxShadow: '0 0 16px rgba(167,139,250,0.3)',
+      },
+      stripStyle: { backgroundColor: 'color-mix(in srgb,#a78bfa 8%,transparent)', borderColor: 'color-mix(in srgb,#a78bfa 30%,transparent)' },
+      dotStyle: { backgroundColor: '#a78bfa' },
+      labelStyle: { color: 'color-mix(in srgb,#a78bfa 70%,transparent)' },
+      progressStyle: { backgroundColor: '#a78bfa' },
+    },
+  };
+  const ec = eventConfig[frame.event] ?? eventConfig.assign;
+
+  // ── Variable card colour config (inline styles) ───────────────────────────
+  type CardStyles = { cardStyle: React.CSSProperties; labelStyle: React.CSSProperties; valueStyle: React.CSSProperties };
+  const varCardStyles: Record<string, CardStyles> = {
+    level: {
+      cardStyle: {
+        background: 'linear-gradient(135deg,color-mix(in srgb,#fcd34d 15%,transparent),color-mix(in srgb,#fcd34d 5%,transparent))',
+        borderColor: 'color-mix(in srgb,#fcd34d 25%,transparent)',
+      },
+      labelStyle: { color: 'color-mix(in srgb,#fcd34d 60%,transparent)' },
+      valueStyle: { color: '#fcd34d' },
+    },
+    topic: {
+      cardStyle: {
+        background: 'linear-gradient(135deg,color-mix(in srgb,#38bdf8 15%,transparent),color-mix(in srgb,#38bdf8 5%,transparent))',
+        borderColor: 'color-mix(in srgb,#38bdf8 25%,transparent)',
+      },
+      labelStyle: { color: 'color-mix(in srgb,#38bdf8 60%,transparent)' },
+      valueStyle: { color: '#38bdf8' },
+    },
+    topics: {
+      cardStyle: {
+        background: 'linear-gradient(135deg,color-mix(in srgb,#4ade80 15%,transparent),color-mix(in srgb,#4ade80 5%,transparent))',
+        borderColor: 'color-mix(in srgb,#4ade80 25%,transparent)',
+      },
+      labelStyle: { color: 'color-mix(in srgb,#4ade80 60%,transparent)' },
+      valueStyle: { color: '#4ade80' },
+    },
+  };
+  const defaultCardStyle: CardStyles = {
+    cardStyle: { backgroundColor: 'var(--parchment)' },
+    labelStyle: { color: 'color-mix(in srgb,var(--ink) 42%,transparent)' },
+    valueStyle: { color: 'var(--ink)' },
+  };
+
   useEffect(() => {
     if (shouldReduceMotion) return;
     const timer = window.setInterval(() => {
@@ -191,7 +276,7 @@ export function Hero() {
           >
             <Link
               href="/playground"
-              className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(232,98,42,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,98,42,0.4)]"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-signal to-amber px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(255,101,53,0.4)] glow-signal transition hover:opacity-90"
             >
               <PlayCircle className="h-4 w-4" />
               {t('openPlayground')}
@@ -238,7 +323,7 @@ export function Hero() {
           {/* Header */}
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-[0.18em] text-ink/42">
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-signal" />
+              <span className="h-2 w-2 rounded-full transition-colors duration-300" style={ec.headerDotStyle} />
               {t('executionPreview')}
             </div>
             <span suppressHydrationWarning>
@@ -256,7 +341,8 @@ export function Hero() {
                     key={item.number}
                     layout
                     transition={{ type: 'spring', stiffness: 280, damping: 24 }}
-                    className={`rounded-xl px-3 py-2 ${active ? 'bg-signal/20 text-bright shadow-[0_0_16px_rgba(255,101,53,0.25)]' : 'text-ink/45'}`}
+                    className={`rounded-xl px-3 py-2 ${active ? '' : 'text-ink/45'}`}
+                    style={active ? ec.activeLineStyle : {}}
                   >
                     <span className="mr-3 select-none text-ink/28">{item.number}</span>
                     {item.code}
@@ -269,18 +355,29 @@ export function Hero() {
           {/* Memory cards + step label */}
           <div className="mt-4 grid grid-cols-2 gap-3">
             {/* Memory cards — show only numeric/short vars */}
-            {frame.memory.slice(0, 2).map((item: { name: string; value: string }, index: number) => (
-              <motion.div
-                key={`${frameIndex}-${item.name}`}
-                initial={{ opacity: 0, scale: 0.94 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.06 }}
-                className="rounded-[16px] bg-parchment p-3"
-              >
-                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/42">{item.name}</div>
-                <div className="mt-1.5 truncate font-mono text-xl font-semibold text-ink">{item.value}</div>
-              </motion.div>
-            ))}
+            {frame.memory.slice(0, 2).map((item: { name: string; value: string }, index: number) => {
+              const cs = varCardStyles[item.name] ?? defaultCardStyle;
+              return (
+                <motion.div
+                  key={`${frameIndex}-${item.name}`}
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.06 }}
+                  className="rounded-[16px] p-3 border"
+                  style={cs.cardStyle}
+                >
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em]" style={cs.labelStyle}>
+                    {item.name}
+                  </div>
+                  <div
+                    className={`mt-1.5 font-mono font-semibold leading-tight ${item.value.length > 15 ? 'break-all' : 'truncate'}`}
+                    style={{ ...cs.valueStyle, fontSize: item.value.length > 15 ? '12px' : item.value.length > 9 ? '14px' : '20px' }}
+                  >
+                    {item.value}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Explanation strip */}
@@ -291,11 +388,14 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.22 }}
-              className="mt-3 flex items-start gap-3 rounded-[16px] border border-signal/30 bg-signal/8 px-4 py-3 shadow-[0_0_16px_rgba(255,101,53,0.1)]"
+              className="mt-3 flex items-start gap-3 rounded-[16px] border px-4 py-3 shadow-[0_0_16px_rgba(0,0,0,0.06)]"
+              style={ec.stripStyle}
             >
-              <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-signal" />
+              <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full" style={ec.dotStyle} />
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-signal/70">{frame.event}</div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.16em]" style={ec.labelStyle}>
+                  {frame.event}
+                </div>
                 <div className="mt-0.5 text-sm leading-6 text-ink/70">{frame.summary}</div>
               </div>
             </motion.div>
@@ -306,7 +406,8 @@ export function Hero() {
             <motion.div
               animate={{ width: `${((frameIndex + 1) / heroExecutionFrames.length) * 100}%` }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="h-full rounded-full bg-signal"
+              className="h-full rounded-full transition-colors duration-300"
+              style={ec.progressStyle}
             />
           </div>
         </motion.div>

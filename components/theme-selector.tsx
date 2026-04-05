@@ -57,10 +57,10 @@ export function ThemeSelector() {
           className="inline-block w-3.5 h-3.5 rounded-full border border-[var(--border-warm)] flex-shrink-0"
           style={{ background: current.preview }}
         />
-        <span>{current.label}</span>
-        {/* Chevron */}
+        <span className="hidden sm:inline">{current.label}</span>
+        {/* Chevron — hidden on mobile to save space */}
         <svg
-          className={`w-3.5 h-3.5 opacity-60 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
+          className={`hidden sm:block w-3.5 h-3.5 opacity-60 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 16 16"
           stroke="currentColor"
