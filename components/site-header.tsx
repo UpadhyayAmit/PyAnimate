@@ -43,6 +43,23 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
           <div className="hidden sm:block w-[1px] h-6 nav-separator" />
           <LanguageSelector />
           <ThemeSelector />
+          {/* AI Wisdom ecosystem pill */}
+          <a
+            href="https://aiwisdom.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold border transition hover:scale-105"
+            style={{
+              color: 'rgba(255,255,255,0.75)',
+              borderColor: 'rgba(139,92,246,0.35)',
+              background: 'rgba(139,92,246,0.08)',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <img src="/aiwisdom_icon.png" alt="" style={{ width: 14, height: 14, objectFit: 'contain' }} />
+            AI Wisdom
+          </a>
         </div>
       </div>
     </header>
