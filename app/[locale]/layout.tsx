@@ -54,7 +54,9 @@ export default async function RootLayout({
       <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}>
         <ThemeProvider>
           <AiWisdomBadge />
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <div style={{ flex: 1 }}>
+            <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          </div>
           <SharedFooter />
         </ThemeProvider>
       </body>
