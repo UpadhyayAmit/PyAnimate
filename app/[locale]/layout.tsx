@@ -6,6 +6,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { ThemeProvider } from '@/lib/theme';
+import { SharedFooter } from '@/components/shared-footer';
+import { AiWisdomBadge } from '@/components/ai-wisdom-badge';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -51,7 +53,9 @@ export default async function RootLayout({
       </head>
       <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}>
         <ThemeProvider>
+          <AiWisdomBadge />
           <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <SharedFooter />
         </ThemeProvider>
       </body>
     </html>
