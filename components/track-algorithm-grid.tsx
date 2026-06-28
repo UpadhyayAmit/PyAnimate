@@ -7,6 +7,7 @@ import { useProgress } from '@/lib/use-progress';
 import { useEffect, useState } from 'react';
 import { TrackProgress } from './track-progress';
 import { useTranslations } from 'next-intl';
+import { CardStats } from '@/components/CardStats';
 
 type AlgorithmEntry = {
   id: string;
@@ -164,9 +165,12 @@ export function TrackAlgorithmGrid({ algorithms }: { algorithms: AlgorithmEntry[
                   )}
 
                   <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/5 pt-6">
-                    <div className="flex items-center gap-2 text-[13px] font-semibold text-ink/40 uppercase tracking-widest">
-                      <Clock className="h-4 w-4" />
-                      {algo.duration}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-widest text-ink/40">
+                        <Clock className="h-4 w-4" />
+                        {algo.duration}
+                      </div>
+                      <CardStats slug={algo.id} />
                     </div>
 
                     <Link

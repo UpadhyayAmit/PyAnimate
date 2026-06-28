@@ -2,7 +2,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type ProgressStore = {
+export type ProgressSnapshot = {
   completedLessons: string[];
   completedSteps: string[];
   completedChallenges: string[];
@@ -10,6 +10,11 @@ type ProgressStore = {
   streak: number;
   lastActiveDate: string | null;
   lastLessonId: string | null;
+};
+
+type ProgressStore = ProgressSnapshot & {
+  setProgress: (progress: ProgressSnapshot) => void;
+  mergeProgress: (progress: ProgressSnapshot) => void;
   setLastLessonId: (id: string) => void;
   markComplete: (lessonId: string, xp?: number) => void;
   markStepComplete: (stepId: string, xp?: number) => void;
@@ -19,6 +24,10 @@ type ProgressStore = {
   isChallengeComplete: (challengeId: string) => boolean;
   reset: () => void;
 };
+
+function unique(values: string[]) {
+  return Array.from(new Set(values));
+}
 
 export const useProgress = create<ProgressStore>()(
   persist(
@@ -30,6 +39,17 @@ export const useProgress = create<ProgressStore>()(
       streak: 0,
       lastActiveDate: null,
       lastLessonId: null,
+      setProgress: (progress) => set(progress),
+      mergeProgress: (progress) =>
+        set((state) => ({
+          completedLessons: unique([...state.completedLessons, ...progress.completedLessons]),
+          completedSteps: unique([...state.completedSteps, ...progress.completedSteps]),
+          completedChallenges: unique([...state.completedChallenges, ...progress.completedChallenges]),
+          totalXP: Math.max(state.totalXP, progress.totalXP),
+          streak: Math.max(state.streak, progress.streak),
+          lastActiveDate: progress.lastActiveDate ?? state.lastActiveDate,
+          lastLessonId: progress.lastLessonId ?? state.lastLessonId,
+        })),
       setLastLessonId: (id) => set({ lastLessonId: id }),
       markComplete: (lessonId, xp = 50) => {
         const { completedLessons, lastActiveDate, streak } = get();

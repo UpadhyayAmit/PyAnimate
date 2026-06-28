@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Code2, Database, GitBranch, Layers } from 'lucide-react';
 import { trackLevels } from '@/data/course';
 import { useTranslations } from 'next-intl';
+import { CardStats } from '@/components/CardStats';
 
 // Dark is the base. light: and sepia: prefixes override for light/sepia themes.
 // These @variant rules are defined in globals.css and work correctly with Turbopack.
@@ -135,9 +136,12 @@ export function TrackGrid() {
                     </motion.ul>
 
                     <div className={`mt-5 flex items-center justify-between border-t pt-4 ${s.divider}`}>
-                      <span className={`text-xs font-medium ${s.count}`}>
-                        {track.lessonCount} {t('lessons')}
-                      </span>
+                      <div className="flex flex-col gap-2">
+                        <span className={`text-xs font-medium ${s.count}`}>
+                          {track.lessonCount} {t('lessons')}
+                        </span>
+                        <CardStats slug={`track-${track.id}`} />
+                      </div>
                       <span
                         className={`inline-flex items-center gap-1 text-xs font-semibold opacity-0 transition-opacity group-hover:opacity-100 ${s.arrow}`}
                       >

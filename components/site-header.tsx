@@ -3,6 +3,7 @@ import { PyAnimateLogo } from '@/components/icons/pyanimate-logo';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/language-selector';
 import { ThemeSelector } from '@/components/theme-selector';
+import { NavBarAuth } from '@/components/NavBarAuth';
 
 type SiteHeaderProps = {
   compactLabel?: string;
@@ -18,7 +19,7 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
           <PyAnimateLogo className="h-8 w-8 shadow-[0_2px_12px_rgba(255,101,53,0.4)] rounded-[10px]" />
           <span className="text-gradient-signal text-lg font-bold neon-text-signal ml-1 hidden sm:block">PyAnimate</span>
         </Link>
-        <div className="flex items-center gap-2 sm:gap-6">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-4">
           {compactLabel ? (
             <div
               className="text-xs sm:text-sm font-medium text-ink/72 max-w-[140px] sm:max-w-none truncate sm:whitespace-normal"
@@ -43,6 +44,8 @@ export function SiteHeader({ compactLabel }: SiteHeaderProps) {
           <div className="hidden sm:block w-[1px] h-6 nav-separator" />
           <LanguageSelector />
           <ThemeSelector />
+          <div className="hidden sm:block w-[1px] h-6 nav-separator" />
+          <NavBarAuth />
         </div>
       </div>
     </header>

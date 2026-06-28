@@ -5,6 +5,7 @@ import { algorithmsByLevel, trackLevels } from '@/data/course';
 import { SiteHeader } from '@/components/site-header';
 import { TrackAlgorithmGrid } from '@/components/track-algorithm-grid';
 import { TrackHeroCard } from '@/components/track-hero-card';
+import { TrackEngagementSection } from '@/components/TrackEngagementSection';
 import { getTranslations } from 'next-intl/server';
 
 type Props = { params: Promise<{ level: string }> };
@@ -45,6 +46,8 @@ export default async function TrackPage({ params }: Props) {
       <section className="px-4 pb-10 sm:px-6 md:px-10 lg:px-16">
         <TrackAlgorithmGrid algorithms={algorithms as any} />
       </section>
+
+      <TrackEngagementSection slug={`track-${track.id}`} />
     </main>
   );
 }

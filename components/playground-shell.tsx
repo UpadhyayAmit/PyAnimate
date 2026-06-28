@@ -32,6 +32,9 @@ import { getPlaygroundLessonsForLocale } from '@/data/course';
 import { MonacoPythonEditor } from '@/components/monaco-python-editor';
 import { ComplexityChart } from '@/components/complexity-chart';
 import { LessonQuiz } from '@/components/lesson-quiz';
+import { CommentsSection } from '@/components/CommentsSection';
+import { LessonEngagementWidget } from '@/components/LessonEngagementWidget';
+import { PageFeedback } from '@/components/PageFeedback';
 import { usePyodide } from '@/lib/use-pyodide';
 import { useProgress } from '@/lib/use-progress';
 import type { ExecutionFrame } from '@/data/course';
@@ -75,6 +78,8 @@ export function PlaygroundShell() {
   const lesson = localizedLessons.find((item) => item.id === selectedLessonId) ?? localizedLessons[0];
   const frame = activeFrames[Math.min(frameIndex, activeFrames.length - 1)];
   const activeExplanation = lesson.explanation?.[explanationMode] ?? lesson.explanation?.simple;
+  const commentsSectionRef = useRef<HTMLDivElement | null>(null);
+  const [commentCount, setCommentCount] = useState(0);
 
   const currentIndex = localizedLessons.findIndex((l) => l.id === selectedLessonId);
   const nextLesson = localizedLessons[currentIndex + 1];
@@ -153,6 +158,10 @@ export function PlaygroundShell() {
     : (activeFrames[frameIndex]?.output ?? lesson.output).slice(0, Math.max(1, activeFrames[frameIndex]?.output?.length ?? lesson.output.length));
 
   const timelineRef = useRef<HTMLDivElement>(null);
+
+  function scrollToComments() {
+    commentsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   // Auto-scroll timeline when frame changes
   useEffect(() => {
@@ -241,6 +250,10 @@ export function PlaygroundShell() {
 
   return (
     <div className="site-shell relative px-3 py-6 sm:py-10 sm:px-10 lg:px-16" dir={isRtlLocale ? 'rtl' : 'ltr'}>
+      <aside className="fixed left-4 top-32 z-30 hidden xl:flex">
+        <LessonEngagementWidget slug={lesson.id} commentCount={commentCount} onCommentClick={scrollToComments} />
+      </aside>
+
       <div className="ambient-orb left-[5%] top-24 h-40 w-40 bg-amber/15" />
       <div className="ambient-orb ambient-orb--slow ambient-orb--delay right-[6%] top-20 h-48 w-48 bg-wave/10" />
 
@@ -725,29 +738,6 @@ export function PlaygroundShell() {
             }}
           />
 
-          {/* Cross-link: apply this in AI systems */}
-          {isFinished && (
-            <div className="mt-4 rounded-[20px] border border-indigo-500/20 bg-indigo-500/5 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-bright mb-1">Apply this in real AI systems →</p>
-                <p className="text-xs text-ink/55 leading-relaxed">
-                  See how algorithms like {lesson.title} are used in production AI pipelines, model serving, and engineering systems on AI Wisdom.
-                </p>
-              </div>
-              <a
-                href="https://aiwisdom.dev/engineering"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-xs font-semibold text-indigo-300 transition hover:bg-indigo-500/20 hover:text-indigo-100"
-              >
-                Explore aiwisdom.dev
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </a>
-            </div>
-          )}
         </section>
 
         {/* ── Right Column: Timeline & Memory View ── */}
@@ -978,6 +968,11 @@ export function PlaygroundShell() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="relative z-10 card-elevated rounded-[32px] p-6 shadow-xl sm:p-8">
+        <PageFeedback slug={lesson.id} />
+        <CommentsSection slug={lesson.id} sectionRef={commentsSectionRef} onCountChange={setCommentCount} />
       </section>
     </div>
   );
