@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
+import { authReturnProps } from '@/lib/auth-return-url';
 
 interface Props {
   slug: string;
@@ -39,7 +40,7 @@ function PageFeedbackInner({ slug }: Props) {
   async function vote(v: 1 | -1) {
     if (!isLoaded) return;
     if (!isSignedIn) {
-      openSignIn();
+      openSignIn(authReturnProps());
       return;
     }
     if (submitting) return;

@@ -13,6 +13,7 @@ export function QuickInquiry() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [honey, setHoney] = useState('');
+  const [startedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -25,7 +26,7 @@ export function QuickInquiry() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message, _honey: honey }),
+        body: JSON.stringify({ name, email, subject, message, _honey: honey, startedAt: String(startedAt) }),
       });
       const data = (await res.json()) as { ok: boolean; error?: string };
       if (data.ok) {

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useClerk, useUser } from '@clerk/nextjs';
 import { Linkedin, MessageCircle, Share2, Twitter } from 'lucide-react';
+import { authReturnProps } from '@/lib/auth-return-url';
 
 const EMOJI_OPTIONS = [
   { emoji: '🔥', label: 'Fire' },
@@ -67,7 +68,7 @@ function LessonEngagementWidgetInner({ slug, commentCount, onCommentClick }: Pro
   async function toggleReaction(emoji: string) {
     if (!isLoaded) return;
     if (!isSignedIn) {
-      openSignIn();
+      openSignIn(authReturnProps());
       return;
     }
 

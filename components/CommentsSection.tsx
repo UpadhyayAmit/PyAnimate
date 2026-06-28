@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useClerk, useUser } from '@clerk/nextjs';
 import { Send, Trash2 } from 'lucide-react';
+import { authReturnProps } from '@/lib/auth-return-url';
 
 type Comment = {
   id: number;
@@ -70,7 +71,7 @@ function CommentsSectionInner({ slug, sectionRef, onCountChange }: Props) {
     e.preventDefault();
     if (!isLoaded) return;
     if (!isSignedIn) {
-      openSignIn();
+      openSignIn(authReturnProps());
       return;
     }
     if (!body.trim() || submitting) return;
@@ -119,7 +120,7 @@ function CommentsSectionInner({ slug, sectionRef, onCountChange }: Props) {
               value={body}
               onChange={(e) => setBody(e.target.value)}
               onClick={() => {
-                if (!isSignedIn) openSignIn();
+                if (!isSignedIn) openSignIn(authReturnProps());
               }}
               readOnly={!isSignedIn}
               rows={3}

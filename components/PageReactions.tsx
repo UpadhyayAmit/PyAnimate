@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { Share2, Twitter, Linkedin } from 'lucide-react';
+import { authReturnProps } from '@/lib/auth-return-url';
 
 const EMOJI_OPTIONS = [
   { emoji: '🔥', label: 'Fire' },
@@ -64,7 +65,7 @@ function PageReactionsInner({ slug }: Props) {
   async function toggleReaction(emoji: string) {
     if (!isLoaded) return;
     if (!isSignedIn) {
-      openSignIn();
+      openSignIn(authReturnProps());
       return;
     }
 

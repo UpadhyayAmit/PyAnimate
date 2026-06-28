@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTheme, THEMES } from '@/lib/theme';
 
-export function ThemeSelector() {
+export function ThemeSelector({ mobile = false }: { mobile?: boolean }) {
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -28,7 +28,9 @@ export function ThemeSelector() {
   if (!mounted) {
     return (
       <div
-        className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium border border-[var(--border)] bg-[var(--pill-bg)] opacity-0 pointer-events-none select-none"
+        className={`flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium border border-[var(--border)] bg-[var(--pill-bg)] opacity-0 pointer-events-none select-none ${
+          mobile ? 'h-12 w-full rounded-full' : ''
+        }`}
         aria-hidden
       >
         <span className="inline-block w-3.5 h-3.5 rounded-full bg-[var(--border)] flex-shrink-0" />
@@ -40,27 +42,29 @@ export function ThemeSelector() {
   const current = THEMES.find((t) => t.id === theme) ?? THEMES[0];
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className={`relative ${mobile ? 'w-full' : ''}`}>
       {/* Trigger button */}
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Change theme"
         aria-expanded={open}
-        className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium
+        className={`flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium
                    text-ink hover:text-bright
                    border border-[var(--border)] hover:border-[var(--border-warm)]
                    bg-[var(--pill-bg)] hover:bg-[var(--timeline-hover)]
-                   transition-all duration-150"
+                   transition-all duration-150 ${
+                     mobile ? 'h-12 w-full justify-between rounded-full px-4 text-white/80' : ''
+                   }`}
       >
         {/* Swatch */}
         <span
           className="inline-block w-3.5 h-3.5 rounded-full border border-[var(--border-warm)] flex-shrink-0"
           style={{ background: current.preview }}
         />
-        <span className="hidden sm:inline">{current.label}</span>
+        <span className={mobile ? 'inline' : 'hidden sm:inline'}>{current.label}</span>
         {/* Chevron — hidden on mobile to save space */}
         <svg
-          className={`hidden sm:block w-3.5 h-3.5 opacity-60 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
+          className={`${mobile ? 'block' : 'hidden sm:block'} w-3.5 h-3.5 opacity-60 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 16 16"
           stroke="currentColor"
@@ -73,9 +77,9 @@ export function ThemeSelector() {
       {/* Dropdown panel — z-[200] to clear all hero/card stacking contexts */}
       {open && (
         <div
-          className="absolute right-0 mt-2 w-44 z-[200] rounded-xl
+          className={`absolute right-0 mt-2 z-[200] rounded-xl
                      bg-[var(--panel)] border border-[var(--border)]
-                     shadow-2xl overflow-hidden"
+                     shadow-2xl overflow-hidden ${mobile ? 'w-full' : 'w-44'}`}
           style={{ boxShadow: 'var(--card-shadow)' }}
         >
           <div

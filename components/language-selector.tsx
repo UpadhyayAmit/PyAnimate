@@ -2,7 +2,6 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState, useTransition } from 'react';
 
 const languages = [
@@ -91,11 +90,10 @@ function FlagMark({ code }: { code: FlagCode }) {
   }
 }
 
-export function LanguageSelector() {
+export function LanguageSelector({ mobile = false }: { mobile?: boolean }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -122,13 +120,13 @@ export function LanguageSelector() {
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
     setOpen(false);
     startTransition(() => {
-      const query = searchParams.toString();
+      const query = typeof window !== 'undefined' ? window.location.search.replace(/^\?/, '') : '';
       router.replace((query ? `${pathname}?${query}` : pathname) as any, { locale: nextLocale });
     });
   }
 
   return (
-    <div ref={menuRef} className="relative inline-flex">
+    <div ref={menuRef} className={`relative inline-flex ${mobile ? 'w-full' : ''}`}>
       <button
         type="button"
         aria-haspopup="listbox"
@@ -136,7 +134,9 @@ export function LanguageSelector() {
         aria-label="Select language"
         disabled={isPending}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex h-10 min-w-[122px] items-center justify-between gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 text-sm font-semibold text-ink/72 outline-none transition hover:bg-white/[0.06] disabled:opacity-50"
+        className={`inline-flex h-10 min-w-[122px] items-center justify-between gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 text-sm font-semibold text-ink/72 outline-none transition hover:bg-white/[0.06] disabled:opacity-50 ${
+          mobile ? 'h-12 w-full text-white/80' : ''
+        }`}
       >
         <span className="inline-flex min-w-0 items-center gap-2">
           <FlagMark code={activeLanguage.flag} />
@@ -150,7 +150,9 @@ export function LanguageSelector() {
       {open && (
         <div
           role="listbox"
-          className="absolute right-0 top-[calc(100%+0.45rem)] z-50 w-40 overflow-hidden rounded-2xl border border-white/10 bg-[#171d28] p-1 shadow-2xl"
+          className={`absolute right-0 z-50 rounded-2xl border border-white/10 bg-[#171d28] p-1 shadow-2xl ${
+            mobile ? 'bottom-[calc(100%+0.45rem)] max-h-[min(22rem,48vh)] w-full overflow-y-auto' : 'top-[calc(100%+0.45rem)] w-40 overflow-hidden'
+          }`}
         >
           {languages.map((lang) => {
             const active = lang.code === locale;

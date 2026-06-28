@@ -32,8 +32,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-bright mb-3">2. Data we collect</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong className="text-bright">Account data</strong> — Name, email address, and profile picture provided via Clerk authentication
-              when you sign up.
+              <strong className="text-bright">Account data</strong> — Name, email address, and profile picture provided through our sign-in
+              system when you create an account.
             </li>
             <li>
               <strong className="text-bright">Usage data</strong> — Reactions, page-feedback votes, and comments you submit on lessons.
@@ -42,8 +42,8 @@ export default function PrivacyPage() {
               <strong className="text-bright">Contact form data</strong> — Your name, email, subject and message when you use the inquiry form.
             </li>
             <li>
-              <strong className="text-bright">Analytics</strong> — Aggregated, anonymized page-view data via Microsoft Clarity. No personal
-              identifiers are stored.
+              <strong className="text-bright">Analytics</strong> — Aggregated, anonymized page-view data used to understand site performance.
+              No personal identifiers are stored for analytics.
             </li>
           </ul>
         </section>
@@ -59,23 +59,21 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-bright mb-3">4. Third-party services</h2>
+          <h2 className="text-xl font-bold text-bright mb-3">4. Service providers</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong className="text-bright">Clerk</strong> — Authentication. See{' '}
-              <a href="https://clerk.com/privacy" target="_blank" rel="noopener noreferrer" className="text-signal underline underline-offset-2">
-                clerk.com/privacy
-              </a>
-              .
+              <strong className="text-bright">Authentication provider</strong> — Helps create accounts, sign users in, and protect sessions.
             </li>
             <li>
-              <strong className="text-bright">Neon</strong> — PostgreSQL database hosting. Your user-generated content is stored in Neon.
+              <strong className="text-bright">Data storage provider</strong> — Stores user-generated content such as comments, reactions, and
+              feedback.
             </li>
             <li>
-              <strong className="text-bright">Vercel</strong> — Hosting and edge network.
+              <strong className="text-bright">Hosting provider</strong> — Delivers PyAnimate pages and application files securely.
             </li>
             <li>
-              <strong className="text-bright">Microsoft Clarity</strong> — Anonymous session analytics.
+              <strong className="text-bright">Analytics provider</strong> — Provides aggregated usage insights so we can improve lessons and
+              fix confusing flows.
             </li>
           </ul>
         </section>
@@ -93,7 +91,7 @@ export default function PrivacyPage() {
 
         <section>
           <h2 className="text-xl font-bold text-bright mb-3">6. Cookies</h2>
-          <p>We use only session cookies set by Clerk for authentication. No advertising cookies are used.</p>
+          <p>We use only essential cookies for authentication, preferences, and basic site functionality. No advertising cookies are used.</p>
         </section>
 
         <section>
