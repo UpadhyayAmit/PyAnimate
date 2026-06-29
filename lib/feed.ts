@@ -20,7 +20,8 @@ import { routing } from "@/i18n/routing";
 const BASE_URL = "https://pyanimate.com";
 const AUTHOR = "Amit Upadhyay";
 const AUTHOR_EMAIL = "connect@amitupadhyay.com";
-const PUB_EPOCH = Date.UTC(2025, 0, 1); // base for stable, synthesised pubDates
+const PUB_START = Date.UTC(2026, 0, 1);  // Jan 1 2026
+const PUB_END   = Date.UTC(2026, 5, 25); // Jun 25 2026
 
 /** Per-item raster OG cover (1200×630 PNG rendered by the /api/og route). */
 function ogCover(title: string, eyebrow: string) {
@@ -90,6 +91,9 @@ type FeedEntry = {
 };
 
 function buildEntries(locale: string): FeedEntry[] {
+  const totalItems = trackLevels.length + playgroundLessons.length;
+  const step = totalItems > 1 ? (PUB_END - PUB_START) / (totalItems - 1) : 0;
+
   const trackEntries: FeedEntry[] = trackLevels.map((track, i) => {
     const url = localeUrl(locale, `/tracks/${track.id}`);
     const goals = track.goals.map((g) => `<li>${escapeXml(g)}</li>`).join("");
@@ -107,7 +111,7 @@ function buildEntries(locale: string): FeedEntry[] {
         <p>▶ <a href="${url}">Start the ${escapeXml(track.title)} track on PyAnimate →</a></p>
         <p><em>Originally published at <a href="${url}">${url}</a></em></p>`.trim(),
       tags: toTags(["python", "track", track.title]),
-      date: new Date(PUB_EPOCH + i * 86_400_000),
+      date: new Date(PUB_START + i * step),
     };
   });
 
@@ -132,7 +136,7 @@ function buildEntries(locale: string): FeedEntry[] {
         <p>▶ <a href="${url}">Run it live in the PyAnimate playground →</a></p>
         <p><em>Originally published at <a href="${url}">${url}</a></em></p>`.trim(),
       tags: toTags(["python", "tutorial", String(lesson.level)]),
-      date: new Date(PUB_EPOCH + (trackLevels.length + i) * 86_400_000),
+      date: new Date(PUB_START + (trackLevels.length + i) * step),
     };
   });
 
