@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/lib/theme';
 import { clerkAppearance } from '@/lib/clerkAppearance';
 import { ProgressSync } from '@/components/ProgressSync';
 import { CookieConsent } from '@/components/CookieConsent';
+import { siteUrl } from '@/lib/site';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -19,7 +20,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pyanimate.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'PyAnimate',
     template: '%s · PyAnimate',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PyAnimate',
     description: 'Visual Python lessons with animated execution, memory, and algorithm flow.',
-    url: 'https://pyanimate.com',
+    url: siteUrl,
     siteName: 'PyAnimate',
     type: 'website',
   },

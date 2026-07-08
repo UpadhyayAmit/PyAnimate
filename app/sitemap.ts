@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
 import { playgroundLessons, trackLevels } from '@/data/course';
 import { routing } from '@/i18n/routing';
+import { siteUrl } from '@/lib/site';
 
-const BASE_URL = 'https://pyanimate.com';
+const BASE_URL = siteUrl;
 const STATIC_ROUTES = [
   { path: '', changeFrequency: 'daily' as const, priority: 1 },
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.7 },

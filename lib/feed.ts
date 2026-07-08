@@ -1,5 +1,6 @@
 import { playgroundLessons, trackLevels } from "@/data/course";
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/lib/site";
 
 /**
  * Shared builder for the syndication-ready RSS 2.0 feeds (dev.to / Medium).
@@ -17,7 +18,7 @@ import { routing } from "@/i18n/routing";
  * up here.
  */
 
-const BASE_URL = "https://pyanimate.com";
+const BASE_URL = siteUrl;
 const AUTHOR = "Amit Upadhyay";
 const AUTHOR_EMAIL = "connect@amitupadhyay.com";
 const PUB_START = Date.UTC(2026, 0, 1);  // Jan 1 2026

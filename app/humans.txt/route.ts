@@ -1,3 +1,5 @@
+import { siteUrl } from "@/lib/site";
+
 export function GET() {
   return new Response(
     `PyAnimate
@@ -7,8 +9,8 @@ Website: https://amitupadhyay.com
 Ecosystem: AI Wisdom
 Contact: connect@pyanimate.com
 
-Site: https://pyanimate.com
-Sitemap: https://pyanimate.com/sitemap.xml
+Site: ${siteUrl}
+Sitemap: ${siteUrl}/sitemap.xml
 `,
     {
       headers: {

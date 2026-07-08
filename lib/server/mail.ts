@@ -3,6 +3,7 @@
  * DO NOT import in client components.
  */
 import nodemailer from 'nodemailer';
+import { siteUrl } from '@/lib/site';
 
 const transporter = nodemailer.createTransport({
   host: process.env.ZOHO_SMTP_HOST ?? 'smtppro.zoho.com',
@@ -50,7 +51,7 @@ export async function sendContactEmail(opts: ContactMailOptions): Promise<void> 
   <p style="color:#6b7280;margin-bottom:6px;font-size:14px">Message:</p>
   <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;font-size:15px;line-height:1.6">${eMessage}</div>
   <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0 12px">
-  <p style="color:#9ca3af;font-size:12px">Sent from the contact form at <a href="https://pyanimate.com" style="color:#e8622a">pyanimate.com</a></p>
+  <p style="color:#9ca3af;font-size:12px">Sent from the contact form at <a href="${siteUrl}" style="color:#e8622a">pyanimate.com</a></p>
 </body>
 </html>`;
 
@@ -89,7 +90,7 @@ export async function sendContactWelcomeEmail(opts: ContactMailOptions): Promise
         </div>
         <p style="margin:0;color:#a8b3c7;font-size:15px;line-height:1.7">
           While you wait, you can keep exploring animated Python lessons at
-          <a href="https://pyanimate.com" style="color:#ff6b35;text-decoration:none">pyanimate.com</a>.
+          <a href="${siteUrl}" style="color:#ff6b35;text-decoration:none">pyanimate.com</a>.
         </p>
         <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0 14px">
         <p style="margin:0;color:#7c879a;font-size:12px;line-height:1.6">
@@ -106,7 +107,7 @@ export async function sendContactWelcomeEmail(opts: ContactMailOptions): Promise
     to: visitorEmail,
     replyTo: from,
     subject: 'Thanks for contacting PyAnimate',
-    text: `Hi ${visitorName},\n\nThanks for reaching out to PyAnimate. Your enquiry about "${subject}" has reached Amit, and I will reply when I have useful context to share.\n\nExplore PyAnimate: https://pyanimate.com\n\nIf this was not you, you can ignore this email.`,
+    text: `Hi ${visitorName},\n\nThanks for reaching out to PyAnimate. Your enquiry about "${subject}" has reached Amit, and I will reply when I have useful context to share.\n\nExplore PyAnimate: ${siteUrl}\n\nIf this was not you, you can ignore this email.`,
     html,
   });
 }
